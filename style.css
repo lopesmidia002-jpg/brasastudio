@@ -2252,6 +2252,98 @@ button, input {
 .portfolio {
   position: relative;
   overflow: visible;
+  background-color: #000000;
+  padding-top: clamp(4rem, 8vw, 6.5rem);
+}
+
+/* Clarão difuso atmosférico âmbar atrás do cabeçalho do portfólio */
+.portfolio-glow-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 92vw);
+  height: 380px;
+  background: radial-gradient(ellipse 65% 55% at 50% 36%, rgba(225, 85, 20, 0.17) 0%, rgba(165, 55, 12, 0.05) 50%, transparent 75%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portfolio-head {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #e55a20;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+
+.portfolio-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.8vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.35rem;
+  text-align: center;
+}
+
+.portfolio-title .title-white {
+  color: #ffffff;
+}
+
+.portfolio-title .title-orange {
+  color: #f76020;
+}
+
+.portfolio-title .title-block {
+  display: block;
+}
+
+.portfolio-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #9295a0;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.25rem;
+}
+
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f76327 0%, #db4611 100%);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 0.88rem 2.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 130, 60, 0.45);
+  box-shadow: 0 10px 30px rgba(235, 75, 20, 0.45), 0 0 20px rgba(255, 90, 31, 0.28);
+  text-decoration: none;
+  transition: box-shadow var(--trans-normal), transform var(--trans-fast), filter var(--trans-fast);
+}
+
+.portfolio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 38px rgba(235, 75, 20, 0.6), 0 0 26px rgba(255, 90, 31, 0.45);
+  filter: brightness(1.05);
 }
 
 .works {

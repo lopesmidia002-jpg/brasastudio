@@ -373,7 +373,17 @@
     - Respeito à preferência do sistema por acessibilidade (`prefers-reduced-motion`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 57 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 57 — Refinamento Visual Fiel do Cabeçalho do Portfólio Conforme Imagem de Referência**
+  - Implementação de clarão difuso atmosférico âmbar (`.portfolio-glow-bg` com `radial-gradient(ellipse 65% 55% at 50% 36%, rgba(225, 85, 20, 0.17) 0%, rgba(165, 55, 12, 0.05) 50%, transparent 75%)` e `filter: blur(28px)`) centralizado atrás do texto sobre fundo preto absoluto (`#000000`).
+  - Calibração de `PORTFÓLIO` (`.portfolio-eyebrow`) em caixa alta, sem ponto ou badge, com tipografia display, tamanho 0.85rem, kerning expandido (`letter-spacing: 0.18em`) e cor âmbar suave (`#e55a20`).
+  - Tipografia precisa do título display (`.portfolio-title`):
+    - Linha 1: "Projetos selecionados" em branco puro (`#ffffff`) seguido por "que" em laranja vibrante (`#f76020`).
+    - Linha 2: "acendem marcas." em nova linha (`display: block`) inteiramente em laranja vibrante (`#f76020`), com peso 700 e entrelinha 1.15.
+  - Subtítulo (`.portfolio-text`) em cinza suave (`#9295a0`), entrelinha 1.65 e largura máxima de 660px com quebra harmoniosa em duas linhas.
+  - Botão de ação (`.portfolio-btn`) em pílula perfeita (`border-radius: 999px`), gradiente vertical vermelho-laranja brasa (`linear-gradient(180deg, #f76327 0%, #db4611 100%)`), contorno suave de luz `1px solid rgba(255, 130, 60, 0.45)` e glow térmico inferior e ao redor (`box-shadow: 0 10px 30px rgba(235, 75, 20, 0.45), 0 0 20px rgba(255, 90, 31, 0.28)`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 58 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

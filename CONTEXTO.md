@@ -460,6 +460,20 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.51 Refinamento Visual Fiel do Cabeçalho do Portfólio Conforme Imagem de Referência (Passo 57)
+- **Problema/Objetivo:** O usuário solicitou: *"no portifolio troque esta imagem por esta segunda imagem exatatamente igual, efeito de fundo, tamanho de letras e cores icones e efeito de fundo"*, anexando a imagem do cabeçalho da seção `#portfolio`.
+- **Investigação Visual & Análise Comparativa Detalhada:**
+  - **Fundo & Iluminação:** Fundo preto puro absoluto (`#000000`) com um suave e difuso clarão atmosférico elíptico em tom âmbar/alaranjado escuro centralizado atrás do texto (`.portfolio-glow-bg` com `radial-gradient` elíptico de 720px e `filter: blur(28px)`), recriando a atmosfera quente e cinematográfica da imagem de referência.
+  - **Eyebrow / Tag:** Texto em caixa alta pura `PORTFÓLIO`, sem badges ou pontuações, em tom âmbar quente elegante (`#e55a20`), tamanho `0.85rem`, peso `700` e kerning expandido (`letter-spacing: 0.18em`).
+  - **Headline Display:** Composta em duas linhas centrais de grande impacto:
+    - Linha 1: "Projetos selecionados" em branco puro (`#ffffff`) seguido por "que" em laranja vibrante (`#f76020`).
+    - Linha 2: "acendem marcas." em bloco isolado (`display: block`) inteiramente em laranja vibrante (`#f76020`) com ponto final alaranjado. Tipografia neo-grotesca robusta (`font-weight: 700`, entrelinha `1.15`, tamanho fluido `clamp(2.35rem, 4.8vw, 3.85rem)`).
+  - **Subtítulo / Lead:** Texto descritivo em cinza suave e legível (`#9295a0`), entrelinha `1.65`, com largura controlada (`max-width: 660px`) gerando quebra orgânica em exatamente duas linhas ("... em / setores diferentes.").
+  - **Botão CTA ("Pedir o portfólio completo"):** Pílula elegante (`border-radius: 999px`) em degradê vertical vermelho-laranja brasa (`linear-gradient(180deg, #f76327 0%, #db4611 100%)`), com contorno sutil de luz acobreada `1px solid rgba(255, 130, 60, 0.45)` e halo volumétrico térmico projetado para baixo e ao redor (`box-shadow: 0 10px 30px rgba(235, 75, 20, 0.45), 0 0 20px rgba(255, 90, 31, 0.28)`), com hover suave.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
