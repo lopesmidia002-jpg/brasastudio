@@ -120,6 +120,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Tipografia Leve e Elegante:** Headline `.title--results` calibrada para `font-weight: 400` com `letter-spacing: -0.025em`, acompanhando a identidade visual aberta e sofisticada da segunda foto.
   - **Lead Textual:** Ajustado `.text--results` em cinza suave `#909096` com entrelinha balanceada de 1.62.
 
+### 2.16 Refinamento dos Ícones da Hero (Passo 22)
+- **Problema/Objetivo:** O usuário solicitou que a barra de rolagem horizontal da hero fosse branca (em substituição ao degradê alaranjado), que os ícones fossem ampliados e o container estendido horizontalmente para exibir os 4 ícones com maior folga (conforme a foto 2), além de corrigir dois ícones específicos para ficarem idênticos à foto 3 (losango oco e matriz 2x2 de círculos).
+- **Decisão e Implementação:**
+  - **Barra de Rolagem Branca:** Atualizado o polegar (`::-webkit-scrollbar-thumb`) para branco puro `#ffffff` com glow suave e trilha translúcida `rgba(255, 255, 255, 0.08)`, e `scrollbar-color: #ffffff rgba(255, 255, 255, 0.12)`.
+  - **Ampliação e Espaçamento dos Cards:** Ampliado o tamanho de `.icon-card` para 84px x 84px com raio de curvatura de 22px, e estendido o container `.hero-icons-wrap` para `max-width: 480px` com gap de 1.35rem, exibindo os 4 primeiros ícones com grande folga horizontal idêntica à Foto 2.
+  - **Calibração dos Ícones da Foto 3:** Implementado o losango vazado/oco (Marca 5) usando `<rect>` rotacionado em 45° com `stroke-width="4.2"` e fundo vazado, e calibrada a matriz 2x2 de 4 círculos proporcionais (Marca 6). Todos os SVGs foram ampliados para 34px x 34px.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

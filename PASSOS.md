@@ -131,3 +131,9 @@
   - Asas laterais poligonais refinadas em corte diagonal simétrico (`clip-path`), posicionadas na altura média da seção com degradê suave alaranjado/âmbar quente e borda de topo com contorno sutil iluminado.
   - Tipografia da headline "Resultados que aparecem no caixa e na marca." ajustada para peso leve/regular (`font-weight: 400`), garantindo elegância e abertura idênticas à referência.
   - Lead em cinza suave (`#909096`) e botão "Agendar 15 minutos" mantido no padrão pílula aveludado.
+
+- [x] **Passo 22 — Refinamento dos Ícones da Hero (Scrollbar Branca, Cards 84x84 Ampliados e Ícones da Foto 3)**
+  - Barra de rolagem horizontal personalizada com polegar em branco puro (`#ffffff`) e trilha translúcida cinza, substituindo o tom alaranjado.
+  - Dimensão dos cards de ícones aumentada para 84px x 84px com cantos arredondados de 22px e SVGs ampliados para 34px x 34px.
+  - Container estendido horizontalmente para `max-width: 480px`, acomodando com conforto e amplitude os 4 ícones como na Foto 2.
+  - Correção dos ícones da segunda metade da rolagem conforme a Foto 3: implementação do losango vazado/oco (`rect` rotacionado com traço de 4.2px) e calibração da grade de 4 círculos 2x2.
