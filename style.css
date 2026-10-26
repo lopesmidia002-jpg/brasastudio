@@ -1096,10 +1096,9 @@ button, input {
   position: relative;
   overflow: hidden;
   padding: 6.5rem 0 4.5rem;
-  background-color: #030303;
-  /* Glow difuso sutil de calor âmbar descendo do topo exatamente no padrão da Foto 2 */
-  background-image: radial-gradient(ellipse 65% 45% at 50% 0%, rgba(225, 80, 20, 0.16) 0%, rgba(130, 40, 8, 0.06) 42%, transparent 70%);
-  background-repeat: no-repeat;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
 }
 
 /* Painéis / Asas geométricas laterais em degradê âmbar/bronze sutil idênticas à Foto 2 */
@@ -1154,26 +1153,35 @@ button, input {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
-/* Título 100% Branco Monocromático com tipografia aberta e elegante (font-weight: 400) conforme Foto 2 */
+/* Título Display: Fonte sem serifa neo-grotesca, degradê vertical sutil #FFFFFF a #A0A0A0 sem sombras */
 .title--results {
-  color: #ffffff !important;
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
-  font-weight: 400; /* Tipografia leve e sofisticada idêntica à Foto 2 */
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.45rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
+  font-size: clamp(3rem, 5.8vw, 4.6rem);
+  font-weight: 500; /* Peso regular a médio */
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
   text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
+  text-shadow: none !important;
+  filter: none !important;
 }
 
+/* Subtítulo / Corpo: Escala 25% a 30%, cinza claro dessaturado/azulado #949ca8, entrelinha confortável e centralizado */
 .text--results {
-  font-size: clamp(1rem, 1.25vw, 1.12rem);
-  line-height: 1.62;
-  color: #909096;
-  max-width: 590px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.65;
+  color: #949ca8;
+  max-width: 620px;
   margin: 0 auto 2.3rem;
   text-align: center;
   font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 /* Botão no tom vermelho-laranja brasa idêntico à Foto 2 */

@@ -157,6 +157,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Foto de Fundo (`.case-img`):** Proporção quadrada 1:1 mantida, com cantos arredondados de 20px integrados na moldura do card, servindo de fundo superior.
   - **Card Informativo Sobressaindo (`.case-box`):** Implementada a sobreposição vertical sobre a base da foto com margem negativa (`margin-top: -65px`), `z-index: 2`, cantos arredondados de 20px, fundo escuro aveludado `#0d0e14`, borda sutil `1px solid rgba(255, 255, 255, 0.08)` e sombra volumétrica projetada (`box-shadow: 0 12px 32px rgba(0,0,0,0.85), 0 -4px 20px rgba(0,0,0,0.65)`), garantindo que o banner informativo sobressaia à foto com relevo tridimensional idêntico à Foto 2 em todos os banners.
 
+### 2.21 Padronização Tipográfica com Degradê Vertical e Fundo Preto Sólido em Resultados (Passo 27)
+- **Problema/Objetivo:** O usuário forneceu parâmetros detalhados de estilo tipográfico para a seção de Resultados: fonte sem serifa geométrica/neo-grotesca moderna (estilo Inter), título display com peso regular/médio centralizado e degradê vertical sutil (#FFFFFF a #A0A0A0) sem sombras pesadas, subtítulo em cinza claro levemente azulado/dessaturado com 25% a 30% da escala do título e espaçamento entrelinhas confortável, e fundo preto absoluto/sólido.
+- **Decisão e Implementação:**
+  - **Fundo Preto Sólido:** Atualizado `.results` com `background: #000000 !important; background-image: none !important`, eliminando gradientes residuais e entregando o fundo preto absoluto idêntico à referência.
+  - **Tipografia e Título Principal (`.title--results`):** Adotada a fonte `Inter` com fallbacks neo-grotescos modernos, escala display (`clamp(3rem, 5.8vw, 4.6rem)`), peso `500` (médio/regular), alinhamento centralizado, entrelinha de 1.12 e degradê vertical do `#FFFFFF` ao `#A0A0A0` aplicado com `-webkit-background-clip: text` e `color: transparent`, sem sombras ou relevos pesados.
+  - **Subtítulo / Lead (`.text--results`):** Configurado com tamanho proporcional de 25% a 30% do título (`clamp(1rem, 1.4vw, 1.18rem)`), tom cinza claro azulado/dessaturado suave (`#949ca8`), peso regular (`font-weight: 400`), entrelinha confortável de `1.65` e alinhamento centralizado.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

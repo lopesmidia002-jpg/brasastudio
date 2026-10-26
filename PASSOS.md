@@ -160,3 +160,10 @@
   - Foto de fundo com formato quadrado 1:1 e cantos arredondados de 20px, servindo de base visual para a composição.
   - Implementação do card informativo interno sobreposto à foto (`margin-top: -65px`, `z-index: 2`) com fundo `#0d0e14`, borda de 1px, cantos arredondados de 20px e sombra projetada volumétrica, criando o acabamento onde o banner informativo sobressai sobre a foto conforme a Foto 2.
 
+- [x] **Passo 27 — Padronização Tipográfica com Degradê Vertical e Fundo Preto Sólido em Resultados**
+  - Aplicação de fundo preto absoluto e sólido (`background: #000000 !important; background-image: none !important`) na seção `.results`.
+  - Configuração da tipografia sem serifa geométrica / neo-grotesca moderna com `Inter` como fonte primária e fallbacks contemporâneos (SF Pro Display, Helvetica Neue, Geist Sans).
+  - Título principal (`.title--results`) em tamanho display grande com peso regular a médio (`font-weight: 500`), alinhamento centralizado e degradê vertical sutil do branco puro `#FFFFFF` no topo ao cinza médio/prateado suave `#A0A0A0` na base via `background-clip: text`, livre de sombras ou relevos pesados.
+  - Subtítulo / corpo (`.text--results`) calibrado para 25% a 30% da escala do título, cor cinza claro ligeiramente dessaturado/azulado (`#949ca8`), peso regular (`font-weight: 400`), entrelinha confortável (`line-height: 1.65`) e alinhamento centralizado.
+
+
