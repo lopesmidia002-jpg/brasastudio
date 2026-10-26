@@ -362,7 +362,18 @@
   - Refinamento do Card 1 ("Marca que vende PRO") com gradiente centralizado âmbar/cobre combinado com o brilho térmico inferior e borda inferior iluminada em âmbar (`border-bottom: 1px solid rgba(255, 110, 40, 0.55)`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 56 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 56 — Efeito Stacking Cards (Empilhamento de Cartões / Sticky Scroll) no Portfólio**
+  - Implementação de sistema moderno de empilhamento de cartões na seção `#portfolio` (`.works` e `.work`).
+  - Posicionamento sticky (`position: sticky`) com escalonamento vertical progressivo (`top: 90px`, `125px` e `160px` no desktop; `75px`, `95px` e `115px` no mobile) e `overflow: visible` garantindo ancoragem perfeita.
+  - Visual de profundidade 3D nos cartões `.work-card` com cantos de 24px, borda com linha de luz superior de horizonte (`border-top: 1px solid rgba(255, 255, 255, 0.24)`) e sombreamento profundo (`box-shadow: 0 -14px 35px rgba(0, 0, 0, 0.75), 0 35px 80px rgba(0, 0, 0, 0.95)`).
+  - Script JavaScript dinâmico (`main.js`) com `requestAnimationFrame` para alta performance (60fps), calculando o overlap de rolagem entre cartões sucessivos:
+    - Redução progressiva de escala de `1.0` para `0.94` (`scale(0.94)`) no cartão coberto.
+    - Escurecimento gradual de luminosidade de `1.0` para `0.65` (`brightness(0.65)`), simulando sombra física projetada do cartão de cima.
+    - Preenchimento da barra de progresso horizontal (`.work-progress i`) em gradiente âmbar quente.
+    - Respeito à preferência do sistema por acessibilidade (`prefers-reduced-motion`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 57 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

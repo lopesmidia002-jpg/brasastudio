@@ -442,6 +442,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Harmonização com Bento Grid:** A classe `.bcard` também recebeu a nuance âmbar acobreada difusa para perfeita coesão visual em toda a página.
   - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
 
+### 2.50 Implementação do Efeito Stacking Cards (Sticky Scroll) nos Cards de Portfólio (Passo 56)
+- **Problema/Objetivo:** O usuário solicitou: *"aplique o efeito Stacking Cards (Empilhamento de Cartões / Sticky Scroll) nestes cards da imagem"*, enviando a captura dos 3 grandes cards de projetos da seção Portfólio (*Casa Ocre*, *Torra Rubi* e *Lume Arquitetura*).
+- **Investigação Técnica & Análise de UX/UI:**
+  - O efeito moderno de **Stacking Cards (Sticky Scroll)** cria uma experiência cinematográfica e imersiva onde, à medida que a página é rolada, cada cartão de projeto sobe, ancora no topo da viewport via `position: sticky;`, e o cartão seguinte se sobrepõe como uma lâmina física sobre ele.
+  - Para atingir máxima qualidade visual (padrão Apple/Linear/Stripe):
+    1. A seção `.portfolio` deve ter `overflow: visible;` para garantir ancoragem fluida dos cartões sticky.
+    2. A lista `.works` possui espaçamento vertical ampliado (`gap: clamp(4rem, 8vh, 7rem)`) e respiro final (`padding-bottom: 6rem;`) para permitir a rolagem gradual e confortável de todos os cartões.
+    3. Cada item `.work` possui `position: sticky;` e um `top` escalonado progressivamente (`top: 90px`, `125px`, `160px` no desktop; `75px`, `95px`, `115px` no mobile) com `z-index` crescente (`1`, `2`, `3`).
+    4. Cada cartão `.work-card` possui cantos de 24px, linha de horizonte superior iluminada (`border-top: 1px solid rgba(255, 255, 255, 0.24)`), fundo `#08080c` e dupla camada de sombra volumétrica (`box-shadow: 0 -14px 35px rgba(0, 0, 0, 0.75), 0 35px 80px rgba(0, 0, 0, 0.95)`).
+    5. **Dinamismo em JavaScript (`main.js`) com `requestAnimationFrame`:** Um algoritmo monitora a posição relativa entre cartões adjacentes a 60fps. Conforme o cartão posterior sobrepõe o anterior:
+       - O cartão de baixo sofre leve contração tridimensional (`scale(0.94)`).
+       - O cartão de baixo é escurecido gradualmente (`brightness(0.65)`), simulando a sombra real projetada pelo cartão que subiu sobre ele.
+       - A barra de progresso horizontal (`.work-progress i`) na barra inferior de cada projeto avança de 0% a 100% acompanhando o ciclo de fixação.
+       - Há suporte completo a acessibilidade com desativação automática de escala caso o usuário utilize `prefers-reduced-motion: reduce`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

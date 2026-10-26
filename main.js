@@ -317,7 +317,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 13. Registro do Service Worker (PWA & Offline Cache)
+  // 13. Stacking Cards (Sticky Scroll com Escala 3D e Profundidade Dinâmica)
+  const initStackingCards = () => {
+    const worksList = document.querySelector('.works');
+    if (!worksList) return;
+
+    const works = Array.from(worksList.querySelectorAll('.work'));
+    if (works.length <= 1) return;
+
+    // Respeita preferência do usuário por movimento reduzido
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    let ticking = false;
+
+    const updateStacking = () => {
+      works.forEach((workEl, index) => {
+        const cardEl = workEl.querySelector('.work-card');
+        const progressBar = workEl.querySelector('.work-progress i');
+        if (!cardEl) return;
+
+        // Se houver um próximo cartão na pilha, calculamos a sobreposição
+        const nextWorkEl = works[index + 1];
+        if (nextWorkEl) {
+          const nextRect = nextWorkEl.getBoundingClientRect();
+          const currentTopOffset = parseFloat(window.getComputedStyle(workEl).top) || 90;
+
+          // Distância entre o topo do próximo cartão e o topo fixado do cartão atual
+          const diff = nextRect.top - currentTopOffset;
+          const totalDistance = workEl.offsetHeight || 500;
+
+          let progress = 0;
+          if (diff < totalDistance) {
+            progress = Math.max(0, Math.min(1, 1 - (diff / totalDistance)));
+          }
+
+          // Escala suave de 1.0 para 0.94 e brilho de 1.0 para 0.65
+          const scale = 1 - (progress * 0.06);
+          const brightness = 1 - (progress * 0.35);
+
+          cardEl.style.transform = `scale(${scale.toFixed(4)})`;
+          cardEl.style.filter = `brightness(${brightness.toFixed(3)})`;
+
+          if (progressBar) {
+            progressBar.style.width = `${Math.round(progress * 100)}%`;
+          }
+        } else {
+          // Último cartão da pilha
+          const rect = workEl.getBoundingClientRect();
+          const currentTopOffset = parseFloat(window.getComputedStyle(workEl).top) || 90;
+          const isPinned = rect.top <= currentTopOffset + 2;
+
+          cardEl.style.transform = 'scale(1)';
+          cardEl.style.filter = 'brightness(1)';
+          if (progressBar) {
+            progressBar.style.width = isPinned ? '100%' : '0%';
+          }
+        }
+      });
+
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateStacking);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateStacking();
+  };
+
+  initStackingCards();
+
+  // 14. Registro do Service Worker (PWA & Offline Cache)
   if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js')

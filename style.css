@@ -2247,36 +2247,66 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   10. SEÇÃO PORTFÓLIO
+   10. SEÇÃO PORTFÓLIO — STACKING CARDS (STICKY SCROLL)
    -------------------------------------------------------------------------- */
+.portfolio {
+  position: relative;
+  overflow: visible;
+}
+
 .works {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: clamp(4rem, 8vh, 7rem);
   margin-top: 3.5rem;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+.work {
+  position: sticky;
+  width: 100%;
+  will-change: transform;
+}
+
+.work:nth-child(1) {
+  top: 90px;
+  z-index: 1;
+}
+
+.work:nth-child(2) {
+  top: 125px;
+  z-index: 2;
+}
+
+.work:nth-child(3) {
+  top: 160px;
+  z-index: 3;
 }
 
 .work-card {
   position: relative;
-  border-radius: 22px;
+  border-radius: 24px;
   overflow: hidden;
-  border: 1px solid var(--border-card);
-  background: var(--bg-card);
-  box-shadow: var(--shadow-card);
-  transition: all var(--trans-normal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  background: #08080c;
+  box-shadow: 0 -14px 35px rgba(0, 0, 0, 0.75), 0 35px 80px rgba(0, 0, 0, 0.95);
+  transform-origin: top center;
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
 }
+
 .work-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 30px 70px -15px rgba(0,0,0,0.95), 0 0 35px -5px rgba(255, 90, 31, 0.22);
+  border-color: rgba(255, 122, 61, 0.45);
+  box-shadow: 0 -14px 35px rgba(0, 0, 0, 0.8), 0 40px 90px -10px rgba(0, 0, 0, 0.98), 0 0 45px -5px rgba(255, 90, 31, 0.3);
 }
 
 .work-img img {
   transition: transform var(--trans-slow);
 }
 .work-card:hover .work-img img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 .work-bar {
@@ -2290,7 +2320,25 @@ button, input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.work-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.work-progress i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--orange-primary), #ffd27a);
+  transition: width 0.1s ease-out;
 }
 
 .work-name {
@@ -2315,6 +2363,22 @@ button, input {
 }
 
 @media (max-width: 809px) {
+  .works {
+    gap: 3.5rem;
+    padding-bottom: 4.5rem;
+  }
+  .work:nth-child(1) {
+    top: 75px;
+  }
+  .work:nth-child(2) {
+    top: 95px;
+  }
+  .work:nth-child(3) {
+    top: 115px;
+  }
+  .work-card {
+    border-radius: 18px;
+  }
   .work-bar {
     padding: 1rem 1.25rem;
     flex-direction: column;
