@@ -33,8 +33,18 @@ brasa/
 ├── PROMPT.md                  # Especificação original e regras do prompt master
 ├── CONTEXTO.md                # Histórico e arquitetura de decisão
 ├── PASSOS.md                  # Checklist sequencial de prioridades
+├── README.md                  # Apresentação do projeto e instruções no GitHub
+├── .gitignore                 # Filtro de exclusões do Git
 └── DOCUMENTACAO.md            # Este arquivo
 ```
+
+---
+
+## 🔗 Repositório Oficial no GitHub
+
+- **URL do Repositório:** [https://github.com/lopesmidia002-jpg/brasastudio.git](https://github.com/lopesmidia002-jpg/brasastudio.git)
+- **Branch Principal:** `main`
+- **Fluxo de Deploy:** Versionamento via Conventional Commits e execução 100% conteinerizada no Docker.
 
 ---
 

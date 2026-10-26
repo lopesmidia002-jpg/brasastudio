@@ -37,6 +37,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Criado o Service Worker (`sw.js`) com estratégia de cache híbrida (Cache-First para imagens/CSS/JS e Network-First com fallback de cache para navegação HTML).
   - Otimizado o Nginx para servir `/sw.js` com `no-cache` (garantindo que atualizações do site cheguem aos usuários imediatamente) e `manifest.json` com MIME type `application/manifest+json`.
 
+### 2.5 Versionamento e Publicação no GitHub (Passo 11)
+- Repositório Git local inicializado na branch `main`.
+- Criação do `.gitignore` com exclusões de SO, temporários e logs.
+- Elaboração do `README.md` institucional e completo com badges, arquitetura e instruções Docker.
+- Vinculado ao remote remoto: `https://github.com/lopesmidia002-jpg/brasastudio.git`.
+- Realizado commit inicial e push com sucesso para a branch `main`.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

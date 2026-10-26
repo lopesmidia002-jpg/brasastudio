@@ -65,3 +65,11 @@
   - Adicionar manifesto de aplicativo Web (`manifest.json`) com tema dark, acentos neon `#ff5a1f` e ícones nos tamanhos 200px e 400px.
   - Implementar Service Worker (`sw.js`) com estratégia de cache híbrida (Cache-First para estáticos e Network-First com fallback para navegação HTML).
   - Configurar cabeçalhos de controle e Service-Worker-Allowed no Nginx com validação 100% conteinerizada.
+
+---
+
+### Fase 4: Versionamento, Deploy & Repositório Remoto (Concluída)
+- [x] **Passo 11 — Publicação e Sincronização com o Repositório GitHub**
+  - Criação do arquivo de exclusão `.gitignore`.
+  - Elaboração do `README.md` institucional e completo com badges, comandos Docker e documentação.
+  - Inicialização do repositório Git na branch `main`, configuração do remote oficial (`https://github.com/lopesmidia002-jpg/brasastudio.git`), commit padronizado e push com sucesso.
