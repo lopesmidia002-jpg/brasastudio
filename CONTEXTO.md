@@ -712,6 +712,35 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.62 Refinamento Ultra-Minimalista do Hero Banner de Planos Conforme Imagem 2 (Passo 68)
+- **Problema/Objetivo:** O usuário solicitou calibrar o componente Hero da seção de Planos (`#planos`) com estética ultra-minimalista dark mode de alta precisão técnica:
+  1. *Fundo & Atmosfera:* Deep pitch-black (`#050505`) absoluto, eliminando qualquer clarão térmico difuso no topo.
+  2. *Camada Geométrica no Canto Inferior Direito:* Subtle dark-grey geometric polygon layer and faint angular shadow on the bottom right.
+  3. *Layout Alinhado à Esquerda:* Left-aligned layout com respiro generoso e espaço negativo elegante.
+  4. *Dark Glassmorphism Pill Badge:* Borda fina com ambient orange top-edge glow, ponto indicador quadrado laranja neon vibrante (`#FF5722`) e texto crisp "Planos" em branco.
+  5. *Massive Bold Sans-Serif Headline:* Linha 1 em branco puro e Linha 2 em gradiente prateado/cinza suave (`muted silver-gray gradient typography`), sem cores alaranjadas no texto.
+  6. *Subheadline Concisa:* Texto descritivo em cinza claro e tipografia limpa.
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na Imagem 1 anterior: o título continha "sua marca sempre acesa." em laranja vibrante com degradê de fogo, a tag era texto cru e não havia polígono no canto inferior direito.
+  - Na Imagem 2 (solicitada):
+    1. O fundo é preto absoluto `#050505` de alto contraste.
+    2. O polígono geométrico escuro está estrategicamente posicionado no **canto inferior direito** (`bottom: 0; right: 0;`), com corte angular, sombra sutil na base e linha de luz superior suave `1px solid rgba(255, 255, 255, 0.16)`.
+    3. A Linha 1 do título ("Planos mensais para manter") é em branco puro sólido, enquanto a Linha 2 ("sua marca sempre acesa.") possui um degradê suave prateado/cinza suave (`#FFFFFF` para `#A1A1AA` e `#8E8E93`), conferindo requinte sem quebrar a paleta neutra.
+    4. A pílula "Planos" exibe reflexo âmbar no topo da borda e ponto quadrado neon.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removido `.plans-glow-bg` para assegurar a pureza do fundo `#050505`.
+    - Posicionado o container `.plans-backdrop` contendo `.plans-wing--right`.
+    - Mantido `.plans-head` com `.tag-status--plans`, `.plans-title` (`.title-line-1` e `.title-line-2`) e `.plans-text`.
+  - Em `style.css`:
+    - `.sec.pricing`: `background-color: #050505;`.
+    - `.plans-backdrop`: ancorado em `bottom: 0; right: 0; width: clamp(380px, 44vw, 720px); height: clamp(300px, 34vw, 520px);`.
+    - `.plans-wing--right`: `clip-path: polygon(32% 0, 100% 0, 100% 100%, 0% 100%);`, fundo dark glassmorphism com gradiente `rgba(255, 255, 255, 0.08)` a grafite escuro, `border-top: 1px solid rgba(255, 255, 255, 0.16)` e sombra difusa.
+    - `.plans-title .title-line-2`: tipografia com gradiente cinza-prateado suave via `-webkit-background-clip: text`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

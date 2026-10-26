@@ -3149,33 +3149,20 @@ button, input {
    e polígono geométrico angular em dark glassmorphism no lado direito
    -------------------------------------------------------------------------- */
 .sec.pricing {
-  background-color: #0A0A0A;
+  background-color: #050505; /* Deep pitch-black #050505 */
   position: relative;
   overflow: hidden;
   padding-top: clamp(5rem, 8vw, 7.5rem);
   padding-bottom: clamp(5rem, 8vw, 7.5rem);
 }
 
-/* Ambient Top Warm Orange Glow */
-.plans-glow-bg {
-  position: absolute;
-  top: 0;
-  right: 15%;
-  width: clamp(500px, 48vw, 850px);
-  height: clamp(260px, 28vw, 420px);
-  background: radial-gradient(ellipse 65% 55% at 60% 0%, rgba(255, 95, 30, 0.16) 0%, rgba(200, 65, 15, 0.06) 50%, transparent 80%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(32px);
-}
-
-/* Polígono Geométrico Angular em Dark Glassmorphism no Lado Direito */
+/* Polígono Geométrico Angular no Canto Inferior Direito (Bottom Right) */
 .plans-backdrop {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  width: clamp(320px, 38vw, 620px);
-  height: clamp(340px, 38vw, 540px);
+  width: clamp(380px, 44vw, 720px);
+  height: clamp(300px, 34vw, 520px);
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
@@ -3183,17 +3170,17 @@ button, input {
 
 .plans-wing--right {
   position: absolute;
-  top: clamp(60px, 8vw, 110px);
+  bottom: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(26, 26, 32, 0.42) 35%, rgba(12, 12, 15, 0.75) 75%, transparent 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 -2px 18px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(14px);
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 60%, transparent 95%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 60%, transparent 95%);
+  clip-path: polygon(32% 0, 100% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.08) 0%, rgba(28, 28, 34, 0.48) 35%, rgba(12, 12, 15, 0.85) 75%, transparent 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 -4px 24px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(16px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 65%, transparent 98%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 65%, transparent 98%);
 }
 
 /* Cabeçalho de Planos Alinhado à Esquerda */
@@ -3205,7 +3192,7 @@ button, input {
   margin-bottom: clamp(3rem, 5vw, 4.5rem);
 }
 
-/* Dark glassmorphic rounded pill badge */
+/* Dark glassmorphic rounded pill badge com ambient orange top-edge glow */
 .tag-status--plans {
   display: inline-flex;
   align-items: center;
@@ -3213,7 +3200,7 @@ button, input {
   background-color: rgba(16, 17, 22, 0.85);
   background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.45) 0%, rgba(255, 87, 34, 0.1) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-top: 1px solid rgba(255, 115, 45, 0.85);
+  border-top: 1px solid rgba(255, 115, 45, 0.88);
   padding: 0.38rem 1.1rem;
   border-radius: 999px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -3224,7 +3211,7 @@ button, input {
   margin-bottom: 1.6rem;
   width: fit-content;
   backdrop-filter: blur(12px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 14px rgba(255, 87, 34, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 14px rgba(255, 87, 34, 0.35);
 }
 
 .tag-status--plans .dot {
@@ -3237,23 +3224,28 @@ button, input {
   flex-shrink: 0;
 }
 
-/* Título Display Monocromático em Alto Contraste */
+/* Massive bold sans-serif headline in pure white and muted silver-gray gradient */
 .plans-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
-  font-size: clamp(2.35rem, 4.6vw, 3.85rem);
+  font-size: clamp(2.4rem, 4.8vw, 3.95rem);
   font-weight: 600;
   line-height: 1.14;
   letter-spacing: -0.025em;
   color: #FFFFFF;
   margin: 0 0 1.35rem;
   text-align: left;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-.plans-title .title-line-1,
-.plans-title .title-line-2 {
+.plans-title .title-line-1 {
   display: block;
   color: #FFFFFF;
+}
+
+.plans-title .title-line-2 {
+  display: block;
+  background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 65%, #8E8E93 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Subheadline em Cinza Suave */

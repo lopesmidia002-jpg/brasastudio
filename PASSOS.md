@@ -543,7 +543,21 @@
   - Preservados intactos todos os demais elementos visuais: pill badge "Portfólio" com ponto laranja, título monocromático branco puro, subtítulo cinza e botão CTA com gradiente e glow.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 68 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 68 — Refinamento Ultra-Minimalista do Hero UI de Planos (Idêntico à Foto 2)**
+  - Fundo calibrado em deep pitch-black (`#050505`), com eliminação completa de halos/clarões difusos no topo.
+  - Polígono geométrico angular reposicionado com precisão no canto inferior direito (`bottom right`), com corte via `clip-path`, sombra angular suave e borda superior iluminada `border-top: 1px solid rgba(255, 255, 255, 0.16)`.
+  - Layout alinhado à esquerda com espaço negativo limpo e acabamento premium SaaS.
+  - Dark glassmorphic rounded pill badge:
+    - Borda fina com ambient orange top-edge glow (`border-top: 1px solid rgba(255, 115, 45, 0.88)`).
+    - Ponto indicador quadrado laranja neon vibrante (`#FF5722` de 7x7px com glow).
+    - Texto crisp "Planos" em branco puro.
+  - Headline massiva sans-serif em alto contraste:
+    - Linha 1: "Planos mensais para manter" em branco puro (`#FFFFFF`).
+    - Linha 2: "sua marca sempre acesa." em gradiente cinza-prateado suave (`linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 65%, #8E8E93 100%)`).
+  - Subtítulo conciso em cinza claro limpo (`#A1A1AA`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 69 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
