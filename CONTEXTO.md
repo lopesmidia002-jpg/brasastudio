@@ -275,6 +275,12 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Subtítulos e Linhas Divisórias:** Subtítulos atualizados para capitalização natural ("Estratégia comercial", "Arquivos vivos", "Performance de fábrica", "Olhar autoral", "Entregas semanais", "Responsivo de verdade") em tom cinza suave legível `#9294a0`. Reativadas as linhas divisórias horizontais (`<hr class="rule">`) entre os subtítulos e as descrições.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.34 Ícones em Formato Squircle Escuro com Borda Âmbar e Halo Suave em Diferenciais conforme Imagem de Referência (Passo 40)
+- **Problema/Objetivo:** O usuário solicitou alterar os ícones dos cards para o estilo da imagem enviada (caixa squircle com cantos suaves, fundo escuro, contorno fino em laranja/âmbar e halo difuso suave com ícone em laranja vibrante).
+- **Decisão e Implementação:**
+  - **Reestilização de `.icon-orb`:** Atualizado o formato para squircle (`border-radius: 14px !important; width: 48px; height: 48px;`), fundo grafite escuro `#0d0e14`, contorno fino laranja/âmbar `1px solid rgba(255, 90, 31, 0.42)`, halo difuso suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.22)`) e traço vetorial interno em laranja vibrante `#ff7a3d` com `stroke-width: 1.8`, replicando com exatidão a estética da imagem de referência.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

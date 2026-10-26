@@ -249,3 +249,9 @@
   - Estilização da badge `PRO` em laranja avermelhado vibrante (`#ff551b`) com texto preto negrito e glow radiante quente (`box-shadow: 0 0 12px rgba(255, 85, 27, 0.65)`) idêntica à Foto 4 e Foto 5.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 40 — Ícones em Formato Squircle Escuro com Borda Âmbar e Halo Suave em Diferenciais conforme Imagem de Referência**
+  - Aplicação do estilo exato da imagem de referência enviada pelo usuário para os ícones dos cards de Diferenciais (`.icon-orb`).
+  - Formato squircle com cantos suaves (`border-radius: 14px !important; width: 48px; height: 48px;`), fundo grafite escuro `#0d0e14`, contorno fino laranja/âmbar `1px solid rgba(255, 90, 31, 0.42)` e halo difuso suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.22)`).
+  - Traço vetorial dos ícones SVG ajustado para laranja vibrante `#ff7a3d` com `stroke-width: 1.8` idêntico à imagem da lupa.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
