@@ -557,7 +557,26 @@
   - Subtítulo conciso em cinza claro limpo (`#A1A1AA`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 69 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 69 — Implementação Fiel dos Pricing Cards de Planos Dark Mode em 2 Colunas (Idêntico à Foto 2)**
+  - Background da seção calibrado em preto absoluto (`#000000`).
+  - Cards em 2 colunas com superfície cinza grafite fosco (`#141416` a `#0d0d0f`), cantos arredondados de 24px (`rounded-2xl`), stroke ultrafino cinza escuro e iluminação de topo rim light sutil.
+  - Card 1 (Essencial):
+    - Squircle escuro com ícone minimalista de chama alaranjada e badge "Mais escolhido".
+    - Título "Essencial" e valor principal "R$ 3.900 / mês" em negrito branco.
+    - Preço original "R$ 4.600" riscado por uma linha diagonal alaranjada vibrante (`.price-diagonal-slash`).
+    - Descrição em cinza suave e pílulas translúcidas "8 peças por mês" e "2 rodadas de ajuste" com números destacados em branco puro.
+    - 5 benefícios com ícones de selo/escudo alaranjado e textos em branco puro.
+    - Botão CTA pill-shaped em gradiente terracota/laranja com glow âmbar inferior e texto "Agendar conversa".
+  - Card 2 (Estúdio):
+    - Squircle com ícone outline de diamante/joia alaranjado e badge "Recomendado".
+    - Título "Estúdio" e valor principal "R$ 8.900 / mês" em negrito branco.
+    - Descrição e pílulas translúcidas "24 peças por mês" e "Ajustes sem limite" (com 'Ajustes' em negrito).
+    - 5 benefícios com ícones de selo/escudo alaranjado e textos em branco puro.
+    - Marca d'água geométrica da rosa dos ventos / estrela de 4 pontas no canto inferior direito com retículos náuticos e brilho central alaranjado difuso.
+    - Botão CTA pill-shaped idêntico ao Card 1 com glow âmbar inferior e texto "Agendar conversa".
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 70 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

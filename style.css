@@ -3260,76 +3260,244 @@ button, input {
   text-align: left;
 }
 
+/* --------------------------------------------------------------------------
+   PRICING CARDS (PLANOS) - 2 COLUNAS DARK MODE MINIMALISTA CONFORME IMAGEM 2
+   - Background preto absoluto (#000000)
+   - Cards com superfície cinza grafite fosco, bordas rounded-2xl e stroke ultrafino
+   - Linha diagonal alaranjada riscando o valor R$ 4.600
+   - Rosa dos ventos geométrica náutica no canto inferior direito do Card 2
+   - Botões pill-shaped com gradiente terracota/laranja e glow âmbar
+   -------------------------------------------------------------------------- */
 .plans {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 3.5rem auto 0;
+  position: relative;
+  z-index: 2;
 }
 
 .plan {
-  padding: 2.5rem;
+  padding: 2.5rem 2.25rem 2.25rem;
   display: flex;
   flex-direction: column;
-}
-.plan--hot {
-  border-color: rgba(255, 90, 31, 0.45);
-  background: linear-gradient(145deg, #150c07 0%, #0b0b0b 60%);
-  box-shadow: var(--shadow-card), 0 0 35px -5px rgba(255, 90, 31, 0.22);
-}
-
-.spark--plan {
-  top: -25px;
-  right: -25px;
-  width: 140px;
-  height: 140px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(ellipse 90% 70% at 50% 15%, #141416 0%, #0d0d0f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 87, 34, 0.25);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 87, 34, 0.14);
 }
 
-.plan-name {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
+.plan .step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.plan .icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 45% 45%, #2a150c 0%, #170b06 65%, #0b0502 100%);
+  border: 1px solid rgba(255, 110, 40, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(255, 90, 31, 0.22);
+}
+
+.plan .pill--dark {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  color: #A1A1AA;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+}
+
+.plan .plan-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
 }
 
-.price {
+.plan .price {
   margin-bottom: 1.5rem;
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
-.price-v {
-  font-family: var(--font-display);
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: var(--text-white);
+
+.plan .price-v {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.45rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.025em;
 }
-.price-u {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+
+.plan .price-u {
+  font-size: 0.98rem;
+  color: #71717A;
   font-weight: 500;
 }
-.price-old {
-  color: var(--text-faint);
+
+/* Linha diagonal alaranjada riscando o valor original R$ 4.600 */
+.price-diagonal-slash {
+  position: relative;
+  display: inline-block;
+  color: #71717A;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-left: 0.75rem;
+  text-decoration: none;
+}
+
+.price-diagonal-slash::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  top: 50%;
+  height: 2px;
+  background: #FF5722;
+  transform: rotate(-14deg);
+  transform-origin: center;
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(255, 87, 34, 0.65);
+}
+
+.plan hr.rule {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 0 1.25rem;
+}
+
+.plan .text-sm {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #A1A1AA;
+  margin-bottom: 1.25rem;
+}
+
+/* Pílulas de Entregáveis / Quantidade */
+.plan .pills--strong {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.65rem;
+}
+
+.plan .pills--strong li {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #71717A;
+  font-weight: 500;
+}
+
+.plan .pills--strong li strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Checks com escudo/selo alaranjado */
+.plan .checks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.plan .checks li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.95rem;
-  margin-left: 0.5rem;
-  text-decoration: line-through;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
-.checks--lg {
-  margin: 1.75rem 0 2.25rem;
-  gap: 1rem;
+.plan .checks .ico {
+  flex-shrink: 0;
 }
 
-.plan .btn {
+/* Botão CTA Pill-Shaped com Gradiente Terracota / Laranja e Glow */
+.plan-btn {
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.92rem 2rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #E04423 0%, #D13514 100%);
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 125, 60, 0.45);
+  box-shadow: 0 0 24px rgba(230, 74, 25, 0.35), 0 10px 24px rgba(208, 59, 30, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.plan-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 32px rgba(230, 74, 25, 0.55), 0 14px 28px rgba(208, 59, 30, 0.6);
+  filter: brightness(1.06);
+}
+
+/* Rosa dos Ventos / Marca d'água no canto inferior direito do Card 2 */
+.plan-compass-wrap {
+  position: absolute;
+  bottom: -55px;
+  right: -55px;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  filter: drop-shadow(0 0 20px rgba(230, 74, 25, 0.45));
+}
+
+.plan-compass-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 @media (max-width: 809px) {
   .plans {
     grid-template-columns: 1fr;
+  }
+  .plan-compass-wrap {
+    bottom: -40px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
   }
 }
 

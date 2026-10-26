@@ -741,6 +741,47 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.63 Implementação Fiel dos Pricing Cards de Planos Dark Mode Conforme Imagem 2 (Passo 69)
+- **Problema/Objetivo:** O usuário solicitou implementar a seção de pricing cards moderna e minimalista (Dark Mode) em 2 colunas seguindo com exatidão a segunda imagem fornecida:
+  1. *Estilo Geral:* Background preto absoluto (`#000000`), superfície preta translúcida/cinza grafite fosco, bordas arredondadas (rounded-2xl) com stroke ultrafino cinza escuro, tipografia branca/cinza claro e detalhes de destaque em cobre/laranja âmbar quente.
+  2. *Card 1 (Essencial):*
+     - Topo com ícone de chama alaranjada em squircle escuro e badge "Mais escolhido" à direita.
+     - Título "Essencial", valor "R$ 3.900 / mês" em negrito branco com valor original "R$ 4.600" riscado por uma linha diagonal alaranjada.
+     - Descrição em cinza suave.
+     - Pílulas escuras translúcidas: "8 peças por mês" e "2 rodadas de ajuste" com números destacados em branco puro.
+     - 5 benefícios com ícone de escudo alaranjado e textos em branco puro.
+     - Botão pill-shaped em gradiente terracota/laranja com glow âmbar inferior e texto branco "Agendar conversa".
+  3. *Card 2 (Estúdio):*
+     - Topo com ícone de diamante/joia alaranjado e badge "Recomendado" à direita.
+     - Título "Estúdio", valor "R$ 8.900 / mês" em negrito branco.
+     - Descrição e pílulas "24 peças por mês" e "Ajustes sem limite" (com 'Ajustes' em negrito).
+     - 5 benefícios com ícone de escudo alaranjado e textos em branco puro.
+     - Marca d'água geométrica da rosa dos ventos / estrela de 4 pontas no canto inferior direito com círculos/retículos náuticos ultrafinos e brilho central alaranjado.
+     - Botão CTA pílula idêntico ao Card 1 com glow âmbar e texto "Agendar conversa".
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na Imagem 1 anterior: o Card 2 tinha borda laranja espalhafatosa ao redor de todo o card, a estrela ficava cortando a borda superior direita e o risco em R$ 4.600 era um strikethrough cinza reto comum.
+  - Na Imagem 2 (solicitada):
+    1. Ambos os cards possuem a mesma borda ultrafina elegante cinza escuro com top rim light alaranjado sutil.
+    2. O valor original "R$ 4.600" é cortado por uma linha diagonal alaranjada vibrante (`.price-diagonal-slash`).
+    3. A rosa dos ventos / bússola geométrica está posicionada no **canto inferior direito** (`bottom right`), cortando as bordas inferiores como marca d'água cênica de altíssima precisão.
+    4. Ambos os botões são padronizados em pílula terracota/laranja com glow volumétrico projetado na base.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Atualizados os dois artigos `.plan` com ícones squircle dedicados (chama e diamante).
+    - Criado o span `.price-diagonal-slash` riscando diagonalmente R$ 4.600.
+    - Pílulas com números em destaque branco puro.
+    - Inserido o SVG da rosa dos ventos náutica HUD dentro de `.plan-compass-wrap` no Card 2.
+    - Botões CTA padronizados em `.plan-btn`.
+  - Em `style.css`:
+    - `.plans`: grid de 2 colunas com `max-width: 1040px` e respiros equilibrados.
+    - `.plan`: fundo grafite fosco, borda sutil `1px solid rgba(255, 255, 255, 0.08)`, `border-radius: 24px`, top rim light.
+    - `.price-diagonal-slash`: pseudo-elemento `::after` com rotação de `-14deg`, background `#FF5722` e sombra suave.
+    - `.plan-compass-wrap`: ancorado em `bottom: -55px; right: -55px; width: 280px; height: 280px;`.
+    - `.plan-btn`: gradiente vertical `#E04423` a `#D13514` com glow alaranjado.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
