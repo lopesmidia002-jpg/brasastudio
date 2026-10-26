@@ -704,13 +704,14 @@ button, input {
   margin-bottom: 2rem;
 }
 
-/* Ícones com caixas generosas e barra de rolagem horizontal livre (sem animação automática) */
+/* Container com largura delimitada para ocultar os ícones adicionais */
 .hero-icons-wrap {
-  margin-top: 0.8rem;
-  padding-top: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
   width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+  max-width: 360px; /* Exibe ~4 ícones e oculta os demais à direita para surgirem na rolagem */
+  position: relative;
+  overflow: visible;
 }
 
 .hero-icons-scroll {
@@ -719,25 +720,31 @@ button, input {
   gap: 1.15rem;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.5rem 0.2rem 1rem;
+  padding: 0.5rem 0.2rem 1.15rem;
+  scroll-behavior: smooth;
+  /* Scrollbar visível e estilizada */
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 90, 31, 0.45) rgba(255, 255, 255, 0.04);
+  scrollbar-color: #ff5a1f rgba(255, 255, 255, 0.08);
   -webkit-overflow-scrolling: touch;
 }
 
+/* Barra de rolagem horizontal destacada em tom âmbar neon */
 .hero-icons-scroll::-webkit-scrollbar {
-  height: 6px;
+  height: 8px;
 }
 .hero-icons-scroll::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 9999px;
+  margin: 0 2px;
 }
 .hero-icons-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 90, 31, 0.45);
+  background: linear-gradient(90deg, #ff7a3d, #ff5a1f);
   border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(255, 90, 31, 0.6);
 }
 .hero-icons-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--orange-primary);
+  background: #ff8c42;
+  box-shadow: 0 0 14px rgba(255, 90, 31, 0.9);
 }
 
 .icon-card {

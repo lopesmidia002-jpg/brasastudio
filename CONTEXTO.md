@@ -65,6 +65,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Badge de Status Padronizada:** Implementada a pílula "• Resultados" com fundo translúcido e ponto indicador de calor.
 - **Tipografia & Botão:** Título "Resultados que aparecem no caixa e na marca." ajustado para 100% branco monocromático e botão "Agendar 15 minutos" calibrado em vermelho-laranja brasa com cantos arredondados e glow âmbar inferior.
 
+### 2.9 Barra de Rolagem Horizontal Delimitada para Revelação de Ícones (Passo 15)
+- **Problema/Objetivo:** Ocultar parte dos ícones de marcas do Hero para que fiquem fora da visão inicial e sejam revelados progressivamente à medida que o usuário rola a barra horizontal.
+- **Decisão e Implementação:**
+  - Delimitada a largura máxima do container `.hero-icons-wrap` para 360px (`max-width: 360px; overflow-x: auto; overflow-y: hidden;`), comportando confortavelmente ~4 cards visíveis inicialmente.
+  - Expandido o catálogo para 8 símbolos geométricos minimalistas (`circle`, `triangle`, `dome`, `waves`, `diamond`, `dots`, `star-octo`, `hourglass`).
+  - O 5º, 6º, 7º e 8º ícones ficam ocultos além da margem direita e são exibidos de forma fluida conforme o usuário rola a barra.
+  - Scrollbar visível e estilizada com gradiente âmbar neon (`#ff7a3d` a `#ff5a1f`), curvatura arredondada (9999px) e sombra luminosa, oferecendo affordance intuitiva tanto em mouse quanto em touch e teclado.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
