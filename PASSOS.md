@@ -622,7 +622,15 @@
   - Traço calibrado com `stroke-width="2.2"` em tom dourado/âmbar nobre (`#ffa44a`) dentro do botão circular esférico `.icon-orb` com contorno fino âmbar e fundo degradê escuro, perfeitamente alinhado à Foto 1 e Foto 2 de referência.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 76 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 76 — Padronização Fiel dos Banners de Como Trabalhamos Conforme Foto 2**
+  - Remoção completa das linhas divisórias horizontais (`<hr class="rule">`) abaixo dos títulos em todos os 3 banners de etapas, proporcionando leitura fluida e respiro limpo.
+  - Fundo dos banners `.step` padronizado em preto grafite escuro uniforme (`#0d0e12`) sem gradientes ou manchas avermelhadas no topo direito.
+  - Caixas de ícones em squircle translúcido escuro (`rgba(255, 255, 255, 0.03)`) com contorno fino âmbar `1px solid rgba(255, 110, 40, 0.45)` (lupa na etapa 1, e caneta/pena inclinada idêntica nas etapas 2 e 3).
+  - Rosa dos ventos na etapa 3 calibrada com estrela central de 4 pontas em terracota/laranja vibrante sólida (`#ff7043` a `#bf360c`) com halo térmico difuso no centro.
+  - Botão de CTA da etapa 3 atualizado para formato de pílula perfeita (`border-radius: 9999px`) em gradiente terracota quente (`#e04423` a `#c43212`) com glow difuso volumétrico, exatamente idêntico à Foto 2.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 77 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

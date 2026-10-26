@@ -1442,47 +1442,47 @@ button, input {
   margin-top: 2.2rem;
 }
 
-/* Banners / Cards de etapas: Fundo grafite mais claro, 100% estáticos (sem efeito hover) conforme Foto 2 */
+/* Banners / Cards de etapas: Fundo grafite profundo e limpo, sem linhas divisórias, 100% estáticos conforme Foto 2 */
 .step {
-  padding: 1.6rem 1.7rem 1.75rem;
+  padding: 1.65rem 1.75rem 1.8rem;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse 55% 45% at 98% 2%, rgba(200, 60, 20, 0.12) 0%, transparent 65%), #101117;
+  background: #0d0e12;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
-  transform: none !important; /* 100% estático conforme solicitação do usuário */
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
+  transform: none !important; /* 100% estático */
   transition: none !important;
 }
 .step:hover {
-  transform: none !important; /* Sem efeito de elevação no hover */
+  transform: none !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85) !important;
 }
 
 .step-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.95rem;
+  margin-bottom: 1.15rem;
 }
 
-/* Ícone em squircle com fundo alaranjado com degradê âmbar quente conforme Foto 3 */
+/* Ícone em squircle escuro com borda âmbar fina conforme Foto 2 */
 .icon-box {
   width: 46px;
   height: 46px;
   border-radius: 13px;
-  background: radial-gradient(circle at 45% 45%, #3d1f13 0%, #220e06 65%, #0f0502 100%);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 110, 40, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 16px rgba(255, 90, 31, 0.22);
+  box-shadow: 0 0 14px rgba(255, 90, 31, 0.2);
 }
 
-/* Pílula de etapa: Formato retangular arredondado conforme Foto 2 e Foto 3 */
+/* Pílula de etapa: Formato retangular arredondado conforme Foto 2 */
 .step .pill--dark {
   background: #111218;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1497,23 +1497,21 @@ button, input {
 /* Título da etapa em tamanho harmonioso conforme Foto 2 */
 .step .card-title {
   font-family: var(--font-display);
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0;
+  margin: 0 0 0.95rem;
 }
 
 .step .rule {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  margin: 0.65rem 0 0.95rem;
+  display: none; /* Linha horizontal removida conforme Foto 2 */
 }
 
 .step .text-sm {
   font-size: 0.88rem;
-  line-height: 1.55;
-  color: #8e8e96;
-  margin: 0 0 1.2rem;
+  line-height: 1.58;
+  color: #9496a1;
+  margin: 0 0 1.25rem;
 }
 
 .step .pills {
@@ -1525,15 +1523,15 @@ button, input {
   padding: 0;
 }
 
-/* Pílulas de entregáveis: EXATAMENTE COMO NA FOTO 3 (retangular arredondada, fundo #111218, borda 1px sutil, texto cinza claro #d1d5db) */
+/* Pílulas de entregáveis: retangular arredondada, fundo #111218, borda 1px sutil, texto cinza claro conforme Foto 2 */
 .step .pills li {
   background: #111218;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px; /* Formato retangular arredondado conforme Foto 3 (sem 9999px oval) */
+  border-radius: 8px;
   padding: 0.4rem 0.85rem;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #d1d5db; /* Tom cinza suave e nítido da Foto 3 */
+  color: #d1d5db;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.01em;
   line-height: 1.25;
@@ -1544,24 +1542,25 @@ button, input {
   overflow: hidden;
 }
 
-/* Botão em formato pílula retangular arredondada com glow quente conforme Foto 2 */
+/* Botão em formato pílula perfeita (pill-shape) com glow difuso conforme Foto 2 */
 .step--last .btn--step {
   margin-top: 1.4rem;
   width: fit-content;
-  background: linear-gradient(135deg, #e64516 0%, #ba2e06 100%) !important;
+  background: linear-gradient(180deg, #e04423 0%, #c43212 100%) !important;
   color: #ffffff !important;
-  border: none !important;
-  border-radius: 12px !important;
-  padding: 0.75rem 1.65rem !important;
-  font-size: 0.88rem !important;
+  border: 1px solid rgba(255, 120, 60, 0.4) !important;
+  border-radius: 9999px !important;
+  padding: 0.8rem 1.9rem !important;
+  font-size: 0.92rem !important;
   font-weight: 600 !important;
-  box-shadow: 0 8px 24px rgba(220, 60, 20, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(216, 67, 21, 0.45), 0 0 20px rgba(255, 87, 34, 0.28) !important;
   position: relative;
   z-index: 3;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
 .step--last .btn--step:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(220, 60, 20, 0.65) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 28px rgba(216, 67, 21, 0.6), 0 0 24px rgba(255, 87, 34, 0.4) !important;
 }
 
 /* Rosa dos ventos Âmbar Brasa da Etapa 3 idêntica à Foto 5 */

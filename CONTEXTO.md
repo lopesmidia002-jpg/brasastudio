@@ -898,6 +898,37 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.70 Padronização Visual Fiel dos Banners de Como Trabalhamos (Passo 76)
+- **Solicitação do Usuário:**
+  - Trocar os banners da seção Como Trabalhamos pelos da segunda foto, deixando exatamente igual.
+- **Investigação Visual e Comparação Minuciosa (Foto 1 vs Foto 2):**
+  - Na Foto 1 (estado anterior):
+    1. Havia uma linha divisória horizontal cinza `<hr class="rule">` abaixo do título de cada etapa.
+    2. O fundo do card tinha um degradê avermelhado no topo direito (`radial-gradient(ellipse ... at 98% 2%)`).
+    3. As caixas de ícone tinham preenchimento avermelhado opaco.
+    4. Na Etapa 3, o ícone era uma pena tinteiro longa e a estrela da rosa dos ventos era dourada pálida.
+    5. O botão "Agendar conversa" era retangular arredondado com cantos de 12px.
+  - Na Foto 2 (solicitada):
+    1. Eliminação total das linhas divisórias `<hr>`, deixando o texto diretamente abaixo do título.
+    2. Fundo dos cards 100% limpo em preto grafite escuro uniforme (`#0d0e12`).
+    3. Caixas de ícone em squircle escuro translúcido com contorno fino âmbar.
+    4. O ícone da Etapa 3 é idêntico ao da Etapa 2 (caneta/lápis inclinado).
+    5. A estrela central da rosa dos ventos é em terracota/laranja vibrante com halo difuso quente.
+    6. O botão "Agendar conversa" é uma pílula perfeita (`border-radius: 9999px`) com gradiente terracota e glow suave na base.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removidos os elementos `<hr class="rule">` dos 3 banners.
+    - Atualizado o ícone SVG da Etapa 3 com o mesmo desenho de caneta inclinada da Etapa 2.
+    - Atualizados os gradientes da rosa dos ventos para terracota/laranja (`#step-orange-star` e `#step-compass-glow`).
+  - Em `style.css`:
+    - `.step`: fundo `#0d0e12`, borda `1px solid rgba(255, 255, 255, 0.08)`, cantos de 22px e sombra profunda.
+    - `.step .rule`: `display: none;`.
+    - `.icon-box`: fundo translúcido escuro `rgba(255, 255, 255, 0.03)` com borda âmbar e sombra suave.
+    - `.step--last .btn--step`: `border-radius: 9999px !important;` com gradiente terracota e glow suave.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
