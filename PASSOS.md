@@ -241,3 +241,11 @@
   - Preservação da linha de luz âmbar no topo (`border-top: 1px solid rgba(255, 120, 50, 0.48)`) e degradê suave bronze/âmbar que se funde ao preto absoluto.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 39 — Estilização Fiel dos Cards de Diferenciais: Ícones Circulares, Sombreamento Volumétrico, Badge PRO com Glow e Linhas Divisórias conforme Fotos 2, 3, 4 e 5**
+  - Substituição do formato squircle dos ícones por círculos perfeitos (`border-radius: 50% !important; 54x54px`) com fundo degradê radial âmbar escuro, contorno fino iluminado e halo difuso quente suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.35)`), com traço interno em dourado âmbar `#ffa44a` idêntico à Foto 3 e Foto 5.
+  - Implementação de sombreamento volumétrico aveludado e linha de luz iluminada âmbar no topo de cada card (`border-top: 1px solid rgba(255, 120, 45, 0.45)` e `radial-gradient` a 50% 0%), com destaque térmico imersivo no Card 1 ("Marca que vende PRO") com glow superior e inferior e contorno âmbar iluminado idêntico à Foto 2 e Foto 5.
+  - Atualização dos subtítulos para capitalização natural ("Estratégia comercial", "Arquivos vivos", "Performance de fábrica", "Olhar autoral", "Entregas semanais", "Responsivo de verdade") em cinza suave `#9294a0`.
+  - Restauração de linhas divisórias horizontais sutis (`<hr class="rule">`) entre o subtítulo e o texto da descrição.
+  - Estilização da badge `PRO` em laranja avermelhado vibrante (`#ff551b`) com texto preto negrito e glow radiante quente (`box-shadow: 0 0 12px rgba(255, 85, 27, 0.65)`) idêntica à Foto 4 e Foto 5.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+

@@ -266,6 +266,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Propagação Uniforme nas Seções:** A nova geometria invertida foi aplicada de forma coerente em todas as seções onde o efeito é empregado no projeto (`#resultados` e `#diferenciais`).
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.33 Estilização Fiel dos Cards de Diferenciais: Ícones Circulares, Sombreamento Volumétrico, Badge PRO com Glow e Linhas Divisórias conforme Fotos 2, 3, 4 e 5 (Passo 39)
+- **Problema/Objetivo:** O usuário solicitou mudar o estilo dos banners da seção Diferenciais para ficar idêntico aos da Foto 2, alterando efeitos, ícones e adicionando efeitos de sombreamento ("mude o estilo de dos banners para que fique identico a estes da segunda imagem, mude os efeito, icones, coloque este efeitos de sombreamento").
+- **Decisão e Implementação:**
+  - **Ícones em Círculos Perfeitos (`.icon-orb`):** Modificado o formato de squircle para círculo perfeito (`border-radius: 50% !important; width: 54px; height: 54px;`), preenchido com gradiente radial âmbar/marrom quente (`radial-gradient(circle at 45% 45%, #381204 0%, #1a0802 65%, #0e0502 100%)`), contorno fino em ouro/âmbar (`1px solid rgba(255, 130, 45, 0.48)`), halo térmico suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.35)`) e traço interno em dourado vibrante `#ffa44a` idêntico à Foto 3 e Foto 5.
+  - **Sombreamento Volumétrico e Iluminação Superior dos Cards (`.feature`):** Implementada linha de luz no topo da borda de cada card (`border-top: 1px solid rgba(255, 120, 45, 0.45)`), sutil reflexo âmbar no topo (`radial-gradient` a 50% 0%) e sombra volumétrica aveludada (`box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85)`). O Card 1 ("Marca que vende PRO") recebeu destaque térmico imersivo com glow radial âmbar superior e inferior e contorno âmbar iluminado com sombra quente.
+  - **Badge `PRO` com Glow Radiante (`.badge--pro`):** Estilizada em pílula retangular arredondada alaranjada (`#ff551b`), texto preto negrito (`#000000`) e halo/glow quente radiante (`box-shadow: 0 0 12px rgba(255, 85, 27, 0.65)`) idêntica à Foto 4 e Foto 5.
+  - **Subtítulos e Linhas Divisórias:** Subtítulos atualizados para capitalização natural ("Estratégia comercial", "Arquivos vivos", "Performance de fábrica", "Olhar autoral", "Entregas semanais", "Responsivo de verdade") em tom cinza suave legível `#9294a0`. Reativadas as linhas divisórias horizontais (`<hr class="rule">`) entre os subtítulos e as descrições.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
