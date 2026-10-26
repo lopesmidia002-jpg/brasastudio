@@ -301,6 +301,17 @@
   - Processamento e substituição dos assets `caso-ambar-joias-880.webp`, `caso-ambar-joias-880.avif`, `caso-ambar-joias-440.webp` e `caso-ambar-joias-440.avif` em proporção nativa `880x555` com foco nítido e respiro perfeito acima do `.case-box`.
   - Validação de entrega dos assets e renderização no container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 48 — Padronização Completa dos Banners Bento Grid de Por Que a Brasa Conforme Foto 2**
+  - Substituição das 5 fotografias oficiais pelos recortes exatos da imagem de referência enviada pelo usuário (Revisões: moodboard de cortiça com polaroids; Preço: livro aberto com cartões quentes em leque; Pedidos: esculturas orgânicas de vidro soprado âmbar/rubi; Retorno: ampulheta dourada clássica de latão com areia; Publicação: mãos digitando em laptop iluminado à noite).
+  - Geração e exportação dos 20 assets otimizados em formatos WebP e AVIF nas resoluções responsivas para cada slot.
+  - Remoção de todas as linhas divisórias horizontais `<hr class="rule">` nos cards.
+  - Ajuste do fundo dos banners (`.bcard`) para superfície grafite escura e profunda (`#0a0b0e`) com contorno sutil `1px solid rgba(255, 255, 255, 0.08)` e cantos arredondados de 22px.
+  - Banners 100% estáticos: remoção total de elevação, sombras e transformações de zoom no hover (`transform: none !important; transition: none !important;`).
+  - Badges `NOVO` em pílula sólida retangular laranja vibrante (`#ff551b`) com texto branco em caixa alta.
+  - Estilização completa dos botões de ação no card grande ("Agendar conversa" e "Conheça a Brasa").
+  - Adição de suporte a arquivos `.avif` no `nginx.conf` e rebuild do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK para todas as rotas e assets.
+
+
 
 
 

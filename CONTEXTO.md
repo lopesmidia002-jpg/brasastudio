@@ -346,6 +346,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Resultado:** A foto preenche de forma homogênea todo o raio de 18px do `.case-img`, eliminando a borda duplicada e garantindo que o anel dourado fique em perfeito destaque visual logo acima do `.case-box`.
   - **Execução e Validação Docker:** Verificada a entrega de todos os novos assets com status HTTP 200 OK diretamente no container Docker ativo.
 
+### 2.42 Padronização Completa dos Banners Bento Grid de Por Que a Brasa Conforme Foto 2 (Passo 48)
+- **Problema/Objetivo:** O usuário solicitou trocar os banners da seção Bento Grid de Benefícios ("Por que a Brasa") para ficarem exatamente idênticos à segunda imagem enviada, incluindo fotos, estilos de texto, fundo dos banners e remoção de qualquer efeito ao passar o mouse ("troque estes banners para exatamente este da segunda imagem, fotos icones estilos de texto fundo dos banners, tire o efeito de passar o maouse que tem nos banners deixe eles todos estaticos, quero exatamten igual").
+- **Decisão e Implementação:**
+  - **Extração e Processamento das Fotografias:** As 5 fotos oficiais foram extraídas diretamente da imagem de referência de alta fidelidade enviada pelo usuário, com recorte cirúrgico livre de textos e bordas residuais:
+    1. *Revisões com método:* Painel de cortiça com fotografias/polaroids iluminadas por feixe de luz solar angular.
+    2. *Preço sem surpresa:* Livro aberto com marcadores de cores quentes e solares em leque sobre tecido escuro.
+    3. *Pedidos sem fila:* Esculturas orgânicas bulbosas de vidro translúcido em âmbar e rubi.
+    4. *Retorno rápido:* Ampulheta clássica de latão com areia dourada escorrendo sobre superfície de pedra rústica.
+    5. *Publicação assistida:* Mãos em close digitando no teclado de um notebook com tela iluminada à noite.
+  - **Geração de Formatos Modernos:** Todos os 20 assets responsivos correspondentes aos 5 slots foram gerados e exportados em WebP e AVIF com qualidade 90.
+  - **Remoção de Divisórias `<hr>` e Ajuste de Badges:** Eliminadas as linhas `<hr class="rule">` dos 5 cards em `index.html` e padronizados os badges em pílulas retangulares sólidas na cor laranja vibrante (`#ff551b`) com o texto `NOVO` em caixa alta e tipografia branca pura.
+  - **Banners 100% Estáticos e Fundo Escuro:** No `style.css`, os `.bcard` receberam fundo grafite profundo `#0a0b0e`, contorno sutil `1px solid rgba(255, 255, 255, 0.08)`, cantos arredondados de 22px, e desativação absoluta de efeitos de hover (`transform: none !important; transition: none !important;`).
+  - **Estilização dos Botões:** No card grande, o botão "Agendar conversa" recebeu gradiente âmbar/laranja com glow difuso na base (`box-shadow: 0 4px 18px rgba(255, 85, 27, 0.45)`), e "Conheça a Brasa" em cinza translúcido com borda suave.
+  - **Suporte no Servidor Nginx:** Adicionada extensão `avif` no `nginx.conf` e reconstruído o container Docker via `docker rm -f; docker-compose up -d --build`, com status HTTP 200 OK validado em todos os recursos.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
