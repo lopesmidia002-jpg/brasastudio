@@ -202,6 +202,23 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Botão com Glow Âmbar e Tag de Status:** O botão "Agendar 15 minutos" recebeu gradiente quente vermelho-alaranjado (`#eb4714` a `#c2330a`) e sombra com glow âmbar inferior (`box-shadow: 0 8px 26px rgba(235, 71, 20, 0.42)`), replicando com precisão o destaque do CTA da Foto 2.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.27 Replicação dos Banners, Ícones, Cores e Tipografia em Diferenciais conforme Foto 2 (Passo 33)
+- **Problema/Objetivo:** O usuário solicitou analisar e replicar exatamente os banners, ícones, cores e tipografia da Foto 2 nos cards da seção Diferenciais.
+- **Decisão e Implementação:**
+  - **Cards com Acabamento Refinado (`.feature`):** Bordas externas com cantos arredondados generosos de 26px (`border-radius: 26px`), fundo escuro profundo `#090a0f`, contorno fino `1px solid rgba(255, 255, 255, 0.08)` e padding amplo de `2.2rem 2.1rem 2.4rem`. O Card 1 ("Marca que vende PRO") recebeu o destaque da Foto 2 com contorno iluminado âmbar `1px solid rgba(220, 75, 25, 0.45)`, sutil gradiente radial quente no fundo e sombra interna.
+  - **Ícones em Caixas Squircle e Cor Âmbar Vibrante (`.icon-orb`):** Caixas com cantos arredondados de 16px (52x52px) em tom escuro `#14151c` e traços finos em laranja/âmbar vibrante `#ff7a3d`:
+    1. *Marca que vende:* Gráfico de linha ascendente com pontos.
+    2. *Sistema editável:* 3 camadas/losangos empilhados.
+    3. *Código leve:* Tag de código limpa `</>`.
+    4. *Direção de arte:* Medalha / roseta com fitas.
+    5. *Prazo combinado:* Relógio circular com ponteiros às 3h.
+    6. *Pensado para o celular:* Smartphone com botão e traço sutil.
+  - **Seta Diagonal Minimalista (`.feature-arrow`):** Inserido o ícone `↗` no canto superior direito de cada card em tom cinza suave `#8e8e95`.
+  - **Subtítulos em Caixa Alta e Cor Laranja/Âmbar (`.sub`):** Tipografia `Inter` em negrito (`font-weight: 700`), cor `#ff6a2b`, maiúsculas e espaçamento entrelinhas (`letter-spacing: 0.06em`).
+  - **Remoção de Linhas Divisórias (`.rule`):** Desativadas as linhas horizontais cinzas `<hr>`, replicando o layout moderno, fluido e desobstruído da Foto 2.
+  - **Badges `PRO` (`.badge--pro`):** Adicionada a pílula retangular arredondada alaranjada `#d84518` ao lado dos títulos dos cards 1 e 5.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

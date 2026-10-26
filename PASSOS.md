@@ -194,3 +194,11 @@
   - Ajuste do botão "Agendar 15 minutos" com glow quente inferior âmbar (`box-shadow: 0 8px 26px rgba(235, 71, 20, 0.42)`) e tag de status translúcida idêntica à Foto 2.
   - Reconstrução e validação do container Docker na porta 3000 com retorno HTTP 200 OK.
 
+- [x] **Passo 33 — Replicação Completa dos Banners, Ícones, Cores e Tipografia em Diferenciais conforme Foto 2**
+  - Estilização dos 6 cards (`.feature`) com cantos arredondados de 26px, fundo escuro profundo `#090a0f`, bordas suaves de 1px e destaque no Card 1 ("Marca que vende PRO") com contorno e iluminação âmbar suave.
+  - Atualização dos ícones em caixas squircle escuras (`.icon-orb`) de 52x52px com traço fino em laranja/âmbar vibrante `#ff7a3d`: gráfico de linha ascendente, 3 camadas empilhadas, tag de código `</>`, roseta com fitas, relógio às 3h e smartphone.
+  - Inclusão do ícone minimalista de seta diagonal `↗` (`.feature-arrow`) no canto superior direito de cada card.
+  - Subtítulos em caixa alta na cor laranja/âmbar vibrante `#ff6a2b` (`ESTRATÉGIA COMERCIAL`, `ARQUIVOS VIVOS`, `PERFORMANCE DE FÁBRICA`, `OLHAR AUTORAL`, `ENTREGAS SEMANAIS`, `RESPONSIVO DE VERDADE`).
+  - Remoção das linhas horizontais divisórias (`<hr class="rule">`), garantindo acabamento limpo e moderno idêntico à Foto 2.
+  - Adição de badge retangular arredondada `PRO` em tom alaranjado nos cards 1 e 5.
+  - Reconstrução e validação do container Docker na porta 3000 com HTTP 200 OK.
