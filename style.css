@@ -2544,9 +2544,8 @@ button, input {
    -------------------------------------------------------------------------- */
 .sec.services {
   background-color: #000000;
+  background-image: none;
   position: relative;
-  /* Brilho sutil avermelhado/laranja no canto superior esquerdo */
-  background-image: radial-gradient(circle 650px at 8% 0%, rgba(255, 95, 30, 0.15) 0%, rgba(180, 50, 15, 0.05) 45%, transparent 75%);
 }
 
 .head--services {
@@ -2555,18 +2554,9 @@ button, input {
   margin-bottom: 2.5rem;
 }
 
-/* Brilho atmosférico concentrado sobre o canto superior esquerdo do cabeçalho */
+/* Remoção total de manchas alaranjadas e clarões difusos no fundo do cabeçalho */
 .head--services::before {
-  content: '';
-  position: absolute;
-  top: -65px;
-  left: -20px;
-  width: 280px;
-  height: 150px;
-  background: radial-gradient(ellipse 70% 60% at 45% 35%, rgba(255, 95, 30, 0.32) 0%, rgba(200, 55, 15, 0.1) 50%, transparent 80%);
-  filter: blur(28px);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 /* Badge superior: Pílula arredondada, fundo cinzento-escuro com rebordo sutil, ponto laranja e texto Serviços em branco */
@@ -2575,8 +2565,6 @@ button, input {
   align-items: center;
   gap: 0.65rem;
   background-color: rgba(18, 20, 26, 0.88);
-  /* Brilho sutil no topo do rebordo e iluminação âmbar */
-  background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 95, 30, 0.52) 0%, rgba(255, 95, 30, 0.12) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 120, 45, 0.85);
   padding: 0.42rem 1.05rem;
@@ -2590,7 +2578,7 @@ button, input {
   backdrop-filter: blur(12px);
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 14px rgba(255, 90, 31, 0.32);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 .tag-status--services .dot {

@@ -599,7 +599,13 @@
     - Os dois banners da extremidade direita (o 4º banner da linha 1 e o 4º banner da linha 2) ficam parcialmente cortados na lateral, revelando-se completamente somente quando a barra de rolagem for acionada (ou via drag-to-scroll elástico), idêntico à Foto 2 enviada pelo usuário.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 72 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 72 — Remoção Total de Manchas Alaranjadas do Fundo em Serviços (Fundo Preto Puro #000000)**
+  - Fundo da seção `.sec.services` configurado como preto absoluto puro (`background-color: #000000; background-image: none;`), eliminando o gradiente radial avermelhado/laranja anterior.
+  - Desativação completa do pseudo-elemento de iluminação difusa `.head--services::before` (`display: none;`), removendo o foco de luz alaranjada no topo/fundo esquerdo.
+  - Remoção da projeção de halo alaranjado na badge `.tag-status--services` (`box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);`), impedindo qualquer vazamento de luz no fundo escuro.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 73 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

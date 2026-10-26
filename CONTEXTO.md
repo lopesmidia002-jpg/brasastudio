@@ -835,6 +835,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.66 Remoção de Manchas Alaranjadas do Fundo em Serviços (Passo 72)
+- **Solicitação do Usuário:**
+  - Remover do fundo da seção de Serviços as manchas alaranjadas e deixar o fundo 100% preto puro.
+- **Investigação Visual e Causa Raiz:**
+  - Em `.sec.services`, havia um `background-image: radial-gradient(circle 650px at 8% 0%, rgba(255, 95, 30, 0.15) 0%, ...)` que projetava um clarão avermelhado/laranja difuso no canto superior esquerdo do fundo.
+  - Em `.head--services::before`, um pseudo-elemento com `background: radial-gradient(...)` e `filter: blur(28px)` projetava uma mancha alaranjada concentrada atrás do topo do cabeçalho.
+  - Na badge `.tag-status--services`, a sombra continha `0 -2px 14px rgba(255, 90, 31, 0.32)`, gerando halo que vazava no fundo escuro acima da cápsula.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.sec.services`: fixado `background-color: #000000;` e `background-image: none;`.
+    - `.head--services::before`: desativado com `display: none;`.
+    - `.tag-status--services`: sombra redefinida para `0 4px 16px rgba(0, 0, 0, 0.5);`, removendo o halo térmico superior.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
