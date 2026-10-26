@@ -301,6 +301,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - **Vento Sul Bikes:** Ondas duplas sinusoidais em traço arredondado com `stroke="#ff7a3d"`.
   - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
 
+### 2.37 Refinamento Visual Fiel da Seção Por Que a Brasa conforme Fotos 2 e 3 (Passo 43)
+- **Problema/Objetivo:** O usuário solicitou ajustar na página "Por que a Brasa" a escrita, tamanho da fonte e organização do texto para ficar igual à segunda foto, aplicar o efeito trapezoidal cinza com degradê somente do lado direito, e substituir o cabeçalho pela tag estilizada da terceira foto ("mna pagina porque brasa troque as escritas, tamnaho da fonte e oraganizaçao do texto para que fique igual a este da segunda foto, coloque este efeito trapeziodal cinza so do lado direito com degrade igaul a este da segunda foto, e coloque este icone na pagina trocando").
+- **Decisão e Implementação:**
+  - **Efeito Trapezoidal Cinza Apenas do Lado Direito (`.benefits-wing--right`):** Criado o container de backdrop com o feixe trapezoidal à direita com geometria `clip-path: polygon(32% 0, 100% 0, 100% 100%, 0% 100%)`, preenchimento em degradê cinza/grafite suave (`linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(160, 165, 185, 0.05) 32%, rgba(20, 22, 28, 0.72) 70%, rgba(6, 7, 10, 0.95) 100%)`) e linha de luz superior de 1px (`rgba(255, 255, 255, 0.18)`), preservando o lado esquerdo em preto sólido puro idêntico à Foto 2.
+  - **Tag de Status no Topo (`.tag-status--benefits`):** Substituído o `<p class="eyebrow">` pela pílula escura de cantos arredondados (9px), com linha de brilho âmbar no topo (`border-top: 1px solid rgba(255, 120, 50, 0.58)`), ponto quadrado laranja vibrante (`#ff5a1f`) com glow de 8px e texto "Por que a Brasa" em Title Case idêntica à Foto 3.
+  - **Headline Display Monocromática (`.title--benefits`):** Tipografia ajustada em tamanho calibrado (`clamp(2.35rem, 4.4vw, 3.8rem)`), peso médio/regular (500) e alinhamento em exatamente 2 linhas ("A gente não só desenha," / "a gente coloca no ar.") com gradiente suave monocromático de branco puro para cinza prateado, eliminando completamente a cor laranja da segunda linha.
+  - **Organização das Pills e Botão Fale Agora:** Estruturadas as pílulas em duas linhas elegantes com fundo grafite `#0d0e14`, contorno suave e texto em cinza claro `#9da0aa`, com destaque no botão "Fale agora" em pílula sólida branca pura com tipografia preta negrita conforme a Foto 2.
+  - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

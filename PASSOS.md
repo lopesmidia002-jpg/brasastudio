@@ -270,5 +270,13 @@
     - **Vento Sul Bikes:** Ondas duplas sinusoidais em traço arredondado (`stroke="#ff7a3d"`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 43 — Refinamento Visual Fiel da Seção Por Que a Brasa conforme Fotos 2 e 3**
+  - Implementação do efeito trapezoidal cinza volumétrico apenas do lado direito (`.benefits-wing--right`) com corte trapezoidal `polygon(32% 0, 100% 0, 100% 100%, 0% 100%)`, degradê suave grafite/cinza e linha de luz superior de 1px idêntica à Foto 2.
+  - Substituição do texto simples no topo pela tag de status (`.tag-status--benefits`) com pílula escura (cantos de 9px), ponto quadrado laranja âmbar (`#ff5a1f`) com glow de 8px, linha iluminada superior e texto "Por que a Brasa" em Title Case idêntico à Foto 3.
+  - Atualização da tipografia e grafia do título (`.title--benefits`): exibição em exatamente 2 linhas monocromáticas ("A gente não só desenha," / "a gente coloca no ar.") com degradê suave de branco puro para cinza prateado, eliminando completamente a cor laranja.
+  - Reorganização das pílulas de benefícios em duas linhas confortáveis (`.pills--benefits`) com fundo escuro `#0d0e14`, contorno suave e destaque no botão "Fale agora" em pílula sólida branca com tipografia preta negrita.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
 
 
