@@ -380,6 +380,20 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Botão Fale Agora:** Tipografia refinada para peso médio fino (`font-weight: 500`), texto preto nítido `#000000` sobre pílula branca `#ffffff` com cantos arredondados de 9px.
   - **Execução e Validação Docker:** Verificada a renderização e carregamento sem erros no container Docker na porta 3000 retornando status HTTP 200 OK.
 
+### 2.45 Padronização Completa dos Banners de Diferenciais Conforme Imagem 2 de Referência (Passo 51)
+- **Problema/Objetivo:** O usuário solicitou alterar todos os banners da seção de Diferenciais para ficarem exatamente iguais à segunda imagem enviada ("mude todos os banners para estes da segunda imagem, que fique exatamente igual").
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  1. *Fundo dos Cards:* Na Imagem 2, os cards possuem uma tonalidade grafite escura e limpa (`#0f1015`) com cantos de 24px e contorno fino de 1px suave (`rgba(255, 255, 255, 0.07)`).
+  2. *Card 1 ("Marca que vende PRO"):* Na versão anterior havia um glow alaranjado externo que vazava para fora no topo e na esquerda. Na Imagem 2, os contornos superior e lateral são limpos e escuros, e o gradiente térmico alaranjado está contido exclusivamente na base interna do card (`radial-gradient(ellipse 90% 55% at 50% 100%, ...)`), com borda inferior âmbar (`border-bottom: 1px solid rgba(255, 110, 40, 0.52)`).
+  3. *Ícone do Card 1:* Na Imagem 2, o ícone do primeiro card possui uma moldura retangular com cantos arredondados contendo um gráfico de linha ascendente com ponta de seta, diferente do ícone solto anterior.
+  4. *Linha Divisória Horizontal (`<hr class="rule">`):* Na Imagem 2, todos os 6 cards possuem uma linha divisória horizontal sutil e nítida entre o subtítulo ("Estratégia comercial", etc.) e a descrição textual longa.
+  5. *Badges PRO:* As pílulas `PRO` (Card 1 e Card 5) possuem fundo laranja vibrante (`#ff551b`) com tipografia branca pura em caixa alta e glow quente.
+  6. *Banners Estáticos:* Remoção total de transições bruscas de elevação (`transform: translateY(-4px)`) e ampliação de ícones no hover, mantendo os banners 100% estáticos e elegantes.
+- **Decisão e Implementação:**
+  - Em `index.html`: atualizado o SVG do Card 1 para o formato exato com `<rect width="18" height="18" ... rx="3"/>` e caminhos de gráfico ascendente e seta.
+  - Em `style.css`: atualizada a classe `.feature` com fundo `#0f1015`, `.feature--hot` com degradê térmico apenas na base, `.badge--pro` com texto branco `#ffffff`, `.feature .rule` estilizada com `border-top: 1px solid rgba(255, 255, 255, 0.1)`, e remoção de transforms nos estados de `:hover`.
+  - Reconstrução do container Docker `brasa-studio-landing` na porta 3000 e validação de resposta HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

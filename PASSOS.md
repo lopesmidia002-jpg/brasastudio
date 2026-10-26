@@ -326,6 +326,18 @@
   - Refinamento do botão "Fale agora" em pílula sólida branca (`#ffffff`) com tipografia preta fina (`font-weight: 500`).
   - Validação da renderização no container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
+- [x] **Passo 51 — Padronização Completa dos Banners de Diferenciais Conforme Imagem 2 de Referência**
+  - Ajuste de fundo dos 6 cards para tom grafite escuro limpo e elegante (`#0f1015`) com cantos arredondados de 24px e contorno fino suave `1px solid rgba(255, 255, 255, 0.07)`.
+  - Refinamento do Card 1 ("Marca que vende PRO"): sombreamento e degradê térmico alaranjado sutil concentrado exclusivamente na base interna (`radial-gradient(ellipse 90% 55% at 50% 100%, ...)`) com borda inferior âmbar (`border-bottom: 1px solid rgba(255, 110, 40, 0.52)`), eliminando qualquer vazamento externo alaranjado no topo e laterais.
+  - Atualização do ícone do Card 1 em `index.html` com a moldura retangular com cantos arredondados e gráfico com linha ascendente e ponta de seta idêntico à Imagem 2.
+  - Implementação de linha divisória horizontal nítida e sutil (`.feature .rule` com `border-top: 1px solid rgba(255, 255, 255, 0.1); height: 0;`) separando o subtítulo do texto descritivo em todos os 6 cards.
+  - Badges `PRO` alaranjadas (`#ff551b`) calibradas com tipografia branca pura em caixa alta e glow quente.
+  - Remoção completa de transformações e elevações bruscas ao passar o mouse (`transform: none`, banners 100% estáticos).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 52 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+  - Aguardar instruções explícitas do usuário para o próximo passo.
+
 
 
 
