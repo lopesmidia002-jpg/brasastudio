@@ -89,6 +89,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Redesenhada a imagem dos banners para proporção 1:1 quadrada (`aspect-ratio: 1 / 1`), eliminando a distorção vertical e destacando o enquadramento do produto.
   - Atualizados os badges dos títulos para etiquetas retangulares com cantos arredondados vermelhas-laranjas (`NOVO` e `RECENTE`) e pílulas de métricas com fundo escuro e tipografia limpa idênticas à foto de referência.
 
+### 2.12 Refinamento Visual Fiel da Seção Como Trabalhamos (Passo 18)
+- **Problema/Objetivo:** A seção Como Trabalhamos precisava incorporar com exatidão a identidade visual da segunda foto (eyebrow "COMO TRABALHAMOS" em caixa alta laranja, headline com "sem atalhos." em laranja vibrante, divisórias `<hr>`, pílulas com texto âmbar e rosa dos ventos vetorial astronômica dourada no 3º card), preservando a foto da primeira imagem (mãos organizando amostras de design e tecidos sobre fundo escuro).
+- **Decisão e Implementação:**
+  - Atualizado o eyebrow para texto cru em caixa alta laranja vibrante `COMO TRABALHAMOS` e headline com destaque âmbar em `sem atalhos.`.
+  - Estruturados os cards das etapas com fundo escuro elegante `#0c0d12`, divisórias `<hr class="rule">`, pílulas de entregáveis com texto em tom âmbar `#ff7a3d` e botão de CTA "Agendar conversa" em pílula vermelha-alaranjada com sombra suave.
+  - Implementada rosa dos ventos vetorial astronômica dourada no canto inferior direito da Etapa 3 ("Entrega"), composta por dois círculos astronômicos concêntricos, eixos de mira em cruz `+` e `x` finos dourados, glow difuso e estrela de 4 pontas pontiaguda dourada em gradiente.
+  - Mantida a foto da primeira imagem (`processo-mesa-1040.webp`) com acabamento limpo em cantos arredondados de 26px sem borda cinza externa pesada.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
