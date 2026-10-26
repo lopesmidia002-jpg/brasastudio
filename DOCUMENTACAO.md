@@ -141,7 +141,7 @@ A landing page está apta a ser instalada na tela de início de celulares, table
 
 1. **Header / Navbar:** Logo Brasa Studio com estrela laranja, menu âncora e botão CTA com efeito glow.
 2. **Hero Section (Refinada conforme Referência Visual):** Headline de impacto, tag de status, botões de ação, barra de rolagem horizontal com caixas de ícones (68x68px) e card de preview com rosa dos ventos laranja vibrante no canto inferior direito sobre iluminação âmbar estática.
-3. **Sobre a Brasa:** Estatísticas com números em destaque, posicionamento e proposta de valor.
+3. **Sobre a Brasa (Refinada conforme Referência Visual):** Imagem com cantos arredondados limpos (26px) sem borda externa cinza e iluminação sutil na base, badge em pílula estilizada ("• Sobre a Brasa"), headline 100% branca monocromática, parágrafo direto sem linha divisória `<hr>`, ícones de diferenciais e botão "Como trabalhamos" em vermelho-laranja brasa.
 4. **Resultados (Marquee):** Carrossel infinito horizontal de métricas e clientes atendidos.
 5. **Como Trabalhamos:** Processo em 3 etapas claras (Diagnóstico, Criação & Engenharia, Escala).
 6. **Diferenciais:** Grid responsivo de 6 cards destacando velocidade, design e tecnologia.

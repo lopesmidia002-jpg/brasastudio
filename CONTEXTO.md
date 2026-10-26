@@ -51,6 +51,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Rosa dos Ventos Laranja no Canto Inferior Direito:** Substituído o ícone pequeno antigo por uma rosa dos ventos vetorial com círculos concêntricos pontilhados, eixos de mira e estrela de 4 pontas em gradiente laranja vibrante (`#ff5a1f` a `#ffa64d`), posicionada exatamente no canto inferior direito do preview com efeito glow âmbar.
   - **Card de Preview:** Ajustada a proporção e borda com iluminação sutil e botão de play central.
 
+### 2.7 Refinamento Visual Fiel da Seção Sobre a Brasa (Passo 13)
+- **Adequação Fiel à Foto 2 de Referência:**
+  - **Remoção de Borda da Imagem:** Retirado o container com borda cinza clara saliente; a imagem agora possui acabamento limpo com cantos arredondados de 26px e suave brilho âmbar inferior.
+  - **Badge Pílula no Topo:** Substituído o texto cru por badge em pílula translúcida com pontinho indicador âmbar ("• Sobre a Brasa").
+  - **Título Monocromático:** O título "Marcas mais fortes, impressões que ficam." foi ajustado para 100% branco puro, sem gradientes alaranjados, conforme a referência visual.
+  - **Eliminação de Divisores Artificiais:** Removida a linha horizontal `<hr>`, garantindo fluidez direta entre o texto e a lista de diferenciais.
+  - **Botão com Sombra & Tom Quente:** Botão "Como trabalhamos" calibrado no tom vermelho-laranja brasa com sombra âmbar e texto branco.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

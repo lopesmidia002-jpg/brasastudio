@@ -876,6 +876,24 @@ button, input {
   box-shadow: 0 0 20px 4px rgba(255, 90, 31, 0.65);
 }
 
+/* Imagem sem borda externa idêntica à Foto 2 */
+.frame--noborder {
+  border: none !important;
+  border-radius: 26px;
+  background: transparent;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.95);
+}
+.frame--noborder::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: radial-gradient(ellipse at center, rgba(255, 90, 31, 0.9), transparent 80%);
+  box-shadow: 0 0 25px 5px rgba(255, 90, 31, 0.55);
+}
+
 .frame--tall {
   max-width: 480px;
   margin-left: auto;
@@ -887,43 +905,94 @@ button, input {
   flex-direction: column;
 }
 
+/* Tag Pílula "• Sobre a Brasa" conforme Foto 2 */
+.tag-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.95rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+  width: fit-content;
+  backdrop-filter: blur(8px);
+}
+.tag-status .dot {
+  width: 6px;
+  height: 6px;
+  background: #ff5a1f;
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(255, 90, 31, 0.8);
+}
+
+/* Título 100% Branco Monocromático conforme Foto 2 */
+.title--about {
+  color: #ffffff !important;
+  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.4rem;
+}
+
 .checks {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 2rem;
+  margin: 1.8rem 0 2.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.95rem;
+  gap: 1rem;
 }
 .checks li {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.95rem;
   font-size: 0.98rem;
   font-weight: 500;
-  color: var(--text-white);
+  color: #f5f5f5;
 }
 .checks .ico {
   flex-shrink: 0;
 }
 
+/* Botão com acabamento idêntico à Foto 2 */
+.btn--about {
+  background: linear-gradient(135deg, #d84518 0%, #b82b08 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.85rem 1.8rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 10px 25px -4px rgba(200, 56, 21, 0.55) !important;
+  transition: all var(--trans-normal) !important;
+}
+.btn--about:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 30px -4px rgba(220, 65, 25, 0.75) !important;
+}
+
 .actions--rated {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.6rem;
   flex-wrap: wrap;
 }
 
 .vsep {
   width: 1px;
-  height: 32px;
+  height: 34px;
   background: rgba(255, 255, 255, 0.12);
 }
 
 .rating {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.3rem;
   font-size: 0.84rem;
   color: var(--text-muted);
 }
@@ -934,6 +1003,7 @@ button, input {
 @media (max-width: 809px) {
   .split {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
