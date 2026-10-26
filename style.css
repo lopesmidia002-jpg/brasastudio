@@ -1787,34 +1787,40 @@ button, input {
   margin-top: 3.5rem;
 }
 
-/* Card individual com fundo grafite escuro #0f1015, contorno fino e banners 100% estáticos idênticos à Foto 2 */
+/* Card individual com superfície charcoal grey, degradê radial sutil e borda de 1px iluminada idênticos à estética SaaS */
 .feature {
-  background-color: #0f1015;
-  background-image: none;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: #0d0e13;
+  background-image: radial-gradient(ellipse 110% 70% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, rgba(25, 27, 36, 0.3) 45%, rgba(10, 11, 15, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 24px;
   padding: 2.2rem 2.1rem 2.3rem;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 16px 40px rgba(0, 0, 0, 0.85);
   transition: border-color var(--trans-fast);
 }
 
 .feature:hover {
   border-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.18);
 }
 
 /* Card 1 em destaque ("Marca que vende PRO") com sombreamento térmico sutil concentrado na base conforme Foto 2 */
 .feature--hot {
-  background-color: #0f1015;
-  background-image: radial-gradient(ellipse 90% 55% at 50% 100%, rgba(220, 70, 20, 0.22) 0%, rgba(180, 50, 15, 0.06) 50%, transparent 80%);
+  background-color: #0d0e13;
+  background-image: 
+    radial-gradient(ellipse 110% 60% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 55% at 50% 100%, rgba(220, 70, 20, 0.22) 0%, rgba(180, 50, 15, 0.06) 50%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 110, 40, 0.52);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 16px 40px rgba(0, 0, 0, 0.85);
 }
 .feature--hot:hover {
   border-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.18);
   border-bottom-color: rgba(255, 110, 40, 0.65);
 }
 
@@ -2108,15 +2114,17 @@ button, input {
   grid-column: span 2;
 }
 
-/* Bento Grid Banners (Por Que a Brasa): Fundo escuro uniforme, 100% estáticos sem hover, idênticos à Foto 2 */
+/* Bento Grid Banners (Por Que a Brasa): Minimalist dark mode surface, ultra-clean sleek charcoal grey, subtle radial gradient, faint glowing edge */
 .bcard {
-  background: #0a0b0e;
+  background-color: #0d0e13;
+  background-image: radial-gradient(ellipse 110% 75% at 50% 0%, rgba(255, 255, 255, 0.055) 0%, rgba(28, 30, 40, 0.35) 45%, rgba(10, 11, 15, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 22px;
   padding: 1.5rem 1.6rem 1.7rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 48px -12px rgba(0, 0, 0, 0.85);
   transition: none !important;
   transform: none !important;
 }
@@ -2124,15 +2132,17 @@ button, input {
 /* Banners 100% estáticos: sem efeito ao passar o mouse conforme solicitado pelo usuário */
 .bcard:hover {
   border-color: rgba(255, 255, 255, 0.08) !important;
+  border-top-color: rgba(255, 255, 255, 0.16) !important;
   transform: none !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 48px -12px rgba(0, 0, 0, 0.85) !important;
 }
 
 .bcard-img {
   border-radius: 16px;
   overflow: hidden;
-  background: #0f1015;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0a0b0e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
   margin-bottom: 0;
 }
 

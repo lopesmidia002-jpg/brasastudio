@@ -349,7 +349,14 @@
   - Aplicação global e consistente em todas as seções que utilizam badges: Hero (`.tag-new .badge`), Diferenciais (`.badge--pro`) e Bento Grid de Por Que a Brasa (`.bcard .card-title .badge`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 54 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 54 — Aplicação de Superfície Minimalist Dark Mode Sleek Charcoal Grey nos Banners**
+  - Implementação de fundo minimalista dark mode ultra-clean em sleek charcoal grey (`#0d0e13`) nos banners Bento Grid (`.bcard`) e Diferenciais (`.feature`).
+  - Aplicação de degradê radial sutil e acetinado de deep charcoal para near-black (`radial-gradient(ellipse 110% 75% at 50% 0%, ...)`) recriando iluminação de estúdio de baixo contraste (low-contrast studio lighting).
+  - Adição de borda com realce de luz de 1px (faint glowing edge border) com `border-top: 1px solid rgba(255, 255, 255, 0.16)` e reflexo interno `box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 48px -12px rgba(0, 0, 0, 0.85)`.
+  - Harmonização da moldura interna de imagem (`.bcard-img`) com contorno refinado e fundo escuro.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 55 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

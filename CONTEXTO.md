@@ -421,6 +421,17 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - Padding e espaçamento calibrados (`0.22rem 0.58rem`)
   - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
 
+### 2.48 Aplicação de Superfície Minimalist Dark Mode Sleek Charcoal Grey nos Banners (Passo 54)
+- **Problema/Objetivo:** O usuário solicitou aplicar um estilo de fundo minimalista dark mode ("Minimalist dark mode banner background, ultra-clean sleek charcoal grey surface, subtle soft radial gradient from deep charcoal to near black, faint 1px glowing edge border, modern SaaS UI card aesthetic, elegant low-contrast studio lighting, completely empty, abstract texture, no elements, no text") nos banners da Bento Grid de Benefícios.
+- **Investigação Visual e Análise Estética:**
+  - Os banners da Bento Grid (`.bcard`) estavam com preenchimento cinza sólido uniforme (`#0a0b0e`) e sombra plana, faltando a sofisticação da iluminação suave de estúdio de baixo contraste e o efeito de borda iluminada de 1px presente em cartões modernos de SaaS e UI cinematográfica.
+- **Decisão e Implementação:**
+  - **Superfície e Gradiente Radial Acetinado:** Aplicada base `#0d0e13` com degradê radial sutil `radial-gradient(ellipse 110% 75% at 50% 0%, rgba(255, 255, 255, 0.055) 0%, rgba(28, 30, 40, 0.35) 45%, rgba(10, 11, 15, 0.98) 100%)`, simulando iluminação difusa de estúdio no topo de cada card que desvanece suavemente para o preto profundo.
+  - **Faint Glowing Edge Border:** Borda de 1px translúcida (`border: 1px solid rgba(255, 255, 255, 0.08)`) reforçada no topo com fio de luz suave (`border-top: 1px solid rgba(255, 255, 255, 0.16)`) e iluminação interna de 1px (`box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 48px -12px rgba(0, 0, 0, 0.85)`).
+  - **Harmonização Global:** A mesma assinatura visual e borda iluminada de 1px foram estendidas aos cards de Diferenciais (`.feature` e `.feature--hot`), mantendo todo o design system alinhado.
+  - **Moldura Interna (`.bcard-img`):** Ajustada com fundo escuro limpo `#0a0b0e`, borda sutil `1px solid rgba(255, 255, 255, 0.07)` e relevo interno.
+  - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
