@@ -1782,45 +1782,51 @@ button, input {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
   list-style: none;
   margin-top: 3.5rem;
+  padding: 0;
 }
 
-/* Card individual Diferenciais: Fundo dark mode SaaS tech, preto profundo absoluto com iluminação suave em gradiente radial âmbar e laranja acobreado centralizado */
+/* Card individual Diferenciais: Modern SaaS Feature Card
+   - Rounded rectangle: border-radius: 20px
+   - Background: ultra-dark charcoal (#0d0d0d) with subtle translucency
+   - Background Lighting Effect: Soft, diffuse radial glow emanating from the top-left corner behind the icon circle using warm amber and burnt orange tones (#ff6b00 to #331500), fading smoothly into the dark base towards the bottom-right
+   - Border: Ultra-thin 1px border with subtle gradient stroke (warm subtle reddish/orange highlight along top edge, fading into faint dark gray #1f2024 / #222222)
+*/
 .feature {
-  background-color: #050609;
-  background-image: radial-gradient(circle 320px at 50% 38%, rgba(225, 100, 32, 0.13) 0%, rgba(165, 62, 18, 0.05) 50%, rgba(5, 6, 9, 0.98) 90%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  padding: 2.2rem 2.1rem 2.3rem;
+  background-color: #0d0d0d;
+  background-image: radial-gradient(circle 260px at 46px 46px, rgba(255, 107, 0, 0.17) 0%, rgba(135, 45, 0, 0.07) 42%, rgba(51, 21, 0, 0.02) 70%, transparent 95%);
+  border: 1px solid #1f2024;
+  border-top: 1px solid rgba(255, 120, 50, 0.28);
+  border-radius: 20px;
+  padding: 2.1rem 1.95rem 2.2rem;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.85);
   transition: border-color var(--trans-fast);
 }
 
 .feature:hover {
-  border-color: rgba(255, 255, 255, 0.13);
-  border-top-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
+  border-top-color: rgba(255, 120, 50, 0.45);
 }
 
-/* Card 1 em destaque ("Marca que vende PRO") com gradiente centralizado âmbar/cobre e brilho térmico inferior */
+/* Card 1 em destaque ("Marca que vende PRO"): glow superior esquerdo atrás do ícone + reflexo térmico suave na base */
 .feature--hot {
-  background-color: #050609;
+  background-color: #0d0d0d;
   background-image: 
-    radial-gradient(circle 320px at 50% 38%, rgba(235, 110, 35, 0.15) 0%, rgba(175, 68, 20, 0.06) 50%, transparent 85%),
-    radial-gradient(ellipse 90% 55% at 50% 100%, rgba(225, 75, 20, 0.24) 0%, rgba(180, 50, 15, 0.07) 50%, transparent 80%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 1px solid rgba(255, 110, 40, 0.55);
-  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.95), 0 10px 32px rgba(220, 75, 20, 0.16);
+    radial-gradient(circle 260px at 46px 46px, rgba(255, 107, 0, 0.19) 0%, rgba(140, 48, 0, 0.08) 42%, transparent 85%),
+    radial-gradient(ellipse 90% 50% at 50% 100%, rgba(225, 75, 20, 0.22) 0%, rgba(180, 50, 15, 0.06) 50%, transparent 80%);
+  border: 1px solid #1f2024;
+  border-top: 1px solid rgba(255, 120, 50, 0.28);
+  border-bottom: 1px solid rgba(255, 110, 40, 0.52);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.85), 0 10px 32px rgba(220, 75, 20, 0.15);
 }
 .feature--hot:hover {
-  border-color: rgba(255, 255, 255, 0.13);
-  border-top-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
+  border-top-color: rgba(255, 120, 50, 0.45);
   border-bottom-color: rgba(255, 110, 40, 0.68);
 }
 
@@ -1831,61 +1837,65 @@ button, input {
   margin-bottom: 1.75rem;
 }
 
-/* Ícone em Círculo perfeito com degradê radial âmbar escuro, contorno fino e halo suave conforme Fotos 2, 3, 4 e 5 */
+/* Small circular icon button on the top-left with warm orange outline and icon */
 .icon-orb {
-  width: 50px;
-  height: 50px;
-  border-radius: 50% !important; /* Círculo perfeito conforme fotos enviadas */
-  background: radial-gradient(circle at 50% 50%, #441a08 0%, #200c05 65%, #0e0502 100%);
-  border: 1px solid rgba(255, 130, 40, 0.45);
+  width: 48px;
+  height: 48px;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 50% 50%, #351406 0%, #1c0a03 65%, #0d0602 100%);
+  border: 1px solid rgba(255, 110, 40, 0.52);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 16px rgba(255, 95, 30, 0.25);
+  box-shadow: 0 0 16px rgba(255, 95, 30, 0.2);
 }
 .icon-orb .ico {
   color: #ffa44a;
   stroke: #ffa44a;
 }
 
-/* Seta diagonal no canto superior direito conforme Foto 2 e 5 */
+/* Subtle arrow pointing diagonally up-right (↗) on the top-right corner */
 .feature-arrow {
-  color: #7e808a;
+  color: #8e8e93;
+  stroke: #8e8e93;
   opacity: 0.85;
+  width: 19px;
+  height: 19px;
 }
 
-/* Título em branco puro moderno */
+/* Crisp white bold primary title */
 .feature .card-title {
-  font-family: var(--font-display);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Geist Sans', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  margin: 0 0 0.45rem;
-  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.025em;
 }
 
-/* Badge PRO em pílula retangular alaranjada com texto preto conforme Foto 2 */
+/* Small rounded pill tag badge with bright orange background and white text ("PRO") */
 .badge--pro {
   background: #ff551b;
-  color: #000000;
-  font-size: 0.65rem;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.22rem 0.6rem;
+  padding: 0.18rem 0.55rem;
   border-radius: 6px;
-  line-height: 1;
-  box-shadow: 0 0 10px rgba(255, 85, 27, 0.45);
+  line-height: 1.1;
+  box-shadow: 0 0 12px rgba(255, 85, 27, 0.5);
 }
 
-/* Subtítulo em cinza suave e capitalização natural conforme Foto 2 e 5 */
+/* Medium gray, concise sub-header text directly under the title */
 .feature .sub {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Geist Sans', sans-serif;
   font-size: 0.88rem;
-  color: #9294a0;
+  color: #8a8c96;
   font-weight: 400;
   text-transform: none;
   letter-spacing: normal;
@@ -1893,22 +1903,22 @@ button, input {
   display: block;
 }
 
-/* Linha divisória horizontal sutil e nítida idêntica à Foto 2 e 5 */
+/* Linha divisória horizontal sutil e nítida */
 .feature .rule {
   display: block;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   height: 0;
   margin: 1.15rem 0 1.25rem;
   width: 100%;
 }
 
-/* Descrição em cinza suave com tipografia confortável */
+/* Dimmed light-gray/muted typography (#8e8e93) at the bottom describing the features */
 .feature .text-sm {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.92rem;
-  line-height: 1.58;
-  color: #8c8e98;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Geist Sans', sans-serif;
+  font-size: 0.93rem;
+  line-height: 1.62;
+  color: #8e8e93;
   margin: 0;
   font-weight: 400;
 }
@@ -1916,6 +1926,7 @@ button, input {
 @media (max-width: 1024px) {
   .feature-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 @media (max-width: 640px) {

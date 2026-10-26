@@ -394,7 +394,19 @@
   - Botão "Agendar conversa" (`.btn--svc`) em pílula com gradiente vermelho-laranja brasa e glow térmico inferior e perimétrico.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 59 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 59 — Implementação da Grade 3x2 Dark Modern SaaS Feature Cards Conforme Imagem 2**
+  - Configuração do canvas background em preto profundo puro (`#000000`).
+  - Container dos cards (`.feature`) em ultra-dark charcoal (`#0d0d0d`) com cantos arredondados de 20px (`border-radius: 20px`) e padding simétrico (`2.1rem 1.95rem 2.2rem`).
+  - Iluminação atmosférica difusa em degradê radial saindo do canto superior esquerdo atrás do círculo do ícone em tons âmbar quente e laranja queimado (`radial-gradient(circle 260px at 46px 46px, rgba(255, 107, 0, 0.17) 0%, rgba(135, 45, 0, 0.07) 42%, rgba(51, 21, 0, 0.02) 70%, transparent 95%)`), dissipando-se em direção ao canto inferior direito.
+  - Card 1 (`.feature--hot`) com destaque térmico: além do glow no topo esquerdo, reflexo acobreado na base e borda inferior âmbar (`border-bottom: 1px solid rgba(255, 110, 40, 0.52)`).
+  - Borda ultra-fina de 1px com degradê sutil: realce superior sutilmente iluminado em tom âmbar/avermelhado (`border-top: 1px solid rgba(255, 120, 50, 0.28)`), desvanecendo para cinza escuro translúcido nas laterais e base (`border: 1px solid #1f2024`).
+  - Top bar com botão circular (`.icon-orb` de 48x48px, raio 50%) com contorno em laranja quente (`border: 1px solid rgba(255, 110, 40, 0.52)`), fundo em degradê escuro âmbar e ícone em dourado/laranja quente (`#ffa44a`), e seta diagonal minimalista `↗` no canto superior direito (`stroke: #8e8e93`).
+  - Títulos display nítidos em branco puro (`#ffffff; font-weight: 700; font-size: 1.25rem;`), acompanhados por badge `PRO` em pílula retangular laranja brilhante (`#ff551b`) com tipografia branca pura (`color: #ffffff; font-weight: 700;`) e glow térmico idêntico à Foto 2.
+  - Subtítulo conciso em cinza médio (`#8a8c96`) logo abaixo do título, linha divisória `<hr class="rule">` e texto descritivo suave (#8e8e93) com entrelinha 1.62.
+  - Grade 3x2 responsiva com gap de 1.5rem, adaptando-se para 2 colunas em telas médias e 1 coluna em mobile.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 60 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
