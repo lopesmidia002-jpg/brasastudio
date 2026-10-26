@@ -149,6 +149,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Geometria das Asas Laterais:** As asas `.stage-wing` foram calibradas com topo perfeitamente horizontal alinhado com a base da headline ("no caixa e na marca.") e corte diagonal preciso em 48% (`clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%)` na esquerda e simétrico em 52% na direita), com degradê em tom bronze/âmbar com profundidade (`rgba(175, 55, 15, 0.35)` a `rgba(30, 10, 4, 0.08)`) e borda superior iluminada `rgba(255, 115, 45, 0.45)`.
   - **Tipografia e Quebras de Texto:** Headline `.title--results` calibrada com tipografia aberta (`font-size: clamp(2.8rem, 5.2vw, 4.4rem)`, `font-weight: 400`, `line-height: 1.1`, `letter-spacing: -0.025em`) em branco puro, e lead `.text--results` em cinza suave `#909096` distribuído em duas linhas centralizadas.
 
+### 2.20 Dimensões Fiel da Foto 2 e Card Informativo Sobressaindo à Foto nos Banners (Passo 26)
+- **Problema/Objetivo:** O usuário solicitou que os banners dos cases da seção Resultados adotassem as dimensões da segunda imagem enviada, implementando o estilo em que a foto de fundo preenche o card e o banner informativo sobressai sobre a foto, com as mesmas bordas padronizadas em todos os banners.
+- **Decisão e Implementação:**
+  - **Dimensões e Proporção dos Banners (`.case`):** Reajustada a largura dos cards para a proporção mais vertical e compacta da Foto 2 (`clamp(320px, 28vw, 385px)`), substituindo o formato excessivamente largo anterior.
+  - **Bordas Padronizadas e Moldura:** Definido contorno externo uniforme para todos os banners com cantos arredondados de 26px (`border-radius: 26px`), borda refinada translúcida `1px solid rgba(255, 255, 255, 0.09)`, fundo `#08090d` e padding interno de respiro (`10px 10px 12px 10px`).
+  - **Foto de Fundo (`.case-img`):** Proporção quadrada 1:1 mantida, com cantos arredondados de 20px integrados na moldura do card, servindo de fundo superior.
+  - **Card Informativo Sobressaindo (`.case-box`):** Implementada a sobreposição vertical sobre a base da foto com margem negativa (`margin-top: -65px`), `z-index: 2`, cantos arredondados de 20px, fundo escuro aveludado `#0d0e14`, borda sutil `1px solid rgba(255, 255, 255, 0.08)` e sombra volumétrica projetada (`box-shadow: 0 12px 32px rgba(0,0,0,0.85), 0 -4px 20px rgba(0,0,0,0.65)`), garantindo que o banner informativo sobressaia à foto com relevo tridimensional idêntico à Foto 2 em todos os banners.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

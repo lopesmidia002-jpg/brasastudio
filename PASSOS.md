@@ -153,3 +153,10 @@
   - Efeito do plano de fundo calibrado com gradiente elíptico difuso sutil de calor âmbar descendo do topo central (`rgba(225, 80, 20, 0.16)` fundindo ao preto profundo), recriando a atmosfera cinematográfica da Foto 2.
   - Geometria das asas laterais poligonais atualizada com topo perfeitamente horizontal alinhado à linha "no caixa e na marca." e corte diagonal em 48%, em degradê bronze/âmbar com fusão suave ao preto e borda superior iluminada.
   - Headline "Resultados que aparecem no caixa e na marca." calibrada com tipografia aberta (`clamp(2.8rem, 5.2vw, 4.4rem)`, peso 400, entrelinha 1.1) e texto de apoio com quebra balanceada em duas linhas.
+
+- [x] **Passo 26 — Dimensões Fiel da Foto 2 e Card Informativo Sobressaindo à Foto nos Banners**
+  - Calibração das dimensões dos banners para proporção compacta e vertical (`clamp(320px, 28vw, 385px)`), idêntica à Foto 2.
+  - Padronização das bordas externas de todos os banners com cantos arredondados de 26px (`border-radius: 26px`), borda refinada `1px solid rgba(255, 255, 255, 0.09)` e padding interno simétrico de respiro (`10px 10px 12px 10px`).
+  - Foto de fundo com formato quadrado 1:1 e cantos arredondados de 20px, servindo de base visual para a composição.
+  - Implementação do card informativo interno sobreposto à foto (`margin-top: -65px`, `z-index: 2`) com fundo `#0d0e14`, borda de 1px, cantos arredondados de 20px e sombra projetada volumétrica, criando o acabamento onde o banner informativo sobressai sobre a foto conforme a Foto 2.
+
