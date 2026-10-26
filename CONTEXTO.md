@@ -127,6 +127,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Ampliação e Espaçamento dos Cards:** Ampliado o tamanho de `.icon-card` para 84px x 84px com raio de curvatura de 22px, e estendido o container `.hero-icons-wrap` para `max-width: 480px` com gap de 1.35rem, exibindo os 4 primeiros ícones com grande folga horizontal idêntica à Foto 2.
   - **Calibração dos Ícones da Foto 3:** Implementado o losango vazado/oco (Marca 5) usando `<rect>` rotacionado em 45° com `stroke-width="4.2"` e fundo vazado, e calibrada a matriz 2x2 de 4 círculos proporcionais (Marca 6). Todos os SVGs foram ampliados para 34px x 34px.
 
+### 2.17 Refinamento dos Banners de Resultados (Passo 23)
+- **Problema/Objetivo:** O usuário solicitou que os banners dos cases fossem estendidos lateralmente, tivessem formato quadrado sem cortes indesejados nas fotos, que todos os elementos e ícones fossem idênticos à Foto 2 e que a barra de rolagem horizontal fosse branca pura.
+- **Decisão e Implementação:**
+  - **Barra de Rolagem Branca:** A barra de rolagem horizontal dos cases (`.results-cases-scroll`) foi configurada com polegar em branco puro `#ffffff`, bordas em pílula e trilha translúcida `rgba(255, 255, 255, 0.08)`, e `scrollbar-color: #ffffff rgba(255, 255, 255, 0.12)`.
+  - **Extensão Lateral dos Cards:** Largura de `.case` aumentada para `clamp(380px, 32vw, 440px)` com gap de `1.85rem` e container estendido para `1560px`, permitindo que os cards respirem lateralmente com amplitude e presença conforme a Foto 2.
+  - **Banners Quadrados sem Cortes:** O container `.case-img` foi calibrado em proporção quadrada perfeita (`aspect-ratio: 1 / 1`) com cantos superiores arredondados em 24px (`border-radius: 24px 24px 0 0`) e `object-fit: cover`, garantindo enquadramento completo e harmonioso das imagens (vaso de cerâmica, café, joia e bicicleta).
+  - **Padronização de Ícones e Badges:** Os ícones `.case-mark` foram padronizados na cor laranja vibrante `#ff5a1f` com o terceiro ícone (Âmbar Joias) ajustado para o losango com ponto no centro, e os badges `NOVO` e `RECENTE` calibrados em tom vibrante `#ff5a1f`.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
