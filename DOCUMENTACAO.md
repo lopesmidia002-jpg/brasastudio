@@ -188,12 +188,13 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       - *Bordas & Acabamento:* Cantos arredondados suaves (`border-radius: 18px`), `overflow: hidden`, contorno sutil `1px solid rgba(255, 255, 255, 0.06)` e base grafite `#0d0d0f`.
       - *Espaçamento:* Gap uniforme de 16px entre colunas e linhas.
       - *Imagens:* Preenchimento completo dos cards com `object-fit: cover` nas 8 peças autorais em altíssima definição (cerâmica, café coado, fachada noturna iluminada, mesa de trabalho de design, colar de ouro sobre linho, ciclista na rua de pedra, tecidos em terracota e arquitetura com luz rasante).
-      - *Layout de Tela a Tela Lateralmente (Full-Width / Edge-to-Edge):* `.showcase-gallery` com largura máxima de 100% (`max-width: 100%`) e padding fluido suave, permitindo que as fileiras de banners se estendam de ponta a ponta na viewport lateralmente, exatamente conforme a Foto 2.
-      - *Remoção da Barra de Rolagem Superior e Posicionamento na Base:*
-        - Removida a barra de rolagem do topo da Sequência 1 (`#showcase-row-1`), eliminando qualquer espelhamento vertical e mantendo a área superior limpa.
-        - Barra de rolagem horizontal posicionada exclusivamente na parte de **baixo** da galeria (`#showcase-row-2`), com trilha translúcida fina (`height: 6px; background: rgba(255, 255, 255, 0.05)`), bordas arredondadas e polegar suave (`rgba(255, 255, 255, 0.28)`) com hover iluminado.
-        - Sincronização dinâmica de rolagem bidirecional em tempo real entre Linha 1 e Linha 2 em `main.js`, permitindo controle unificado e harmonioso.
-      - *Grid Track Tela a Tela:* `.showcase-grid-track` com `display: grid; grid-template-columns: repeat(4, minmax(260px, 1fr)); gap: 16px; min-width: 1080px; width: 100%;`, garantindo 4 colunas proporcionais preenchendo toda a tela no desktop e rolagem horizontal suave em resoluções menores.
+      - *Layout de Tela a Tela Lateralmente (Full-Width / Edge-to-Edge):* `.showcase-gallery` com largura máxima de 100% (`max-width: 100%`) e padding fluido suave, permitindo que as fileiras de banners se estendam de ponta a ponta na viewport lateralmente.
+      - *Barra de Rolagem Horizontal de Cor Branca na Base dos Banners:*
+        - Removida a barra de rolagem do topo da Sequência 1 (`#showcase-row-1`), mantendo a margem superior limpa.
+        - Barra de rolagem horizontal estilizada em **branco puro (`#ffffff`)** posicionada na parte de **baixo** dos banners (`#showcase-row-2` e `.showcase-scrollbar-track` com `.showcase-scrollbar-thumb`).
+        - Trilha com fundo sutil translúcido (`rgba(255, 255, 255, 0.14)`) e indicador de rolagem (thumb) em branco sólido com brilho acetinado (`box-shadow: 0 0 10px rgba(255, 255, 255, 0.95)`).
+        - Controle e arraste interativo via mouse/touch em `main.js`, com sincronização bidirecional em tempo real entre Linha 1 e Linha 2.
+      - *Grid Track com Rolagem Horizontal:* `.showcase-grid-track` com `display: grid; grid-template-columns: repeat(4, clamp(340px, 28.5vw, 460px)); gap: 16px; min-width: 100%; width: max-content;`, garantindo banners espaçosos e ativação fluida da barra branca de rolagem.
       - *Física & Interação Antigravity:* Levitação sutil ao hover (`transform: translateY(-4px)` com sombra volumétrica difusa e brilho âmbar suave), resposta elástica ao clique (`transform: translateY(-1px) scale(0.985)`) e arraste elástico interativo (*drag-to-scroll*) com inércia física amortecida em `main.js`.
 11. **Planos / Precificação (`.pricing` #planos — Hero Banner & Pricing Cards Dark Mode Minimalista):**
     - **Fundo & Atmosfera:** Fundo preto absoluto (`#000000`) de altíssimo contraste, limpo e sem polígonos cinzas interferindo no fundo dos cards de preços conforme a Foto 2.

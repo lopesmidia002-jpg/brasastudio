@@ -659,7 +659,14 @@
   - Linha de base `.tray` calibrada com glow térmico central âmbar.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 81 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 81 — Barra de Rolagem Horizontal de Cor Branca na Base dos Banners**
+  - Implementação da barra de rolagem horizontal em branco puro (`#ffffff`) na parte de baixo dos banners da vitrine (`#showcase-row-2`), tanto na scrollbar nativa Webkit/Firefox quanto no elemento visual interativo (`#showcase-scrollbar-track` com `#showcase-scrollbar-thumb`).
+  - Trilha horizontal translúcida sutil com thumb em branco sólido brilhante com sombra volumétrica acetinada.
+  - Calibração de `.showcase-grid-track` com banners amplos (`clamp(340px, 28.5vw, 460px)`) para ativação suave da rolagem horizontal.
+  - Implementação em `main.js` de arraste e clique interativo no thumb e na trilha, sincronizado com a Linha 1 em tempo real.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 82 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

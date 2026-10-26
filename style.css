@@ -2920,13 +2920,13 @@ button, input {
   transform: none;
 }
 
-/* Linha 2: Barra de Rolagem Horizontal Exclusiva na PARTE DE BAIXO */
+/* Linha 2: Barra de Rolagem Horizontal de Cor Branca na PARTE DE BAIXO */
 #showcase-row-2 {
   transform: none;
   padding-top: 0;
-  padding-bottom: 14px;
+  padding-bottom: 8px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.28) rgba(255, 255, 255, 0.05);
+  scrollbar-color: #ffffff rgba(255, 255, 255, 0.15);
 }
 #showcase-row-2 .showcase-grid-track {
   transform: none;
@@ -2942,35 +2942,71 @@ button, input {
   scroll-behavior: auto;
 }
 
-/* Estilização da Barra de Rolagem Horizontal na Base (Webkit) */
+/* Estilização da Barra de Rolagem Horizontal Nativa (Webkit) de Cor Branca */
 #showcase-row-2::-webkit-scrollbar {
   height: 6px;
 }
 
 #showcase-row-2::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   margin: 0 clamp(20px, 8vw, 90px);
 }
 
 #showcase-row-2::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.28);
+  background: #ffffff;
   border-radius: 999px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 #showcase-row-2::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+  background: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 1);
 }
 
-/* Grid Track com Banners de Tela a Tela Lateralmente Conforme Foto 2 */
+/* Barra de Rolagem Horizontal de Cor Branca na Parte de Baixo dos Banners */
+.showcase-scrollbar-track {
+  width: clamp(260px, 48vw, 680px);
+  height: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  margin: 16px auto 0;
+  position: relative;
+  cursor: pointer;
+  z-index: 3;
+  user-select: none;
+}
+
+.showcase-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 32%;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.95), 0 0 20px rgba(255, 255, 255, 0.5);
+  cursor: grab;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showcase-scrollbar-thumb:hover {
+  background: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 26px rgba(255, 255, 255, 0.7);
+}
+
+.showcase-scrollbar-thumb:active {
+  cursor: grabbing;
+}
+
+/* Grid Track com Banners de Tela a Tela e Rolagem Horizontal */
 .showcase-grid-track {
   display: grid;
-  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, clamp(340px, 28.5vw, 460px));
   gap: 16px;
-  min-width: 1080px;
-  width: 100%;
+  min-width: 100%;
+  width: max-content;
   box-sizing: border-box;
 }
 

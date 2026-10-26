@@ -492,6 +492,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, { passive: true });
     }
+
+    // Controle da Barra de Rolagem Horizontal de Cor Branca na Base dos Banners
+    const scrollTrack = document.getElementById('showcase-scrollbar-track');
+    const scrollThumb = document.getElementById('showcase-scrollbar-thumb');
+
+    const updateWhiteScrollBar = () => {
+      if (!row2 || !scrollTrack || !scrollThumb) return;
+      const maxScroll = row2.scrollWidth - row2.clientWidth;
+      if (maxScroll > 0) {
+        scrollTrack.style.display = 'block';
+        const trackWidth = scrollTrack.clientWidth;
+        const visibleRatio = Math.min(1, Math.max(0.2, row2.clientWidth / row2.scrollWidth));
+        const thumbWidth = Math.max(60, Math.round(trackWidth * visibleRatio));
+        scrollThumb.style.width = thumbWidth + 'px';
+        const maxThumbTravel = trackWidth - thumbWidth;
+        const scrollPercent = row2.scrollLeft / maxScroll;
+        scrollThumb.style.transform = `translateX(${scrollPercent * maxThumbTravel}px)`;
+      } else {
+        scrollTrack.style.display = 'block';
+      }
+    };
+
+    if (row2 && scrollTrack && scrollThumb) {
+      row2.addEventListener('scroll', updateWhiteScrollBar, { passive: true });
+      window.addEventListener('resize', updateWhiteScrollBar, { passive: true });
+      setTimeout(updateWhiteScrollBar, 150);
+
+      // Interação de arraste no Thumb Branco
+      let isThumbDragging = false;
+      let thumbStartX = 0;
+      let thumbStartScroll = 0;
+
+      scrollThumb.addEventListener('mousedown', (e) => {
+        isThumbDragging = true;
+        thumbStartX = e.pageX;
+        thumbStartScroll = row2.scrollLeft;
+        document.body.style.userSelect = 'none';
+        e.stopPropagation();
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isThumbDragging) return;
+        const maxScroll = row2.scrollWidth - row2.clientWidth;
+        const trackWidth = scrollTrack.clientWidth;
+        const thumbWidth = scrollThumb.clientWidth;
+        const maxTravel = trackWidth - thumbWidth;
+        if (maxTravel <= 0 || maxScroll <= 0) return;
+
+        const deltaX = e.pageX - thumbStartX;
+        const scrollDelta = (deltaX / maxTravel) * maxScroll;
+        row2.scrollLeft = thumbStartScroll + scrollDelta;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (isThumbDragging) {
+          isThumbDragging = false;
+          document.body.style.userSelect = '';
+        }
+      });
+
+      // Clique na Trilha para rolar diretamente
+      scrollTrack.addEventListener('click', (e) => {
+        if (e.target === scrollThumb) return;
+        const rect = scrollTrack.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const trackWidth = scrollTrack.clientWidth;
+        const maxScroll = row2.scrollWidth - row2.clientWidth;
+        const targetPercent = Math.max(0, Math.min(1, clickX / trackWidth));
+        row2.scrollTo({
+          left: targetPercent * maxScroll,
+          behavior: 'smooth'
+        });
+      });
+    }
   };
 
   initGalleryInteractivity();

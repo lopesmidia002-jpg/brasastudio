@@ -1007,6 +1007,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.quote figcaption`: tipografia e hierarquia vertical limpa idêntica à Foto 2.
     - `.tray`: linha escura com halo difuso alaranjado no centro.
 - **Execução e Validação Docker:**
+  ### 2.75 Implementação da Barra de Rolagem Horizontal Branca na Base dos Banners (Passo 81)
+- **Solicitação do Usuário:**
+  - "neste banners coloque uma barra de rolagem horizontal de cor branca na parte de baixo dos banners" (com foto da 2ª linha de banners da vitrine).
+- **Investigação Técnica:**
+  - No passo 78, a galeria foi ajustada com `repeat(4, minmax(260px, 1fr))` e `width: 100%`, fazendo com que em monitores desktop normais e widescreen os 4 banners coubessem na largura da tela sem transbordar (`overflow-x`), ocultando nativamente a barra de rolagem.
+  - Além disso, a scrollbar nativa possuía cor cinza translúcida com baixa visibilidade, e em alguns sistemas operacionais (como Windows 11 / macOS) a scrollbar do sistema fica oculta por padrão até a interação.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Adicionado o elemento de barra de rolagem horizontal personalizada na base dos banners: `<div class="showcase-scrollbar-track" id="showcase-scrollbar-track"><div class="showcase-scrollbar-thumb" id="showcase-scrollbar-thumb"></div></div>`.
+  - Em `style.css`:
+    - Configurado `#showcase-row-2` com `scrollbar-color: #ffffff rgba(255, 255, 255, 0.15);` e `::-webkit-scrollbar-thumb { background: #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.85); }`.
+    - Estilizados `.showcase-scrollbar-track` com trilha translúcida `background: rgba(255, 255, 255, 0.14)` e `.showcase-scrollbar-thumb` em **branco puro (`#ffffff`)** com brilho volumétrico acetinado (`box-shadow: 0 0 10px rgba(255, 255, 255, 0.95)`).
+    - `.showcase-grid-track`: ampliado para `repeat(4, clamp(340px, 28.5vw, 460px))` com `width: max-content; min-width: 100%;`, garantindo cards imponentes e ativação fluida da rolagem horizontal.
+  - Em `main.js`:
+    - Adicionado cálculo em tempo real da posição do thumb branco conforme a rolagem de `#showcase-row-2`, além de suporte completo a clique na trilha e arraste suave (*drag-to-scroll*) do thumb, sincronizando com a Linha 1.
+- **Execução e Validação Docker:**
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
