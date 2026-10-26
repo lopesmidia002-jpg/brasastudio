@@ -250,6 +250,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Subtítulo e Botão de Ação:** Subtítulo refinado em cinza suave `#8e8e96` com entrelinha 1.62 e botão "Conheça a Brasa" estilizado em gradiente terracota suave com glow inferior idêntico à Foto 2.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.31 Remoção do Brilho Alaranjado Central em Resultados Mantendo Efeitos Trapezoidais Laterais (Passo 37)
+- **Problema/Objetivo:** O usuário solicitou retirar exclusivamente a parte do meio alaranjada da seção Resultados, mantendo preservados os efeitos trapezoidais laterais ("tire somente esta parte do meio alaranjado, mantenha as os efeitos trapeziodais").
+- **Decisão e Implementação:**
+  - **Eliminação do Gradiente Central (`.results`):** Removido o `background-image: radial-gradient(...)` elíptico âmbar que iluminava o centro superior da seção Resultados, definindo `background-image: none;` e mantendo `background-color: #000000;`. O centro da seção passou a ser preto absoluto e limpo.
+  - **Preservação dos Efeitos Trapezoidais (`.stage-wing`):** Mantidos integralmente intactos os painéis geométricos laterais (`.stage-wing--left` e `.stage-wing--right`), com corte diagonal em 48% (`clip-path: polygon(...)`), borda superior iluminada em 1px e degradê bronze/âmbar que se dissipa harmonicamente do canto externo para o centro escuro.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

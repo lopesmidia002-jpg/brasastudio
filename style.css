@@ -1096,10 +1096,8 @@ button, input {
   position: relative;
   overflow: hidden;
   padding: 6.5rem 0 4.5rem;
-  background-color: #030303;
-  /* Glow difuso sutil de calor âmbar descendo do topo exatamente no padrão da Foto 2 */
-  background-image: radial-gradient(ellipse 65% 45% at 50% 0%, rgba(225, 80, 20, 0.16) 0%, rgba(130, 40, 8, 0.06) 42%, transparent 70%);
-  background-repeat: no-repeat;
+  background-color: #000000;
+  background-image: none;
 }
 
 /* Painéis / Asas geométricas laterais em degradê âmbar/bronze com borda superior iluminada idênticas à Foto 2 */

@@ -228,3 +228,9 @@
   - Ajuste do subtítulo em cinza claro e do botão "Conheça a Brasa" com fundo terracota suave e glow inferior.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 37 — Remoção do Brilho Alaranjado Central em Resultados Mantendo Efeitos Trapezoidais Laterais**
+  - Eliminação cirúrgica do gradiente radial elíptico alaranjado (`background-image: none !important;`) no fundo central da seção `.results`.
+  - Fixação do fundo central em preto sólido puro (`background-color: #000000;`).
+  - Preservação intacta de todas as formas trapezoidais / asas geométricas laterais (`.stage-wing--left` e `.stage-wing--right`) com seu gradiente bronze/âmbar sutil, borda iluminada de 1px e corte diagonal de 48%.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
