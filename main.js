@@ -493,29 +493,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { passive: true });
     }
 
-    // Controle da Barra de Rolagem Horizontal de Cor Branca na Base dos Banners
-    const scrollTrack = document.getElementById('showcase-scrollbar-track');
-    const scrollThumb = document.getElementById('showcase-scrollbar-thumb');
+    // Controle da Barra de Rolagem Horizontal de Cor Branca na Base dos Banners (Linha 1 e Linha 2)
+    const setupCustomScrollbar = (row, scrollTrack, scrollThumb) => {
+      if (!row || !scrollTrack || !scrollThumb) return;
 
-    const updateWhiteScrollBar = () => {
-      if (!row2 || !scrollTrack || !scrollThumb) return;
-      const maxScroll = row2.scrollWidth - row2.clientWidth;
-      if (maxScroll > 0) {
-        scrollTrack.style.display = 'block';
-        const trackWidth = scrollTrack.clientWidth;
-        const visibleRatio = Math.min(1, Math.max(0.2, row2.clientWidth / row2.scrollWidth));
-        const thumbWidth = Math.max(60, Math.round(trackWidth * visibleRatio));
-        scrollThumb.style.width = thumbWidth + 'px';
-        const maxThumbTravel = trackWidth - thumbWidth;
-        const scrollPercent = row2.scrollLeft / maxScroll;
-        scrollThumb.style.transform = `translateX(${scrollPercent * maxThumbTravel}px)`;
-      } else {
-        scrollTrack.style.display = 'block';
-      }
-    };
+      const updateWhiteScrollBar = () => {
+        const maxScroll = row.scrollWidth - row.clientWidth;
+        if (maxScroll > 0) {
+          scrollTrack.style.display = 'block';
+          const trackWidth = scrollTrack.clientWidth;
+          const visibleRatio = Math.min(1, Math.max(0.2, row.clientWidth / row.scrollWidth));
+          const thumbWidth = Math.max(60, Math.round(trackWidth * visibleRatio));
+          scrollThumb.style.width = thumbWidth + 'px';
+          const maxThumbTravel = trackWidth - thumbWidth;
+          const scrollPercent = row.scrollLeft / maxScroll;
+          scrollThumb.style.transform = `translateX(${scrollPercent * maxThumbTravel}px)`;
+        } else {
+          scrollTrack.style.display = 'block';
+        }
+      };
 
-    if (row2 && scrollTrack && scrollThumb) {
-      row2.addEventListener('scroll', updateWhiteScrollBar, { passive: true });
+      row.addEventListener('scroll', updateWhiteScrollBar, { passive: true });
       window.addEventListener('resize', updateWhiteScrollBar, { passive: true });
       setTimeout(updateWhiteScrollBar, 150);
 
@@ -527,14 +525,14 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollThumb.addEventListener('mousedown', (e) => {
         isThumbDragging = true;
         thumbStartX = e.pageX;
-        thumbStartScroll = row2.scrollLeft;
+        thumbStartScroll = row.scrollLeft;
         document.body.style.userSelect = 'none';
         e.stopPropagation();
       });
 
       window.addEventListener('mousemove', (e) => {
         if (!isThumbDragging) return;
-        const maxScroll = row2.scrollWidth - row2.clientWidth;
+        const maxScroll = row.scrollWidth - row.clientWidth;
         const trackWidth = scrollTrack.clientWidth;
         const thumbWidth = scrollThumb.clientWidth;
         const maxTravel = trackWidth - thumbWidth;
@@ -542,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const deltaX = e.pageX - thumbStartX;
         const scrollDelta = (deltaX / maxTravel) * maxScroll;
-        row2.scrollLeft = thumbStartScroll + scrollDelta;
+        row.scrollLeft = thumbStartScroll + scrollDelta;
       });
 
       window.addEventListener('mouseup', () => {
@@ -558,14 +556,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = scrollTrack.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
         const trackWidth = scrollTrack.clientWidth;
-        const maxScroll = row2.scrollWidth - row2.clientWidth;
+        const maxScroll = row.scrollWidth - row.clientWidth;
         const targetPercent = Math.max(0, Math.min(1, clickX / trackWidth));
-        row2.scrollTo({
+        row.scrollTo({
           left: targetPercent * maxScroll,
           behavior: 'smooth'
         });
       });
-    }
+    };
+
+    // Inicializa a barra de rolagem horizontal branca para a Linha 1 e Linha 2
+    setupCustomScrollbar(
+      document.getElementById('showcase-row-1'),
+      document.getElementById('showcase-scrollbar-track-1'),
+      document.getElementById('showcase-scrollbar-thumb-1')
+    );
+    setupCustomScrollbar(
+      document.getElementById('showcase-row-2'),
+      document.getElementById('showcase-scrollbar-track-2') || document.getElementById('showcase-scrollbar-track'),
+      document.getElementById('showcase-scrollbar-thumb-2') || document.getElementById('showcase-scrollbar-thumb')
+    );
   };
 
   initGalleryInteractivity();

@@ -1026,6 +1026,31 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.76 Barra de Rolagem Horizontal Branca na Base da Linha 1 de Banners (Passo 82)
+- **Solicitação do Usuário:**
+  - "coloque uma barra de rolagem horizontal de cor branca na parte de baixo destes banners" (com foto dos 4 banners da Linha 1 da vitrine: cerâmica, café coado, fachada e mesa de trabalho).
+- **Investigação Técnica:**
+  - No passo anterior (Passo 81), a barra de rolagem horizontal branca havia sido adicionada na base da Linha 2 de banners (`#showcase-row-2`).
+  - A Linha 1 (`#showcase-row-1`) ainda mantinha as regras de scrollbar oculta (`scrollbar-width: none; &::-webkit-scrollbar { display: none; }`) herdadas da remoção da scrollbar superior.
+  - Para que a Linha 1 tivesse exatamente a mesma barra de rolagem horizontal de cor branca pura na parte de baixo, foi necessário adicionar o container da trilha `#showcase-scrollbar-track-1` com `#showcase-scrollbar-thumb-1` imediatamente abaixo de `#showcase-row-1` em `index.html`.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Adicionado o container `<div class="showcase-scrollbar-track" id="showcase-scrollbar-track-1">...</div>` posicionado logo abaixo da Linha 1 (`#showcase-row-1`).
+    - Renomeado o container da Linha 2 para `#showcase-scrollbar-track-2` e `#showcase-scrollbar-thumb-2`, mantendo a clareza e simetria de nomenclatura.
+  - Em `style.css`:
+    - Atualizadas as regras para que `#showcase-row-1` e `#showcase-row-2` compartilhem os estilos de scrollbar:
+      - `scrollbar-color: #ffffff rgba(255, 255, 255, 0.15);`
+      - `::-webkit-scrollbar { height: 6px; }`
+      - `::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.12); border-radius: 999px; }`
+      - `::-webkit-scrollbar-thumb { background: #ffffff; border-radius: 999px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.85); }`
+    - `.showcase-scrollbar-track`: refinado espaçamento com `margin: 10px auto 16px;` para manter proporção harmoniosa entre a Linha 1 e a Linha 2.
+  - Em `main.js`:
+    - Refatorada a inicialização em uma função modular `setupCustomScrollbar(row, scrollTrack, scrollThumb)` aplicada tanto à Linha 1 quanto à Linha 2.
+    - Suporte a cálculo de largura do thumb dinâmico, arrasto suave (*drag-to-scroll*) com cursor `grabbing` e clique direto na trilha para ambas as fileiras.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

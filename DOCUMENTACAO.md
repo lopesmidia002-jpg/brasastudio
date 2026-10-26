@@ -189,11 +189,12 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       - *Espaçamento:* Gap uniforme de 16px entre colunas e linhas.
       - *Imagens:* Preenchimento completo dos cards com `object-fit: cover` nas 8 peças autorais em altíssima definição (cerâmica, café coado, fachada noturna iluminada, mesa de trabalho de design, colar de ouro sobre linho, ciclista na rua de pedra, tecidos em terracota e arquitetura com luz rasante).
       - *Layout de Tela a Tela Lateralmente (Full-Width / Edge-to-Edge):* `.showcase-gallery` com largura máxima de 100% (`max-width: 100%`) e padding fluido suave, permitindo que as fileiras de banners se estendam de ponta a ponta na viewport lateralmente.
-      - *Barra de Rolagem Horizontal de Cor Branca na Base dos Banners:*
-        - Removida a barra de rolagem do topo da Sequência 1 (`#showcase-row-1`), mantendo a margem superior limpa.
-        - Barra de rolagem horizontal estilizada em **branco puro (`#ffffff`)** posicionada na parte de **baixo** dos banners (`#showcase-row-2` e `.showcase-scrollbar-track` com `.showcase-scrollbar-thumb`).
-        - Trilha com fundo sutil translúcido (`rgba(255, 255, 255, 0.14)`) e indicador de rolagem (thumb) em branco sólido com brilho acetinado (`box-shadow: 0 0 10px rgba(255, 255, 255, 0.95)`).
-        - Controle e arraste interativo via mouse/touch em `main.js`, com sincronização bidirecional em tempo real entre Linha 1 e Linha 2.
+      - *Barras de Rolagem Horizontais de Cor Branca na Base dos Banners:*
+        - Ambas as fileiras de banners (Linha 1 `#showcase-row-1` e Linha 2 `#showcase-row-2`) possuem barras de rolagem horizontais em **branco puro (`#ffffff`)** posicionadas na parte de **baixo** dos banners.
+        - Scrollbars nativas Webkit/Firefox estilizadas com thumb em branco puro (`#ffffff`) e trilha translúcida suave (`rgba(255, 255, 255, 0.12)`).
+        - Barras visuais e interativas dedicadas logo abaixo de cada fileira (`#showcase-scrollbar-track-1` com `#showcase-scrollbar-thumb-1` e `#showcase-scrollbar-track-2` com `#showcase-scrollbar-thumb-2`).
+        - Trilha com fundo sutil translúcido (`rgba(255, 255, 255, 0.14)`) e thumb em branco sólido brilhante acetinado (`box-shadow: 0 0 10px rgba(255, 255, 255, 0.95), 0 0 20px rgba(255, 255, 255, 0.5)`).
+        - Interatividade completa em `main.js` com cálculo de proporção e translação em tempo real, suporte a clique na trilha para rolagem direta, arraste elástico (*drag-to-scroll*) no thumb e sincronização bidirecional suave entre as duas fileiras.
       - *Grid Track com Rolagem Horizontal:* `.showcase-grid-track` com `display: grid; grid-template-columns: repeat(4, clamp(340px, 28.5vw, 460px)); gap: 16px; min-width: 100%; width: max-content;`, garantindo banners espaçosos e ativação fluida da barra branca de rolagem.
       - *Física & Interação Antigravity:* Levitação sutil ao hover (`transform: translateY(-4px)` com sombra volumétrica difusa e brilho âmbar suave), resposta elástica ao clique (`transform: translateY(-1px) scale(0.985)`) e arraste elástico interativo (*drag-to-scroll*) com inércia física amortecida em `main.js`.
 11. **Planos / Precificação (`.pricing` #planos — Hero Banner & Pricing Cards Dark Mode Minimalista):**

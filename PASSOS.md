@@ -666,7 +666,14 @@
   - Implementação em `main.js` de arraste e clique interativo no thumb e na trilha, sincronizado com a Linha 1 em tempo real.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 82 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 82 — Barra de Rolagem Horizontal de Cor Branca na Base da Linha 1 de Banners**
+  - Implementação da barra de rolagem horizontal em branco puro (`#ffffff`) na parte de baixo dos banners da Linha 1 da vitrine (`#showcase-row-1`).
+  - Criação do elemento visual dedicado `#showcase-scrollbar-track-1` com `#showcase-scrollbar-thumb-1` logo abaixo da Linha 1 e identificação correspondente `#showcase-scrollbar-track-2` na Linha 2.
+  - Atualização do CSS (`style.css`) unificando as regras para `#showcase-row-1` e `#showcase-row-2`: scrollbar nativa branca com thumb acetinado `#ffffff` e trilha translúcida `rgba(255, 255, 255, 0.12)`.
+  - Atualização do script (`main.js`) com a função modular `setupCustomScrollbar`, garantindo cálculo de rolagem, arraste (*drag-to-scroll*) do thumb e clique na trilha para ambas as fileiras.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 83 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

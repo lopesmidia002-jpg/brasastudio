@@ -2903,24 +2903,8 @@ button, input {
   user-select: none;
 }
 
-/* Linha 1: Barra de Rolagem Superior Removida (sem espelhamento e scrollbar oculta no topo) */
-#showcase-row-1 {
-  transform: none;
-  padding-top: 0;
-  padding-bottom: 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-#showcase-row-1::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
-#showcase-row-1 .showcase-grid-track {
-  transform: none;
-}
-
-/* Linha 2: Barra de Rolagem Horizontal de Cor Branca na PARTE DE BAIXO */
+/* Linhas 1 e 2: Barra de Rolagem Horizontal de Cor Branca na PARTE DE BAIXO */
+#showcase-row-1,
 #showcase-row-2 {
   transform: none;
   padding-top: 0;
@@ -2928,6 +2912,7 @@ button, input {
   scrollbar-width: thin;
   scrollbar-color: #ffffff rgba(255, 255, 255, 0.15);
 }
+#showcase-row-1 .showcase-grid-track,
 #showcase-row-2 .showcase-grid-track {
   transform: none;
 }
@@ -2943,16 +2928,19 @@ button, input {
 }
 
 /* Estilização da Barra de Rolagem Horizontal Nativa (Webkit) de Cor Branca */
+#showcase-row-1::-webkit-scrollbar,
 #showcase-row-2::-webkit-scrollbar {
   height: 6px;
 }
 
+#showcase-row-1::-webkit-scrollbar-track,
 #showcase-row-2::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   margin: 0 clamp(20px, 8vw, 90px);
 }
 
+#showcase-row-1::-webkit-scrollbar-thumb,
 #showcase-row-2::-webkit-scrollbar-thumb {
   background: #ffffff;
   border-radius: 999px;
@@ -2960,6 +2948,7 @@ button, input {
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
+#showcase-row-1::-webkit-scrollbar-thumb:hover,
 #showcase-row-2::-webkit-scrollbar-thumb:hover {
   background: #ffffff;
   box-shadow: 0 0 16px rgba(255, 255, 255, 1);
@@ -2971,7 +2960,7 @@ button, input {
   height: 6px;
   background: rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  margin: 16px auto 0;
+  margin: 10px auto 16px;
   position: relative;
   cursor: pointer;
   z-index: 3;
