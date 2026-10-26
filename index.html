@@ -216,11 +216,18 @@
 </section>
 
 <section class="sec results" id="resultados" aria-labelledby="resultados-titulo" data-motion>
-  <div class="container head head--center glow-sides" data-reveal>
-    <p class="eyebrow">Resultados</p>
-    <h2 class="title" id="resultados-titulo"><span>Resultados que aparecem</span> <span class="title-2">no caixa e na marca.</span></h2>
-    <p class="text">Cada entrega nasce com um objetivo claro e um jeito de medir. Veja alguns números de projetos recentes.</p>
-    <a class="btn btn--brasa" href="#contato">Agendar 15 minutos</a>
+  <div class="results-backdrop" aria-hidden="true">
+    <div class="stage-wing stage-wing--left"></div>
+    <div class="stage-wing stage-wing--right"></div>
+  </div>
+  <div class="container head head--center results-head" data-reveal>
+    <div class="tag-status">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Resultados</span>
+    </div>
+    <h2 class="title title--results" id="resultados-titulo">Resultados que aparecem<br>no caixa e na marca.</h2>
+    <p class="text text--results">Cada entrega nasce com um objetivo claro e um jeito de medir. Veja alguns números de projetos recentes.</p>
+    <a class="btn btn--brasa btn--results" href="#contato" data-open-modal="modal-diagnostico">Agendar 15 minutos</a>
   </div>
   <input class="motion-toggle" type="checkbox" id="pausa-casos" aria-label="Pausar animação" title="Pausar animação">
   <div class="marquee marquee--cases">

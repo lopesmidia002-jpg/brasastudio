@@ -59,6 +59,12 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Eliminação de Divisores Artificiais:** Removida a linha horizontal `<hr>`, garantindo fluidez direta entre o texto e a lista de diferenciais.
   - **Botão com Sombra & Tom Quente:** Botão "Como trabalhamos" calibrado no tom vermelho-laranja brasa com sombra âmbar e texto branco.
 
+### 2.8 Refinamento Visual Fiel da Seção Resultados (Passo 14)
+- **Palco Geométrico em Perspectiva:** Criação dos painéis/asas poligonais nas laterais esquerda e direita com corte trapezoidal, reflexo sutil de iluminação âmbar no topo e gradiente carvão.
+- **Iluminação Cenográfica:** Adicionado clarão central âmbar descendente no topo da seção via gradiente radial difuso.
+- **Badge de Status Padronizada:** Implementada a pílula "• Resultados" com fundo translúcido e ponto indicador de calor.
+- **Tipografia & Botão:** Título "Resultados que aparecem no caixa e na marca." ajustado para 100% branco monocromático e botão "Agendar 15 minutos" calibrado em vermelho-laranja brasa com cantos arredondados e glow âmbar inferior.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

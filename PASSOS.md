@@ -86,3 +86,10 @@
   - Ajuste do título para 100% branco monocromático ("Marcas mais fortes, impressões que ficam.") sem a linha laranja.
   - Remoção da linha divisória `<hr>` entre o parágrafo e a lista de diferenciais.
   - Botão "Como trabalhamos" estilizado no tom vermelho-laranja brasa idêntico à foto de referência.
+
+- [x] **Passo 14 — Refinamento Visual Fiel da Seção Resultados (Idêntico à Foto 2)**
+  - Implementação de painéis/asas poligonais nas laterais esquerda e direita com perspectiva geométrica e suave brilho âmbar no contorno superior.
+  - Inserção de iluminação difusa central descendente no topo da seção.
+  - Substituição do texto cru por badge em pílula estilizada ("• Resultados") com pontinho indicador âmbar.
+  - Ajuste do título para 100% branco monocromático ("Resultados que aparecem no caixa e na marca.") sem a linha alaranjada.
+  - Botão "Agendar 15 minutos" calibrado no tom vermelho-laranja brasa com cantos arredondados e glow âmbar na base.
