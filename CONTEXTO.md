@@ -942,6 +942,25 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.plans-wing--right`: configurado em `top: clamp(140px, 15vw, 210px); right: 0; width: clamp(360px, 38vw, 620px); height: clamp(340px, 36vw, 560px); clip-path: polygon(32% 0, 100% 0, 100% 100%, 0% 100%); background: linear-gradient(155deg, rgba(255, 255, 255, 0.08) 0%, rgba(28, 28, 34, 0.48) 35%, rgba(12, 12, 15, 0.85) 75%, transparent 100%); border-top: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(16px);`.
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  ### 2.72 Remoção da Scrollbar Superior, Barra na Base e Vitrine Tela a Tela Lateralmente (Passo 78)
+- **Solicitação do Usuário:**
+  - "tire a barra de rolagem horizonta da parte de cima e coloqua embaixo e faca que os banners fiquem de tela a tela lateralmente comgorma a segunda foto"
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 1: a Linha 1 apresentava uma barra de rolagem horizontal escura no topo dos cards (gerada por `transform: scaleY(-1)`), visualmente intrusiva e desconectada da base. Além disso, a galeria estava limitada a 1380px com largura fixa de cartões (`repeat(4, clamp(340px, 30.5vw, 440px))`), cortando banners e sem expandir de borda a borda da tela.
+  - Na Foto 2 (referência desejada):
+    1. A barra de rolagem horizontal não fica no topo; a rolagem horizontal fica posicionada na parte de **baixo** da galeria, despoluindo o topo dos cards.
+    2. Os banners preenchem de tela a tela lateralmente (*full-width* / edge-to-edge), organizados em 4 colunas proporcionais por linha, cobrindo toda a extensão horizontal da tela com margem lateral suave e uniforme.
+    3. O espaçamento vertical entre a Linha 1 e a Linha 2 é limpo e contínuo, sem barras intermediárias visíveis.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.showcase-gallery`: removida a restrição `max-width: 1380px; margin: 0 auto;`, alterando para `width: 100%; max-width: 100%; margin: 0; padding: 0 clamp(12px, 1.8vw, 24px);`, expandindo os banners de tela a tela lateralmente.
+    - `#showcase-row-1`: removido `transform: scaleY(-1)` no container e no track, removido `padding-top: 14px`, e ocultada a scrollbar individual (`scrollbar-width: none; -ms-overflow-style: none; &::-webkit-scrollbar { display: none; }`).
+    - `#showcase-row-2`: mantida a barra de rolagem horizontal exclusiva na **parte de baixo** (`padding-bottom: 14px`), com trilha translúcida fina (`height: 6px; background: rgba(255, 255, 255, 0.05)`), bordas arredondadas e thumb acetinado com hover iluminado.
+    - `.showcase-grid-track`: configurado com `display: grid; grid-template-columns: repeat(4, minmax(260px, 1fr)); gap: 16px; min-width: 1080px; width: 100%;`, garantindo que no desktop os 4 banners ocupem toda a largura da tela de uma lateral à outra, com scroll horizontal elástico em larguras menores.
+  - Em `main.js`:
+    - Adicionada sincronização de rolagem bidirecional em tempo real entre `#showcase-row-1` e `#showcase-row-2` com `requestAnimationFrame`, de modo que o controle pela barra na base ou pelo arraste (*drag-to-scroll*) movimenta ambas as fileiras em perfeita harmonia cinematográfica.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
 ## 3. Arquitetura de Execução (100% Docker)

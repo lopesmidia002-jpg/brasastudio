@@ -470,6 +470,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    // Sincronização entre as linhas da galeria (a barra inferior controla a visualização de ambas)
+    const row1 = document.getElementById('showcase-row-1');
+    const row2 = document.getElementById('showcase-row-2');
+    if (row1 && row2) {
+      let isSyncing = false;
+      row1.addEventListener('scroll', () => {
+        if (!isSyncing) {
+          isSyncing = true;
+          row2.scrollLeft = row1.scrollLeft;
+          requestAnimationFrame(() => { isSyncing = false; });
+        }
+      }, { passive: true });
+
+      row2.addEventListener('scroll', () => {
+        if (!isSyncing) {
+          isSyncing = true;
+          row1.scrollLeft = row2.scrollLeft;
+          requestAnimationFrame(() => { isSyncing = false; });
+        }
+      }, { passive: true });
+    }
   };
 
   initGalleryInteractivity();

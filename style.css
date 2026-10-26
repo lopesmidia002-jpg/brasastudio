@@ -2882,17 +2882,17 @@ button, input {
 .showcase-gallery {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 clamp(1rem, 3.5vw, 2.5rem);
+  max-width: 100%;
+  margin: 0;
+  padding: 0 clamp(12px, 1.8vw, 24px);
   box-sizing: border-box;
   position: relative;
   z-index: 2;
 }
 
-/* Sequência de Banners Rolável Horizontalmente com Barra de Rolagem */
+/* Sequência de Banners Rolável Horizontalmente com Barra de Rolagem na BASE */
 .showcase-scroll-row {
   width: 100%;
   overflow-x: auto;
@@ -2901,24 +2901,35 @@ button, input {
   scroll-behavior: smooth;
   cursor: grab;
   user-select: none;
+}
+
+/* Linha 1: Barra de Rolagem Superior Removida (sem espelhamento e scrollbar oculta no topo) */
+#showcase-row-1 {
+  transform: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#showcase-row-1::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+#showcase-row-1 .showcase-grid-track {
+  transform: none;
+}
+
+/* Linha 2: Barra de Rolagem Horizontal Exclusiva na PARTE DE BAIXO */
+#showcase-row-2 {
+  transform: none;
+  padding-top: 0;
+  padding-bottom: 14px;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.28) rgba(255, 255, 255, 0.05);
 }
-
-/* Barra de Rolagem Horizontal no TOPO para a Sequência 1 (Linha 1) */
-#showcase-row-1 {
-  transform: scaleY(-1);
-  padding-top: 14px;
-  padding-bottom: 0;
-}
-#showcase-row-1 .showcase-grid-track {
-  transform: scaleY(-1);
-}
-
-/* Barra de Rolagem Horizontal na BASE para a Sequência 2 (Linha 2) */
-#showcase-row-2 {
-  padding-top: 0;
-  padding-bottom: 14px;
+#showcase-row-2 .showcase-grid-track {
+  transform: none;
 }
 
 .showcase-scroll-row:focus-visible {
@@ -2931,35 +2942,36 @@ button, input {
   scroll-behavior: auto;
 }
 
-/* Estilização da Barra de Rolagem Horizontal (Webkit) */
-.showcase-scroll-row::-webkit-scrollbar {
+/* Estilização da Barra de Rolagem Horizontal na Base (Webkit) */
+#showcase-row-2::-webkit-scrollbar {
   height: 6px;
 }
 
-.showcase-scroll-row::-webkit-scrollbar-track {
+#showcase-row-2::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 999px;
   margin: 0 clamp(20px, 8vw, 90px);
 }
 
-.showcase-scroll-row::-webkit-scrollbar-thumb {
+#showcase-row-2::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-.showcase-scroll-row::-webkit-scrollbar-thumb:hover {
+#showcase-row-2::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 }
 
-/* Grid Track com 4 Colunas Ampliadas Lateralmente (3 Visíveis + 4º Parcialmente Cortado) */
+/* Grid Track com Banners de Tela a Tela Lateralmente Conforme Foto 2 */
 .showcase-grid-track {
   display: grid;
-  grid-template-columns: repeat(4, clamp(340px, 30.5vw, 440px));
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
   gap: 16px;
-  min-width: 100%;
-  width: max-content;
+  min-width: 1080px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Cards Quadrados 1:1 */

@@ -636,7 +636,15 @@
   - Superfície dark glassmorphism em degradê cinza translúcido fosco com desfoque e fade progressivo na base, exatamente idêntico à Foto 1 de referência.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 78 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 78 — Remoção da Barra de Rolagem Superior, Posicionamento na Base e Galeria de Tela a Tela Lateralmente (Conforme Foto 2)**
+  - Remoção completa da barra de rolagem horizontal do topo da Linha 1 (`#showcase-row-1`), retirando o `scaleY(-1)` e despoluindo a margem superior da vitrine.
+  - Posicionamento da barra de rolagem horizontal na base inferior da galeria (`#showcase-row-2`), com trilha fina e thumb translúcido acetinado.
+  - Sincronização dinâmica de rolagem bidirecional em tempo real entre Linha 1 e Linha 2 em `main.js`, garantindo navegação integrada e fluida.
+  - Expansão da galeria `.showcase-gallery` para layout *full-width* de tela a tela lateralmente (`width: 100%; max-width: 100%; padding: 0 clamp(12px, 1.8vw, 24px)`).
+  - Calibração do grid track `.showcase-grid-track` com 4 colunas proporcionais cobrindo de ponta a ponta a viewport lateralmente no desktop (`grid-template-columns: repeat(4, minmax(260px, 1fr))`), exatamente idêntico à Foto 2.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 79 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
