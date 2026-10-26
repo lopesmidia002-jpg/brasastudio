@@ -73,6 +73,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - O 5º, 6º, 7º e 8º ícones ficam ocultos além da margem direita e são exibidos de forma fluida conforme o usuário rola a barra.
   - Scrollbar visível e estilizada com gradiente âmbar neon (`#ff7a3d` a `#ff5a1f`), curvatura arredondada (9999px) e sombra luminosa, oferecendo affordance intuitiva tanto em mouse quanto em touch e teclado.
 
+### 2.10 Card de Preview Compacto Estático e Rosa dos Ventos Ampliada (Passo 16)
+- **Problema/Objetivo:** O card de preview na primeira dobra visual apresentava escala excessiva e efeitos dinâmicos ao passar o mouse (hover translateY, mudança de cor do botão play, pulso contínuo), divergindo da segunda foto de referência que exibia o card mais compacto, 100% estático e uma rosa dos ventos substancialmente ampliada no canto inferior direito.
+- **Decisão e Implementação:**
+  - Reduzida a largura do card `.preview--hero` de 380px para 285px (`width: min(100%, 285px); flex: 0 1 285px;`), recuando a imagem para proporção harmoniosa.
+  - Convertida a tag de link interativo `<a>` para `<div>`, adicionando `pointer-events: none` e removendo quaisquer elevações ou alterações de cor/escala ao passar o mouse (`transform: none`, `transition: none`).
+  - Ampliadas as dimensões da rosa dos ventos vetorial (`.spark-compass-wrap`) para 260px x 260px com `bottom: -58px` e `right: -52px`, cobrindo de forma destacada o quadrante inferior direito do card com seus eixos de mira, círculos astronômicos concêntricos e estrela alaranjada.
+  - Desativada a animação de pulso contínuo (`animation: none;`), garantindo renderização nítida, estável e 100% estática.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
