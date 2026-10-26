@@ -1101,36 +1101,9 @@ button, input {
   background-image: none !important;
 }
 
-/* Painéis / Asas geométricas laterais em degradê âmbar/bronze sutil idênticas à Foto 2 */
+/* Remoção total de fundos, asas e reflexos alaranjados para fundo preto 100% sólido */
 .results-backdrop {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.stage-wing {
-  position: absolute;
-  top: clamp(155px, 19vw, 210px);
-  height: clamp(270px, 32vw, 410px);
-  width: clamp(210px, 24vw, 360px);
-  pointer-events: none;
-  border-top: 1px solid rgba(255, 115, 45, 0.45);
-}
-
-.stage-wing--left {
-  left: 0;
-  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%);
-  /* Degradê alaranjado/âmbar bronze com profundidade e fusão suave ao preto idêntico à Foto 2 */
-  background: linear-gradient(135deg, rgba(175, 55, 15, 0.35) 0%, rgba(105, 30, 8, 0.22) 36%, rgba(30, 10, 4, 0.08) 75%, transparent 100%);
-}
-
-.stage-wing--right {
-  right: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
-  /* Degradê simétrico para a asa direita */
-  background: linear-gradient(225deg, rgba(175, 55, 15, 0.35) 0%, rgba(105, 30, 8, 0.22) 36%, rgba(30, 10, 4, 0.08) 75%, transparent 100%);
+  display: none !important;
 }
 
 .results-head {
@@ -1184,7 +1157,7 @@ button, input {
   letter-spacing: -0.01em;
 }
 
-/* Botão no tom vermelho-laranja brasa idêntico à Foto 2 */
+/* Botão no tom vermelho-laranja brasa com sombra neutra sem vazamento alaranjado */
 .btn--results {
   background: linear-gradient(135deg, #d84518 0%, #b82b08 100%) !important;
   color: #ffffff !important;
@@ -1193,12 +1166,12 @@ button, input {
   padding: 0.9rem 2.2rem !important;
   font-weight: 600 !important;
   font-size: 0.95rem !important;
-  box-shadow: 0 10px 28px -4px rgba(200, 56, 21, 0.6) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important;
   transition: all var(--trans-normal) !important;
 }
 .btn--results:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 14px 34px -4px rgba(220, 65, 25, 0.8) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7) !important;
 }
 
 /* Container com rolagem horizontal livre e barra personalizada branca pura (sem rolagem automática) */

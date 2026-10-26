@@ -164,6 +164,12 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Tipografia e Título Principal (`.title--results`):** Adotada a fonte `Inter` com fallbacks neo-grotescos modernos, escala display (`clamp(3rem, 5.8vw, 4.6rem)`), peso `500` (médio/regular), alinhamento centralizado, entrelinha de 1.12 e degradê vertical do `#FFFFFF` ao `#A0A0A0` aplicado com `-webkit-background-clip: text` e `color: transparent`, sem sombras ou relevos pesados.
   - **Subtítulo / Lead (`.text--results`):** Configurado com tamanho proporcional de 25% a 30% do título (`clamp(1rem, 1.4vw, 1.18rem)`), tom cinza claro azulado/dessaturado suave (`#949ca8`), peso regular (`font-weight: 400`), entrelinha confortável de `1.65` e alinhamento centralizado.
 
+### 2.22 Remoção Total de Fundos, Asas e Reflexos Alaranjados em Resultados (Passo 28)
+- **Problema/Objetivo:** O usuário solicitou retirar todo o fundo alaranjado da seção Resultados, tornando a imagem 100% escura e sem vazamento de luz quente.
+- **Decisão e Implementação:**
+  - **Desativação do Backdrop com Asas:** Aplicado `.results-backdrop { display: none !important; }`, eliminando os painéis poligonais laterais que emitiam gradientes âmbar/alaranjados (`rgba(175, 55, 15, 0.35)`) e bordas iluminadas.
+  - **Eliminação de Halos e Sombra do Botão:** O botão `.btn--results` teve sua sombra reconfigurada para tom escuro neutro (`box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5)`), erradicando qualquer halo alaranjado e consolidando o visual preto sólido puro e limpo em toda a seção.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

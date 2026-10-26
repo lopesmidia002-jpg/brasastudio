@@ -166,4 +166,9 @@
   - Título principal (`.title--results`) em tamanho display grande com peso regular a médio (`font-weight: 500`), alinhamento centralizado e degradê vertical sutil do branco puro `#FFFFFF` no topo ao cinza médio/prateado suave `#A0A0A0` na base via `background-clip: text`, livre de sombras ou relevos pesados.
   - Subtítulo / corpo (`.text--results`) calibrado para 25% a 30% da escala do título, cor cinza claro ligeiramente dessaturado/azulado (`#949ca8`), peso regular (`font-weight: 400`), entrelinha confortável (`line-height: 1.65`) e alinhamento centralizado.
 
+- [x] **Passo 28 — Remoção Total de Fundos, Asas e Reflexos Alaranjados em Resultados**
+  - Desativação completa do container de backdrop com asas laterais (`.results-backdrop { display: none !important; }`), eliminando gradientes alaranjados, bronze e bordas âmbar da seção.
+  - Ajuste da sombra do botão `.btn--results` para dispersão neutra escura (`rgba(0, 0, 0, 0.5)`), removendo o halo alaranjado e garantindo fundo 100% preto sólido e puro em toda a área de Resultados.
+
+
 
