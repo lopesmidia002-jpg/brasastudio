@@ -220,3 +220,11 @@
   - Preservação estrita das fotos e proporções nativas sem alteração de arquivos de imagem conforme solicitação do usuário.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 36 — Fundo Preto Puro, Feixes de Luz Volumétricos, Tag Status e Grafia Monocromática em Diferenciais conforme Fotos 2, 3 e 4**
+  - Remoção total de halos ou efeitos alaranjados difusos do fundo de `#diferenciais`, estabelecendo fundo 100% preto sólido (`#000000`).
+  - Implementação do efeito *Volumetric Light Beams* (feixes de luz/focos angulares) nas laterais esquerda e direita (`.feature-beam--left` e `.feature-beam--right` com corte diagonal em 48%, borda superior iluminada `1px solid rgba(255, 120, 50, 0.48)` e degradê bronze/âmbar suave que se dissipa no centro escuro) idêntico à Foto 2.
+  - Substituição da tag simples pela tag de status da Foto 3 (`.tag-status--features`): pílula escura de cantos arredondados (10px), ponto quadrado laranja vibrante (`#ff5a1f`) com glow de 8px e reflexo de luz âmbar no topo da borda.
+  - Aplicação da grafia exata da Foto 4 no título display (`.title--features`): "Recursos de estúdio grande" na primeira linha e "com atenção de ateliê." na segunda linha com tipografia elegante de peso regular/médio (500) e degradê sutil monocromático de branco puro para cinza prateado, eliminando completamente a cor laranja da segunda linha.
+  - Ajuste do subtítulo em cinza claro e do botão "Conheça a Brasa" com fundo terracota suave e glow inferior.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+

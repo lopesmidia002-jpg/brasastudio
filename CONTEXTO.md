@@ -240,6 +240,16 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Integridade das Imagens:** As fotos originais e seus caminhos foram integralmente mantidos intactos, alterando estritamente os banners conforme requisitado.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.30 Fundo Preto Puro, Feixes de Luz Volumétricos, Tag Status e Grafia Monocromática em Diferenciais conforme Fotos 2, 3 e 4 (Passo 36)
+- **Problema/Objetivo:** O usuário solicitou retirar o efeito alaranjado do fundo da seção Diferenciais deixando-o totalmente preto, adicionar o efeito *Volumetric Light Beams* (feixes de luz / focos angulares com formas trapezoidais diagonais nas laterais esquerda e direita que se dissipam no centro escuro) idêntico à Foto 2, mudar os ícones/tag para o padrão da Foto 3 (pílula com ponto quadrado laranja e reflexo âmbar no topo da borda), e colocar a mesma grafia e tipografia da Foto 4 (título display em duas linhas monocromáticas sem texto laranja).
+- **Decisão e Implementação:**
+  - **Fundo Totalmente Preto Puro (`#000000`):** Desativado o pseudo-elemento `.glow-sides::before` que projetava halo alaranjado centralizado no cabeçalho e fixado `background-color: #000000 !important;` na seção `.features`.
+  - **Feixes de Luz Volumétricos (`.features-backdrop`):** Criado contêiner de feixes com duas formas angulares/trapezoidais (`.feature-beam--left` e `.feature-beam--right`). Utilizado `clip-path: polygon(...)` com corte inclinado em 48%, borda superior iluminada `1px solid rgba(255, 120, 50, 0.48)` e sombra difusa quente, preenchido com gradiente bronze/âmbar suave (`linear-gradient(135deg, rgba(185, 60, 16, 0.42) 0%, ..., transparent 100%)`) simulando focos luminosos laterais que se dissipam harmonicamente no centro escuro idênticos à Foto 2.
+  - **Tag de Status da Foto 3 (`.tag-status--features`):** Substituído o `<p class="eyebrow">` por pílula estilizada translúcida com borda de 10px, contorno fino, reflexo difuso âmbar no topo (`radial-gradient` a 50% -10% e `border-top: 1px solid rgba(255, 120, 45, 0.7)`), ponto quadrado laranja vibrante `#ff5a1f` com halo de 8px e tipografia em branco puro.
+  - **Grafia Monocromática da Foto 4 (`.title--features`):** Título formatado em display regular a médio (500), fonte sem serifa neo-grotesca (`Inter`), dividido em "Recursos de estúdio grande" na primeira linha e "com atenção de ateliê." na segunda linha, ambas com degradê prateado suave (de `#FFFFFF` para `#B0B0B8` / `#A8A8B2`), eliminando qualquer cor alaranjada no título conforme a Foto 4.
+  - **Subtítulo e Botão de Ação:** Subtítulo refinado em cinza suave `#8e8e96` com entrelinha 1.62 e botão "Conheça a Brasa" estilizado em gradiente terracota suave com glow inferior idêntico à Foto 2.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

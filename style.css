@@ -1625,8 +1625,161 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   8. SEÇÃO DIFERENCIAIS — CARDS REFINADOS CONFORME FOTO 2 DE REFERÊNCIA
+   8. SEÇÃO DIFERENCIAIS — REFATORAÇÃO VISUAL CONFORME FOTOS 2, 3 E 4
    -------------------------------------------------------------------------- */
+.features {
+  background-color: #000000 !important; /* Fundo 100% preto puro sem efeito alaranjado conforme Foto 2 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Desativação de qualquer halo ou brilho alaranjado central */
+.features .glow-sides::before,
+.head--features::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Feixes de Luz Volumétricos (Volumetric Light Beams / Focos Angulares) nas laterais idênticos à Foto 2 */
+.features-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.feature-beam {
+  position: absolute;
+  top: clamp(80px, 9vw, 125px);
+  height: clamp(280px, 32vw, 420px);
+  width: clamp(240px, 26vw, 390px);
+  pointer-events: none;
+  border-top: 1px solid rgba(255, 120, 50, 0.48);
+  box-shadow: 0 -2px 14px rgba(255, 90, 31, 0.18);
+}
+
+.feature-beam--left {
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%);
+  background: linear-gradient(135deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
+}
+
+.feature-beam--right {
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
+  background: linear-gradient(225deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
+}
+
+.head--features {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Tag Status da Foto 3: Pílula escura com quadradinho laranja e clarão âmbar no topo */
+.tag-status--features {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  background-image: radial-gradient(ellipse 65% 55% at 50% -10%, rgba(255, 95, 30, 0.6) 0%, rgba(255, 95, 30, 0.15) 50%, transparent 75%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 120, 45, 0.7);
+  padding: 0.35rem 1rem;
+  border-radius: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 12px rgba(255, 90, 31, 0.22);
+}
+
+.tag-status--features .dot {
+  width: 7px;
+  height: 7px;
+  background: #ff5a1f;
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 90, 31, 0.95);
+  flex-shrink: 0;
+}
+
+/* Tipografia / Grafia idêntica à Foto 4 */
+.title--features {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
+  font-size: clamp(2.35rem, 4.4vw, 3.6rem);
+  font-weight: 500; /* Regular a médio elegante conforme Foto 4 */
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 1.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title--features .title-line-1 {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8E8EC 55%, #B0B0B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.title--features .title-line-2 {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E0E0E6 55%, #A8A8B2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  /* Sem laranja conforme Foto 4 */
+}
+
+/* Subtítulo da Foto 4 */
+.text--features {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.62;
+  color: #8e8e96; /* Cinza suave e legível */
+  max-width: 620px;
+  margin: 0 auto 2.2rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Botão "Conheça a Brasa" com glow suave da Foto 2 */
+.btn--features {
+  background: linear-gradient(135deg, #d84518 0%, #b8320c 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem 1.85rem !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 8px 24px rgba(216, 69, 24, 0.4) !important;
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn--features:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(216, 69, 24, 0.6) !important;
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
