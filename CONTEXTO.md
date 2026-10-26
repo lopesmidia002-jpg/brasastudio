@@ -371,6 +371,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Linha de Luz Superior:** Refinada a borda superior (`border-top: 1px solid rgba(255, 255, 255, 0.24)`) com iluminação de acento interno de 1px.
   - **Execução e Validação Docker:** Validada a renderização em `http://localhost:3000/` com status HTTP 200 OK.
 
+### 2.44 Calibração das Caixas de Texto (Pills) de Por Que a Brasa Conforme Foto 2 (Passo 50)
+- **Problema/Objetivo:** O usuário apontou que as caixas de texto (pílulas de benefícios) estavam diferentes da imagem de referência e solicitou corrigi-las para ficarem exatamente iguais à segunda imagem, com fundo mais claro e letras mais finas ("as caizas de textos estao diferentes da imagem de referencia corrija, deixe exatamente igual ao da segunda imagem, com fundo mais claros e letras mais finas").
+- **Decisão e Implementação:**
+  - **Fundo Mais Claro (`.pill-item`):** A superfície de fundo foi ajustada de `#0d0e14` (muito escuro/preto) para `#15161c`, criando o tom grafite sutil e nítido extraído da referência visual enviada pelo usuário, com contorno fino suave `1px solid rgba(255, 255, 255, 0.15)`.
+  - **Letras Mais Finas:** A tipografia das pílulas foi calibrada para peso regular (`font-weight: 400`), eliminando o negrito pesado anterior (`700`), com cor suave legível `#b0b3bf`.
+  - **Organização e Quebra de Linha Fiel à Referência:** Foi adicionado o elemento flexível `.pill-break` em `index.html` entre "Personalizável" e "Escalável", garantindo exatamente 5 itens na primeira linha e 6 itens na segunda linha com o botão de CTA "Fale agora" perfeitamente alinhado.
+  - **Botão Fale Agora:** Tipografia refinada para peso médio fino (`font-weight: 500`), texto preto nítido `#000000` sobre pílula branca `#ffffff` com cantos arredondados de 9px.
+  - **Execução e Validação Docker:** Verificada a renderização e carregamento sem erros no container Docker na porta 3000 retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

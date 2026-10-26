@@ -318,6 +318,15 @@
   - Linha de luz superior refinada (`border-top: 1px solid rgba(255, 255, 255, 0.24)`) com iluminação interna suave de 1px.
   - Validação da renderização e execução no container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
+- [x] **Passo 50 — Calibração das Caixas de Texto (Pills) de Por Que a Brasa Conforme Foto 2**
+  - Ajuste da cor de fundo das pílulas para uma tonalidade grafite mais clara (`#15161c` / `#17181c`) com contorno fino suave `1px solid rgba(255, 255, 255, 0.15)`.
+  - Ajuste da tipografia para letras mais finas de peso regular (`font-weight: 400`), eliminando o negrito pesado anterior.
+  - Calibração da cor do texto para cinza claro suave e nítido (`#b0b3bf`).
+  - Estruturação da quebra de linha idêntica à Foto 2 (5 itens na linha 1 e 6 itens na linha 2) através de elemento `li.pill-break`.
+  - Refinamento do botão "Fale agora" em pílula sólida branca (`#ffffff`) com tipografia preta fina (`font-weight: 500`).
+  - Validação da renderização no container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+
 
 
 
