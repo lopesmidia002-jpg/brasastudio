@@ -227,6 +227,17 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Pílulas Retangulares Arredondadas idênticas à Foto 3 (`.step .pills li`):** Substituído o raio oval de 9999px pelo formato retangular com cantos suaves de 8px (`border-radius: 8px`), fundo escuro `#111218`, contorno fino `1px solid rgba(255, 255, 255, 0.1)` e texto cinza claro `#d1d5db` idêntico à Foto 3, aplicado uniformemente a todas as pílulas dos 3 banners.
   - **Badges de Etapa e Botão de Ação:** Badges no canto superior direito (`.step .pill--dark`) padronizadas com o mesmo raio de 8px e botão "Agendar conversa" calibrado com raio de 12px e glow quente inferior.
   - **Tipografia:** Títulos das etapas ajustados para `1.22rem` (peso 700 em branco puro) e textos descritivos em `0.88rem` / `#8e8e96` com entrelinha de 1.55.
+
+### 2.29 Compactação do Banner Informativo, Cor Escura Sólida, Hover Neutro e Fotos Estáticas em Resultados conforme Foto 2 (Passo 35)
+- **Problema/Objetivo:** O usuário solicitou diminuir o banner informativo de Resultados para ficar idêntico ao da Foto 2 de referência, alterar a cor com base na Foto 2, remover o efeito alaranjado ao passar o mouse e deixar as fotos 100% estáticas, ressaltando expressamente a instrução: "nao altere as fotos somente os banners que assim solicirados".
+- **Decisão e Implementação:**
+  - **Banner Informativo Compacto (`.case-box`):** Reduzido o padding para `0.95rem 1.15rem 1.15rem`, diminuído o espaçamento interno para `gap: 0.52rem`, cantos arredondados de 18px e ajustada a sobreposição para `margin-top: -38px`. Isso tornou o bloco de informações consideravelmente mais baixo e compacto, valorizando a fotografia sem cobrir o assunto principal.
+  - **Fundo Escuro Sólido e Refinado:** Aplicado `#07080c` no banner informativo (`.case-box`) e `#06070a` no card container (`.case`) com contorno sutil `1px solid rgba(255, 255, 255, 0.07)`, conferindo a estética escura profunda e limpa da Foto 2.
+  - **Remoção Completa do Hover Alaranjado (`.case:hover`):** Eliminadas as propriedades de `border-color: rgba(255, 90, 31, 0.45)` e `box-shadow` alaranjados, adotando transição neutra e sóbria com `border-color: rgba(255, 255, 255, 0.16)` e sombra preta aveludada.
+  - **Fotografias 100% Estáticas:** Desativada qualquer transição ou ampliação no cursor (`.case-img img` e `.case:hover .case-img img` com `transform: none !important; transition: none !important;`).
+  - **Pílulas Retangulares Arredondadas (`.case .pills li`):** Cantos definidos em `border-radius: 8px`, fundo escuro `#101117`, contorno discreto e texto cinza claro `#c5c5cf` idêntico à Foto 2.
+  - **Tipografia e Badges:** Títulos calibrados em `1.12rem`, badges em pílulas retangulares de 5px e descrições em `0.82rem` / `#82828a`.
+  - **Integridade das Imagens:** As fotos originais e seus caminhos foram integralmente mantidos intactos, alterando estritamente os banners conforme requisitado.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
 ---

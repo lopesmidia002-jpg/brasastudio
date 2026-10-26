@@ -211,3 +211,12 @@
   - Badges de etapa no canto superior direito ajustadas para o mesmo formato retangular arredondado (`border-radius: 8px`) e botão "Agendar conversa" calibrado com raio de 12px.
   - Reconstrução e validação do container Docker na porta 3000 com HTTP 200 OK.
 
+- [x] **Passo 35 — Compactação do Banner Informativo, Cor Escura Sólida, Hover Neutro e Fotos Estáticas em Resultados conforme Foto 2**
+  - Redução das dimensões do banner informativo (`.case-box` com padding de `0.95rem 1.15rem 1.15rem`, espaçamento de `0.52rem` e sobreposição contida `margin-top: -38px`), tornando o box visivelmente menor e deixando a fotografia superior em maior evidência conforme a Foto 2.
+  - Aplicação de cor escura profunda e refinada nos cartões (`#06070a` no contêiner `.case` e `#07080c` no banner informativo `.case-box` com contorno suave `1px solid rgba(255, 255, 255, 0.07)`).
+  - Remoção completa do efeito alaranjado de hover do mouse (`.case:hover` sem borda ou sombra alaranjada, transicionando exclusivamente com contorno neutro translúcido `rgba(255, 255, 255, 0.16)` e sombra escura).
+  - Fotos 100% estáticas (`.case-img img` e `.case:hover .case-img img` com `transform: none !important; transition: none !important;`), sem efeito de zoom ou escala ao passar o cursor.
+  - Pílulas de resultados em formato retangular arredondado (`border-radius: 8px`), fundo `#101117` e tipografia calibrada idêntica à Foto 2.
+  - Preservação estrita das fotos e proporções nativas sem alteração de arquivos de imagem conforme solicitação do usuário.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
