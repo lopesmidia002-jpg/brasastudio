@@ -180,7 +180,9 @@
   - Calibração da rosa dos ventos da Etapa 3 conforme a Foto 5: estrela central de 4 pontas em degradê quente âmbar/laranja (`#ff9d5c` a `#9e2808`) com círculos astronômicos e miras em bronze/âmbar com glow sutil.
   - Pílulas de entregáveis com texto em cinza claro refinado (`#c8c8d2`) idênticas à Foto 3 e pill de etapa com texto branco nítido conforme a Foto 4.
 
-
-
-
-
+- [x] **Passo 31 — Formato Quadrado dos Banners e Enquadramento das Fotos de Resultados conforme Foto 2**
+  - Calibração das dimensões dos banners `.case` para formato quadrado padronizado (`flex: 0 0 clamp(360px, 32vw, 420px); width: clamp(360px, 32vw, 420px);`), eliminando o aspecto de fita vertical esticada e harmonizando largura e altura total em torno de 1:1.
+  - Correção da proporção das fotos (`.case-img` com `aspect-ratio: 880 / 555`) preservando a escala fotográfica natural e evitando qualquer corte indevido de detalhes centrais (xícara com grãos flutuando e vapor, vaso de cerâmica, anel de ouro e bicicleta urbana).
+  - Ajuste da sobreposição do card de texto inferior (`.case-box` com `margin-top: -48px`, padding compacto `1.25rem 1.35rem 1.45rem`), mantendo respiro superior amplo nas fotos e acabamento proporcional fiel à Foto 2 de referência.
+  - Atualização dos atributos intrínsecos `height="555"` nas tags `<img>` dos cases em `index.html`.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.

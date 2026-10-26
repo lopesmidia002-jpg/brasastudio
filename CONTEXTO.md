@@ -184,6 +184,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Rosa dos Ventos Âmbar/Laranja Brasa:** Substituídos os tons dourados/amarelados anteriores pelo gradiente quente âmbar/laranja (`#ff9d5c` a `#9e2808`) na estrela central de 4 pontas, miras e círculos concêntricos finos em tom bronze/âmbar com glow difuso quente.
   - **Pílulas de Informação e Etapa:** Texto das pílulas de entregáveis ajustado para tom cinza claro suave (`#c8c8d2`) idêntico à Foto 3 ("Plano de projeto") e pílula escura de identificação da etapa com texto branco nítido conforme a Foto 4 ("Etapa 1").
 
+### 2.25 Formato Quadrado dos Banners e Enquadramento das Fotos de Resultados conforme Foto 2 (Passo 31)
+- **Problema/Objetivo:** O usuário solicitou que as fotos dos banners fiquem no padrão semelhante à segunda foto (Torra Rubi) e que os banners adotem formato quadrado, sem o aspecto alongado/cortado visualizado anteriormente.
+- **Decisão e Implementação:**
+  - **Dimensões e Proporção Quadrada dos Banners (`.case`):** Ajustada a largura base dos cards para `clamp(360px, 32vw, 420px)` com bordas de raio `28px` e padding de respiro de `10px 10px 12px 10px`. Com a nova altura calculada do conjunto foto + box sobreposto (~410px a 430px), o banner atinge uma silhueta praticamente 1:1 (quadrada), fiel à proporção da Foto 2 de referência.
+  - **Enquadramento e Aspect Ratio Fotográfico (`.case-img`):** As fotografias originais dos cases possuem resolução nativa 880x555. A aplicação forçada anterior de `aspect-ratio: 1/1` com `object-fit: cover` cortava até 40% das laterais ou comprimia elementos essenciais. Atualizado `.case-img` para `aspect-ratio: 880 / 555`, permitindo que toda a área de imagem (xícara de café com grãos flutuando e vapor, vaso de cerâmica autoral, anel de ouro reciclado e bike urbana) seja exibida com integridade visual e respiro.
+  - **Overlap Balanceado do Card Informativo (`.case-box`):** A margem superior de sobreposição foi calibrada para `-48px` com padding enxuto de `1.25rem 1.35rem 1.45rem` e gap de `0.72rem`. Isso faz o banner informativo sobrepor suavemente apenas a base escura da mesa, deixando a xícara inteira e os detalhes centrais da foto em destaque.
+  - **Atributos de Imagem em `index.html`:** Atualizado o atributo intrínseco `height="880"` para `height="555"` nas tags `<img>` dos 4 cases para refletir as dimensões reais e evitar qualquer oscilação de layout (CLS).
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
