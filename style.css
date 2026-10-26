@@ -1346,28 +1346,62 @@ button, input {
   align-items: flex-start;
 }
 
-.eyebrow--process {
-  color: #ff5a1f !important;
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.85rem;
+.tag-status--process {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  /* Clarão de luz âmbar superior no topo da pílula exatamente conforme a Foto 3 */
+  background-image: radial-gradient(ellipse 65% 55% at 50% -10%, rgba(255, 95, 30, 0.6) 0%, rgba(255, 95, 30, 0.15) 50%, transparent 75%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 120, 45, 0.7);
+  padding: 0.35rem 1rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.6rem;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 12px rgba(255, 90, 31, 0.22);
+}
+
+.tag-status--process .dot {
+  width: 7px;
+  height: 7px;
+  background: #ff5a1f;
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 90, 31, 0.95);
+  flex-shrink: 0;
 }
 
 .title--process {
   font-family: var(--font-display);
-  font-size: clamp(2.3rem, 4.2vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.6rem, 4.8vw, 3.8rem);
+  font-weight: 400; /* Tipografia leve e sofisticada idêntica à Foto 2 */
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   color: #ffffff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.4rem;
+}
+.title--process span {
+  display: block;
 }
 
+/* Segunda linha sem atalhos em cinza prata suave monocromático idêntico à Foto 2 */
 .title--process .title-highlight {
-  color: #ff5a1f;
+  color: #8e8e96;
+  font-weight: 400;
+}
+
+.text--process {
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  line-height: 1.62;
+  color: #909096;
+  font-weight: 400;
+  max-width: 520px;
 }
 
 .steps {

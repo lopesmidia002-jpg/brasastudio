@@ -143,3 +143,8 @@
   - Banners dos cases estendidos lateralmente para `clamp(380px, 32vw, 440px)` em largura, garantindo amplitude visual sem cortes laterais indesejados nas fotos (vaso, café, aliança e bike).
   - Proporção do topo do banner em quadrado perfeito 1:1 com cantos superiores arredondados de 24px (`border-radius: 24px 24px 0 0`) e `object-fit: cover`.
   - Calibração de todos os elementos e ícones em tom laranja vibrante (`#ff5a1f`) e badges de destaque (`NOVO` e `RECENTE`) idênticos à Foto 2.
+
+- [x] **Passo 24 — Refinamento do Cabeçalho da Seção Como Trabalhamos (Tag com Luz Âmbar e Cores Monocromáticas da Foto 2 e 3)**
+  - Implementação da tag de status em pílula `Como trabalhamos` com ponto quadrado laranja (`#ff5a1f`) com glow e efeito de iluminação âmbar superior no topo da borda idêntico à Foto 3.
+  - Substituição da cor laranja no título: "Do briefing ao ar," em branco puro (`#ffffff`) e "sem atalhos." em cinza prata suave (`#8e8e96`), com tipografia leve e aberta (`font-weight: 400`, `letter-spacing: -0.025em`) conforme a Foto 2.
+  - Lead em cinza suave e harmonizado (`#909096`).

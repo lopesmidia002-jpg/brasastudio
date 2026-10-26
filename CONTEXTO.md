@@ -135,6 +135,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Banners Quadrados sem Cortes:** O container `.case-img` foi calibrado em proporção quadrada perfeita (`aspect-ratio: 1 / 1`) com cantos superiores arredondados em 24px (`border-radius: 24px 24px 0 0`) e `object-fit: cover`, garantindo enquadramento completo e harmonioso das imagens (vaso de cerâmica, café, joia e bicicleta).
   - **Padronização de Ícones e Badges:** Os ícones `.case-mark` foram padronizados na cor laranja vibrante `#ff5a1f` com o terceiro ícone (Âmbar Joias) ajustado para o losango com ponto no centro, e os badges `NOVO` e `RECENTE` calibrados em tom vibrante `#ff5a1f`.
 
+### 2.18 Refinamento do Cabeçalho da Seção Como Trabalhamos (Passo 24)
+- **Problema/Objetivo:** O usuário solicitou alterar as cores de texto da seção Como Trabalhamos e modificar o elemento "COMO TRABALHAMOS" para uma tag de status exatamente igual à Foto 2, tendo como referência de detalhe a Foto 3 (pílula com ponto quadrado laranja e luz âmbar superior).
+- **Decisão e Implementação:**
+  - **Tag de Status (`.tag-status--process`):** Criada a pílula de status substituindo o eyebrow de texto cru. O container foi configurado com cantos arredondados de 10px, borda cinza translúcida e uma sutil iluminação âmbar superior no topo (`border-top: 1px solid rgba(255, 120, 45, 0.7)` e `background-image: radial-gradient(ellipse 65% 55% at 50% -10%, rgba(255, 95, 30, 0.6) 0%, transparent 75%)`) idêntica à Foto 3, contendo o ponto quadrado laranja `#ff5a1f` com glow e o texto "Como trabalhamos" em branco puro `#ffffff`.
+  - **Cores e Tipografia da Headline (`.title--process`):** Removido o tom laranja em "sem atalhos.". A headline foi calibrada para peso leve (`font-weight: 400`, `letter-spacing: -0.025em`) com a primeira linha ("Do briefing ao ar,") em branco puro `#ffffff` e a segunda ("sem atalhos.") em cinza prata suave monocromático `#8e8e96`, estabelecendo o visual limpo, sofisticado e idêntico à Foto 2.
+  - **Lead Textual:** Texto descritivo ajustado em tom cinza suave legível `#909096`.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
