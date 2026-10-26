@@ -295,6 +295,13 @@
   - Os outros 2 ícones parceiros (Marca 5: losango vazado oco e Marca 6: grade 2x2 de círculos) ficam ocultos à direita e são revelados suavemente assim que o usuário aciona a rolagem horizontal pela barra branca estilizada.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 47 — Correção de Enquadramento e Remoção de Artefato de Moldura no Banner de Âmbar Joias**
+  - Identificada a causa raiz do desalinhamento: o arquivo original continha uma moldura curva escura de mockup gravada no canto superior esquerdo e topo, além do anel estar deslocado para a base.
+  - Regeneração fotográfica de alta definição com enquadramento centralizado do anel de ouro martelado sobre pedra vulcânica sob luz dourada e atmosfera quente, sem bordas ou molduras externas.
+  - Processamento e substituição dos assets `caso-ambar-joias-880.webp`, `caso-ambar-joias-880.avif`, `caso-ambar-joias-440.webp` e `caso-ambar-joias-440.avif` em proporção nativa `880x555` com foco nítido e respiro perfeito acima do `.case-box`.
+  - Validação de entrega dos assets e renderização no container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
 
 
 

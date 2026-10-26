@@ -335,6 +335,17 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Comportamento Visual Resultante:** Inicialmente apenas os 4 primeiros ícones (círculo, triângulo, cúpula com base e ondas duplas) são enquadrados perfeitamente no visor. Os 2 ícones finais (losango vazado e grade 2x2 de círculos) ficam ocultos à direita e deslizam para dentro da visão suavemente assim que o usuário movimenta a barra de rolagem branca personalizada.
   - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
 
+### 2.41 Correção de Enquadramento e Remoção de Artefatos no Banner de Âmbar Joias (Passo 47)
+- **Problema/Objetivo:** O usuário apontou que o banner de Âmbar Joias estava fora de enquadramento ("CORRIJA ESTE BANNER a imagem esta fora de enquadramento"), enviando uma captura destacando a borda superior/esquerda distorcida e a imagem do anel deslocada.
+- **Investigação da Causa Raiz:**
+  - Ao inspecionar os arquivos originais (`assets/img/caso-ambar-joias-880.webp`), constatou-se que a própria imagem continha uma moldura curva escura de card/mockup gravada dentro do bitmap (colunas de pixels pretos e borda arredondada nos cantos superior e esquerdo), criando a ilusão de um card duplo desencaixado dentro do contêiner.
+  - Além disso, o anel estava posicionado muito próximo da base inferior da foto, ficando parcialmente cortado pela sobreposição do `.case-box` (-38px).
+- **Decisão e Implementação:**
+  - **Regeneração Fotográfica:** Produzida nova imagem cinematográfica de macro de um anel artesanal de ouro martelado sobre rocha vulcânica escura com iluminação âmbar quente lateral, focada e centralizada, com respiro superior e inferior generoso e 100% livre de bordas, molduras ou marcas de mockup.
+  - **Processamento e Otimização:** Utilizando Pillow (Python), a nova imagem foi recortada com proporção nativa exata de 880x555 (1.585:1) e exportada em múltiplos formatos e resoluções responsivas: `caso-ambar-joias-880.webp`, `caso-ambar-joias-880.avif`, `caso-ambar-joias-440.webp` e `caso-ambar-joias-440.avif`.
+  - **Resultado:** A foto preenche de forma homogênea todo o raio de 18px do `.case-img`, eliminando a borda duplicada e garantindo que o anel dourado fique em perfeito destaque visual logo acima do `.case-box`.
+  - **Execução e Validação Docker:** Verificada a entrega de todos os novos assets com status HTTP 200 OK diretamente no container Docker ativo.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
