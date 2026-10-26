@@ -617,7 +617,12 @@
     - Altura compactada para `clamp(240px, 26vw, 380px)` com degradê cinza sutil translúcido (`rgba(255, 255, 255, 0.05)` a `rgba(20, 22, 28, 0.28)`) e máscara progressiva, exatamente conforme a Foto 2 de referência.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 75 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 75 — Calibração do Ícone de Marca que Vende com Eixos em L e Tendência Ascendente (Idêntico à Foto 1)**
+  - Atualização do SVG do Card 1 em Diferenciais ("Marca que vende PRO"): remoção do retângulo/moldura externa e implementação dos eixos cartesianos em L com linha de tendência em zigue-zague e ponta de seta `↗` (`d="M5 6v13h13 m8 14 3-3 2 2 4-4 M14 9h3v3"`).
+  - Traço calibrado com `stroke-width="2.2"` em tom dourado/âmbar nobre (`#ffa44a`) dentro do botão circular esférico `.icon-orb` com contorno fino âmbar e fundo degradê escuro, perfeitamente alinhado à Foto 1 e Foto 2 de referência.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 76 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

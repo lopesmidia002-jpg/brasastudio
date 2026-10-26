@@ -883,6 +883,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.69 Calibração do Ícone Gráfico de Conversão em Diferenciais (Passo 75)
+- **Solicitação do Usuário:**
+  - Usar o ícone da foto 1 como exemplo e colocá-lo nos banners da segunda foto (seção Diferenciais).
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 2: o primeiro card ("Marca que vende PRO") apresentava um ícone gráfico envolto por um retângulo/moldura `<rect>`, que destoava dos demais ícones circulares.
+  - Na Foto 1 (zoom de referência): o ícone correto possui formato circular limpo, eixos cartesianos ortogonais em formato de L (`M5 6v13h13`) e uma linha de tendência ascendente em zigue-zague finalizando em uma seta diagonal `↗` (`m8 14 3-3 2 2 4-4` com `M14 9h3v3`), com traço dourado/âmbar quente `#ffa44a` de 2.2px de espessura.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Atualizado o SVG do Card 1 em `.feature-top .icon-orb` com os eixos em L e a seta ascendente, eliminando o elemento `<rect>`.
+  - Em `style.css`:
+    - Confirmada a estilização consistente de `.icon-orb` em formato de círculo perfeito (`48x48px`, `border-radius: 50%`, borda fina em âmbar e halo térmico suave).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
