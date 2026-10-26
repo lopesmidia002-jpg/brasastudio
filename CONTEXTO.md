@@ -625,6 +625,43 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.59 Implementação da Galeria em Grid Interativa Dark Mode com 2 Sequências e Barras de Rolagem Conforme Imagem 2 (Passo 65)
+- **Problema/Objetivo:** O usuário solicitou modernizar a galeria de imagens da seção "Lance seu projeto" / Vitrine (`#lancamento` / `.showcase`) para ficar idêntica à segunda imagem enviada:
+  1. *Fundo da Seção:* Dark mode estilo SaaS tech (`#0a0a0a`).
+  2. *Grid Layout & Estrutura:* CSS Grid com 4 colunas e 2 linhas (8 cards no total), organizados em 2 sequências de banners.
+  3. *Card Aspect Ratio:* Proporção 1:1 (quadrado) com largura fluida e responsiva.
+  4. *Bordas & Acabamento:* `border-radius: 18px` (cantos arredondados suaves), `overflow: hidden`, sem contorno visível ou borda sutil `1px solid rgba(255, 255, 255, 0.06)`.
+  5. *Espaçamento (Gap):* Gap de 16px uniforme entre colunas e entre as sequências.
+  6. *Imagens:* Preenchimento completo dos cards com `object-fit: cover`.
+  7. *Duas Barras de Rolagem Horizontais:* Uma barra de rolagem horizontal em cada sequência de banners.
+  8. *Remoção de Rolagem Infinita e Sobresaliência:* Remoção do efeito de rolagem contínua automática (marquee infinito) e da sobresaliência (zoom exagerado) no hover.
+  9. *Física/Interação Antigravity:* Cards como elementos físicos com colisão suave ao hover, levitação sutil (floating effect), resposta elástica ao clique/pressão e resposta elástica ao arraste manual (*drag-to-scroll* com inércia).
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na Imagem 1 anterior: havia duas trilhas de marquee com animação contínua automática cortando os cards nas extremidades, formato retangular largo (`r-9x7`), cards que saltavam agressivamente com zoom (`scale(1.03)`) no hover e sem barras manuais de rolagem.
+  - Na Imagem 2 (solicitada):
+    1. Os 8 cards são exibidos em duas sequências de 4 colunas em **proporção perfeitamente quadrada 1:1** (`aspect-ratio: 1 / 1`), com cantos arredondados de 18px e bordas ultra-sutis de 1px.
+    2. Cada uma das duas sequências possui sua própria barra de rolagem horizontal personalizada (`::-webkit-scrollbar` com altura de 6px, trilha translúcida e thumb acetinado), permitindo rolagem e arraste manual fluido.
+    3. Sem efeito de rolagem infinita automática (os cards ficam firmes e estáveis) e sem sobresaliência exagerada de zoom no hover.
+    4. A interação ganha levitação sutil com física amortecida (`transform: translateY(-4px)`), sombra difusa e resposta elástica ao clique (`transform: scale(0.985)`).
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removidos o checkbox de pausa e as antigas tags de marquee com nós clonados (`.dup`).
+    - Estruturado o container `.showcase-gallery` com duas sequências `.showcase-scroll-row` (`#showcase-row-1` e `#showcase-row-2`), cada uma contendo um grid track com 4 cards quadrados `.gallery-card`.
+    - Ordenação exata conforme a Imagem 2: Linha 1 (cerâmica, café, fachada de loja, mesa de estúdio); Linha 2 (colar de ouro, ciclista ao pôr do sol, tecidos terracota, arquitetura geométrica).
+  - Em `style.css`:
+    - `.sec.showcase`: fundo `#0a0a0a`.
+    - `.showcase-gallery`: flex column com gap uniforme de 16px e padding equilibrado.
+    - `.showcase-scroll-row`: `overflow-x: auto; scroll-behavior: smooth; cursor: grab; user-select: none;` com scrollbar horizontal personalizada de 6px.
+    - `.showcase-grid-track`: grid com `repeat(4, minmax(260px, 1fr))` no mobile/tablet e `repeat(4, 1fr)` no desktop, com `gap: 16px`.
+    - `.gallery-card`: `aspect-ratio: 1 / 1; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.06); background: #0d0d0f;`.
+    - Hover com física Antigravity: `transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 87, 34, 0.12);`.
+    - Clique com resposta elástica: `transform: translateY(-1px) scale(0.985);`.
+  - Em `main.js`:
+    - Implementada a função `initGalleryInteractivity()` com suporte nativo a drag-to-scroll elástico com mouse, cálculo de velocidade, desaceleração com inércia física (`requestAnimationFrame`) e fator de atrito amortecido.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

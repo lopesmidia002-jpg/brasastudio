@@ -2886,11 +2886,133 @@ button, input {
    12. SEÇÃO VITRINE (SHOWCASE / LANCE SEU PROJETO)
    -------------------------------------------------------------------------- */
 .sec.showcase {
-  background-color: #000000;
+  background-color: #0a0a0a;
   position: relative;
   overflow: hidden;
   padding-top: clamp(5rem, 9vw, 8rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(4rem, 7vw, 6rem);
+}
+
+/* --------------------------------------------------------------------------
+   GALERIA EM GRID INTERATIVA ESTILO DARK MODE (FUNDO #0A0A0A)
+   - Grid com 4 colunas e 2 linhas (8 cards no total)
+   - Proporção 1:1 (quadrado) com largura fluida/responsiva
+   - Cantos arredondados de 18px, overflow: hidden, borda de 1px solid rgba(255,255,255,0.06)
+   - Espaçamento de 16px uniforme
+   - Imagens preenchendo completamente com object-fit: cover
+   - Duas barras de rolagem horizontais (uma em cada sequência)
+   - Física Antigravidade: levitação sutil ao hover, resposta elástica e arraste
+   -------------------------------------------------------------------------- */
+.showcase-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3.5vw, 2.5rem);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Sequência de Banners Rolável Horizontalmente com Barra de Rolagem */
+.showcase-scroll-row {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+  padding-bottom: 14px; /* Espaçamento para visualização nítida da scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.28) rgba(255, 255, 255, 0.05);
+}
+
+.showcase-scroll-row:focus-visible {
+  outline: 1px solid rgba(255, 90, 31, 0.5);
+  outline-offset: 4px;
+}
+
+.showcase-scroll-row.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+}
+
+/* Estilização da Barra de Rolagem Horizontal (Webkit) */
+.showcase-scroll-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.showcase-scroll-row::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  margin: 0 clamp(20px, 10vw, 120px);
+}
+
+.showcase-scroll-row::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.showcase-scroll-row::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* Grid Track com 4 Colunas */
+.showcase-grid-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: 16px;
+  min-width: 100%;
+  width: max-content;
+}
+
+@media (min-width: 1120px) {
+  .showcase-grid-track {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Cards Quadrados 1:1 */
+.gallery-card {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0d0d0f;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  transform: translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform, box-shadow;
+}
+
+.gallery-card picture,
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* Física Antigravidade: Levitação suave sem sobresaliência desproporcional */
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 87, 34, 0.12);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Resposta Elástica ao Clique / Pressionar */
+.gallery-card:active {
+  transform: translateY(-1px) scale(0.985);
+  transition-duration: 0.15s;
 }
 
 /* Moldura de Profundidade: Silhuetas e Painéis Angulares Trapezoidais Laterais em Terracota / Marrom-Acobreado */
@@ -3028,36 +3150,7 @@ button, input {
   filter: brightness(1.06);
 }
 
-.marquee--shots {
-  margin: 1.5rem 0;
-}
-.t-shots {
-  gap: 1.5rem;
-  padding: 0.5rem 0;
-}
-
-.shot {
-  flex-shrink: 0;
-  width: 320px;
-}
-
-.shot-frame {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border-card);
-  background: var(--bg-card);
-  padding: 3px;
-  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.85);
-  transition: all var(--trans-normal);
-}
-.shot-frame:hover {
-  border-color: var(--border-hover);
-  transform: scale(1.03);
-}
-
-.shot-img {
-  border-radius: 15px;
-}
+/* Antigos estilos de marquee removidos em prol da galeria interativa */
 
 /* --------------------------------------------------------------------------
    13. SEÇÃO PLANOS

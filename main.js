@@ -405,4 +405,72 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
+  // 15. Galeria Interativa: Drag-to-Scroll com Inércia e Física Amortecida (Antigravidade)
+  const initGalleryInteractivity = () => {
+    const rows = document.querySelectorAll('.showcase-scroll-row');
+    if (!rows.length) return;
+
+    rows.forEach(row => {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let velX = 0;
+      let lastX = 0;
+      let animationFrameId = null;
+
+      const stopMomentum = () => {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      };
+
+      row.addEventListener('mousedown', (e) => {
+        isDown = true;
+        row.classList.add('is-dragging');
+        startX = e.pageX - row.offsetLeft;
+        scrollLeft = row.scrollLeft;
+        lastX = e.pageX;
+        velX = 0;
+        stopMomentum();
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        row.classList.remove('is-dragging');
+
+        // Física de inércia suave
+        const momentum = () => {
+          if (Math.abs(velX) > 0.6) {
+            row.scrollLeft -= velX;
+            velX *= 0.94; // Fator de atrito amortecido
+            animationFrameId = requestAnimationFrame(momentum);
+          } else {
+            stopMomentum();
+          }
+        };
+        momentum();
+      });
+
+      row.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - row.offsetLeft;
+        const walk = (x - startX) * 1.25; // Sensibilidade equilibrada
+        velX = e.pageX - lastX;
+        lastX = e.pageX;
+        row.scrollLeft = scrollLeft - walk;
+      });
+
+      row.addEventListener('mouseleave', () => {
+        if (isDown) {
+          isDown = false;
+          row.classList.remove('is-dragging');
+        }
+      });
+    });
+  };
+
+  initGalleryInteractivity();
 });

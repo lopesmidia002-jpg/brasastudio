@@ -497,7 +497,30 @@
     - Ilustração vetorial com círculos concêntricos pontilhados e contínuos, eixos ortogonais e diagonais, e estrela central de 4 pontas preenchida com gradiente laranja suave (`#svc-bottom-star`), emitindo glow difuso avermelhado no fundo.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 65 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 65 — Implementação da Galeria em Grid Interativa Dark Mode com 2 Linhas e Rolagem Horizontal (Idêntico à Foto 2)**
+  - Fundo da seção calibrado em dark mode `#0a0a0a`.
+  - Estrutura da Galeria (`.showcase-gallery`):
+    - Grid layout com 4 colunas e 2 linhas (8 cards no total), divididos em duas sequências horizontais fluídas e responsivas.
+    - Proporção 1:1 (quadrado perfeito) para todos os 8 cards em qualquer resolução de tela.
+    - Cantos arredondados suaves (`border-radius: 18px`), `overflow: hidden` e contorno sutil `1px solid rgba(255, 255, 255, 0.06)`.
+    - Espaçamento (gap) de 16px uniforme entre colunas e entre as sequências de banners.
+  - Imagens com Preenchimento Completo:
+    - Linha 1: 1: Cerâmica/torno, 2: Café filtrado na xícara, 3: Fachada de loja à noite, 4: Mesa de trabalho do estúdio.
+    - Linha 2: 5: Colar de ouro sobre linho, 6: Ciclista ao entardecer, 7: Tecidos dobrados em terracota, 8: Arquitetura com luz rasante.
+    - Todas com `object-fit: cover` e dimensões nítidas.
+  - Duas Barras de Rolagem Horizontais Dedicadas:
+    - Uma barra de rolagem horizontal personalizada em cada sequência de banners (`#showcase-row-1` e `#showcase-row-2`).
+    - Scrollbar estilizada com trilha translúcida fina (`height: 6px`) e polegar suave com feedback visual ao hover.
+  - Remoção de Rolagem Infinita e Efeito de Sobresaliência:
+    - Removidas as animações contínuas de marquee e nós duplicados.
+    - Eliminado o efeito de zoom agressivo/sobresalência no hover.
+  - Física & Interação Antigravity:
+    - Levitação sutil ao hover (`transform: translateY(-4px)` com física amortecida e sombra volumétrica).
+    - Resposta elástica suave ao clique/pressão (`transform: translateY(-1px) scale(0.985)`).
+    - Arraste interativo com inércia física (drag-to-scroll elástico com atrito dinâmico em `main.js`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 66 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
