@@ -1248,8 +1248,8 @@ button, input {
 
 /* Card individual do case: Formato refinado e compacto fiel à Foto 2 de referência */
 .case {
-  flex: 0 0 clamp(335px, 29vw, 390px);
-  width: clamp(335px, 29vw, 390px);
+  flex: 0 0 min(clamp(390px, 34vw, 470px), 90vw);
+  width: min(clamp(390px, 34vw, 470px), 90vw);
   border-radius: 24px;
   background: #06070a;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1309,8 +1309,8 @@ button, input {
 }
 
 .case-mark {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 

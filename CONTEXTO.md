@@ -288,6 +288,19 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Remoção Limpa:** Os dois blocos foram removidos de `index.html`, mantendo os 6 ícones restantes alinhados e navegáveis pela barra de rolagem horizontal personalizada.
   - **Execução e Validação Docker:** Container `brasa-studio-landing` reconstruído via Docker Compose com validação de status HTTP 200 na porta 3000.
 
+### 2.36 Aumento da Largura dos Banners de Resultados e Estilização Fiel dos Ícones na Cor Âmbar (#ff7a3d) (Passo 42)
+- **Problema/Objetivo:** O usuário solicitou aumentar a largura dos banners e alterar o estilo e a cor dos ícones dos banners para ficarem idênticos às imagens de referência enviadas ("aumente masi do tamanho da largura dos banners, e mude o estrelo de icones dos banners igual esteda iamgem e use a mesma cor").
+- **Decisão e Implementação:**
+  - **Largura dos Banners (`.case`):** Aumentada a largura de `clamp(335px, 29vw, 390px)` para `min(clamp(390px, 34vw, 470px), 90vw)`, proporcionando banners substancialmente mais largos, confortáveis e elegantes, acomodando perfeitamente as pílulas de resultados em linha única e títulos sem aperto.
+  - **Ajuste de Dimensões (`.case-mark`):** Dimensões ajustadas para 24x24px no CSS para manter nitidez e fidelidade visual à referência.
+  - **Estilização Fiel dos 4 Ícones na Cor Âmbar (#ff7a3d):**
+    - Análise cromática direta nos pixels dos recortes fornecidos identificou a cor `#ff7a3d` como o valor exato.
+    - **Casa Ocre:** Mantido o anel circular estrito (`circle` com `fill="none"` e `stroke="#ff7a3d"`).
+    - **Torra Rubi:** Cúpula/domo superior com barra horizontal arredondada inferior com preenchimento sólido `#ff7a3d`.
+    - **Âmbar Joias:** Atualizado para losango vazado oco sem ponto central (`rect` rotacionado em 45º com `fill="none"` e `stroke="#ff7a3d"` de 4.5px de espessura, eliminando o círculo interior).
+    - **Vento Sul Bikes:** Ondas duplas sinusoidais em traço arredondado com `stroke="#ff7a3d"`.
+  - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

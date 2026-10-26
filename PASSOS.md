@@ -260,4 +260,15 @@
   - Preservação da rolagem horizontal suave e dos 6 ícones restantes de marcas parceiras (círculo, triângulo, cúpula/arco com base, ondas duplas, losango vazado oco e grade 2x2 de círculos).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 42 — Aumento da Largura dos Banners de Resultados e Estilização Fiel dos Ícones na Cor Âmbar (#ff7a3d)**
+  - Aumento da largura dos banners (`.case`) no carrossel de Resultados de `clamp(335px, 29vw, 390px)` para `min(clamp(390px, 34vw, 470px), 90vw)`, permitindo espaçamento mais generoso e alinhamento elegante das pílulas de métricas.
+  - Ajuste nas dimensões de `.case-mark` para 24x24px em `style.css`.
+  - Reestilização exata dos 4 ícones de marca nos cards de Resultados conforme as imagens de referência com a cor âmbar vibrante `#ff7a3d`:
+    - **Casa Ocre:** Anel circular limpo (`<circle cx="20" cy="20" r="11" fill="none" stroke="#ff7a3d" stroke-width="4.5"/>`).
+    - **Torra Rubi:** Cúpula/domo com barra inferior arredondada (`<path fill="#ff7a3d" d="M8 21a12 12 0 0 1 24 0z"/>` e `<rect x="8" y="24.5" width="24" height="4.5" rx="2.2" fill="#ff7a3d"/>`).
+    - **Âmbar Joias:** Losango vazado oco sem ponto central (`<rect x="11.5" y="11.5" width="17" height="17" stroke="#ff7a3d" stroke-width="4.5" fill="none" transform="rotate(45 20 20)"/>`).
+    - **Vento Sul Bikes:** Ondas duplas sinusoidais em traço arredondado (`stroke="#ff7a3d"`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
 
