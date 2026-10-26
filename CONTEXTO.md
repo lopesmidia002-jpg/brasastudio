@@ -474,6 +474,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.52 Padronização Visual Fiel dos Banners de Serviços Conforme Imagem de Referência (Passo 58)
+- **Problema/Objetivo:** O usuário solicitou: *"trouque estes banners para estes da segunda imagem, textos, icones cores de fundo e efeitos, cores dos icones taontes do texto e a rosa dos vento fique exatamente no mesmo lugar que esta a da segunda foto com todas as cores e tamnho"*, enviando a imagem da seção de Serviços (`#servicos`).
+- **Investigação Visual & Análise Comparativa Detalhada:**
+  - **Fundo dos Cards (`.svc`):** Base grafite profundo/preto (`#08090c`) com cantos arredondados de 24px, contorno fino e sutil `1px solid rgba(255, 255, 255, 0.08)` e sombra volumétrica suave (`box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85)`). Comportamento 100% estático.
+  - **Ícones Squircle (`.icon-box`):** Dimensões de 52x52px com cantos arredondados (14px), preenchimento em degradê radial âmbar escuro (`#2a1308` a `#0c0502`), contorno fino âmbar `1px solid rgba(255, 110, 40, 0.45)`, halo térmico suave e traço vetorial em laranja acobreado (`#ff7a3d`):
+    - Card 1: Janela de navegador/browser minimalista.
+    - Card 2: Símbolos geométricos de marca (círculo, quadrado e triângulo agrupados).
+    - Card 3: Megafone/alto-falante minimalista.
+  - **Badges de Categoria (`.pill--dark`):** Pílulas arredondadas (`border-radius: 999px`) em translúcido escuro (`rgba(255, 255, 255, 0.04)`), borda sutil e tipografia em cinza suave (`#a0a2ac`).
+  - **Títulos & Divisórias:** Título display branco robusto (`#ffffff`, peso 700, 1.65rem), seguido de linha divisória horizontal `<hr class="rule">` (`border-top: 1px solid rgba(255, 255, 255, 0.07)`).
+  - **Pílulas de Entregáveis e Prazos (`.pills--strong li`):** Pílulas em formato cápsula com fundo `#111217`, contorno fino, valores numéricos em laranja vibrante (`#ff551b; font-weight: 700;`) e texto descritivo em branco/cinza claro (`#ffffff; font-weight: 600;`).
+  - **Checks de Selo Estrelado:** Ícone em formato de selo estrelado recortado em laranja vibrante (`#ff5a1f`) com checkmark interno e textos nítidos em branco puro (`#ffffff; font-weight: 600;`).
+  - **Posicionamento Exato da Rosa dos Ventos no Card 3:** A rosa dos ventos vetorial astronômica foi posicionada no quadrante superior esquerdo do Card 3 (`.svc-compass-wrap` com `position: absolute; top: 10px; left: 135px; width: 185px; height: 185px; transform: translate(-50%, 0);`), sobreposta perfeitamente atrás das primeiras letras do título "Lançamento integrado". Mantém círculos concêntricos e eixos de mira astronômicos em dourado `#c49a45`, estrela central de 4 pontas em gradiente nobre de ouro antigo (`#d8b26e` a `#8a6320`) e halo dourado difuso, idêntica à referência enviada.
+  - **Botão "Agendar conversa":** Pílula em gradiente vermelho-laranja brasa (`#f76327` a `#db4611`), contorno de luz acobreado e glow térmico radiante.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

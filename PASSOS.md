@@ -383,7 +383,18 @@
   - Botão de ação (`.portfolio-btn`) em pílula perfeita (`border-radius: 999px`), gradiente vertical vermelho-laranja brasa (`linear-gradient(180deg, #f76327 0%, #db4611 100%)`), contorno suave de luz `1px solid rgba(255, 130, 60, 0.45)` e glow térmico inferior e ao redor (`box-shadow: 0 10px 30px rgba(235, 75, 20, 0.45), 0 0 20px rgba(255, 90, 31, 0.28)`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 58 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 58 — Padronização Visual Fiel dos Banners de Serviços Conforme Imagem de Referência**
+  - Ajuste de fundo dos 3 cards (`.svc`) para preto profundo/grafite escuro (`#08090c`) com cantos de 24px, contorno fino sutil `1px solid rgba(255, 255, 255, 0.08)` e sombra volumétrica de profundidade (`box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85)`).
+  - Caixas squircle de ícones (`.icon-box` 52x52px, raio 14px) com degradê radial âmbar escuro (`radial-gradient(circle at 45% 45%, #2a1308 0%, #150904 70%, #0c0502 100%)`), contorno fino `1px solid rgba(255, 110, 40, 0.45)`, glow térmico suave e ícones vetoriais em laranja acobreado (`#ff7a3d`): Card 1 (janela de browser), Card 2 (círculo, quadrado e triângulo geométricos) e Card 3 (megafone/alto-falante).
+  - Badges de categoria no topo direito (`.pill--dark`) em formato pílula arredondada (`border-radius: 999px`) com fundo translúcido escuro, borda fina e texto em cinza claro (`#a0a2ac`).
+  - Linha divisória horizontal nítida e sutil `<hr class="rule">` (`border-top: 1px solid rgba(255, 255, 255, 0.07)`) separando o título do texto descritivo em todos os 3 cards.
+  - Pílulas de entregáveis e prazos (`.pills--strong li`) em formato pílula com fundo escuro grafite (`#111217`), borda sutil, destaque numérico em laranja vibrante (`#ff551b; font-weight: 700;`) e texto descritivo em branco/cinza claro (`#ffffff; font-weight: 600;`).
+  - Lista de diferenciais com ícones de selo recortado estrelado em laranja vibrante (`#ff5a1f`) e textos nítidos em branco puro (`#ffffff; font-weight: 600;`).
+  - **Rosa dos Ventos Astronômica Dourada no Card 3:** posicionada com extrema precisão sobreposta atrás do título "Lançamento integrado" (`.svc-compass-wrap` com `position: absolute; top: 10px; left: 135px; width: 185px; height: 185px;` e `transform: translate(-50%, 0);`), com círculos concêntricos e eixos de mira astronômicos em dourado suave (`#c49a45`), estrela central de 4 pontas em gradiente nobre de ouro antigo (`#d8b26e` a `#8a6320`) e halo dourado difuso, idêntica à imagem enviada pelo usuário.
+  - Botão "Agendar conversa" (`.btn--svc`) em pílula com gradiente vermelho-laranja brasa e glow térmico inferior e perimétrico.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 59 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

@@ -2493,33 +2493,206 @@ button, input {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
   margin-top: 2rem;
 }
 
 .svc {
-  padding: 2rem;
+  position: relative;
+  background-color: #08090c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: clamp(1.85rem, 3.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
-}
-.svc .text-sm {
-  margin-bottom: 1.25rem;
-}
-.svc .pills {
-  margin-bottom: 1.5rem;
-}
-.svc .checks {
-  margin: 0;
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85);
+  transition: border-color var(--trans-normal);
 }
 
-.svc--last .btn {
-  margin-top: 1.5rem;
+.svc:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.svc .step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.svc .icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 45% 45%, #2a1308 0%, #150904 70%, #0c0502 100%);
+  border: 1px solid rgba(255, 110, 40, 0.45);
+  box-shadow: 0 0 16px rgba(255, 100, 30, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc .icon-box svg {
+  display: block;
+}
+
+.svc .pill--dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #a0a2ac;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc .card-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.85rem 0;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.025em;
+}
+
+.svc .rule {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin: 0 0 1.25rem 0;
+  height: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.svc .text-sm {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #8e919c;
+  margin-bottom: 1.45rem;
+  position: relative;
+  z-index: 2;
+}
+
+.svc .pills--strong {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.svc .pills--strong li {
+  background: #111217;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.38rem 0.95rem;
+  font-size: 0.88rem;
+  color: #ffffff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.svc .pills--strong li strong {
+  color: #ff551b;
+  font-weight: 700;
+}
+
+.svc .checks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.svc .checks li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+
+.svc .checks .ico {
+  flex-shrink: 0;
+}
+
+.svc--last {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Rosa dos Ventos astronômica sobreposta exatamente atrás de "Lançamento integrado" */
+.svc-compass-wrap {
+  position: absolute;
+  top: 10px;
+  left: 135px;
+  width: 185px;
+  height: 185px;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, 0);
+}
+
+.svc-compass {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 0 16px rgba(200, 155, 70, 0.35));
+}
+
+.btn--svc {
+  margin-top: 1.85rem;
   width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f76327 0%, #db4611 100%);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.82rem 1.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 130, 60, 0.45);
+  box-shadow: 0 10px 28px rgba(235, 75, 20, 0.45), 0 0 18px rgba(255, 90, 31, 0.28);
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow var(--trans-normal), transform var(--trans-fast), filter var(--trans-fast);
+}
+
+.btn--svc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(235, 75, 20, 0.6), 0 0 24px rgba(255, 90, 31, 0.42);
+  filter: brightness(1.05);
 }
 
 @media (max-width: 809px) {
   .split--services {
     grid-template-columns: 1fr;
+  }
+  .svc-compass-wrap {
+    top: 12px;
+    left: 120px;
+    width: 160px;
+    height: 160px;
   }
 }
 
