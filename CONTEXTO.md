@@ -662,6 +662,38 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.60 Implementação do Hero Section Banner Dark Mode da Seção Planos Conforme Imagem 2 (Passo 66)
+- **Problema/Objetivo:** O usuário solicitou transformar o cabeçalho da seção de Planos (`#planos` / `.pricing`) para seguir a estética minimalista high-end da segunda imagem enviada:
+  1. *Fundo da Seção:* Preto profundo absoluto (`#0A0A0A`) com sutil brilho difuso âmbar/laranja no topo direito (`subtle top ambient warm orange glow`).
+  2. *À Esquerda (Alinhado à Esquerda):*
+     - Dark glassmorphic rounded pill badge: borda fina sutil, ponto indicador laranja neon brilhante à esquerda e texto crisp "Planos" em branco.
+     - Headline principal em sans-serif bold branco de alto contraste estruturada em duas linhas: "Planos mensais para manter" / "sua marca sempre acesa.", eliminando tons laranjas anteriores do texto.
+     - Subheadline em cinza neutro suave (`#A1A1AA`): *"Para quem precisa de design contínuo depois do lançamento. Escopo por escrito, sem fidelidade e com prioridade na agenda."*.
+  3. *À Direita:*
+     - Polígono geométrico angular em dark glassmorphism com realce suave na borda superior (`abstract angled dark glassmorphism geometric polygon overlay with soft edge highlights`), criando profundidade arquitetônica e perspectiva cênica.
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na Imagem 1 anterior: a seção usava a tag `.eyebrow` simples em texto cru caixa alta laranja ("PLANOS"), a segunda linha do título ("sua marca sempre acesa.") continha cor laranja de alto contraste e degradê térmico, e a lateral direita era vazia sem perspectiva ou polígono.
+  - Na Imagem 2 (referência solicitada):
+    1. O cabeçalho é inteiramente alinhado à esquerda (`text-align: left`).
+    2. A tag superior ganha status de pill badge em glassmorphism escuro (`.tag-status--plans`), com reflexo âmbar no topo da borda e ponto quadrado laranja neon `#FF5722`.
+    3. O título é 100% monocromático em branco puro (`#FFFFFF`), peso 600 e visual limpo display.
+    4. O lado direito é enriquecido pelo polígono angular em glassmorphism (`.plans-wing--right`), com corte simétrico via `clip-path`, borda superior iluminada de 1px e dissolução orgânica no preto `#0A0A0A`.
+    5. No topo direito, uma iluminação difusa âmbar suave (`.plans-glow-bg`) banha a atmosfera do banner.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Adicionado `.plans-glow-bg` e `.plans-backdrop` com `.plans-wing--right`.
+    - Substituída a antiga div `.head` por `.plans-head`, integrando `.tag-status--plans`, `.plans-title` estruturado em `.title-line-1` e `.title-line-2`, e `.plans-text`.
+  - Em `style.css`:
+    - `.sec.pricing`: background `#0A0A0A`, padding generoso.
+    - `.plans-glow-bg`: radial-gradient difuso âmbar/laranja no topo direito.
+    - `.plans-backdrop` e `.plans-wing--right`: painel em corte angular com `clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%)`, `border-top: 1px solid rgba(255, 255, 255, 0.14)` e `backdrop-filter: blur(14px)`.
+    - `.tag-status--plans`: pílula translúcida com bullet laranja neon e reflexo superior âmbar.
+    - `.plans-title`: tipografia display monocromática branca `#FFFFFF`, peso 600, entrelinha 1.14 e alinhamento à esquerda.
+    - `.plans-text`: cor `#A1A1AA`, entrelinha 1.62 e largura de 630px.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

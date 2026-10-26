@@ -520,7 +520,23 @@
     - Arraste interativo com inércia física (drag-to-scroll elástico com atrito dinâmico em `main.js`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 66 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 66 — Implementação do Hero Section Banner Dark Mode da Seção Planos (Idêntico à Foto 2)**
+  - Fundo da seção calibrado em preto profundo `#0A0A0A`.
+  - Ambient Top Warm Orange Glow: iluminação difusa sutil âmbar/laranja projetada no topo direito (`.plans-glow-bg` com desfoque de 32px).
+  - Polígono Geométrico Angular em Dark Glassmorphism no Canto Direito (`.plans-wing--right`): corte angular via `clip-path`, borda superior iluminada `border-top: 1px solid rgba(255, 255, 255, 0.14)`, desfoque e fusão suave com o fundo.
+  - Alinhamento do cabeçalho estritamente à esquerda (`text-align: left`).
+  - Dark Glassmorphic Rounded Pill Badge (`.tag-status--plans`):
+    - Pílula translúcida com cantos arredondados, fundo escuro semi-transparente e borda superior iluminada em tom âmbar.
+    - Ponto indicador (bullet) laranja neon brilhante (`#FF5722` com glow) à esquerda.
+    - Texto crisp "Planos" em branco puro.
+  - Título Principal Monocromático de Alto Contraste (`.plans-title`):
+    - Linha 1: "Planos mensais para manter" em branco puro (`#FFFFFF`).
+    - Linha 2: "sua marca sempre acesa." em branco puro (`#FFFFFF`), eliminando a cor laranja anterior conforme a Foto 2.
+    - Tipografia sans-serif moderna de alto impacto, peso 600 e entrelinha compacta de 1.14.
+  - Subheadline (`.plans-text`): texto em cinza neutro suave (`#A1A1AA`), entrelinha 1.62 e largura de 630px.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 67 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
