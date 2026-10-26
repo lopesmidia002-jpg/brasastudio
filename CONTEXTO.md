@@ -929,6 +929,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.71 Posicionamento do Trapézio Cinza no Cabeçalho de Planos (Passo 77)
+- **Solicitação do Usuário:**
+  - Colocar o efeito do trapézio cinza na seção de Planos (Foto 2) exatamente igual à Foto 1.
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 2: o cabeçalho de Planos estava sobre fundo totalmente preto sem o polígono cinza na lateral direita.
+  - Na Foto 1 (referência): o trapézio cinza aparece com grande elegância e profundidade na lateral direita do cabeçalho, com o topo horizontal alinhado com a segunda linha do título ("sua marca sempre acesa.") e corte diagonal descendo para a esquerda.
+  - Causa anterior: `.plans-backdrop` estava fixado em `bottom: 0`, ficando confinado no rodapé da seção atrás dos cards de preços e invisível no cabeçalho.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.plans-backdrop`: posicionado no topo (`top: 0; right: 0; height: 100%; z-index: 1;`).
+    - `.plans-wing--right`: configurado em `top: clamp(140px, 15vw, 210px); right: 0; width: clamp(360px, 38vw, 620px); height: clamp(340px, 36vw, 560px); clip-path: polygon(32% 0, 100% 0, 100% 100%, 0% 100%); background: linear-gradient(155deg, rgba(255, 255, 255, 0.08) 0%, rgba(28, 28, 34, 0.48) 35%, rgba(12, 12, 15, 0.85) 75%, transparent 100%); border-top: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(16px);`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

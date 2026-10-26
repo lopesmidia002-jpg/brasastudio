@@ -630,7 +630,13 @@
   - Botão de CTA da etapa 3 atualizado para formato de pílula perfeita (`border-radius: 9999px`) em gradiente terracota quente (`#e04423` a `#c43212`) com glow difuso volumétrico, exatamente idêntico à Foto 2.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 77 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 77 — Posicionamento Fiel do Efeito Trapézio Cinza no Cabeçalho de Planos (Idêntico à Foto 1)**
+  - Reposicionamento do container `.plans-backdrop` e da asa geométrica `.plans-wing--right` para a lateral direita do cabeçalho de Planos (`top: clamp(140px, 15vw, 210px); width: clamp(360px, 38vw, 620px); height: clamp(340px, 36vw, 560px)`).
+  - Alinhamento da linha superior iluminada (`border-top: 1px solid rgba(255, 255, 255, 0.2)`) com a segunda linha do título display ("sua marca sempre acesa."), descendo diagonalmente em perspectiva com corte via `clip-path: polygon(32% 0, 100% 0, 100% 100%, 0% 100%)`.
+  - Superfície dark glassmorphism em degradê cinza translúcido fosco com desfoque e fade progressivo na base, exatamente idêntico à Foto 1 de referência.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 78 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
