@@ -311,6 +311,14 @@
   - Estilização completa dos botões de ação no card grande ("Agendar conversa" e "Conheça a Brasa").
   - Adição de suporte a arquivos `.avif` no `nginx.conf` e rebuild do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK para todas as rotas e assets.
 
+- [x] **Passo 49 — Suavização e Efeito de Degradê Contínuo no Trapézio Cinza de Por Que a Brasa**
+  - Eliminação da quina dura e do preenchimento escuro opaco anterior no elemento `.benefits-wing--right`.
+  - Implementação de degradê composto: radial luminoso no topo direito (`radial-gradient`) combinado com linear angular suave (`linear-gradient(165deg, ...)`) que transiciona de cinza prateado translúcido para 100% transparente.
+  - Aplicação de máscara progressiva vertical (`mask-image: linear-gradient(...)`) que dissolve suave e organicamente a base do trapézio no preto absoluto da página idêntica à Foto 2.
+  - Linha de luz superior refinada (`border-top: 1px solid rgba(255, 255, 255, 0.24)`) com iluminação interna suave de 1px.
+  - Validação da renderização e execução no container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+
 
 
 

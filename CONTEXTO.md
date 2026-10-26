@@ -361,6 +361,16 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Estilização dos Botões:** No card grande, o botão "Agendar conversa" recebeu gradiente âmbar/laranja com glow difuso na base (`box-shadow: 0 4px 18px rgba(255, 85, 27, 0.45)`), e "Conheça a Brasa" em cinza translúcido com borda suave.
   - **Suporte no Servidor Nginx:** Adicionada extensão `avif` no `nginx.conf` e reconstruído o container Docker via `docker rm -f; docker-compose up -d --build`, com status HTTP 200 OK validado em todos os recursos.
 
+### 2.43 Suavização e Efeito de Degradê Contínuo no Trapézio Cinza de Por Que a Brasa (Passo 49)
+- **Problema/Objetivo:** O usuário solicitou suavizar o trapézio da seção "Por Que a Brasa" para ficar idêntico à segunda imagem enviada, com degradê contínuo e sem corte duro ("suavize este trapezio de modo que fique igual a da segunda imagem, coloque um degrade no efeito do trapezio").
+- **Investigação da Causa Raiz:**
+  - O elemento `.benefits-wing--right` possuía `height: 100%` com paradas de gradiente opacas (`rgba(20, 22, 28, 0.72)` e `rgba(6, 7, 10, 0.95)`), gerando uma quina diagonal afiada e um bloco escuro rígido sem a luminosidade difusa visível na Foto 2.
+- **Decisão e Implementação:**
+  - **Degradê Composto e Luminoso:** Substituído o preenchimento por uma composição de `radial-gradient` no quadrante superior direito (luz prateada suave de 14% a 0%) e `linear-gradient(165deg)` angular que transiciona suavemente de `rgba(255, 255, 255, 0.10)` para `transparent 92%`.
+  - **Máscara Progressiva Vertical:** Aplicada `-webkit-mask-image` e `mask-image` linear de 180º que dissolve progressivamente o elemento a partir de 35% até o desaparecimento total na base (100% transparente), eliminando qualquer linha ou quina inferior dura.
+  - **Linha de Luz Superior:** Refinada a borda superior (`border-top: 1px solid rgba(255, 255, 255, 0.24)`) com iluminação de acento interno de 1px.
+  - **Execução e Validação Docker:** Validada a renderização em `http://localhost:3000/` com status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
