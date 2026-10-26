@@ -575,6 +575,26 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.57 Criação do Componente Hero Dark Mode Minimalista em Lance Seu Projeto (Showcase) Conforme Imagem 2 (Passo 63)
+- **Problema/Objetivo:** O usuário solicitou modernizar o cabeçalho da seção "Lance seu projeto" (`#lancamento` / `.showcase`) para ficar idêntico à segunda imagem enviada:
+  1. *Layout & Alinhamento:* Centralizado vertical e horizontalmente, espaçamento equilibrado, visual limpo estilo SaaS/Agência tech.
+  2. *Fundo & Atmosfera:* Background preto profundo (`#000000`) com moldura de profundidade nas laterais criada por blocos trapezoidais/angulares com gradiente sutil marrom-acobreado/terracota escuro.
+  3. *Pill Badge Superior:* Fundo preto translúcido, borda sutil, ponto quadrado alaranjado (`#FF5722`) à esquerda, texto "Lance seu projeto" em branco puro e sutil rim light/glow avermelhado na borda superior.
+  4. *Título (H1/H2):* "O parceiro criativo / de marcas em crescimento.", tipografia moderna sem serifa, peso medium (500), cor branca pura (`#FFFFFF`), em grande destaque.
+  5. *Subtítulo:* "Do primeiro esboço ao site no ar, com acompanhamento próximo e um time que responde rápido.", texto em cinza claro (`#A1A1AA`), peso regular e centralizado.
+  6. *Botão CTA Principal:* Formato pílula/arredondado, cor terracota/vermelho-alaranjado vibrante (`#D03B1E`), texto "Ver como trabalhamos" em branco e sombra difusa com glow alaranjado projetada abaixo do botão.
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na versão anterior (Imagem 1), a seção usava a tag `.eyebrow` em caixa alta alaranjada ("LANCE SEU PROJETO"), o título continha "de marcas em crescimento." em laranja vibrante, e as laterais eram vazias sem profundidade geométrica.
+  - Na Imagem 2 (referência desejada), a seção ganha alto valor cênico com:
+    1. *Moldura Arquitetônica Lateral (`.showcase-backdrop`):* Painéis escuros poligonais em marrom-acobreado/terracota (`.showcase-wing--left` e `.showcase-wing--right`) com corte trapezoidal via `clip-path`, topo horizontal iluminado `border-top: 1px solid rgba(208, 59, 30, 0.42)` e halo difuso que conduz o olhar diretamente ao centro.
+    2. *Pill Badge Superior (`.tag-status--showcase`):* Pílula arredondada em preto translúcido com rebordo suave de 1px, borda superior iluminada `border-top: 1px solid rgba(255, 115, 45, 0.88)` com halo âmbar, ponto quadrado alaranjado `#FF5722` e texto "Lance seu projeto" em branco puro.
+    3. *Título Principal (`.showcase-title`):* Tipografia Inter/SF Pro Display monocromática (100% branca `#FFFFFF`) em peso medium (500), entrelinha 1.14 e estruturada em duas linhas elegantes.
+    4. *Subtítulo (`.showcase-text`):* Cor cinza claro `#A1A1AA` com entrelinha 1.62.
+    5. *Botão CTA (`.showcase-btn`):* Pílula terracota/vermelho-alaranjado `#D03B1E` com glow alaranjado projetado para baixo (`box-shadow: 0 12px 32px rgba(208, 59, 30, 0.58), 0 0 22px rgba(255, 87, 34, 0.35)`).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

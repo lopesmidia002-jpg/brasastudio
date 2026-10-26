@@ -453,7 +453,23 @@
     - Efeito box-shadow marcante com drop shadow/glow alaranjado difuso projetado logo abaixo do botão (`box-shadow: 0 12px 32px rgba(224, 68, 35, 0.55), 0 0 24px rgba(209, 53, 20, 0.35)`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 63 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 63 — Cabeçalho Hero Dark Mode Minimalista da Seção Lance Seu Projeto (Showcase)**
+  - Background preto profundo absoluto (`#000000`).
+  - Moldura de profundidade com silhuetas e painéis angulares trapezoidais nas laterais (`.showcase-wing--left` e `.showcase-wing--right`), com gradiente sutil marrom-acobreado/terracota escuro, corte via `clip-path` e borda superior iluminada `border-top: 1px solid rgba(208, 59, 30, 0.42)`, guiando o olhar ao centro.
+  - Pill Badge Superior (`.tag-status--showcase`):
+    - Fundo preto translúcido (`rgba(14, 15, 18, 0.85)`), borda sutil de 1px e rim light/glow avermelhado na borda superior `border-top: 1px solid rgba(255, 115, 45, 0.88)` com halo âmbar superior.
+    - Ponto quadrado alaranjado (`#FF5722` com glow) à esquerda.
+    - Texto "Lance seu projeto" em branco puro com peso 500.
+  - Título Principal (`.showcase-title`):
+    - "O parceiro criativo / de marcas em crescimento.", tipografia moderna sem serifa (Inter/SF Pro Display), peso medium (500), cor branca pura (`#FFFFFF`), entrelinha 1.14 e grande destaque em duas linhas, sem cores alaranjadas.
+  - Subtítulo (`.showcase-text`):
+    - "Do primeiro esboço ao site no ar, com acompanhamento próximo e um time que responde rápido.", texto em cinza claro (`#A1A1AA`), peso regular (400) e largura calibrada de 660px.
+  - Botão CTA Principal (`.showcase-btn`):
+    - Formato pílula/arredondado (`border-radius: 999px`), cor terracota/vermelho-alaranjado vibrante (`#D03B1E`), texto "Ver como trabalhamos" em branco e peso 500.
+    - Sombra difusa marcante com glow alaranjado projetada abaixo do botão (`box-shadow: 0 12px 32px rgba(208, 59, 30, 0.58), 0 0 22px rgba(255, 87, 34, 0.35)`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 64 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

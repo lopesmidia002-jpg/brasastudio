@@ -2869,8 +2869,151 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   12. SEÇÃO VITRINE (SHOWCASE)
+   12. SEÇÃO VITRINE (SHOWCASE / LANCE SEU PROJETO)
    -------------------------------------------------------------------------- */
+.sec.showcase {
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+/* Moldura de Profundidade: Silhuetas e Painéis Angulares Trapezoidais Laterais em Terracota / Marrom-Acobreado */
+.showcase-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(380px, 42vw, 560px);
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.showcase-wing {
+  position: absolute;
+  top: clamp(140px, 18vw, 210px);
+  height: clamp(280px, 32vw, 420px);
+  width: clamp(240px, 28vw, 450px);
+  pointer-events: none;
+  border-top: 1px solid rgba(208, 59, 30, 0.42);
+  box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.15);
+}
+
+.showcase-wing--left {
+  left: 0;
+  clip-path: polygon(0 0, 68% 0, 100% 100%, 0 100%);
+  background: linear-gradient(135deg, rgba(120, 38, 18, 0.38) 0%, rgba(65, 20, 8, 0.22) 40%, rgba(20, 6, 2, 0.08) 75%, transparent 100%);
+}
+
+.showcase-wing--right {
+  right: 0;
+  clip-path: polygon(32% 0, 100% 0, 100% 100%, 0 100%);
+  background: linear-gradient(225deg, rgba(120, 38, 18, 0.38) 0%, rgba(65, 20, 8, 0.22) 40%, rgba(20, 6, 2, 0.08) 75%, transparent 100%);
+}
+
+.showcase-head {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.5rem;
+}
+
+/* 1. Pill Badge Superior: Fundo preto translúcido, borda sutil, ponto quadrado alaranjado (#FF5722), texto Lance seu projeto e rim light avermelhado */
+.tag-status--showcase {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: rgba(14, 15, 18, 0.85);
+  background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.55) 0%, rgba(255, 87, 34, 0.12) 55%, transparent 80%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 115, 45, 0.88);
+  padding: 0.38rem 1.1rem;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.6rem;
+  width: fit-content;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 14px rgba(255, 87, 34, 0.32);
+}
+
+.tag-status--showcase .dot {
+  width: 7px;
+  height: 7px;
+  background: #FF5722;
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.95);
+  flex-shrink: 0;
+}
+
+/* 2. Título (H1/H2): O parceiro criativo / de marcas em crescimento, peso medium, cor branca (#FFFFFF) */
+.showcase-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
+  font-size: clamp(2.4rem, 4.8vw, 3.9rem);
+  font-weight: 500; /* Peso medium conforme solicitado */
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0 0 1.45rem;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.showcase-title .title-line-1,
+.showcase-title .title-line-2 {
+  display: block;
+  color: #FFFFFF;
+}
+
+/* 3. Subtítulo: Do primeiro esboço ao site no ar..., em cinza claro (#A1A1AA) */
+.showcase-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.62;
+  color: #A1A1AA;
+  max-width: 660px;
+  margin: 0 auto 2.35rem;
+  text-align: center;
+}
+
+/* 4. Botão CTA Principal: Formato pílula/arredondado, cor terracota/vermelho-alaranjado vibrante (#D03B1E) */
+.showcase-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D03B1E;
+  background-image: linear-gradient(180deg, #D94425 0%, #C43418 100%);
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  padding: 0.88rem 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 125, 60, 0.45);
+  box-shadow: 0 12px 32px rgba(208, 59, 30, 0.58), 0 0 22px rgba(255, 87, 34, 0.35);
+  text-decoration: none;
+  transition: box-shadow var(--trans-normal), transform var(--trans-fast), filter var(--trans-fast);
+}
+
+.showcase-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(208, 59, 30, 0.72), 0 0 28px rgba(255, 95, 40, 0.48);
+  filter: brightness(1.06);
+}
+
 .marquee--shots {
   margin: 1.5rem 0;
 }
