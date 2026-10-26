@@ -597,6 +597,34 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 
 ---
 
+### 2.58 Implementação dos Cards de Serviços / Pricing Dark Mode Conforme Imagem 2 (Passo 64)
+- **Problema/Objetivo:** O usuário solicitou implementar a seção de Planos/Serviços (Pricing / Service Cards) contendo três banners dispostos em grid responsivo, seguindo rigorosamente a referência da segunda imagem enviada:
+  1. *Tema & Paleta de Cores (Dark Mode Premium):* Fundo da página em preto puro (`#050505` / `#0a0a0a`), fundo dos cards em gradiente radial sutil (`#141416` no centro decaindo suavemente para `#0d0d0f` nas bordas), cor de acento em laranja/âmbar vibrante (`#FF5722` / `#E64A19`), títulos em branco puro (`#FFFFFF`) e descrições em cinza neutro (`#A1A1AA`).
+  2. *Efeitos Visuais & Iluminação (Lighting & Shaders):* Cantos arredondados de 24px com borda sutil de `1px solid rgba(255, 255, 255, 0.08)`, top rim light com gradiente linear discreto na borda superior refletindo luminosidade alaranjada (`rgba(255, 87, 34, 0.28)`), efeito de vidro & profundidade nas pílulas e tags internas (`backdrop-filter: blur(8px)`, `background: rgba(255, 255, 255, 0.05)`), e glow externo no botão CTA (`box-shadow: 0 0 24px rgba(230, 74, 25, 0.35)`).
+  3. *Estrutura dos Cards e Conteúdo:*
+     - Card 1 ("Site sob medida"): ícone squircle de janela de navegador/código; badge "Site"; título H3 bold branco; descrição; pílulas de metadados com valores em branco puro (`R$ 24 mil` / projeto e `5–7 semanas`); lista com 2 benefícios com marcador de selo/escudo laranja e check interno; sem botão.
+     - Card 2 ("Identidade completa"): ícone squircle de formas vetoriais/marca; badge "Marca"; título H3 bold branco; descrição; pílulas com valores em branco puro (`R$ 16 mil` / projeto e `3–4 semanas`); lista com 2 benefícios; sem botão.
+     - Card 3 ("Lançamento integrado"): ícone squircle de megafone/comunicação; badge "Campanha"; título H3 bold branco; descrição; pílulas com valores em branco puro (`R$ 12 mil` / projeto e `2–3 semanas`); lista com 2 benefícios; botão CTA pill-shaped com gradiente vermelho/laranja escuro "Agendar conversa" com glow; e grafismo decorativo de fundo no canto inferior direito (`bottom-right`, `pointer-events: none`) com ilustração vetorial de bússola/rosa dos ventos com círculos concêntricos pontilhados/finos e estrela de 4 pontas preenchida com degradê laranja suave e leve glow radial avermelhado no fundo.
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na Imagem 1 anterior: a rosa dos ventos ficava posicionada no topo esquerdo atrás do título "Lançamento integrado" do Card 3, as pílulas de preço e prazo possuíam os números na cor laranja (`#ff551b`), e o Card 1 tinha um botão translúcido fantasma apagado ("Fale com a gente").
+  - Na Imagem 2 (solicitada):
+    1. A rosa dos ventos / bússola foi movida para o **canto inferior direito** (`bottom-right`), sangrando suavemente pelas bordas com `overflow: hidden`, estrela de 4 pontas com degradê laranja suave e glow avermelhado difuso no fundo.
+    2. As pílulas de metadados agora destacam os valores numéricos em **branco puro `#FFFFFF; font-weight: 700`**, mantendo os complementos em cinza suave (`#71717A`), trazendo um contraste muito mais limpo e equilibrado.
+    3. O Card 1 e o Card 2 são totalmente limpos de botões residuais, enquanto apenas o Card 3 exibe o botão CTA principal "Agendar conversa" com glow alaranjado volumétrico.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Estruturados os 3 cards `.svc` com layout consistente, títulos monocromáticos brancos, pílulas de metadados com `<strong>` em branco puro para valores numéricos e textos complementares em cinza.
+    - Card 3 configurado com a bússola vetorial `.svc-compass-wrap` contendo `<svg>` com gradiente laranja suave (`#svc-bottom-star`), glow avermelhado de fundo (`#svc-bottom-glow`) e ancorado no canto inferior direito.
+    - Botão `.btn--svc` posicionado com texto "Agendar conversa".
+  - Em `style.css`:
+    - `.svc`: `background: radial-gradient(ellipse 90% 70% at 50% 15%, #141416 0%, #0d0d0f 100%)`, `border-radius: 24px`, `border: 1px solid rgba(255, 255, 255, 0.08)`, `border-top: 1px solid rgba(255, 87, 34, 0.28)`, e `box-shadow: inset 0 1px 0 rgba(255, 87, 34, 0.16)...`.
+    - Pílulas translúcidas com `backdrop-filter: blur(8px)`, fundo `rgba(255, 255, 255, 0.05)`, e valores numéricos `strong { color: #FFFFFF; font-weight: 700; }`.
+    - `.svc-compass-wrap`: posicionado com `bottom: -55px; right: -55px; width: 280px; height: 280px; pointer-events: none; overflow: hidden; filter: drop-shadow(0 0 20px rgba(230, 74, 25, 0.45));`.
+    - `.btn--svc`: pill-shaped em `linear-gradient(180deg, #E04423 0%, #D13514 100%)`, `box-shadow: 0 0 24px rgba(230, 74, 25, 0.35), 0 10px 24px rgba(208, 59, 30, 0.45)` e hover com escala `scale(1.02)`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

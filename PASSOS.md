@@ -469,7 +469,35 @@
     - Sombra difusa marcante com glow alaranjado projetada abaixo do botão (`box-shadow: 0 12px 32px rgba(208, 59, 30, 0.58), 0 0 22px rgba(255, 87, 34, 0.35)`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 64 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 64 — Implementação Fiel dos Cards de Planos e Serviços Dark Mode (Idêntico à Foto 2)**
+  - Fundo da página e seção mantido em preto profundo (`#050505` / `#0a0a0a`).
+  - Superfície dos Cards (`.svc`):
+    - Fundo em gradiente radial sutil (`#141416` no centro decaindo suavemente para `#0d0d0f` nas bordas).
+    - Cantos arredondados acentuados (`border-radius: 24px`) e borda suave `1px solid rgba(255, 255, 255, 0.08)`.
+    - Top Rim Light com gradiente/linha discreta na borda superior refletindo luminosidade alaranjada (`border-top: 1px solid rgba(255, 87, 34, 0.28)`) e glow interno suave.
+    - Remoção de elevação indesejada no hover mantendo estabilidade 100% estática.
+  - Cabeçalho dos Cards:
+    - Card 1 ("Site sob medida"): ícone squircle de janela de navegador/código com contorno fino alaranjado; badge à direita em pílula translúcida com texto "Site".
+    - Card 2 ("Identidade completa"): ícone squircle de formas vetoriais/marca com traço alaranjado; badge à direita com texto "Marca".
+    - Card 3 ("Lançamento integrado"): ícone squircle de megafone/comunicação com traço alaranjado; badge à direita com texto "Campanha".
+  - Tipografia & Hierarquia de Preços/Prazos:
+    - Título H3 bold branco puro (`#FFFFFF; font-weight: 700;`).
+    - Textos descritivos em cinza neutro legível (`#A1A1AA; line-height: 1.6`).
+    - Pílulas de metadados em efeito de vidro (`backdrop-filter: blur(8px)`, `background: rgba(255, 255, 255, 0.05)`) com destaque nos valores numéricos em branco puro (`#FFFFFF; font-weight: 700`) e textos secundários em cinza neutro (`#71717A`):
+      - Card 1: `R$ 24 mil` / projeto e `5–7 semanas`.
+      - Card 2: `R$ 16 mil` / projeto e `3–4 semanas`.
+      - Card 3: `R$ 12 mil` / projeto e `2–3 semanas`.
+  - Lista de Benefícios (Checks):
+    - Marcador com selo dentado/escudo laranja vibrante (`#FF5722`) e check interno.
+    - Textos em branco puro (`#FFFFFF; font-weight: 500; line-height: 1.6`).
+  - Botão CTA no Card 3 (`.btn--svc`):
+    - Formato pílula com gradiente quente em tons de vermelho/laranja escuro (`#E04423` para `#D13514`), texto "Agendar conversa" em branco puro e iluminação difusa externa com glow alaranjado (`box-shadow: 0 0 24px rgba(230, 74, 25, 0.35)`).
+  - Grafismo Decorativo Rosa dos Ventos / Bússola no Card 3 (`.svc-compass-wrap`):
+    - Posicionado de forma absoluta no canto inferior direito (`bottom-right`, `bottom: -55px; right: -55px; pointer-events: none; overflow: hidden`), idêntico à Foto 2.
+    - Ilustração vetorial com círculos concêntricos pontilhados e contínuos, eixos ortogonais e diagonais, e estrela central de 4 pontas preenchida com gradiente laranja suave (`#svc-bottom-star`), emitindo glow difuso avermelhado no fundo.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 65 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

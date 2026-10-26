@@ -821,54 +821,6 @@
           </ul>
         </li>
         <li class="svc card-bg svc--last" data-reveal>
-          <!-- Rosa dos Ventos / Retículo Tático HUD Sci-Fi em Dourado-Âmbar de Alta Precisão -->
-          <div class="svc-compass-wrap" aria-hidden="true">
-            <svg class="svc-compass" width="185" height="185" viewBox="0 0 200 200" fill="none">
-              <defs>
-                <radialGradient id="svc-compass-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ffbf47" stop-opacity="0.55"/>
-                  <stop offset="45%" stop-color="#d99426" stop-opacity="0.22"/>
-                  <stop offset="75%" stop-color="#b07010" stop-opacity="0.06"/>
-                  <stop offset="100%" stop-color="#b07010" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="svc-star-gradient" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#fedc82"/>
-                  <stop offset="35%" stop-color="#e0aa3a"/>
-                  <stop offset="70%" stop-color="#bf8322"/>
-                  <stop offset="100%" stop-color="#945d0e"/>
-                </linearGradient>
-                <filter id="svc-gold-spark-glow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur stdDeviation="3.2" result="blur"/>
-                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-              </defs>
-
-              <!-- Halo de luminescência âmbar suave central -->
-              <circle cx="100" cy="100" r="48" fill="url(#svc-compass-glow)"/>
-
-              <!-- Marcações Técnicas / Retículo HUD Sci-fi -->
-              <!-- 1. Anel interno concêntrico pontilhado -->
-              <circle cx="100" cy="100" r="32" stroke="#c59b47" stroke-width="1" stroke-dasharray="2.5, 3.5" opacity="0.6"/>
-
-              <!-- 2. Círculo intermediário contínuo fino (tangente às pontas da estrela) -->
-              <circle cx="100" cy="100" r="58" stroke="#c59b47" stroke-width="1.2" opacity="0.85"/>
-
-              <!-- 3. Anel concêntrico externo pontilhado -->
-              <circle cx="100" cy="100" r="76" stroke="#c59b47" stroke-width="1.1" stroke-dasharray="3, 4" opacity="0.75"/>
-
-              <!-- 4. Eixos ortogonais longos cruzados -->
-              <line x1="100" y1="8" x2="100" y2="192" stroke="#c59b47" stroke-width="1.2" opacity="0.9"/>
-              <line x1="8" y1="100" x2="192" y2="100" stroke="#c59b47" stroke-width="1.2" opacity="0.9"/>
-
-              <!-- 5. Linhas diagonais de referência a 45 graus -->
-              <line x1="38" y1="38" x2="162" y2="162" stroke="#c59b47" stroke-width="0.95" opacity="0.55"/>
-              <line x1="38" y1="162" x2="162" y2="38" stroke="#c59b47" stroke-width="0.95" opacity="0.55"/>
-
-              <!-- 6. Estrela sólida de 4 pontas com bordas côncavas perfeitas em gradiente âmbar -->
-              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#svc-star-gradient)" filter="url(#svc-gold-spark-glow)"/>
-              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#svc-star-gradient)"/>
-            </svg>
-          </div>
           <div class="step-top">
             <span class="icon-box">
               <svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -896,6 +848,59 @@
             </li>
           </ul>
           <a class="btn btn--brasa btn--sm btn--svc" href="#contato">Agendar conversa</a>
+
+          <!-- Grafismo Decorativo de Fundo no Canto Inferior Direito: Bússola Vetorial com Gradiente Laranja Suave e Glow Avermelhado -->
+          <div class="svc-compass-wrap" aria-hidden="true">
+            <svg class="svc-compass" width="280" height="280" viewBox="0 0 200 200" fill="none">
+              <defs>
+                <!-- Glow radial avermelhado/laranja suave de fundo -->
+                <radialGradient id="svc-bottom-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ff5722" stop-opacity="0.45"/>
+                  <stop offset="45%" stop-color="#d03b1e" stop-opacity="0.22"/>
+                  <stop offset="75%" stop-color="#801b08" stop-opacity="0.06"/>
+                  <stop offset="100%" stop-color="#801b08" stop-opacity="0"/>
+                </radialGradient>
+                <!-- Gradiente laranja suave nobre para a estrela -->
+                <linearGradient id="svc-bottom-star" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ff8c3a"/>
+                  <stop offset="35%" stop-color="#ea561b"/>
+                  <stop offset="70%" stop-color="#be370e"/>
+                  <stop offset="100%" stop-color="#7d1f05"/>
+                </linearGradient>
+                <!-- Luminescência suave -->
+                <filter id="svc-bottom-glow-filter" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+
+              <!-- Halo de luminescência avermelhada/laranja central -->
+              <circle cx="100" cy="100" r="52" fill="url(#svc-bottom-glow)"/>
+
+              <!-- Marcações Técnicas / Bússola com círculos concêntricos pontilhados/finos -->
+              <!-- 1. Anel interno pontilhado -->
+              <circle cx="100" cy="100" r="32" stroke="#d6682a" stroke-width="1" stroke-dasharray="2.5, 3.5" opacity="0.6"/>
+
+              <!-- 2. Círculo intermediário contínuo fino tangente às pontas da estrela -->
+              <circle cx="100" cy="100" r="58" stroke="#d6682a" stroke-width="1.2" opacity="0.85"/>
+
+              <!-- 3. Anel externo pontilhado -->
+              <circle cx="100" cy="100" r="76" stroke="#d6682a" stroke-width="1.1" stroke-dasharray="3, 4" opacity="0.75"/>
+
+              <!-- 4. Eixos ortogonais longos cruzados -->
+              <line x1="100" y1="8" x2="100" y2="192" stroke="#d6682a" stroke-width="1.2" opacity="0.85"/>
+              <line x1="8" y1="100" x2="192" y2="100" stroke="#d6682a" stroke-width="1.2" opacity="0.85"/>
+
+              <!-- 5. Linhas diagonais a 45 graus -->
+              <line x1="38" y1="38" x2="162" y2="162" stroke="#d6682a" stroke-width="0.95" opacity="0.55"/>
+              <line x1="38" y1="162" x2="162" y2="38" stroke="#d6682a" stroke-width="0.95" opacity="0.55"/>
+
+              <!-- 6. Estrela sólida de 4 pontas preenchida com degradê laranja suave -->
+              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#svc-bottom-star)" filter="url(#svc-bottom-glow-filter)"/>
+              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#svc-bottom-star)"/>
+            </svg>
+          </div>
+        </li>
         </li>
       </ul>
     </div>
