@@ -224,25 +224,29 @@ button, input {
 }
 
 .btn--light {
-  background: var(--text-white);
-  color: var(--bg-black);
-  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  font-weight: 600;
 }
 .btn--light:hover {
-  background: #ffffff;
+  background: #f8f8f8;
+  color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .btn--ghost {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-white);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  font-weight: 500;
 }
 .btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -684,34 +688,55 @@ button, input {
 .tag-new {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 90, 31, 0.3);
-  padding: 0.35rem 0.95rem;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.25rem 0.95rem 0.25rem 0.35rem;
   border-radius: 9999px;
-  font-size: 0.85rem;
-  color: var(--text-white);
-  margin-bottom: 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.6rem;
   width: fit-content;
   backdrop-filter: blur(10px);
+}
+.tag-new .badge {
+  background: #ff5a1f;
+  color: #000000;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.24rem 0.62rem;
+  border-radius: 6px;
+  border: none;
+  line-height: 1;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4.8vw, 4.1rem);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  color: var(--text-white);
-  margin-bottom: 1.35rem;
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  font-weight: 400; /* Tipografia aberta e elegante idêntica à Foto 2 */
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 1.45rem;
+}
+.hero-title span {
+  display: block;
+}
+.hero-title .title-2 {
+  color: #ff6a2b;
+  font-weight: 400;
 }
 
 .lead {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
   line-height: 1.65;
-  color: var(--text-muted);
+  color: #909096;
   max-width: 530px;
   margin-bottom: 2.2rem;
+  font-weight: 400;
 }
 
 .actions {
@@ -719,7 +744,7 @@ button, input {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
 }
 
 /* Container com largura delimitada para ocultar os ícones adicionais */

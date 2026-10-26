@@ -96,13 +96,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Estruturados os cards das etapas com fundo escuro elegante `#0c0d12`, divisórias `<hr class="rule">`, pílulas de entregáveis com texto em tom âmbar `#ff7a3d` e botão de CTA "Agendar conversa" em pílula vermelha-alaranjada com sombra suave.
   - Implementada rosa dos ventos vetorial astronômica dourada no canto inferior direito da Etapa 3 ("Entrega"), composta por dois círculos astronômicos concêntricos, eixos de mira em cruz `+` e `x` finos dourados, glow difuso e estrela de 4 pontas pontiaguda dourada em gradiente.
   - Mantida a foto da primeira imagem (`processo-mesa-1040.webp`) com acabamento limpo em cantos arredondados de 26px sem borda cinza externa pesada.
-
 ### 2.13 Refinamento Visual Fiel da Barra Superior / Header (Passo 19)
 - **Problema/Objetivo:** O header apresentava o sufixo "studio" na cor laranja vibrante e botão CTA em tom laranja claro com forte brilho, enquanto a segunda foto de referência estabelecia o sufixo "studio" em tom cinza médio/prata suave (`#8e8e93`) e botão "Fale com a gente" em vermelho-laranja brasa intenso aveludado com cantos em pílula.
 - **Decisão e Implementação:**
   - Calibrado o logotipo da marca para exibir "brasa" em branco puro `#ffffff` e "studio" em tom cinza médio/prata `#8e8e93` com peso refinado, harmonizando com a referência visual.
   - Ajustada a tipografia e cores dos links da navbar com o item ativo "Início" em branco e os demais em cinza claro `#c8c8cc` com espaçamento generoso de 2rem.
   - Estilizado o botão "Fale com a gente" no gradiente vermelho-laranja brasa aveludado (`#d84518` a `#b82b08`) com cantos de pílula (`9999px`) e sombra quente suave.
+
+### 2.14 Refinamento Tipográfico e Visual da Hero Section (Passo 20)
+- **Problema/Objetivo:** A Hero Section precisava ficar idêntica à segunda foto enviada pelo usuário, ajustando tamanho do texto, design dos ícones, cores e estilos dos elementos textuais e dos botões.
+- **Decisão e Implementação:**
+  - **Tag de status (`.tag-new`):** Atualizado o badge para retângulo com cantos suaves (`border-radius: 6px`) em fundo laranja vibrante sólido (`#ff5a1f`) com tipografia preta em negrito (`#000000; font-weight: 700; text-transform: uppercase`) contendo `NOVO`. O container da tag recebeu borda cinza translúcida fina (`rgba(255, 255, 255, 0.16)`) e texto "Agenda aberta para 2027" em branco puro `#ffffff`.
+  - **Tipografia da Headline (`.hero-title`):** Ajustado o peso da fonte de 700 para 400 (regular/aberta), conferindo leveza, sofisticação e kerning elegante idêntico à Foto 2, com a primeira linha ("Design que acende") em branco e a segunda ("marcas criativas.") em laranja brasa `#ff6a2b`.
+  - **Lead (`.lead`):** Calibrado o tom para cinza suave e legível (`#909096`) com entrelinha equilibrada (1.65) e tamanho responsivo.
+  - **Botões (`.actions`):** Botão primário "Começar um projeto" calibrado com fundo branco puro `#ffffff`, texto preto `#000000` em peso 600 e sombra suave sem efeito estourado de glow; botão secundário "Conheça a Brasa" com fundo translúcido escuro `rgba(255, 255, 255, 0.08)`, borda discreta `rgba(255, 255, 255, 0.14)` e texto branco.
+  - **Ícones de Marcas:** Todos os 8 ícones geométricos atualizados com traço e preenchimento em branco puro acetinado `#ffffff` (`opacity: 0.95`), padronizando acabamento de ateliê conforme o design da foto.
 
 ---
 
