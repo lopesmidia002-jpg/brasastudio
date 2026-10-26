@@ -576,8 +576,23 @@
     - Botão CTA pill-shaped idêntico ao Card 1 com glow âmbar inferior e texto "Agendar conversa".
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 70 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 70 — Hero Section Dark Mode Ultrawide 21:9 em Depoimentos (Idêntico à Foto 2)**
+  - Fundo preto absoluto (`#000000`) em proporção ultrawide 21:9 com blocos geométricos angulares em perspectiva nas laterais em tom marrom-cobre escuro (`.testimonials-wing--left` e `.testimonials-wing--right`) com borda superior iluminada `1px solid rgba(255, 110, 64, 0.22)`.
+  - Pill badge centralizada no topo (`.tag-status--testimonials`) com fundo cinza-escuro translúcido, borda sutil, ponto quadrado laranja vibrante (`#FF5722` de 6x6px com glow) e texto "Depoimentos".
+  - Título tipográfico centralizado em destaque 100% branco (`#FFFFFF`), sem texto laranja, em duas linhas elegantes ("O que dizem as marcas" / "que passaram por aqui.").
+  - Subtítulo em cinza claro minimalista (`#A1A1AA`): "Clientes contam como foi trabalhar com o estúdio e o que mudou depois do lançamento.".
+  - Fileira horizontal de 4 cartões quadrados com cantos arredondados escuros (`.brand-squircle-card` de 82x82px, cantos de 20px, fundo `#111216` e borda suave) com ícones monocromáticos abstratos fiéis à Foto 2:
+    1. Cúpula com base horizontal inferior.
+    2. Ondas sinuosas duplas.
+    3. Losango vazado com cantos nítidos.
+    4. Grade 2x2 de círculos simétricos.
+  - Botão pill-shape central na base (`.testimonials-btn`) em vermelho-alaranjado queimado (`#d84315`) com texto "Ver portfólio" e iluminação difusa (*orange glow*) volumétrica projetada logo abaixo.
+  - Eliminação da animação contínua de marquee/carrossel anterior (`.marquee--logos`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 71 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
+
 
 
 

@@ -782,6 +782,37 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.64 Hero Section Dark Mode Ultrawide 21:9 em Depoimentos (Passo 70)
+- **Solicitação do Usuário:**
+  - Hero section dark mode para website de design e estúdio criativo, proporção ultrawide 21:9.
+  - Fundo preto absoluto (`#000000`) com blocos geométricos angulares em perspectiva nas laterais em tom marrom-cobre escuro.
+  - Centralizado no topo: badge em formato de pílula com borda sutil e ponto laranja contendo o texto "Depoimentos".
+  - Título tipográfico em destaque "O que dizem as marcas que passaram por aqui." em fonte sans-serif branca, seguido por subtítulo cinza minimalista "Clientes contam como foi trabalhar com o estúdio e o que mudou depois do lançamento.".
+  - Fileira horizontal de 4 cartões quadrados com cantos arredondados escuros com ícones monocromáticos abstratos.
+  - Na base central, botão pill-shape vermelho-alaranjado queimado com texto "Ver portfólio" e efeito de iluminação difusa (*orange glow*) projetada logo abaixo.
+  - UI/UX cinematográfico idêntico à segunda foto de referência.
+- **Diferenças Identificadas entre Foto 1 e Foto 2:**
+  1. *Fundo & Proporção:* Na Foto 1, a seção tinha fundo preto plano com iluminação de topo e sem asas laterais; na Foto 2, a seção possui proporção ultrawide 21:9 com painéis geométricos angulares em perspectiva nas laterais em tom marrom-cobre escuro (`.testimonials-wing--left` e `.testimonials-wing--right`) com borda superior iluminada.
+  2. *Badge Superior:* Substituição da tag em caixa alta alaranjada (`DEPOIMENTOS`) por pill badge translúcida com ponto quadrado laranja `#FF5722` e texto "Depoimentos".
+  3. *Tipografia:* Título 100% branco monocromático ("O que dizem as marcas" / "que passaram por aqui."), eliminando a cor laranja da segunda linha presente na Foto 1.
+  4. *Marcas Parceiras:* Substituição do carrossel/marquee contínuo de logos por exatamente 4 cartões quadrados estáticos com cantos arredondados escuros (`.brand-squircle-card` de 82x82px, raio de 20px, fundo `#111216`) com 4 ícones monocromáticos abstratos:
+     - Cúpula com base horizontal inferior.
+     - Ondas sinuosas duplas.
+     - Losango vazado com cantos nítidos.
+     - Grade 2x2 de círculos simétricos.
+  5. *Botão CTA:* Botão pill-shaped em vermelho-alaranjado queimado (`#d84315`) com texto "Ver portfólio" e halo difuso volumétrico de iluminação âmbar projetado na base.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Inserido `.testimonials-backdrop` com `.testimonials-wing--left` e `.testimonials-wing--right`.
+    - Atualizado o cabeçalho `.testimonials-head` com `.tag-status--testimonials`, `.testimonials-title` em duas linhas brancas, `.testimonials-text` em cinza claro, o contêiner `.testimonials-brands-grid` contendo os 4 `.brand-squircle-card` com SVGs dedicados e o botão `.testimonials-btn`.
+    - Mantida a lista de cards de depoimentos `.quotes` logo abaixo.
+  - Em `style.css`:
+    - Estilizados `.testimonials`, `.testimonials-backdrop`, `.testimonials-wing`, `.tag-status--testimonials`, `.testimonials-title`, `.testimonials-text`, `.testimonials-brands-grid`, `.brand-squircle-card` e `.testimonials-btn`.
+    - Ajustado breakpoint responsivo em `@media (max-width: 768px)` ocultando as asas laterais e compactando os cartões de marcas para mobile.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
