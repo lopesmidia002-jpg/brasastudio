@@ -310,6 +310,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Organização das Pills e Botão Fale Agora:** Estruturadas as pílulas em duas linhas elegantes com fundo grafite `#0d0e14`, contorno suave e texto em cinza claro `#9da0aa`, com destaque no botão "Fale agora" em pílula sólida branca pura com tipografia preta negrita conforme a Foto 2.
   - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
 
+### 2.38 Fundo Mais Claro dos Banners de Diferenciais, Remoção do Brilho Superior e Ícones em Círculos Perfeitos com Halo Âmbar (Passo 44)
+- **Problema/Objetivo:** O usuário solicitou clarear o fundo dos banners de Diferenciais, remover o sombreamento alaranjado da parte de cima deixando apenas na parte de baixo igual à segunda foto, e trocar o estilo dos ícones para o formato circular com degradê e contorno âmbar das fotos 2, 3, 4 e 5 ("mude o fundo dos banners para um mais claro e tire o efeito de somrbramento alaranjado da parte de cima deixando so na parte debaixo dos banners igual a segunda foto, os icones estao diferentes troque por este estilo").
+- **Decisão e Implementação:**
+  - **Clareamento do Fundo dos Banners (`.feature`):** A superfície escura foi alterada de `#090a0f` para um tom grafite mais claro e quente `#13141a` (e `#14151c` no Card 1), proporcionando contraste confortável e visibilidade dos contornos em relação ao fundo preto da seção.
+  - **Remoção do Brilho Alaranjado Superior:** Eliminados o gradiente radial superior e a borda alaranjada do topo (`border-top-color`), passando a utilizar borda neutra `rgba(255, 255, 255, 0.08)` em toda a parte superior.
+  - **Sombreamento Alaranjado Exclusivo na Base:** Aplicado o gradiente térmico âmbar posicionado na base (`radial-gradient(ellipse ... at 50% 100%)`). O Card 1 ("Marca que vende PRO") recebeu glow volumétrico alaranjado inferior e contorno âmbar na base (`border-bottom: 1px solid rgba(255, 110, 40, 0.55)` com sombra `box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9), 0 14px 38px rgba(235, 75, 20, 0.32)`) exatamente como demonstrado na Foto 2.
+  - **Ícones em Círculos Perfeitos (`.icon-orb`):** Reestilizados para formato circular (`border-radius: 50% !important; 50x50px`) com fundo em degradê radial âmbar escuro (`radial-gradient(circle at 45% 45%, #351508 0%, #1c0903 65%, #0e0502 100%)`), contorno fino em ouro/âmbar `1px solid rgba(255, 135, 45, 0.45)`, halo difuso quente suave (`box-shadow: 0 0 16px rgba(255, 95, 30, 0.28)`) e traço vetorial interno em dourado âmbar `#ffa44a` idêntico às fotos 2, 3, 4 e 5 enviadas pelo usuário.
+  - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

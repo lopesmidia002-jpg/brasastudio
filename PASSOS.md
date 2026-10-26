@@ -277,6 +277,14 @@
   - Reorganização das pílulas de benefícios em duas linhas confortáveis (`.pills--benefits`) com fundo escuro `#0d0e14`, contorno suave e destaque no botão "Fale agora" em pílula sólida branca com tipografia preta negrita.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 44 — Fundo Mais Claro dos Banners de Diferenciais, Remoção do Brilho Superior e Ícones em Círculos Perfeitos com Halo Âmbar**
+  - Ajuste do fundo dos banners (`.feature`) para uma superfície grafite mais clara e aconchegante (`#13141a`).
+  - Remoção completa do efeito de sombreamento e contorno alaranjado da parte de cima dos banners (adotando contorno neutro `rgba(255, 255, 255, 0.08)` no topo).
+  - Posicionamento do sombreamento volumétrico alaranjado exclusivamente na parte de baixo dos banners, com destaque térmico imersivo no Card 1 ("Marca que vende PRO") com glow inferior e borda âmbar na base (`border-bottom: 1px solid rgba(255, 110, 40, 0.55)`).
+  - Reestilização dos ícones (`.icon-orb`) em formato de círculos perfeitos (`border-radius: 50% !important; 50x50px`) com fundo em degradê radial âmbar escuro, contorno fino âmbar `rgba(255, 135, 45, 0.45)`, halo difuso quente e traço interno em dourado âmbar `#ffa44a` idêntico às fotos 2, 3, 4 e 5.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
 
 
 

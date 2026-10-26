@@ -1786,12 +1786,11 @@ button, input {
   margin-top: 3.5rem;
 }
 
-/* Card individual com sombreamento volumétrico e iluminação âmbar superior conforme Foto 2 e 5 */
+/* Card individual com fundo grafite mais claro, sem brilho alaranjado no topo e com sombreamento suave na base conforme Foto 2 */
 .feature {
-  background-color: #090a0f;
-  background-image: radial-gradient(ellipse 70% 35% at 50% 0%, rgba(255, 95, 30, 0.14) 0%, transparent 70%);
+  background-color: #13141a;
+  background-image: radial-gradient(ellipse 80% 45% at 50% 100%, rgba(255, 90, 25, 0.08) 0%, transparent 70%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 120, 45, 0.45);
   border-radius: 26px;
   padding: 2.2rem 2.1rem 2.4rem;
   display: flex;
@@ -1803,21 +1802,22 @@ button, input {
 
 .feature:hover {
   transform: translateY(-4px);
-  border-top-color: rgba(255, 140, 60, 0.7);
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 90, 31, 0.18);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.95), 0 10px 25px rgba(255, 90, 31, 0.16);
 }
 
-/* Card 1 em destaque ("Marca que vende PRO") com sombreamento volumétrico quente e iluminação âmbar conforme Foto 2 e 5 */
+/* Card 1 em destaque ("Marca que vende PRO") com sombreamento volumétrico alaranjado na parte de baixo conforme Foto 2 */
 .feature--hot {
-  background: radial-gradient(ellipse 95% 65% at 50% 100%, rgba(190, 55, 18, 0.18) 0%, transparent 65%), radial-gradient(ellipse 85% 45% at 50% 0%, rgba(255, 95, 30, 0.22) 0%, transparent 70%), #090a0f;
-  border: 1px solid rgba(220, 75, 25, 0.5);
-  border-top: 1px solid rgba(255, 140, 55, 0.8);
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9), 0 0 35px rgba(235, 80, 25, 0.24);
+  background-color: #14151c;
+  background-image: radial-gradient(ellipse 95% 65% at 50% 100%, rgba(220, 70, 20, 0.26) 0%, rgba(180, 50, 15, 0.1) 50%, transparent 80%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 110, 40, 0.55);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9), 0 14px 38px rgba(235, 75, 20, 0.32);
 }
 .feature--hot:hover {
-  border-color: rgba(255, 90, 31, 0.7);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.95), 0 0 42px rgba(255, 90, 31, 0.35);
+  transform: translateY(-4px);
+  border-color: rgba(255, 90, 31, 0.55);
+  box-shadow: 0 26px 58px rgba(0, 0, 0, 0.95), 0 18px 45px rgba(235, 75, 20, 0.42);
 }
 
 .feature-top {
@@ -1827,27 +1827,27 @@ button, input {
   margin-bottom: 1.75rem;
 }
 
-/* Ícone em Squircle escuro com borda fina laranja/âmbar e halo suave conforme imagem de referência */
+/* Ícone em Círculo perfeito com degradê radial âmbar escuro, contorno fino e halo suave conforme Fotos 2, 3, 4 e 5 */
 .icon-orb {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px !important; /* Formato squircle conforme imagem enviada */
-  background: #0d0e14;
-  border: 1px solid rgba(255, 90, 31, 0.42);
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important; /* Círculo perfeito conforme fotos enviadas */
+  background: radial-gradient(circle at 45% 45%, #351508 0%, #1c0903 65%, #0e0502 100%);
+  border: 1px solid rgba(255, 135, 45, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 16px rgba(255, 90, 31, 0.22);
+  box-shadow: 0 0 16px rgba(255, 95, 30, 0.28);
   transition: border-color var(--trans-normal), transform var(--trans-normal), box-shadow var(--trans-normal);
 }
 .icon-orb .ico {
-  color: #ff7a3d;
-  stroke: #ff7a3d;
+  color: #ffa44a;
+  stroke: #ffa44a;
 }
 .feature:hover .icon-orb {
-  border-color: rgba(255, 110, 45, 0.7);
+  border-color: rgba(255, 145, 55, 0.7);
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 90, 31, 0.4);
+  box-shadow: 0 0 22px rgba(255, 95, 30, 0.45);
 }
 
 /* Seta diagonal no canto superior direito conforme Foto 2 e 5 */
