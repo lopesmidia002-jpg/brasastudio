@@ -1095,14 +1095,13 @@ button, input {
 .results {
   position: relative;
   overflow: hidden;
-  padding: 6rem 0 4.5rem;
-  background-color: #030303;
-  /* Glow suave difuso âmbar descendo do topo exatamente como na Foto 2 */
-  background-image: radial-gradient(ellipse 70% 45% at 50% 0%, rgba(255, 90, 31, 0.22) 0%, transparent 65%);
-  background-repeat: no-repeat;
+  padding: 6.5rem 0 4.5rem;
+  background-color: #000000;
+  /* Fundo totalmente escuro/preto profundo sem o clarão alaranjado difuso do topo, idêntico à Foto 2 */
+  background-image: none !important;
 }
 
-/* Painéis / Asas geométricas laterais em perspectiva idênticas à Foto 2 */
+/* Painéis / Asas geométricas laterais em degradê alaranjado sutil idênticas à Foto 2 */
 .results-backdrop {
   position: absolute;
   inset: 0;
@@ -1113,25 +1112,25 @@ button, input {
 
 .stage-wing {
   position: absolute;
-  top: 14%;
-  bottom: 14%;
-  width: 26%;
-  max-width: 360px;
-  background: linear-gradient(135deg, rgba(255, 90, 31, 0.14) 0%, rgba(16, 17, 23, 0.95) 30%, rgba(6, 7, 10, 0.98) 100%);
-  border-top: 1px solid rgba(255, 90, 31, 0.28);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.9);
+  top: clamp(140px, 17vw, 210px);
+  height: clamp(260px, 30vw, 390px);
+  width: clamp(200px, 24vw, 360px);
+  pointer-events: none;
+  border-top: 1px solid rgba(255, 115, 45, 0.35);
 }
 
 .stage-wing--left {
   left: 0;
-  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  clip-path: polygon(0 0, 100% 0, 58% 100%, 0 100%);
+  /* Degradê alaranjado sutil que ilumina suavemente a faceta e funde ao preto */
+  background: linear-gradient(135deg, rgba(235, 95, 25, 0.32) 0%, rgba(160, 55, 12, 0.18) 45%, rgba(45, 14, 4, 0.06) 80%, transparent 100%);
 }
 
 .stage-wing--right {
   right: 0;
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 42% 100%);
+  /* Degradê alaranjado sutil simétrico para a asa direita */
+  background: linear-gradient(225deg, rgba(235, 95, 25, 0.32) 0%, rgba(160, 55, 12, 0.18) 45%, rgba(45, 14, 4, 0.06) 80%, transparent 100%);
 }
 
 .results-head {
@@ -1149,24 +1148,26 @@ button, input {
   margin-bottom: 1.5rem;
 }
 
-/* Título 100% Branco Monocromático conforme Foto 2 */
+/* Título 100% Branco Monocromático com tipografia aberta e elegante (font-weight: 400) conforme Foto 2 */
 .title--results {
   color: #ffffff !important;
-  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
-  margin-bottom: 1.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 400; /* Tipografia leve e sofisticada idêntica à Foto 2 */
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.4rem;
   text-align: center;
 }
 
 .text--results {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.65;
-  color: #a0a0a5;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.62;
+  color: #909096;
   max-width: 580px;
   margin: 0 auto 2.2rem;
   text-align: center;
+  font-weight: 400;
 }
 
 /* Botão no tom vermelho-laranja brasa idêntico à Foto 2 */

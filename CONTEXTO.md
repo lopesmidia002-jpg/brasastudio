@@ -112,6 +112,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Botões (`.actions`):** Botão primário "Começar um projeto" calibrado com fundo branco puro `#ffffff`, texto preto `#000000` em peso 600 e sombra suave sem efeito estourado de glow; botão secundário "Conheça a Brasa" com fundo translúcido escuro `rgba(255, 255, 255, 0.08)`, borda discreta `rgba(255, 255, 255, 0.14)` e texto branco.
   - **Ícones de Marcas:** Todos os 8 ícones geométricos atualizados com traço e preenchimento em branco puro acetinado `#ffffff` (`opacity: 0.95`), padronizando acabamento de ateliê conforme o design da foto.
 
+### 2.15 Ajuste Visual Fiel da Seção Resultados (Passo 21)
+- **Problema/Objetivo:** O usuário solicitou retirar o fundo alaranjado difuso no topo da seção Resultados, mantendo o fundo totalmente escuro como na segunda foto de referência, além de tornar as asas laterais poligonais mais sutis com um degradê em tom alaranjado/âmbar quente e harmonizar a tipografia do título e textos.
+- **Decisão e Implementação:**
+  - **Fundo Escuro:** Removido integralmente o `background-image` radial alaranjado difuso de `.results`, configurando `background-color: #000000`, garantindo preto puro e contraste nítido com o palco.
+  - **Asas Laterais com Degradê Alaranjado Sutil:** Redefinidas as asas `.stage-wing` com posicionamento na altura média (altura do subtítulo), dimensões proporcionais e corte poligonal diagonal simétrico (`clip-path`). Aplicado degradê suave `linear-gradient` com tons alaranjados/âmbar (`rgba(235, 95, 25, 0.32)` a `rgba(160, 55, 12, 0.18)` e `rgba(45, 14, 4, 0.06)`), fundindo sutilmente ao fundo escuro com borda superior iluminada `rgba(255, 115, 45, 0.35)`.
+  - **Tipografia Leve e Elegante:** Headline `.title--results` calibrada para `font-weight: 400` com `letter-spacing: -0.025em`, acompanhando a identidade visual aberta e sofisticada da segunda foto.
+  - **Lead Textual:** Ajustado `.text--results` em cinza suave `#909096` com entrelinha balanceada de 1.62.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
