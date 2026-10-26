@@ -142,6 +142,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Cores e Tipografia da Headline (`.title--process`):** Removido o tom laranja em "sem atalhos.". A headline foi calibrada para peso leve (`font-weight: 400`, `letter-spacing: -0.025em`) com a primeira linha ("Do briefing ao ar,") em branco puro `#ffffff` e a segunda ("sem atalhos.") em cinza prata suave monocromático `#8e8e96`, estabelecendo o visual limpo, sofisticado e idêntico à Foto 2.
   - **Lead Textual:** Texto descritivo ajustado em tom cinza suave legível `#909096`.
 
+### 2.19 Calibração do Fundo Atmosférico e Geometria das Asas em Resultados (Passo 25)
+- **Problema/Objetivo:** O usuário solicitou calibrar o plano de fundo da seção Resultados com o mesmo padrão difuso da Foto 2 e ajustar a geometria das asas e a tipografia do texto para ficarem idênticos à referência.
+- **Decisão e Implementação:**
+  - **Fundo Atmosférico:** Aplicado gradiente elíptico difuso sutil no topo central de `.results` (`radial-gradient(ellipse 65% 45% at 50% 0%, rgba(225, 80, 20, 0.16) 0%, rgba(130, 40, 8, 0.06) 42%, transparent 70%)`), criando a aura quente de brasa sem poluir a legibilidade do texto.
+  - **Geometria das Asas Laterais:** As asas `.stage-wing` foram calibradas com topo perfeitamente horizontal alinhado com a base da headline ("no caixa e na marca.") e corte diagonal preciso em 48% (`clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%)` na esquerda e simétrico em 52% na direita), com degradê em tom bronze/âmbar com profundidade (`rgba(175, 55, 15, 0.35)` a `rgba(30, 10, 4, 0.08)`) e borda superior iluminada `rgba(255, 115, 45, 0.45)`.
+  - **Tipografia e Quebras de Texto:** Headline `.title--results` calibrada com tipografia aberta (`font-size: clamp(2.8rem, 5.2vw, 4.4rem)`, `font-weight: 400`, `line-height: 1.1`, `letter-spacing: -0.025em`) em branco puro, e lead `.text--results` em cinza suave `#909096` distribuído em duas linhas centralizadas.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

@@ -148,3 +148,8 @@
   - Implementação da tag de status em pílula `Como trabalhamos` com ponto quadrado laranja (`#ff5a1f`) com glow e efeito de iluminação âmbar superior no topo da borda idêntico à Foto 3.
   - Substituição da cor laranja no título: "Do briefing ao ar," em branco puro (`#ffffff`) e "sem atalhos." em cinza prata suave (`#8e8e96`), com tipografia leve e aberta (`font-weight: 400`, `letter-spacing: -0.025em`) conforme a Foto 2.
   - Lead em cinza suave e harmonizado (`#909096`).
+
+- [x] **Passo 25 — Calibração do Fundo Atmosférico e Geometria das Asas em Resultados (Idêntico à Foto 2)**
+  - Efeito do plano de fundo calibrado com gradiente elíptico difuso sutil de calor âmbar descendo do topo central (`rgba(225, 80, 20, 0.16)` fundindo ao preto profundo), recriando a atmosfera cinematográfica da Foto 2.
+  - Geometria das asas laterais poligonais atualizada com topo perfeitamente horizontal alinhado à linha "no caixa e na marca." e corte diagonal em 48%, em degradê bronze/âmbar com fusão suave ao preto e borda superior iluminada.
+  - Headline "Resultados que aparecem no caixa e na marca." calibrada com tipografia aberta (`clamp(2.8rem, 5.2vw, 4.4rem)`, peso 400, entrelinha 1.1) e texto de apoio com quebra balanceada em duas linhas.

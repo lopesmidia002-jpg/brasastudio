@@ -1096,12 +1096,13 @@ button, input {
   position: relative;
   overflow: hidden;
   padding: 6.5rem 0 4.5rem;
-  background-color: #000000;
-  /* Fundo totalmente escuro/preto profundo sem o clarão alaranjado difuso do topo, idêntico à Foto 2 */
-  background-image: none !important;
+  background-color: #030303;
+  /* Glow difuso sutil de calor âmbar descendo do topo exatamente no padrão da Foto 2 */
+  background-image: radial-gradient(ellipse 65% 45% at 50% 0%, rgba(225, 80, 20, 0.16) 0%, rgba(130, 40, 8, 0.06) 42%, transparent 70%);
+  background-repeat: no-repeat;
 }
 
-/* Painéis / Asas geométricas laterais em degradê alaranjado sutil idênticas à Foto 2 */
+/* Painéis / Asas geométricas laterais em degradê âmbar/bronze sutil idênticas à Foto 2 */
 .results-backdrop {
   position: absolute;
   inset: 0;
@@ -1112,25 +1113,25 @@ button, input {
 
 .stage-wing {
   position: absolute;
-  top: clamp(140px, 17vw, 210px);
-  height: clamp(260px, 30vw, 390px);
-  width: clamp(200px, 24vw, 360px);
+  top: clamp(155px, 19vw, 210px);
+  height: clamp(270px, 32vw, 410px);
+  width: clamp(210px, 24vw, 360px);
   pointer-events: none;
-  border-top: 1px solid rgba(255, 115, 45, 0.35);
+  border-top: 1px solid rgba(255, 115, 45, 0.45);
 }
 
 .stage-wing--left {
   left: 0;
-  clip-path: polygon(0 0, 100% 0, 58% 100%, 0 100%);
-  /* Degradê alaranjado sutil que ilumina suavemente a faceta e funde ao preto */
-  background: linear-gradient(135deg, rgba(235, 95, 25, 0.32) 0%, rgba(160, 55, 12, 0.18) 45%, rgba(45, 14, 4, 0.06) 80%, transparent 100%);
+  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%);
+  /* Degradê alaranjado/âmbar bronze com profundidade e fusão suave ao preto idêntico à Foto 2 */
+  background: linear-gradient(135deg, rgba(175, 55, 15, 0.35) 0%, rgba(105, 30, 8, 0.22) 36%, rgba(30, 10, 4, 0.08) 75%, transparent 100%);
 }
 
 .stage-wing--right {
   right: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 42% 100%);
-  /* Degradê alaranjado sutil simétrico para a asa direita */
-  background: linear-gradient(225deg, rgba(235, 95, 25, 0.32) 0%, rgba(160, 55, 12, 0.18) 45%, rgba(45, 14, 4, 0.06) 80%, transparent 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
+  /* Degradê simétrico para a asa direita */
+  background: linear-gradient(225deg, rgba(175, 55, 15, 0.35) 0%, rgba(105, 30, 8, 0.22) 36%, rgba(30, 10, 4, 0.08) 75%, transparent 100%);
 }
 
 .results-head {
@@ -1145,18 +1146,23 @@ button, input {
 }
 
 .results-head .tag-status {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.35rem 0.95rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
 /* Título 100% Branco Monocromático com tipografia aberta e elegante (font-weight: 400) conforme Foto 2 */
 .title--results {
   color: #ffffff !important;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
   font-weight: 400; /* Tipografia leve e sofisticada idêntica à Foto 2 */
-  line-height: 1.14;
+  line-height: 1.1;
   letter-spacing: -0.025em;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.45rem;
   text-align: center;
 }
 
@@ -1164,8 +1170,8 @@ button, input {
   font-size: clamp(1rem, 1.25vw, 1.12rem);
   line-height: 1.62;
   color: #909096;
-  max-width: 580px;
-  margin: 0 auto 2.2rem;
+  max-width: 590px;
+  margin: 0 auto 2.3rem;
   text-align: center;
   font-weight: 400;
 }
