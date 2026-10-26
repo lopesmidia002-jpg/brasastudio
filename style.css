@@ -1442,23 +1442,24 @@ button, input {
   margin-top: 2.2rem;
 }
 
-/* Banners / Cards de etapas: Tamanho compacto, fundo preto grafite profundo e leve glow no canto superior direito conforme Foto 2 */
+/* Banners / Cards de etapas: Fundo grafite mais claro, 100% estáticos (sem efeito hover) conforme Foto 2 */
 .step {
   padding: 1.6rem 1.7rem 1.75rem;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse 55% 45% at 98% 2%, rgba(200, 60, 20, 0.11) 0%, transparent 65%), #050609;
+  background: radial-gradient(ellipse 55% 45% at 98% 2%, rgba(200, 60, 20, 0.12) 0%, transparent 65%), #101117;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
-  transition: border-color var(--trans-normal), transform var(--trans-normal), box-shadow var(--trans-normal);
+  transform: none !important; /* 100% estático conforme solicitação do usuário */
+  transition: none !important;
 }
 .step:hover {
-  border-color: rgba(255, 90, 31, 0.35);
-  transform: translateY(-2px);
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 90, 31, 0.15);
+  transform: none !important; /* Sem efeito de elevação no hover */
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8) !important;
 }
 
 .step-top {
@@ -1468,17 +1469,17 @@ button, input {
   margin-bottom: 0.95rem;
 }
 
-/* Ícone em squircle com borda âmbar e halo suave conforme Foto 2 */
+/* Ícone em squircle com fundo alaranjado com degradê âmbar quente conforme Foto 3 */
 .icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: #0d0e14;
-  border: 1px solid rgba(255, 90, 31, 0.32);
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: radial-gradient(circle at 45% 45%, #3d1f13 0%, #220e06 65%, #0f0502 100%);
+  border: 1px solid rgba(255, 110, 40, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 16px rgba(255, 90, 31, 0.2);
+  box-shadow: 0 0 16px rgba(255, 90, 31, 0.22);
 }
 
 /* Pílula de etapa: Formato retangular arredondado conforme Foto 2 e Foto 3 */

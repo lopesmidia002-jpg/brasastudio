@@ -284,6 +284,13 @@
   - Reestilização dos ícones (`.icon-orb`) em formato de círculos perfeitos (`border-radius: 50% !important; 50x50px`) com fundo em degradê radial âmbar escuro, contorno fino âmbar `rgba(255, 135, 45, 0.45)`, halo difuso quente e traço interno em dourado âmbar `#ffa44a` idêntico às fotos 2, 3, 4 e 5.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 45 — Fundo Mais Claro nas Etapas de Como Trabalhamos, Banners Estáticos e Ícones em Degradê Alaranjado**
+  - Ajuste do plano de fundo dos cards de etapas (`.step`) para um tom grafite mais claro e aconchegante (`#101117`) idêntico à Foto 2.
+  - Desativação completa do efeito hover nos banners de etapas (`transform: none !important; transition: none !important; border-color: rgba(255, 255, 255, 0.08) !important;`), tornando os banners 100% estáticos conforme solicitado pelo usuário.
+  - Aplicação de fundo alaranjado com degradê âmbar quente nas caixas de ícones (`.icon-box` com `radial-gradient(circle at 45% 45%, #3d1f13 0%, #220e06 65%, #0f0502 100%)`), contorno fino âmbar `1px solid rgba(255, 110, 40, 0.45)` e halo difuso suave idêntico à Foto 3.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
 
 
 

@@ -319,6 +319,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Ícones em Círculos Perfeitos (`.icon-orb`):** Reestilizados para formato circular (`border-radius: 50% !important; 50x50px`) com fundo em degradê radial âmbar escuro (`radial-gradient(circle at 45% 45%, #351508 0%, #1c0903 65%, #0e0502 100%)`), contorno fino em ouro/âmbar `1px solid rgba(255, 135, 45, 0.45)`, halo difuso quente suave (`box-shadow: 0 0 16px rgba(255, 95, 30, 0.28)`) e traço vetorial interno em dourado âmbar `#ffa44a` idêntico às fotos 2, 3, 4 e 5 enviadas pelo usuário.
   - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
 
+### 2.39 Fundo Mais Claro nas Etapas de Como Trabalhamos, Banners Estáticos e Ícones em Degradê Alaranjado (Passo 45)
+- **Problema/Objetivo:** O usuário solicitou clarear o fundo dos banners da seção de etapas ("Como trabalhamos") igual à segunda foto, remover o efeito de passar o mouse deixando os banners estáticos, e aplicar fundo alaranjado com degradê nos ícones dos banners conforme a terceira foto ("deixe o fundodos banneers um pouco mais claro igual da segunda foto, tire o efeito de passar o mouse e deixe os banners estaticos, coloque este fundo alaranjado com degrade nos icones dos banners").
+- **Decisão e Implementação:**
+  - **Clareamento da Superfície (`.step`):** Fundo dos cards ajustado de `#050609` para `#101117`, criando um tom grafite mais claro, suave e com contraste equilibrado idêntico à Foto 2.
+  - **Banners 100% Estáticos:** Desativadas as transições e transformações de elevação vertical no hover (`transform: none !important; transition: none !important; border-color: rgba(255, 255, 255, 0.08) !important;`), mantendo os banners totalmente estáticos na interação.
+  - **Fundo Alaranjado com Degradê nos Ícones (`.icon-box`):** Aplicado gradiente radial âmbar quente (`radial-gradient(circle at 45% 45%, #3d1f13 0%, #220e06 65%, #0f0502 100%)`) com contorno fino em âmbar `1px solid rgba(255, 110, 40, 0.45)` e halo difuso suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.22)`), reproduzindo com fidelidade o recorte da Foto 3.
+  - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
