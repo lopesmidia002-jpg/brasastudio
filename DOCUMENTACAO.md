@@ -125,24 +125,22 @@ A landing page está apta a ser instalada na tela de início de celulares, table
 ## 🎨 Design System e Tokens
 
 - **Cores de Fundo:**
-  - Primária: `#050505` (Preto absoluto com profundidade)
+  - Primária: `#050505` e `#030303` (Preto absoluto com iluminação volumétrica)
   - Superfícies / Cards: `#0b0c10`, `#111217`
+  - Caixas de Ícones do Hero: `#0b0c10` (68x68px, raio 20px, com borda sutil)
   - Bordas Sutis: `rgba(255, 255, 255, 0.08)`
 - **Acentos e Iluminação:**
   - Laranja Brasa Primário: `#FF5A1F`
-  - Gradiente Neon Brasa: `linear-gradient(135deg, #FF5A1F, #FF8C00)`
-  - Glow Shadow: `0 8px 32px rgba(255, 90, 31, 0.25)`
-  - Molduras com brilho âmbar inferior: `box-shadow: 0 20px 40px -15px rgba(255, 90, 31, 0.2)`
-- **Tipografia:**
-  - Fonte de Títulos: `'DM Sans', sans-serif`
-  - Fonte de Corpo: `'Inter', sans-serif`
+  - Gradiente Neon Brasa: `linear-gradient(135deg, #ffa64d, #ff5a1f, #cc3708)`
+  - Rosa dos Ventos: Vetor astronômico com círculos concêntricos pontilhados, eixos de mira e estrela de 4 pontas alaranjada
+  - Iluminação do Hero: Gradientes radiais estáticos no topo direito (clarão âmbar 850px) e topo esquerdo (glow difuso 620px)
 
 ---
 
 ## 🧩 Seções Mapeadas e Implementadas
 
 1. **Header / Navbar:** Logo Brasa Studio com estrela laranja, menu âncora e botão CTA com efeito glow.
-2. **Hero Section:** Headline de impacto, tag de autoridade, botão de agendamento, ticker contínuo de marcas parceiras e preview do mockup de dashboard com iluminação inferior.
+2. **Hero Section (Refinada conforme Referência Visual):** Headline de impacto, tag de status, botões de ação, barra de rolagem horizontal com caixas de ícones (68x68px) e card de preview com rosa dos ventos laranja vibrante no canto inferior direito sobre iluminação âmbar estática.
 3. **Sobre a Brasa:** Estatísticas com números em destaque, posicionamento e proposta de valor.
 4. **Resultados (Marquee):** Carrossel infinito horizontal de métricas e clientes atendidos.
 5. **Como Trabalhamos:** Processo em 3 etapas claras (Diagnóstico, Criação & Engenharia, Escala).

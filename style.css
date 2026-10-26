@@ -632,26 +632,21 @@ button, input {
   align-items: center;
   padding: clamp(6.5rem, 12vh, 8.5rem) 0 3.5rem;
   overflow: hidden;
+  background-color: #030303;
+  /* Efeito de plano de fundo idêntico à foto 2: clarão âmbar forte no topo direito e glow suave no topo esquerdo */
+  background-image:
+    radial-gradient(circle 850px at 92% 8%, rgba(255, 95, 22, 0.72) 0%, rgba(220, 72, 12, 0.42) 26%, rgba(140, 40, 6, 0.18) 52%, transparent 74%),
+    radial-gradient(circle 620px at 12% 10%, rgba(210, 68, 16, 0.24) 0%, rgba(120, 32, 6, 0.08) 44%, transparent 68%),
+    radial-gradient(ellipse 95% 45% at 50% 0%, rgba(255, 90, 31, 0.16) 0%, transparent 62%);
+  background-repeat: no-repeat;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: -1;
-  overflow: hidden;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse 75% 55% at 50% -5%, rgba(255, 90, 31, 0.28) 0%, transparent 68%),
-    radial-gradient(circle at 82% 35%, rgba(255, 179, 71, 0.12) 0%, transparent 55%),
-    var(--bg-black);
-}
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.32;
-  mix-blend-mode: screen;
-  filter: contrast(1.15) brightness(1.2);
+  background: transparent;
 }
 
 .hero-in {
@@ -706,27 +701,62 @@ button, input {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-.ticker-wrap {
-  margin-top: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  min-width: 0;
+/* Ícones com caixas generosas e barra de rolagem horizontal livre (sem animação automática) */
+.hero-icons-wrap {
+  margin-top: 0.8rem;
+  padding-top: 1rem;
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
 }
-.t-logos {
-  gap: 3rem;
+
+.hero-icons-scroll {
+  display: flex;
   align-items: center;
+  gap: 1.15rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0.2rem 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 90, 31, 0.45) rgba(255, 255, 255, 0.04);
+  -webkit-overflow-scrolling: touch;
 }
-.t-logos .mark {
-  opacity: 0.65;
-  transition: opacity var(--trans-fast);
+
+.hero-icons-scroll::-webkit-scrollbar {
+  height: 6px;
 }
-.t-logos .mark:hover {
-  opacity: 1;
+.hero-icons-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+}
+.hero-icons-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 90, 31, 0.45);
+  border-radius: 9999px;
+}
+.hero-icons-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--orange-primary);
+}
+
+.icon-card {
+  flex: 0 0 68px;
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: #0b0c10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.65);
+  transition: transform var(--trans-fast), border-color var(--trans-fast), box-shadow var(--trans-fast);
+}
+.icon-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 90, 31, 0.45);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.85), 0 0 18px rgba(255, 90, 31, 0.3);
 }
 
 .hero-art {
@@ -751,7 +781,7 @@ button, input {
   transition: transform var(--trans-normal), box-shadow var(--trans-normal);
 }
 .preview:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.95), 0 0 60px -5px rgba(255, 90, 31, 0.45);
 }
 
@@ -760,11 +790,11 @@ button, input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(5, 5, 5, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(10, 10, 12, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -773,16 +803,32 @@ button, input {
   transition: all var(--trans-normal);
 }
 .preview:hover .play {
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.08);
   background: rgba(255, 90, 31, 0.85);
   border-color: #ffb347;
 }
 
-.spark--hero {
-  top: -35px;
-  right: -35px;
-  width: 135px;
-  height: 135px;
+/* Rosa dos ventos Laranja com eixos e círculos no canto inferior direito */
+.spark-compass-wrap {
+  position: absolute;
+  bottom: -45px;
+  right: -45px;
+  width: 170px;
+  height: 170px;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 0 20px rgba(255, 90, 31, 0.45));
+}
+.spark-compass {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: brasa-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes brasa-pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(255, 90, 31, 0.4)); }
+  100% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(255, 110, 40, 0.7)); }
 }
 
 @media (max-width: 809px) {
@@ -790,7 +836,14 @@ button, input {
     grid-template-columns: 1fr;
   }
   .hero-art {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  .spark-compass-wrap {
+    bottom: -30px;
+    right: -15px;
+    width: 135px;
+    height: 135px;
   }
 }
 

@@ -44,6 +44,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - Vinculado ao remote remoto: `https://github.com/lopesmidia002-jpg/brasastudio.git`.
 - Realizado commit inicial e push com sucesso para a branch `main`.
 
+### 2.6 Refinamento Visual Fiel da Hero Section (Passo 12)
+- **Adequação à Imagem de Referência do Usuário:**
+  - **Plano de Fundo Estático:** Removido o elemento `<video>` de background para evitar animação excessiva e consumo de GPU; implementada iluminação ambiente estática através de múltiplos gradientes radiais CSS (clarão âmbar potente de 850px no topo direito e glow suave de 620px no topo esquerdo).
+  - **Cards de Ícones com Scroll Horizontal:** Removido o ticker de rolagem automática contínua. Implementadas caixas individuais em formato squircle (68x68px, raio 20px, fundo `#0b0c10`) com barra de rolagem horizontal nativa com suporte touch e mouse.
+  - **Rosa dos Ventos Laranja no Canto Inferior Direito:** Substituído o ícone pequeno antigo por uma rosa dos ventos vetorial com círculos concêntricos pontilhados, eixos de mira e estrela de 4 pontas em gradiente laranja vibrante (`#ff5a1f` a `#ffa64d`), posicionada exatamente no canto inferior direito do preview com efeito glow âmbar.
+  - **Card de Preview:** Ajustada a proporção e borda com iluminação sutil e botão de play central.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
