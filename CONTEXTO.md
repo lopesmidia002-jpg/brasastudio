@@ -257,6 +257,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Preservação dos Efeitos Trapezoidais (`.stage-wing`):** Mantidos integralmente intactos os painéis geométricos laterais (`.stage-wing--left` e `.stage-wing--right`), com corte diagonal em 48% (`clip-path: polygon(...)`), borda superior iluminada em 1px e degradê bronze/âmbar que se dissipa harmonicamente do canto externo para o centro escuro.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.32 Inversão dos Efeitos Trapezoidais nos Dois Lados conforme Foto 2 em Resultados e Diferenciais (Passo 38)
+- **Problema/Objetivo:** O usuário solicitou inverter a orientação dos efeitos trapezoidais em ambos os lados ("inverta este efeito dos dois lados de modo que fique igual esse da segunda foto e aplique nas paginas que onde este efeito essta sendo usado"). Na Foto 2 enviada, a forma trapezoidal possui base larga e afunila em direção ao topo (com diagonal inclinada que sobe em direção ao topo estreito).
+- **Decisão e Implementação:**
+  - **Inversão da Geometria do `clip-path`:**
+    - *Lado Esquerdo (`.stage-wing--left` e `.feature-beam--left`):* Ajustado o polígono para `polygon(0 0, 72% 0, 100% 100%, 0 100%)`. O topo horizontal agora ocupa 72% e a base alarga para 100%, gerando a diagonal descendente externa idêntica à Foto 2.
+    - *Lado Direito (`.stage-wing--right` e `.feature-beam--right`):* Ajustado o polígono para `polygon(28% 0, 100% 0, 100% 100%, 0 100%)`. A diagonal sobe de `0% 100%` até `28% 0%`, encontrando o topo horizontal que vai até `100% 0%`, replicando com exatidão matemática a silhueta da Foto 2 de referência.
+  - **Propagação Uniforme nas Seções:** A nova geometria invertida foi aplicada de forma coerente em todas as seções onde o efeito é empregado no projeto (`#resultados` e `#diferenciais`).
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

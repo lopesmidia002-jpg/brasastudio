@@ -1122,14 +1122,14 @@ button, input {
 
 .stage-wing--left {
   left: 0;
-  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%);
+  clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%);
   /* Degradê alaranjado/âmbar bronze com profundidade e fusão suave ao preto idêntico à Foto 2 */
   background: linear-gradient(135deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
 }
 
 .stage-wing--right {
   right: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
   /* Degradê simétrico para a asa direita */
   background: linear-gradient(225deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
 }
@@ -1660,13 +1660,13 @@ button, input {
 
 .feature-beam--left {
   left: 0;
-  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%);
+  clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%);
   background: linear-gradient(135deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
 }
 
 .feature-beam--right {
   right: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
   background: linear-gradient(225deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
 }
 

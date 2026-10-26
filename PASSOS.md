@@ -234,3 +234,10 @@
   - Preservação intacta de todas as formas trapezoidais / asas geométricas laterais (`.stage-wing--left` e `.stage-wing--right`) com seu gradiente bronze/âmbar sutil, borda iluminada de 1px e corte diagonal de 48%.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 38 — Inversão dos Efeitos Trapezoidais nos Dois Lados conforme Foto 2 em Resultados e Diferenciais**
+  - Inversão da geometria do `clip-path` dos efeitos trapezoidais laterais em todas as seções onde o efeito é utilizado (`#resultados` e `#diferenciais`), adotando o formato exato da Foto 2 (base larga e topo afunilado/estreito).
+  - Lado esquerdo (`.stage-wing--left` e `.feature-beam--left`): `clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%)`.
+  - Lado direito (`.stage-wing--right` e `.feature-beam--right`): `clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%)`.
+  - Preservação da linha de luz âmbar no topo (`border-top: 1px solid rgba(255, 120, 50, 0.48)`) e degradê suave bronze/âmbar que se funde ao preto absoluto.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
