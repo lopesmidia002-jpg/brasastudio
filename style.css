@@ -2493,6 +2493,109 @@ button, input {
 /* --------------------------------------------------------------------------
    11. SEÇÃO SERVIÇOS
    -------------------------------------------------------------------------- */
+.sec.services {
+  background-color: #000000;
+  position: relative;
+  /* Brilho sutil avermelhado/laranja no canto superior esquerdo */
+  background-image: radial-gradient(circle 650px at 8% 0%, rgba(255, 95, 30, 0.15) 0%, rgba(180, 50, 15, 0.05) 45%, transparent 75%);
+}
+
+.head--services {
+  position: relative;
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+/* Brilho atmosférico concentrado sobre o canto superior esquerdo do cabeçalho */
+.head--services::before {
+  content: '';
+  position: absolute;
+  top: -65px;
+  left: -20px;
+  width: 280px;
+  height: 150px;
+  background: radial-gradient(ellipse 70% 60% at 45% 35%, rgba(255, 95, 30, 0.32) 0%, rgba(200, 55, 15, 0.1) 50%, transparent 80%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Badge superior: Pílula arredondada, fundo cinzento-escuro com rebordo sutil, ponto laranja e texto Serviços em branco */
+.tag-status--services {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: rgba(18, 20, 26, 0.88);
+  /* Brilho sutil no topo do rebordo e iluminação âmbar */
+  background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 95, 30, 0.52) 0%, rgba(255, 95, 30, 0.12) 55%, transparent 80%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 120, 45, 0.85);
+  padding: 0.42rem 1.05rem;
+  border-radius: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.6rem;
+  width: fit-content;
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 -2px 14px rgba(255, 90, 31, 0.32);
+}
+
+.tag-status--services .dot {
+  width: 7px;
+  height: 7px;
+  background: #ff5a1f;
+  border-radius: 2px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 90, 31, 0.95);
+  flex-shrink: 0;
+}
+
+/* Título principal: Tipografia sans-serif grande em duas linhas */
+.title--services {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
+  font-size: clamp(2.45rem, 4.8vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  text-align: left;
+  margin: 0 0 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Linha 1 em branco brilhante */
+.title--services .title-line-1 {
+  display: block;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Linha 2 com opacidade reduzida / cinzento elegante */
+.title--services .title-line-2 {
+  display: block;
+  color: #8c8e98;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* Subtítulo em cinzento suave */
+.text--services {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.02rem, 1.35vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.62;
+  color: #9294a0;
+  text-align: left;
+  max-width: 630px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
 .split--services {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;

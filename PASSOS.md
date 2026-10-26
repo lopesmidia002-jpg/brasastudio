@@ -422,7 +422,21 @@
     3. Seção Serviços (`.svc-compass-wrap`) no Card 3 ("Lançamento integrado").
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com HTTP 200 OK tanto na raiz quanto na rota do asset vetorial `/assets/img/compass-rose-hud.svg`.
 
-- [ ] **Passo 61 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 61 — Cabeçalho Moderno Dark Mode Minimalista da Seção Serviços (Idêntico à Imagem 2)**
+  - Configuração do fundo em preto puro absoluto (`#000000`) com iluminação difusa avermelhada/laranja no canto superior esquerdo (`radial-gradient` de 650px e pseudo-elemento `.head--services::before` com glow térmico de 280x150px e blur de 28px).
+  - Implementação do badge superior em pílula arredondada (`.tag-status--services`):
+    - Fundo cinzento-escuro (`rgba(18, 20, 26, 0.88)`), cantos arredondados de 10px e rebordo sutil `1px solid rgba(255, 255, 255, 0.12)`.
+    - Destaque no topo com borda iluminada `border-top: 1px solid rgba(255, 120, 45, 0.85)` e gradiente elíptico âmbar superior com sombra sutil.
+    - Ponto quadrado cor de laranja à esquerda (`.dot` com 7x7px, `#ff5a1f` e glow de 8px).
+    - Texto "Serviços" em branco puro (`#ffffff`) com peso 500.
+  - Título principal (`.title--services`) em tipografia sans-serif grande (`clamp(2.45rem, 4.8vw, 3.85rem)`), peso 700 e entrelinha 1.12 em duas linhas nítidas:
+    - Linha 1: "Serviços completos," em branco brilhante (`#ffffff`).
+    - Linha 2: "do conceito ao código." em cinzento prateado com opacidade reduzida (`#8c8e98`), sem degradê alaranjado.
+  - Subtítulo (`.text--services`): texto em cinzento suave (`#9294a0`), tamanho 1.05rem, entrelinha 1.62 e largura máxima de 630px para quebra elegante em duas linhas.
+  - Alinhamento à esquerda (`text-align: left`), espaçamento generoso e hierarquia visual refinada idêntica à Imagem 2 de referência.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 62 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

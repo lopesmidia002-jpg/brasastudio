@@ -531,6 +531,25 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
   - Requisição do asset vetorial validada com `Invoke-WebRequest -Uri 'http://localhost:3000/assets/img/compass-rose-hud.svg'`, retornando status HTTP 200 OK.
 
+### 2.55 Implementação do Cabeçalho Moderno Dark Mode Minimalista em Serviços Conforme Imagem 2 (Passo 61)
+- **Problema/Objetivo:** O usuário solicitou alterar o cabeçalho da seção de Serviços para ficar exatamente igual à segunda imagem enviada:
+  - Fundo preto puro (`#000000`) com brilho sutil avermelhado/laranja no canto superior esquerdo.
+  - Badge superior em formato de pílula arredondada, fundo cinzento-escuro com rebordo sutil, contendo um ponto cor de laranja à esquerda e o texto "Serviços" em branco.
+  - Título principal em duas linhas monocromático: Linha 1 ("Serviços completos,") em branco brilhante e Linha 2 ("do conceito ao código.") com opacidade reduzida/cinzento.
+  - Subtítulo em cinzento suave: *"Escolha o formato que combina com o momento da sua marca. Todos incluem estratégia, direção de arte e acompanhamento."*
+  - Alinhamento à esquerda, espaçamento generoso e hierarquia visual bem definida.
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  - Na versão anterior (Imagem 1), o cabeçalho usava a tag `.eyebrow` em caixa alta alaranjada ("SERVIÇOS"), o título principal continha "do" e "conceito ao código." em laranja de alto contraste e degradê de fogo, e o alinhamento carecia da atmosfera sutil do canto superior esquerdo.
+  - Na Imagem 2 (referência desejada), a composição adota a estética premium minimalista do design system moderno da Brasa Studio:
+    1. *Fundo & Glow:* Canvas preto puro (`#000000`) com iluminação atmosférica sutil avermelhada/laranja no canto superior esquerdo (`radial-gradient(circle 650px at 8% 0%, rgba(255, 95, 30, 0.15) 0%, ...)` e pseudo-elemento com desfoque de 28px).
+    2. *Badge Superior (`.tag-status--services`):* Pílula arredondada com cantos de 10px em cinza grafite translúcido (`rgba(18, 20, 26, 0.88)`), rebordo fino `1px solid rgba(255, 255, 255, 0.12)`, reflexo âmbar no topo da borda `border-top: 1px solid rgba(255, 120, 45, 0.85)` com sombra projetada suave, ponto quadrado laranja vibrante à esquerda (`#ff5a1f`) e texto "Serviços" em branco puro (`#ffffff`).
+    3. *Título Principal (`.title--services`):* Tipografia sans-serif robusta display (700 bold) com quebra balanceada em duas linhas: Linha 1 em branco puro brilhante (`#ffffff`) e Linha 2 em cinzento prateado (`#8c8e98`) com opacidade calibrada, eliminando tons alaranjados do título.
+    4. *Subtítulo (`.text--services`):* Texto descritivo em cinzento suave (`#9294a0`), entrelinha confortável de 1.62 e largura máxima de 630px para quebra elegante em duas linhas.
+    5. *Alinhamento:* Alinhado à esquerda (`text-align: left`) com respiros generosos e harmonia com os 3 banners de serviços abaixo.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
