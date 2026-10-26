@@ -186,3 +186,11 @@
   - Ajuste da sobreposição do card de texto inferior (`.case-box` com `margin-top: -48px`, padding compacto `1.25rem 1.35rem 1.45rem`), mantendo respiro superior amplo nas fotos e acabamento proporcional fiel à Foto 2 de referência.
   - Atualização dos atributos intrínsecos `height="555"` nas tags `<img>` dos cases em `index.html`.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+- [x] **Passo 32 — Reativação das Asas em Degradê e Calibração Tipográfica em 2 Linhas conforme Foto 2**
+  - Reativação do painel de asas geométricas laterais em degradê âmbar/bronze (`.stage-wing--left` e `.stage-wing--right` com corte diagonal em 48%, borda superior iluminada `1px solid rgba(255, 120, 50, 0.48)` e sombra difusa quente) alinhadas perfeitamente ao texto.
+  - Restauração do glow atmosférico difuso de calor âmbar descendo do topo central (`radial-gradient` no `.results`).
+  - Calibração tipográfica do título (`.title--results`) reduzindo o tamanho de exibição para escala elegante (`clamp(2.35rem, 4.3vw, 3.6rem)`), garantindo quebra limpa em exatamente 2 linhas ("Resultados que aparecem" / "no caixa e na marca.") com degradê suave de branco puro para cinza prateado.
+  - Ajuste do botão "Agendar 15 minutos" com glow quente inferior âmbar (`box-shadow: 0 8px 26px rgba(235, 71, 20, 0.42)`) e tag de status translúcida idêntica à Foto 2.
+  - Reconstrução e validação do container Docker na porta 3000 com retorno HTTP 200 OK.
+

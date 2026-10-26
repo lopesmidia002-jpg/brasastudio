@@ -1090,20 +1090,50 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   6. SEÇÃO RESULTADOS — PALCO COM ASAS LATERAIS & GLOW
+   6. SEÇÃO RESULTADOS — PALCO COM ASAS LATERAIS & GLOW (EXATAMENTE COMO NA FOTO 2)
    -------------------------------------------------------------------------- */
 .results {
   position: relative;
   overflow: hidden;
   padding: 6.5rem 0 4.5rem;
-  background: #000000 !important;
-  background-color: #000000 !important;
-  background-image: none !important;
+  background-color: #030303;
+  /* Glow difuso sutil de calor âmbar descendo do topo exatamente no padrão da Foto 2 */
+  background-image: radial-gradient(ellipse 65% 45% at 50% 0%, rgba(225, 80, 20, 0.16) 0%, rgba(130, 40, 8, 0.06) 42%, transparent 70%);
+  background-repeat: no-repeat;
 }
 
-/* Remoção total de fundos, asas e reflexos alaranjados para fundo preto 100% sólido */
+/* Painéis / Asas geométricas laterais em degradê âmbar/bronze com borda superior iluminada idênticas à Foto 2 */
 .results-backdrop {
-  display: none !important;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  display: block !important;
+}
+
+.stage-wing {
+  position: absolute;
+  top: clamp(140px, 17vw, 195px);
+  height: clamp(260px, 30vw, 400px);
+  width: clamp(230px, 25vw, 380px);
+  pointer-events: none;
+  border-top: 1px solid rgba(255, 120, 50, 0.48);
+  box-shadow: 0 -2px 14px rgba(255, 90, 31, 0.18);
+}
+
+.stage-wing--left {
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 48% 100%, 0 100%);
+  /* Degradê alaranjado/âmbar bronze com profundidade e fusão suave ao preto idêntico à Foto 2 */
+  background: linear-gradient(135deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
+}
+
+.stage-wing--right {
+  right: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%);
+  /* Degradê simétrico para a asa direita */
+  background: linear-gradient(225deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
 }
 
 .results-head {
@@ -1113,12 +1143,12 @@ button, input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 820px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .results-head .tag-status {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
   border-radius: 9px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.03);
@@ -1126,16 +1156,16 @@ button, input {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
-/* Título Display: Fonte sem serifa neo-grotesca, degradê vertical sutil #FFFFFF a #A0A0A0 sem sombras */
+/* Título Display: Tamanho sofisticado e calibrado em exatamente 2 linhas, sem quebra excessiva conforme Foto 2 */
 .title--results {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
-  font-size: clamp(3rem, 5.8vw, 4.6rem);
-  font-weight: 500; /* Peso regular a médio */
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.35rem, 4.3vw, 3.6rem);
+  font-weight: 500; /* Peso refinado e elegante idêntico à Foto 2 */
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.35rem;
   text-align: center;
-  background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8E8EC 55%, #B0B0B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1144,34 +1174,34 @@ button, input {
   filter: none !important;
 }
 
-/* Subtítulo / Corpo: Escala 25% a 30%, cinza claro dessaturado/azulado #949ca8, entrelinha confortável e centralizado */
+/* Subtítulo / Corpo: Escala harmonizada, cinza claro legível #9da3af, entrelinha confortável e centralizado */
 .text--results {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
-  font-size: clamp(1rem, 1.4vw, 1.18rem);
-  line-height: 1.65;
-  color: #949ca8;
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.62;
+  color: #9da3af;
   max-width: 620px;
-  margin: 0 auto 2.3rem;
+  margin: 0 auto 2.2rem;
   text-align: center;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
 
-/* Botão no tom vermelho-laranja brasa com sombra neutra sem vazamento alaranjado */
+/* Botão em tom vermelho-laranja brasa com glow quente suave idêntico à Foto 2 */
 .btn--results {
-  background: linear-gradient(135deg, #d84518 0%, #b82b08 100%) !important;
+  background: linear-gradient(135deg, #eb4714 0%, #c2330a 100%) !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 9999px !important;
-  padding: 0.9rem 2.2rem !important;
+  padding: 0.85rem 2.2rem !important;
   font-weight: 600 !important;
   font-size: 0.95rem !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 8px 26px rgba(235, 71, 20, 0.42), 0 2px 10px rgba(0, 0, 0, 0.6) !important;
   transition: all var(--trans-normal) !important;
 }
 .btn--results:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0 10px 32px rgba(235, 71, 20, 0.6), 0 4px 14px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Container com rolagem horizontal livre e barra personalizada branca pura (sem rolagem automática) */

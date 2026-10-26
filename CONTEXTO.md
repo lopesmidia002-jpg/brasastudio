@@ -193,6 +193,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Atributos de Imagem em `index.html`:** Atualizado o atributo intrínseco `height="880"` para `height="555"` nas tags `<img>` dos 4 cases para refletir as dimensões reais e evitar qualquer oscilação de layout (CLS).
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.26 Reativação das Asas em Degradê e Calibração Tipográfica em 2 Linhas conforme Foto 2 (Passo 32)
+- **Problema/Objetivo:** O usuário expressou que as letras do título estavam grandes demais (quebrando em 3 linhas de forma desarmônica) e que faltavam os efeitos laterais das asas em degradê, solicitando copiar e replicar com fidelidade exata todos os elementos da Foto 2 (asas em degradê, tipo e cor de letras, tamanho equilibrado e botão com glow).
+- **Decisão e Implementação:**
+  - **Reativação das Asas Laterais em Degradê (`.stage-wing`):** Reativado o contêiner `.results-backdrop` com as asas geométricas poligonais (`.stage-wing--left` e `.stage-wing--right`). Aplicado recorte trapezoidal (`clip-path`) com corte diagonal em 48%, borda superior iluminada `1px solid rgba(255, 120, 50, 0.48)` e degradê bronze/âmbar aveludado (`rgba(185, 60, 16, 0.42)` fundindo suavemente ao preto profundo).
+  - **Atmosfera de Fundo com Calor Âmbar (`.results`):** Restaurado o degradê radial elíptico superior (`radial-gradient(ellipse 65% 45% at 50% 0%, rgba(225, 80, 20, 0.16) 0%, ...)`), proporcionando a atmosfera aconchegante e de alto contraste da Foto 2.
+  - **Calibração Tipográfica em Exatamente 2 Linhas (`.title--results`):** Reduzido o tamanho da fonte para `clamp(2.35rem, 4.3vw, 3.6rem)` e ampliado o `max-width` do cabeçalho para `960px`, garantindo que "Resultados que aparecem" ocupe a primeira linha e "no caixa e na marca." a segunda linha com quebra balanceada. Aplicado degradê suave prateado (`#FFFFFF` no topo para `#B0B0B8` na base) e peso regular a médio (`font-weight: 500`).
+  - **Botão com Glow Âmbar e Tag de Status:** O botão "Agendar 15 minutos" recebeu gradiente quente vermelho-alaranjado (`#eb4714` a `#c2330a`) e sombra com glow âmbar inferior (`box-shadow: 0 8px 26px rgba(235, 71, 20, 0.42)`), replicando com precisão o destaque do CTA da Foto 2.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
