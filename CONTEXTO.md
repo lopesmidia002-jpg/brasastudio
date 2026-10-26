@@ -432,6 +432,16 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Moldura Interna (`.bcard-img`):** Ajustada com fundo escuro limpo `#0a0b0e`, borda sutil `1px solid rgba(255, 255, 255, 0.07)` e relevo interno.
   - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
 
+### 2.49 Aplicação de Fundo Dark Mode SaaS Tech com Gradiente Radial Âmbar e Laranja Acobreado Centralizado (Passo 55)
+- **Problema/Objetivo:** O usuário solicitou aplicar um fundo dark mode estilo SaaS tech nos banners ("Fundo dark mode estilo SaaS tech, preto profundo absoluto com iluminação suave em gradiente radial âmbar e laranja acobreado centralizado, luz difusa moderna, visual minimalista e premium, alto contraste, sem ruído, estética moderna de landing page --ar 16:9"), anexando a imagem da seção de Diferenciais.
+- **Investigação Visual e Análise Estética:**
+  - Os cards de Diferenciais demandavam um contraste mais expressivo e cinematográfico: uma base em preto profundo absoluto (`#050609`) combinada com uma luz difusa, suave e centralizada em tons de âmbar e laranja acobreado, mantendo a atmosfera quente e tecnológica característica da Brasa Studio.
+- **Decisão e Implementação:**
+  - **Preto Profundo Absoluto e Luz Difusa:** Em `style.css`, a regra `.feature` recebeu `background-color: #050609` com gradiente radial âmbar e laranja acobreado centralizado (`radial-gradient(circle 320px at 50% 38%, rgba(225, 100, 32, 0.13) 0%, rgba(165, 62, 18, 0.05) 50%, rgba(5, 6, 9, 0.98) 90%)`), criando um relevo luminoso moderno e limpo sem ruído.
+  - **Card 1 em Destaque:** O `.feature--hot` combinou a luz centralizada âmbar com o brilho térmico acobreado inferior e a borda inferior iluminada (`border-bottom: 1px solid rgba(255, 110, 40, 0.55)`).
+  - **Harmonização com Bento Grid:** A classe `.bcard` também recebeu a nuance âmbar acobreada difusa para perfeita coesão visual em toda a página.
+  - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

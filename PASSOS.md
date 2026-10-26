@@ -356,7 +356,13 @@
   - Harmonização da moldura interna de imagem (`.bcard-img`) com contorno refinado e fundo escuro.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 55 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 55 — Aplicação de Fundo Dark Mode SaaS Tech com Gradiente Radial Âmbar e Laranja Acobreado**
+  - Implementação de fundo dark mode estilo SaaS tech com preto profundo absoluto (`#050609`) nos banners de Diferenciais (`.feature` e `.feature--hot`) e Bento Grid (`.bcard`).
+  - Iluminação suave e difusa centralizada em gradiente radial âmbar e laranja acobreado (`radial-gradient(circle 320px at 50% 38%, rgba(225, 100, 32, 0.13) 0%, rgba(165, 62, 18, 0.05) 50%, rgba(5, 6, 9, 0.98) 90%)`), criando contraste elevado com os títulos brancos puros e ícones circulares.
+  - Refinamento do Card 1 ("Marca que vende PRO") com gradiente centralizado âmbar/cobre combinado com o brilho térmico inferior e borda inferior iluminada em âmbar (`border-bottom: 1px solid rgba(255, 110, 40, 0.55)`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 56 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
