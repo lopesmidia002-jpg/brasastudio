@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasa Studio · Estúdio criativo de marca, site e campanha</title>
+<meta name="description" content="Brasa Studio: identidade visual, sites sob medida e campanhas para marcas criativas, com método claro e acabamento de ateliê.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ff5a1f">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Brasa Studio">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/img/brasa-estrela-200.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<link rel="preload" href="assets/img/hero-preview-800.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="assets/img/brasa-estrela-200.webp" as="image" type="image/webp">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23000000%27/%3E%3Cpath d=%27M16 5c1.8 5 8 7.4 8 14a8 8 0 0 1-16 0c0-3.6 1.8-5.8 3.6-7.1 0 2.6 1.3 4.4 3.1 4.9C13.4 13 13.8 8.6 16 5z%27 fill=%27%23ff5a1f%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+
+<header class="site-header" id="topo">
+  <div class="container header-in">
+    <a class="brand" href="#topo" aria-label="Brasa Studio, início">
+      <svg class="brand-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="chama-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".55" stop-color="#ff5a1f"/><stop offset="1" stop-color="#c4351a"/></linearGradient></defs><path fill="url(#chama-a)" d="M16 3c2 5.6 9 8.3 9 15.6a9 9 0 0 1-18 0c0-4 2-6.5 4-8 0 2.9 1.5 5 3.5 5.5C13 12 13.5 7.2 16 3z"/><path fill="#000" opacity=".55" d="M16.4 16.5c1.4 2 3.6 2.9 3.6 5.2a4 4 0 0 1-8 0c0-1.7 1-2.8 2-3.4.2 1 .8 1.7 1.6 1.9-.4-1.5-.2-2.8.8-3.7z"/></svg>
+      <span class="brand-name">brasa<span>studio</span></span>
+    </a>
+    <span class="header-sep" aria-hidden="true"></span>
+    <nav class="nav" aria-label="Principal">
+      <a href="#topo">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn--brasa header-cta" href="#contato" data-open-modal="modal-diagnostico">Fale com a gente</a>
+    <details class="menu" data-menu>
+      <summary class="menu-btn"><span class="sr-only">Menu</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></summary>
+      <nav class="menu-panel" aria-label="Menu móvel">
+        <a href="#topo">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--brasa" href="#contato" data-open-modal="modal-diagnostico">Fale com a gente</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="hero" aria-labelledby="hero-titulo" data-motion>
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" muted loop playsinline preload="none" poster="assets/video/brasa-hero-bg-poster.webp" width="1024" height="562" tabindex="-1">
+      <source src="assets/video/brasa-hero-bg.webm" type="video/webm">
+      <source src="assets/video/brasa-hero-bg.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="container hero-in">
+    <div class="hero-copy">
+      <p class="tag-new"><span class="badge">Novo</span><span>Agenda aberta para 2027</span></p>
+      <h1 class="hero-title" id="hero-titulo"><span>Design que acende</span> <span class="title-2">marcas criativas.</span></h1>
+      <p class="lead">Identidade, site e campanha para negócios criativos que querem presença memorável, com método claro e acabamento de ateliê.</p>
+      <div class="actions">
+        <a class="btn btn--light" href="#contato" data-open-modal="modal-diagnostico">Começar um projeto</a>
+        <a class="btn btn--ghost" href="#sobre">Conheça a Brasa</a>
+      </div>
+      <div class="ticker-wrap">
+        <input class="motion-toggle" type="checkbox" id="pausa-hero" aria-label="Pausar animação" title="Pausar animação">
+        <div class="marquee marquee--logos">
+          <ul class="marquee-track t-logos" aria-hidden="true">
+            <li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11.5" fill="none" stroke="#d4d4d4" stroke-width="5"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" d="M20 6.5 34 32H6z"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#7a7a7a" d="M8 22a12 12 0 0 1 24 0z"/><rect x="8" y="25" width="24" height="5" rx="2.5" fill="#7a7a7a"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 24c5-8 10-8 15 0s10 8 15 0M5 15c5-8 10-8 15 0s10 8 15 0" fill="none" stroke="#d4d4d4" stroke-width="4" stroke-linecap="round"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" fill-rule="evenodd" d="M20 5 35 20 20 35 5 20zm0 9-6 6 6 6 6-6z"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g fill="#7a7a7a"><circle cx="13" cy="13" r="6"/><circle cx="27" cy="13" r="6"/><circle cx="13" cy="27" r="6"/><circle cx="27" cy="27" r="6"/></g></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11.5" fill="none" stroke="#d4d4d4" stroke-width="5"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" d="M20 6.5 34 32H6z"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#7a7a7a" d="M8 22a12 12 0 0 1 24 0z"/><rect x="8" y="25" width="24" height="5" rx="2.5" fill="#7a7a7a"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 24c5-8 10-8 15 0s10 8 15 0M5 15c5-8 10-8 15 0s10 8 15 0" fill="none" stroke="#d4d4d4" stroke-width="4" stroke-linecap="round"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" fill-rule="evenodd" d="M20 5 35 20 20 35 5 20zm0 9-6 6 6 6 6-6z"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g fill="#7a7a7a"><circle cx="13" cy="13" r="6"/><circle cx="27" cy="13" r="6"/><circle cx="13" cy="27" r="6"/><circle cx="27" cy="27" r="6"/></g></svg></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <a class="preview" href="#portfolio">
+        <span class="sr-only">Ver projetos do portfólio</span>
+        <div class="ph ph--a r-3x2" data-slot="hero-preview"><picture><source type="image/webp" srcset="assets/img/hero-preview-400.webp 400w, assets/img/hero-preview-800.webp 800w" sizes="(min-width: 1200px) 284px, 236px"><img src="assets/img/hero-preview-800.webp" width="1200" height="800" alt="Bastidores de uma sessão de fotos de produto, com luz quente sobre a mesa" loading="eager" fetchpriority="high" decoding="async"></picture></div>
+        <span class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.5 5.8v12.4a.8.8 0 0 0 1.2.7l9.6-6.2a.8.8 0 0 0 0-1.4L9.7 5.1a.8.8 0 0 0-1.2.7z"/></svg></span>
+      </a>
+      <img class="spark spark--hero" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="200" height="200" loading="eager" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="sobre" aria-labelledby="sobre-titulo">
+  <div class="container split">
+    <div class="frame frame--tall" data-reveal>
+      <div class="ph ph--b r-4x5" data-slot="sobre-estudio"><picture><source type="image/webp" srcset="assets/img/sobre-estudio-480.webp 480w, assets/img/sobre-estudio-800.webp 800w, assets/img/sobre-estudio-1200.webp 1200w" sizes="(min-width: 810px) 448px, calc(100vw - 62px)"><img src="assets/img/sobre-estudio-1200.webp" width="1200" height="1500" alt="Designer do estúdio trabalhando no notebook ao lado de amostras de cor" loading="lazy" decoding="async"></picture></div>
+    </div>
+    <div class="split-copy" data-reveal>
+      <p class="eyebrow">Sobre a Brasa</p>
+      <h2 class="title" id="sobre-titulo"><span>Marcas mais fortes,</span> <span class="title-2">impressões que ficam.</span></h2>
+      <p class="text">Somos um estúdio enxuto de direção de arte, design e tecnologia. Cada projeto passa pelas mesmas mãos do briefing à entrega, sem repasse e sem ruído.</p>
+      <hr class="rule">
+      <ul class="checks">
+        <li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Time sênior em todas as etapas do projeto.</li>
+        <li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Cronograma fechado antes do primeiro traço.</li>
+      </ul>
+      <div class="actions actions--rated">
+        <a class="btn btn--brasa" href="#processo">Como trabalhamos</a>
+        <span class="vsep" aria-hidden="true"></span>
+        <p class="rating"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg><span>Nota 4,9 dada por 86 clientes</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec results" id="resultados" aria-labelledby="resultados-titulo" data-motion>
+  <div class="container head head--center glow-sides" data-reveal>
+    <p class="eyebrow">Resultados</p>
+    <h2 class="title" id="resultados-titulo"><span>Resultados que aparecem</span> <span class="title-2">no caixa e na marca.</span></h2>
+    <p class="text">Cada entrega nasce com um objetivo claro e um jeito de medir. Veja alguns números de projetos recentes.</p>
+    <a class="btn btn--brasa" href="#contato">Agendar 15 minutos</a>
+  </div>
+  <input class="motion-toggle" type="checkbox" id="pausa-casos" aria-label="Pausar animação" title="Pausar animação">
+  <div class="marquee marquee--cases">
+    <ul class="marquee-track t-cases">
+      <li class="case"><div class="ph ph--c r-7x8 case-img" data-slot="caso-casa-ocre"><picture><source type="image/webp" srcset="assets/img/caso-casa-ocre-440.webp 440w, assets/img/caso-casa-ocre-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-casa-ocre-880.webp" width="1050" height="1200" alt="Vaso de cerâmica escura em fundo carvão, com um brilho terracota atrás" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11.5" fill="none" stroke="#ff7a3d" stroke-width="5"/></svg><h3 class="card-title">Casa Ocre <span class="badge">Novo</span></h3><ul class="pills"><li>+38% em vendas online</li><li>2,1× mais recompra</li></ul><p class="text-sm">Nova identidade e loja virtual para um ateliê de cerâmica autoral, com fotografia de produto própria.</p></div></li><li class="case"><div class="ph ph--c r-7x8 case-img" data-slot="caso-torra-rubi"><picture><source type="image/webp" srcset="assets/img/caso-torra-rubi-440.webp 440w, assets/img/caso-torra-rubi-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-torra-rubi-880.webp" width="1050" height="1200" alt="Grãos de café torrado e xícara sobre mesa escura" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#ff7a3d" d="M8 22a12 12 0 0 1 24 0z"/><rect x="8" y="25" width="24" height="5" rx="2.5" fill="#ff7a3d"/></svg><h3 class="card-title">Torra Rubi</h3><ul class="pills"><li>−27% no custo por lead</li><li>+44% em pedidos B2B</li></ul><p class="text-sm">Reposicionamento de uma torrefação de cafés especiais para atender cafeterias e escritórios.</p></div></li><li class="case"><div class="ph ph--c r-7x8 case-img" data-slot="caso-ambar-joias"><picture><source type="image/webp" srcset="assets/img/caso-ambar-joias-440.webp 440w, assets/img/caso-ambar-joias-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-ambar-joias-880.webp" width="1050" height="1200" alt="Anel de ouro sobre pedra vulcânica sob luz quente" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#ff7a3d" fill-rule="evenodd" d="M20 5 35 20 20 35 5 20zm0 9-6 6 6 6 6-6z"/></svg><h3 class="card-title">Âmbar Joias <span class="badge">Recente</span></h3><ul class="pills"><li>+61% de visitas qualificadas</li><li>+29% no ticket médio</li></ul><p class="text-sm">Campanha de lançamento e site editorial para uma coleção de joias em ouro reciclado.</p></div></li><li class="case"><div class="ph ph--c r-7x8 case-img" data-slot="caso-vento-sul"><picture><source type="image/webp" srcset="assets/img/caso-vento-sul-440.webp 440w, assets/img/caso-vento-sul-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-vento-sul-880.webp" width="1050" height="1200" alt="Detalhe de bicicleta urbana ao pôr do sol" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 24c5-8 10-8 15 0s10 8 15 0M5 15c5-8 10-8 15 0s10 8 15 0" fill="none" stroke="#ff7a3d" stroke-width="4" stroke-linecap="round"/></svg><h3 class="card-title">Vento Sul Bikes</h3><ul class="pills"><li>3 cidades novas atendidas</li><li>+52% de agendamentos</li></ul><p class="text-sm">Marca e site com agenda de test-ride para uma oficina de bicicletas urbanas.</p></div></li><li class="case dup" aria-hidden="true"><div class="ph ph--c r-7x8 case-img" data-slot="caso-casa-ocre"><picture><source type="image/webp" srcset="assets/img/caso-casa-ocre-440.webp 440w, assets/img/caso-casa-ocre-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-casa-ocre-880.webp" width="1050" height="1200" alt="" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11.5" fill="none" stroke="#ff7a3d" stroke-width="5"/></svg><div class="card-title">Casa Ocre <span class="badge">Novo</span></div><ul class="pills"><li>+38% em vendas online</li><li>2,1× mais recompra</li></ul><p class="text-sm">Nova identidade e loja virtual para um ateliê de cerâmica autoral, com fotografia de produto própria.</p></div></li><li class="case dup" aria-hidden="true"><div class="ph ph--c r-7x8 case-img" data-slot="caso-torra-rubi"><picture><source type="image/webp" srcset="assets/img/caso-torra-rubi-440.webp 440w, assets/img/caso-torra-rubi-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-torra-rubi-880.webp" width="1050" height="1200" alt="" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#ff7a3d" d="M8 22a12 12 0 0 1 24 0z"/><rect x="8" y="25" width="24" height="5" rx="2.5" fill="#ff7a3d"/></svg><div class="card-title">Torra Rubi</div><ul class="pills"><li>−27% no custo por lead</li><li>+44% em pedidos B2B</li></ul><p class="text-sm">Reposicionamento de uma torrefação de cafés especiais para atender cafeterias e escritórios.</p></div></li><li class="case dup" aria-hidden="true"><div class="ph ph--c r-7x8 case-img" data-slot="caso-ambar-joias"><picture><source type="image/webp" srcset="assets/img/caso-ambar-joias-440.webp 440w, assets/img/caso-ambar-joias-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-ambar-joias-880.webp" width="1050" height="1200" alt="" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#ff7a3d" fill-rule="evenodd" d="M20 5 35 20 20 35 5 20zm0 9-6 6 6 6 6-6z"/></svg><div class="card-title">Âmbar Joias <span class="badge">Recente</span></div><ul class="pills"><li>+61% de visitas qualificadas</li><li>+29% no ticket médio</li></ul><p class="text-sm">Campanha de lançamento e site editorial para uma coleção de joias em ouro reciclado.</p></div></li><li class="case dup" aria-hidden="true"><div class="ph ph--c r-7x8 case-img" data-slot="caso-vento-sul"><picture><source type="image/webp" srcset="assets/img/caso-vento-sul-440.webp 440w, assets/img/caso-vento-sul-880.webp 880w" sizes="(min-width: 1930px) calc(25vw - 48px), (min-width: 810px) 436px, 278px"><img src="assets/img/caso-vento-sul-880.webp" width="1050" height="1200" alt="" loading="lazy" decoding="async"></picture></div><div class="case-box"><svg class="case-mark" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 24c5-8 10-8 15 0s10 8 15 0M5 15c5-8 10-8 15 0s10 8 15 0" fill="none" stroke="#ff7a3d" stroke-width="4" stroke-linecap="round"/></svg><div class="card-title">Vento Sul Bikes</div><ul class="pills"><li>3 cidades novas atendidas</li><li>+52% de agendamentos</li></ul><p class="text-sm">Marca e site com agenda de test-ride para uma oficina de bicicletas urbanas.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec process" id="processo" aria-labelledby="processo-titulo">
+  <div class="container split split--steps">
+    <div class="split-copy">
+      <div class="head" data-reveal>
+        <p class="eyebrow">Como trabalhamos</p>
+        <h2 class="title" id="processo-titulo"><span>Do briefing ao ar,</span> <span class="title-2">sem atalhos.</span></h2>
+        <p class="text">Um processo curto, com entregas visíveis a cada semana, para você acompanhar a ideia virando produto.</p>
+      </div>
+      <ol class="steps">
+        <li class="step card-bg" data-reveal>
+          <div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.6-4.6"/></svg></span><span class="pill pill--dark">Etapa 1</span></div>
+          <h3 class="card-title">Imersão</h3>
+          <hr class="rule">
+          <p class="text-sm">Começamos ouvindo. Entrevistas, visita ao negócio e leitura do mercado para entender metas, público e o que torna a sua marca única.</p>
+          <ul class="pills"><li>Diagnóstico de marca</li><li>Plano de projeto</li></ul>
+        </li>
+        <li class="step card-bg" data-reveal>
+          <div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20l1-4.5L16 4.5 19.5 8 8.5 19z"/><path d="m13.5 7 3.5 3.5"/></svg></span><span class="pill pill--dark">Etapa 2</span></div>
+          <h3 class="card-title">Criação</h3>
+          <hr class="rule">
+          <p class="text-sm">Com a estratégia definida, a ideia ganha forma. Direção de arte, design e código andam juntos, com revisões semanais em vez de surpresas no fim.</p>
+          <ul class="pills"><li>Revisões semanais</li><li>Protótipo navegável</li></ul>
+        </li>
+        <li class="step card-bg step--last" data-reveal>
+          <div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.5 15.5C4 17 3.5 20.5 3.5 20.5s3.5-.5 5-2"/><path d="M9.5 15.5 8.5 14.5c1.5-5 5.5-10 12-10.5-.5 6.5-5.5 10.5-10.5 12z"/><circle cx="15" cy="9" r="1.6"/></svg></span><span class="pill pill--dark">Etapa 3</span></div>
+          <h3 class="card-title">Entrega</h3>
+          <hr class="rule">
+          <p class="text-sm">Arquivos organizados, guia de uso e treinamento da equipe. Ficamos por perto nas primeiras semanas para o lançamento sair redondo.</p>
+          <ul class="pills"><li>Suporte pós-lançamento</li><li>Guia da marca</li></ul>
+          <a class="btn btn--brasa btn--sm" href="#contato">Agendar conversa</a>
+          <img class="spark spark--card" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="180" height="180" loading="lazy" decoding="async">
+        </li>
+      </ol>
+    </div>
+    <div class="sticky-col">
+      <div class="frame" data-reveal>
+        <div class="ph ph--d r-1x1" data-slot="processo-mesa"><picture><source type="image/webp" srcset="assets/img/processo-mesa-520.webp 520w, assets/img/processo-mesa-1040.webp 1040w" sizes="(min-width: 810px) 506px, calc(100vw - 62px)"><img src="assets/img/processo-mesa-1040.webp" width="1200" height="1200" alt="Mãos organizando provas de cor, papéis e amostras de material sobre a mesa" loading="lazy" decoding="async"></picture></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec features" id="diferenciais" aria-labelledby="diferenciais-titulo">
+  <div class="container head head--center glow-sides" data-reveal>
+    <p class="eyebrow">Diferenciais</p>
+    <h2 class="title" id="diferenciais-titulo"><span>Recursos de estúdio grande</span> <span class="title-2">com atenção de ateliê.</span></h2>
+    <p class="text">Estratégia, design e tecnologia trabalhando juntos, para cada peça render mais do que ficar bonita.</p>
+    <a class="btn btn--brasa" href="#sobre">Conheça a Brasa</a>
+  </div>
+  <ul class="container feature-grid">
+    <li class="feature feature--hot"><div class="feature-top"><span class="icon-orb"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffb347" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16h16"/><path d="m8 14 3.5-3.5 3 3L20 8"/><path d="M16 8h4v4"/></svg></span><svg class="ico feature-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6a6a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></div><h3 class="card-title card-title--strong">Marca que vende <span class="badge">Pro</span></h3><p class="sub">Estratégia comercial</p><hr class="rule"><p class="text-sm">Posicionamento e mensagens pensados para transformar atenção em pedido.</p></li><li class="feature"><div class="feature-top"><span class="icon-orb"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffb347" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg></span><svg class="ico feature-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6a6a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></div><h3 class="card-title card-title--strong">Sistema editável</h3><p class="sub">Arquivos vivos</p><hr class="rule"><p class="text-sm">Modelos e componentes que a sua equipe ajusta sem depender do estúdio.</p></li><li class="feature"><div class="feature-top"><span class="icon-orb"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffb347" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></span><svg class="ico feature-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6a6a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></div><h3 class="card-title card-title--strong">Código leve</h3><p class="sub">Performance de fábrica</p><hr class="rule"><p class="text-sm">Sites rápidos, acessíveis e fáceis de manter, sem plugins pesados.</p></li><li class="feature"><div class="feature-top"><span class="icon-orb"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffb347" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"/><path d="m8.4 13.8-1.6 7.2L12 18.4l5.2 2.6-1.6-7.2"/></svg></span><svg class="ico feature-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6a6a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></div><h3 class="card-title card-title--strong">Direção de arte</h3><p class="sub">Olhar autoral</p><hr class="rule"><p class="text-sm">Fotografia, tipografia e cor com assinatura própria, longe do genérico.</p></li><li class="feature"><div class="feature-top"><span class="icon-orb"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffb347" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span><svg class="ico feature-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6a6a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></div><h3 class="card-title card-title--strong">Prazo combinado <span class="badge">Pro</span></h3><p class="sub">Entregas semanais</p><hr class="rule"><p class="text-sm">Cronograma fechado no início e entregas visíveis toda semana.</p></li><li class="feature"><div class="feature-top"><span class="icon-orb"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffb347" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 18.3h3"/></svg></span><svg class="ico feature-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a6a6a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></div><h3 class="card-title card-title--strong">Pensado para o celular</h3><p class="sub">Responsivo de verdade</p><hr class="rule"><p class="text-sm">Cada tela nasce no celular e é ampliada com cuidado para telas maiores.</p></li>
+  </ul>
+</section>
+
+<section class="sec benefits detail-right" id="beneficios" aria-labelledby="beneficios-titulo">
+  <div class="container">
+    <div class="head" data-reveal>
+      <p class="eyebrow">Por que a Brasa</p>
+      <h2 class="title" id="beneficios-titulo"><span>A gente não só desenha,</span> <span class="title-2">a gente coloca no ar.</span></h2>
+      <ul class="pills pills--lg">
+        <li>Experiência fluida</li><li>Mais conversão</li><li>Carregamento rápido</li><li>SEO técnico</li><li>Personalizável</li><li>Escalável</li><li>Mais engajamento</li><li>Expansível</li><li>Seguro</li><li>Acessível</li>
+        <li class="pill-cta"><a href="#contato">Fale agora</a></li>
+      </ul>
+    </div>
+    <div class="bento">
+      <div class="bento-side">
+        <article class="bcard">
+          <div class="ph ph--a r-2x1 bcard-img" data-slot="beneficio-revisoes"><picture><source type="image/webp" srcset="assets/img/beneficio-revisoes-480.webp 480w, assets/img/beneficio-revisoes-960.webp 960w" sizes="(min-width: 1200px) 448px, (min-width: 810px) calc(50vw - 90px), calc(100vw - 78px)"><img src="assets/img/beneficio-revisoes-960.webp" width="1000" height="500" alt="Provas impressas presas em um painel de cortiça" loading="lazy" decoding="async"></picture></div>
+          <h3 class="card-title">Revisões com método <span class="badge">Novo</span></h3>
+          <hr class="rule">
+          <p class="text-sm">Cada etapa tem rodadas de revisão combinadas, para o seu retorno entrar no projeto sem atrasar o cronograma.</p>
+        </article>
+        <article class="bcard">
+          <div class="ph ph--d r-2x1 bcard-img" data-slot="beneficio-preco"><picture><source type="image/webp" srcset="assets/img/beneficio-preco-480.webp 480w, assets/img/beneficio-preco-960.webp 960w" sizes="(min-width: 1200px) 448px, (min-width: 810px) calc(50vw - 90px), calc(100vw - 78px)"><img src="assets/img/beneficio-preco-960.webp" width="1000" height="500" alt="Caderno aberto com amostras de cor laranja e vermelha" loading="lazy" decoding="async"></picture></div>
+          <h3 class="card-title">Preço sem surpresa <span class="badge">Novo</span></h3>
+          <hr class="rule">
+          <p class="text-sm">Planos fechados e escopo por escrito. Você sabe quanto vai investir antes de começar, do primeiro esboço ao lançamento.</p>
+        </article>
+      </div>
+      <div class="bento-main">
+        <article class="bcard bcard--big">
+          <div class="ph ph--e r-11x5 bcard-img" data-slot="beneficio-pedidos"><picture><source type="image/webp" srcset="assets/img/beneficio-pedidos-660.webp 660w, assets/img/beneficio-pedidos-1320.webp 1320w" sizes="(min-width: 1200px) 652px, (min-width: 810px) calc(100vw - 118px), calc(100vw - 78px)"><img src="assets/img/beneficio-pedidos-1320.webp" width="1320" height="600" alt="Esculturas de vidro vermelho e âmbar sob luz quente" loading="lazy" decoding="async"></picture></div>
+          <h3 class="card-title">Pedidos sem fila</h3>
+          <hr class="rule">
+          <p class="text-sm">Mande ajustes e novas peças quando precisar, dentro do plano. A fila é organizada pelo estúdio e você acompanha cada item.</p>
+          <div class="actions">
+            <a class="btn btn--brasa btn--sm" href="#contato">Agendar conversa</a>
+            <a class="btn btn--ghost btn--sm" href="#sobre">Conheça a Brasa</a>
+          </div>
+        </article>
+        <article class="bcard">
+          <div class="ph ph--f r-8x3 bcard-img" data-slot="beneficio-retorno"><picture><source type="image/webp" srcset="assets/img/beneficio-retorno-320.webp 320w, assets/img/beneficio-retorno-640.webp 640w" sizes="(min-width: 1200px) 295px, (min-width: 810px) calc(50vw - 90px), calc(100vw - 78px)"><img src="assets/img/beneficio-retorno-640.webp" width="960" height="360" alt="Ampulheta de latão sobre mesa de pedra" loading="lazy" decoding="async"></picture></div>
+          <h3 class="card-title">Retorno rápido <span class="badge">Novo</span></h3>
+          <hr class="rule">
+          <p class="text-sm">Respostas em até um dia útil, com prioridade para o que trava o seu negócio.</p>
+        </article>
+        <article class="bcard">
+          <div class="ph ph--b r-8x3 bcard-img" data-slot="beneficio-publicacao"><picture><source type="image/webp" srcset="assets/img/beneficio-publicacao-320.webp 320w, assets/img/beneficio-publicacao-640.webp 640w" sizes="(min-width: 1200px) 295px, (min-width: 810px) calc(50vw - 90px), calc(100vw - 78px)"><img src="assets/img/beneficio-publicacao-640.webp" width="960" height="360" alt="Mãos digitando num teclado de notebook sob luz quente" loading="lazy" decoding="async"></picture></div>
+          <h3 class="card-title">Publicação assistida</h3>
+          <hr class="rule">
+          <p class="text-sm">Colocamos o site no ar e acompanhamos as primeiras semanas de perto.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec portfolio" id="portfolio" aria-labelledby="portfolio-titulo">
+  <div class="container head head--center glow-sides" data-reveal>
+    <p class="eyebrow">Portfólio</p>
+    <h2 class="title" id="portfolio-titulo"><span>Projetos selecionados</span> <span class="title-2">que acendem marcas.</span></h2>
+    <p class="text">Uma seleção de trabalhos recentes, de lojas autorais a escritórios de serviço, em setores diferentes.</p>
+    <a class="btn btn--brasa" href="#contato">Pedir o portfólio completo</a>
+  </div>
+  <ol class="container works">
+    <li class="work"><article class="work-card"><div class="ph ph--e r-2x1 rm-4x5 work-img" data-slot="portfolio-casa-ocre"><picture><source media="(max-width: 809px)" type="image/webp" srcset="assets/img/portfolio-casa-ocre-m-400.webp 400w, assets/img/portfolio-casa-ocre-m-800.webp 800w, assets/img/portfolio-casa-ocre-m-1080.webp 1080w" sizes="calc(100vw - 58px)"><source type="image/webp" srcset="assets/img/portfolio-casa-ocre-800.webp 800w, assets/img/portfolio-casa-ocre-1200.webp 1200w, assets/img/portfolio-casa-ocre-1800.webp 1800w, assets/img/portfolio-casa-ocre-2400.webp 2400w" sizes="(min-width: 1240px) 1178px, calc(100vw - 102px)"><img src="assets/img/portfolio-casa-ocre-2400.webp" width="2400" height="1200" alt="Interior do ateliê Casa Ocre, com prateleiras de peças de cerâmica" loading="lazy" decoding="async"></picture></div><div class="work-bar"><ul class="pills"><li>E-commerce</li><li>Identidade</li></ul><span class="work-progress" aria-hidden="true"><i></i></span><h3 class="work-name">Casa Ocre<span class="dot" aria-hidden="true"></span><span class="work-year">2026</span></h3></div></article></li><li class="work"><article class="work-card"><div class="ph ph--b r-2x1 rm-4x5 work-img" data-slot="portfolio-torra-rubi"><picture><source media="(max-width: 809px)" type="image/webp" srcset="assets/img/portfolio-torra-rubi-m-400.webp 400w, assets/img/portfolio-torra-rubi-m-800.webp 800w, assets/img/portfolio-torra-rubi-m-1080.webp 1080w" sizes="calc(100vw - 58px)"><source type="image/webp" srcset="assets/img/portfolio-torra-rubi-800.webp 800w, assets/img/portfolio-torra-rubi-1200.webp 1200w, assets/img/portfolio-torra-rubi-1800.webp 1800w, assets/img/portfolio-torra-rubi-2400.webp 2400w" sizes="(min-width: 1240px) 1178px, calc(100vw - 102px)"><img src="assets/img/portfolio-torra-rubi-2400.webp" width="2400" height="1200" alt="Embalagens de café da Torra Rubi sobre balcão de madeira" loading="lazy" decoding="async"></picture></div><div class="work-bar"><ul class="pills"><li>Marca</li><li>Embalagem</li></ul><span class="work-progress" aria-hidden="true"><i></i></span><h3 class="work-name">Torra Rubi<span class="dot" aria-hidden="true"></span><span class="work-year">2026</span></h3></div></article></li><li class="work"><article class="work-card"><div class="ph ph--a r-2x1 rm-4x5 work-img" data-slot="portfolio-lume"><picture><source media="(max-width: 809px)" type="image/webp" srcset="assets/img/portfolio-lume-m-400.webp 400w, assets/img/portfolio-lume-m-800.webp 800w, assets/img/portfolio-lume-m-1080.webp 1080w" sizes="calc(100vw - 58px)"><source type="image/webp" srcset="assets/img/portfolio-lume-800.webp 800w, assets/img/portfolio-lume-1200.webp 1200w, assets/img/portfolio-lume-1800.webp 1800w, assets/img/portfolio-lume-2400.webp 2400w" sizes="(min-width: 1240px) 1178px, calc(100vw - 102px)"><img src="assets/img/portfolio-lume-2400.webp" width="2400" height="1200" alt="Sala de projeto do escritório Lume Arquitetura ao entardecer" loading="lazy" decoding="async"></picture></div><div class="work-bar"><ul class="pills"><li>Site institucional</li><li>Direção de arte</li></ul><span class="work-progress" aria-hidden="true"><i></i></span><h3 class="work-name">Lume Arquitetura<span class="dot" aria-hidden="true"></span><span class="work-year">2025</span></h3></div></article></li>
+  </ol>
+</section>
+
+<section class="sec services" id="servicos" aria-labelledby="servicos-titulo">
+  <div class="container split split--services">
+    <div class="sticky-col">
+      <div class="frame" data-reveal>
+        <div class="ph ph--b r-1x1" data-slot="servicos-retrato"><picture><source type="image/webp" srcset="assets/img/servicos-retrato-520.webp 520w, assets/img/servicos-retrato-1040.webp 1040w" sizes="(min-width: 810px) 506px, calc(100vw - 62px)"><img src="assets/img/servicos-retrato-1040.webp" width="1200" height="1200" alt="Diretor de arte revisando provas de cor em uma mesa de luz" loading="lazy" decoding="async"></picture></div>
+      </div>
+    </div>
+    <div class="split-copy">
+      <div class="head" data-reveal>
+        <p class="eyebrow">Serviços</p>
+        <h2 class="title" id="servicos-titulo"><span>Serviços completos,</span> <span class="title-2">do conceito ao código.</span></h2>
+        <p class="text">Escolha o formato que combina com o momento da sua marca. Todos incluem estratégia, direção de arte e acompanhamento.</p>
+      </div>
+      <ul class="services-list">
+        <li class="svc card-bg" data-reveal><div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2.6"/><path d="M3 9h18M6.5 6.5h.01M9 6.5h.01"/></svg></span><span class="pill pill--dark">Site</span></div><h3 class="card-title">Site sob medida</h3><hr class="rule"><p class="text-sm">Do mapa de páginas ao código final, com foco em velocidade, busca orgânica e conversão. Pronto para crescer junto com o negócio.</p><ul class="pills pills--strong"><li><strong>R$ 24 mil</strong> / projeto</li><li><strong>5–7</strong> semanas</li></ul><ul class="checks"><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Design e desenvolvimento próprios</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Animações sutis e acessíveis</li></ul></li><li class="svc card-bg" data-reveal><div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8.5" r="4.5"/><rect x="12.5" y="12.5" width="8" height="8" rx="1.6"/><path d="m16.5 3 4 6.5h-8z"/></svg></span><span class="pill pill--dark">Marca</span></div><h3 class="card-title">Identidade completa</h3><hr class="rule"><p class="text-sm">Logo, paleta, tipografia, fotografia de referência e manual de uso, para a marca ficar consistente em todos os pontos de contato.</p><ul class="pills pills--strong"><li><strong>R$ 16 mil</strong> / projeto</li><li><strong>3–4</strong> semanas</li></ul><ul class="checks"><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Arquivos-fonte e manual da marca</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Kit para redes sociais</li></ul></li><li class="svc card-bg svc--last" data-reveal><div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 10v4h3.5l9 5V5L7 10z"/><path d="M19 9.2a4 4 0 0 1 0 5.6"/></svg></span><span class="pill pill--dark">Campanha</span></div><h3 class="card-title">Lançamento integrado</h3><hr class="rule"><p class="text-sm">Conceito criativo, peças para mídia paga, página de destino e roteiro de conteúdo para lançar um produto com força.</p><ul class="pills pills--strong"><li><strong>R$ 12 mil</strong> / projeto</li><li><strong>2–3</strong> semanas</li></ul><ul class="checks"><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Página de destino otimizada</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Peças para mídia e redes</li></ul><a class="btn btn--brasa btn--sm" href="#contato">Agendar conversa</a><img class="spark spark--card" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="180" height="180" loading="lazy" decoding="async"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec showcase" id="lancamento" aria-labelledby="lancamento-titulo" data-motion>
+  <div class="container head head--center glow-sides" data-reveal>
+    <p class="eyebrow">Lance seu projeto</p>
+    <h2 class="title" id="lancamento-titulo"><span>O parceiro criativo</span> <span class="title-2">de marcas em crescimento.</span></h2>
+    <p class="text">Do primeiro esboço ao site no ar, com acompanhamento próximo e um time que responde rápido.</p>
+    <a class="btn btn--brasa" href="#processo">Ver como trabalhamos</a>
+  </div>
+  <input class="motion-toggle" type="checkbox" id="pausa-vitrine" aria-label="Pausar animação" title="Pausar animação">
+  <div class="marquee marquee--shots">
+    <ul class="marquee-track t-shots">
+      <li class="shot"><div class="shot-frame"><div class="ph ph--d r-9x7 shot-img" data-slot="vitrine-1"><picture><source type="image/webp" srcset="assets/img/vitrine-1-450.webp 450w, assets/img/vitrine-1-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-1-900.webp" width="900" height="700" alt="Mãos modelando argila em um torno de cerâmica" loading="lazy" decoding="async"></picture></div></div></li><li class="shot"><div class="shot-frame"><div class="ph ph--e r-9x7 shot-img" data-slot="vitrine-2"><picture><source type="image/webp" srcset="assets/img/vitrine-2-450.webp 450w, assets/img/vitrine-2-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-2-900.webp" width="900" height="700" alt="Café sendo servido em xícara de porcelana" loading="lazy" decoding="async"></picture></div></div></li><li class="shot"><div class="shot-frame"><div class="ph ph--f r-9x7 shot-img" data-slot="vitrine-3"><picture><source type="image/webp" srcset="assets/img/vitrine-3-450.webp 450w, assets/img/vitrine-3-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-3-900.webp" width="900" height="700" alt="Fachada de loja autoral ao entardecer, sem letreiro" loading="lazy" decoding="async"></picture></div></div></li><li class="shot"><div class="shot-frame"><div class="ph ph--a r-9x7 shot-img" data-slot="vitrine-4"><picture><source type="image/webp" srcset="assets/img/vitrine-4-450.webp 450w, assets/img/vitrine-4-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-4-900.webp" width="900" height="700" alt="Estação de trabalho do estúdio com monitor desligado" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--d r-9x7 shot-img" data-slot="vitrine-1"><picture><source type="image/webp" srcset="assets/img/vitrine-1-450.webp 450w, assets/img/vitrine-1-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-1-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--e r-9x7 shot-img" data-slot="vitrine-2"><picture><source type="image/webp" srcset="assets/img/vitrine-2-450.webp 450w, assets/img/vitrine-2-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-2-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--f r-9x7 shot-img" data-slot="vitrine-3"><picture><source type="image/webp" srcset="assets/img/vitrine-3-450.webp 450w, assets/img/vitrine-3-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-3-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--a r-9x7 shot-img" data-slot="vitrine-4"><picture><source type="image/webp" srcset="assets/img/vitrine-4-450.webp 450w, assets/img/vitrine-4-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-4-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li>
+    </ul>
+  </div>
+  <div class="marquee marquee--shots">
+    <ul class="marquee-track t-shots t-reverse">
+      <li class="shot"><div class="shot-frame"><div class="ph ph--b r-9x7 shot-img" data-slot="vitrine-5"><picture><source type="image/webp" srcset="assets/img/vitrine-5-450.webp 450w, assets/img/vitrine-5-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-5-900.webp" width="900" height="700" alt="Detalhe de colar de ouro sobre tecido de linho" loading="lazy" decoding="async"></picture></div></div></li><li class="shot"><div class="shot-frame"><div class="ph ph--c r-9x7 shot-img" data-slot="vitrine-6"><picture><source type="image/webp" srcset="assets/img/vitrine-6-450.webp 450w, assets/img/vitrine-6-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-6-900.webp" width="900" height="700" alt="Ciclista atravessando rua de pedra ao pôr do sol" loading="lazy" decoding="async"></picture></div></div></li><li class="shot"><div class="shot-frame"><div class="ph ph--d r-9x7 shot-img" data-slot="vitrine-7"><picture><source type="image/webp" srcset="assets/img/vitrine-7-450.webp 450w, assets/img/vitrine-7-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-7-900.webp" width="900" height="700" alt="Amostras de tecido em tons de terracota" loading="lazy" decoding="async"></picture></div></div></li><li class="shot"><div class="shot-frame"><div class="ph ph--e r-9x7 shot-img" data-slot="vitrine-8"><picture><source type="image/webp" srcset="assets/img/vitrine-8-450.webp 450w, assets/img/vitrine-8-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-8-900.webp" width="900" height="700" alt="Interior de arquitetura com luz quente rasante" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--b r-9x7 shot-img" data-slot="vitrine-5"><picture><source type="image/webp" srcset="assets/img/vitrine-5-450.webp 450w, assets/img/vitrine-5-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-5-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--c r-9x7 shot-img" data-slot="vitrine-6"><picture><source type="image/webp" srcset="assets/img/vitrine-6-450.webp 450w, assets/img/vitrine-6-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-6-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--d r-9x7 shot-img" data-slot="vitrine-7"><picture><source type="image/webp" srcset="assets/img/vitrine-7-450.webp 450w, assets/img/vitrine-7-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-7-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li><li class="shot dup" aria-hidden="true"><div class="shot-frame"><div class="ph ph--e r-9x7 shot-img" data-slot="vitrine-8"><picture><source type="image/webp" srcset="assets/img/vitrine-8-450.webp 450w, assets/img/vitrine-8-900.webp 900w" sizes="(min-width: 1712px) calc(25vw - 40px), (min-width: 810px) 388px, 266px"><img src="assets/img/vitrine-8-900.webp" width="900" height="700" alt="" loading="lazy" decoding="async"></picture></div></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec pricing detail-right" id="planos" aria-labelledby="planos-titulo">
+  <div class="container">
+    <div class="head" data-reveal>
+      <p class="eyebrow">Planos</p>
+      <h2 class="title" id="planos-titulo"><span>Planos mensais para manter</span> <span class="title-2">sua marca sempre acesa.</span></h2>
+      <p class="text">Para quem precisa de design contínuo depois do lançamento. Escopo por escrito, sem fidelidade e com prioridade na agenda.</p>
+    </div>
+    <div class="plans">
+      <article class="plan card-bg"><div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3c1.5 4.2 6.5 6.2 6.5 11.4a6.5 6.5 0 0 1-13 0c0-2.9 1.4-4.7 2.9-5.8 0 2.1 1.1 3.6 2.5 4C10.2 9.8 10.5 6.2 12 3z"/></svg></span><span class="pill pill--dark">Mais escolhido</span></div><h3 class="plan-name">Essencial</h3><p class="price"><span class="price-v">R$ 3.900</span> <span class="price-u">/ mês</span> <s class="price-old"><span class="sr-only">Valor avulso: </span>R$ 4.600</s></p><hr class="rule"><p class="text-sm">Para marcas que precisam de peças novas todo mês, com direção de arte e prazo combinado.</p><ul class="pills pills--strong"><li><strong>8</strong> peças por mês</li><li><strong>2</strong> rodadas de ajuste</li></ul><ul class="checks checks--lg"><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Direção de arte dedicada</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Arquivos-fonte liberados</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Calendário de conteúdo</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Suporte por e-mail em 1 dia útil</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancelamento com 30 dias de aviso</li></ul><a class="btn btn--brasa btn--block" href="#contato">Agendar conversa</a></article><article class="plan card-bg plan--hot"><div class="step-top"><span class="icon-box"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3.5h11l3.5 5.5-9 11.5L3 9z"/><path d="M3 9h18M9.5 3.5 12 20.5l2.5-17"/></svg></span><span class="pill pill--dark">Recomendado</span></div><h3 class="plan-name">Estúdio</h3><p class="price"><span class="price-v">R$ 8.900</span> <span class="price-u">/ mês</span></p><hr class="rule"><p class="text-sm">Para empresas em crescimento que querem o estúdio como extensão do time, com campanhas e melhorias no site.</p><ul class="pills pills--strong"><li><strong>24</strong> peças por mês</li><li><strong>Ajustes</strong> sem limite</li></ul><ul class="checks checks--lg"><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Tudo do plano Essencial</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Melhorias contínuas no site</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Uma campanha por trimestre</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Reunião quinzenal de pauta</li><li><svg class="ico" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff5a1f" d="M12 1.6l2.5 1.7 3-.1 1 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.9-3-.1L12 22.4l-2.5-1.7-3 .1-1-2.9-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.9 3 .1z"/><path d="M8 12.3l2.7 2.6 5.3-5.6" fill="none" stroke="#131313" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancelamento com 30 dias de aviso</li></ul><a class="btn btn--brasa btn--block" href="#contato">Agendar conversa</a><img class="spark spark--plan" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="200" height="200" loading="lazy" decoding="async"></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec testimonials" id="depoimentos" aria-labelledby="depoimentos-titulo" data-motion>
+  <div class="container head head--center glow-sides" data-reveal>
+    <p class="eyebrow">Depoimentos</p>
+    <h2 class="title" id="depoimentos-titulo"><span>O que dizem as marcas</span> <span class="title-2">que passaram por aqui.</span></h2>
+    <p class="text">Clientes contam como foi trabalhar com o estúdio e o que mudou depois do lançamento.</p>
+    <div class="ticker-wrap ticker-wrap--center">
+      <input class="motion-toggle" type="checkbox" id="pausa-marcas" aria-label="Pausar animação" title="Pausar animação">
+      <div class="marquee marquee--logos">
+        <ul class="marquee-track t-logos t-reverse" aria-hidden="true">
+          <li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11.5" fill="none" stroke="#d4d4d4" stroke-width="5"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" d="M20 6.5 34 32H6z"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#7a7a7a" d="M8 22a12 12 0 0 1 24 0z"/><rect x="8" y="25" width="24" height="5" rx="2.5" fill="#7a7a7a"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 24c5-8 10-8 15 0s10 8 15 0M5 15c5-8 10-8 15 0s10 8 15 0" fill="none" stroke="#d4d4d4" stroke-width="4" stroke-linecap="round"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" fill-rule="evenodd" d="M20 5 35 20 20 35 5 20zm0 9-6 6 6 6 6-6z"/></svg></li><li class="mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g fill="#7a7a7a"><circle cx="13" cy="13" r="6"/><circle cx="27" cy="13" r="6"/><circle cx="13" cy="27" r="6"/><circle cx="27" cy="27" r="6"/></g></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="11.5" fill="none" stroke="#d4d4d4" stroke-width="5"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" d="M20 6.5 34 32H6z"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#7a7a7a" d="M8 22a12 12 0 0 1 24 0z"/><rect x="8" y="25" width="24" height="5" rx="2.5" fill="#7a7a7a"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M5 24c5-8 10-8 15 0s10 8 15 0M5 15c5-8 10-8 15 0s10 8 15 0" fill="none" stroke="#d4d4d4" stroke-width="4" stroke-linecap="round"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path fill="#9a9a9a" fill-rule="evenodd" d="M20 5 35 20 20 35 5 20zm0 9-6 6 6 6 6-6z"/></svg></li><li class="dup mark"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g fill="#7a7a7a"><circle cx="13" cy="13" r="6"/><circle cx="27" cy="13" r="6"/><circle cx="13" cy="27" r="6"/><circle cx="27" cy="27" r="6"/></g></svg></li>
+        </ul>
+      </div>
+    </div>
+    <a class="btn btn--brasa" href="#portfolio">Ver portfólio</a>
+  </div>
+  <ul class="container quotes">
+    <li class="quote"><figure><div class="ph ph--b r-1x1 avatar" data-slot="depoimento-1"><picture><source type="image/webp" srcset="assets/img/depoimento-1-80.webp 80w, assets/img/depoimento-1-160.webp 160w" sizes="52px"><img src="assets/img/depoimento-1-160.webp" width="320" height="320" alt="Retrato de Helena Duarte" loading="lazy" decoding="async"></picture></div><p class="rating-q" role="img" aria-label="Avaliação: 5 de 5"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg></p><blockquote><p>“A Brasa entendeu a alma do ateliê antes de desenhar qualquer coisa. A loja nova finalmente parece com as peças que a gente faz.”</p></blockquote><hr class="rule"><figcaption><span class="q-name">Helena Duarte</span><span class="dot" aria-hidden="true"></span><span class="q-role">Fundadora</span><span class="q-co">Casa Ocre</span></figcaption></figure></li><li class="quote"><figure><div class="ph ph--b r-1x1 avatar" data-slot="depoimento-2"><picture><source type="image/webp" srcset="assets/img/depoimento-2-80.webp 80w, assets/img/depoimento-2-160.webp 160w" sizes="52px"><img src="assets/img/depoimento-2-160.webp" width="320" height="320" alt="Retrato de Rafael Moura" loading="lazy" decoding="async"></picture></div><p class="rating-q" role="img" aria-label="Avaliação: 5 de 5"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg></p><blockquote><p>“O processo foi claro do começo ao fim. Toda semana tinha algo novo para ver, e o site entrou no ar no dia combinado.”</p></blockquote><hr class="rule"><figcaption><span class="q-name">Rafael Moura</span><span class="dot" aria-hidden="true"></span><span class="q-role">Diretor comercial</span><span class="q-co">Torra Rubi</span></figcaption></figure></li><li class="quote"><figure><div class="ph ph--b r-1x1 avatar" data-slot="depoimento-3"><picture><source type="image/webp" srcset="assets/img/depoimento-3-80.webp 80w, assets/img/depoimento-3-160.webp 160w" sizes="52px"><img src="assets/img/depoimento-3-160.webp" width="320" height="320" alt="Retrato de Lívia Campos" loading="lazy" decoding="async"></picture></div><p class="rating-q" role="img" aria-label="Avaliação: 5 de 5"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg></p><blockquote><p>“A campanha de lançamento teve a cara da coleção. Recebemos elogios de clientes antigos e conquistamos muitos clientes novos.”</p></blockquote><hr class="rule"><figcaption><span class="q-name">Lívia Campos</span><span class="dot" aria-hidden="true"></span><span class="q-role">Sócia</span><span class="q-co">Âmbar Joias</span></figcaption></figure></li><li class="quote"><figure><div class="ph ph--b r-1x1 avatar" data-slot="depoimento-4"><picture><source type="image/webp" srcset="assets/img/depoimento-4-80.webp 80w, assets/img/depoimento-4-160.webp 160w" sizes="52px"><img src="assets/img/depoimento-4-160.webp" width="320" height="320" alt="Retrato de Caio Ferraz" loading="lazy" decoding="async"></picture></div><p class="rating-q" role="img" aria-label="Avaliação: 5 de 5"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg></p><blockquote><p>“Eles traduziram uma oficina de bairro numa marca que dá orgulho. A agenda online mudou a nossa rotina.”</p></blockquote><hr class="rule"><figcaption><span class="q-name">Caio Ferraz</span><span class="dot" aria-hidden="true"></span><span class="q-role">Fundador</span><span class="q-co">Vento Sul Bikes</span></figcaption></figure></li><li class="quote"><figure><div class="ph ph--b r-1x1 avatar" data-slot="depoimento-5"><picture><source type="image/webp" srcset="assets/img/depoimento-5-80.webp 80w, assets/img/depoimento-5-160.webp 160w" sizes="52px"><img src="assets/img/depoimento-5-160.webp" width="320" height="320" alt="Retrato de Marina Teles" loading="lazy" decoding="async"></picture></div><p class="rating-q" role="img" aria-label="Avaliação: 5 de 5"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg></p><blockquote><p>“Cuidado com cada detalhe, da fotografia ao código. O site é rápido até no celular mais simples.”</p></blockquote><hr class="rule"><figcaption><span class="q-name">Marina Teles</span><span class="dot" aria-hidden="true"></span><span class="q-role">Arquiteta</span><span class="q-co">Lume Arquitetura</span></figcaption></figure></li><li class="quote"><figure><div class="ph ph--b r-1x1 avatar" data-slot="depoimento-6"><picture><source type="image/webp" srcset="assets/img/depoimento-6-80.webp 80w, assets/img/depoimento-6-160.webp 160w" sizes="52px"><img src="assets/img/depoimento-6-160.webp" width="320" height="320" alt="Retrato de Otávio Lins" loading="lazy" decoding="async"></picture></div><p class="rating-q" role="img" aria-label="Avaliação: 5 de 5"><svg class="stars" width="95" height="16" viewBox="0 0 95 16" aria-hidden="true" focusable="false"><g fill="#f2f2f2"><path transform="translate(0 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(19 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(38 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(57 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/><path transform="translate(76 0)" d="M8 1.7l2 4 4.4.7-3.2 3.1.8 4.4L8 11.8l-4 2.1.8-4.4L1.6 6.4 6 5.7z"/></g></svg></p><blockquote><p>“Viraram uma extensão do nosso time. Peça nova sai no prazo e sempre com o mesmo padrão.”</p></blockquote><hr class="rule"><figcaption><span class="q-name">Otávio Lins</span><span class="dot" aria-hidden="true"></span><span class="q-role">Gerente de marketing</span><span class="q-co">Grão Norte</span></figcaption></figure></li>
+  </ul>
+  <div class="tray" aria-hidden="true"></div>
+</section>
+
+<section class="sec faq" id="faq" aria-labelledby="faq-titulo">
+  <div class="container faq-in">
+    <div class="head" data-reveal>
+      <p class="eyebrow">FAQ</p>
+      <h2 class="title" id="faq-titulo"><span>Perguntas</span> <span class="title-2">frequentes.</span></h2>
+      <p class="text">Separamos respostas rápidas para as dúvidas mais comuns. Se faltar alguma, é só chamar.</p>
+    </div>
+    <div class="faq-list">
+      <details class="qa"><summary><span class="qa-n" aria-hidden="true">01</span><span class="qa-q">Como começa um projeto com a Brasa?</span><span class="qa-i" aria-hidden="true"></span></summary><p class="text-sm">Com uma conversa de 15 minutos para entender o momento da marca. Depois enviamos uma proposta com escopo, prazo e investimento por escrito.</p></details><details class="qa"><summary><span class="qa-n" aria-hidden="true">02</span><span class="qa-q">Quanto tempo leva para o site ficar pronto?</span><span class="qa-i" aria-hidden="true"></span></summary><p class="text-sm">Um site sob medida leva de 5 a 7 semanas, conforme o número de páginas e de conteúdos. O cronograma é fechado antes de começar.</p></details><details class="qa"><summary><span class="qa-n" aria-hidden="true">03</span><span class="qa-q">Preciso ter textos e fotos prontos?</span><span class="qa-i" aria-hidden="true"></span></summary><p class="text-sm">Não. Podemos escrever os textos e produzir a fotografia junto com o projeto. Se você já tiver material, avaliamos o que dá para aproveitar.</p></details><details class="qa"><summary><span class="qa-n" aria-hidden="true">04</span><span class="qa-q">Vou conseguir editar o site depois?</span><span class="qa-i" aria-hidden="true"></span></summary><p class="text-sm">Sim. Entregamos um painel simples para textos e imagens, um guia de uso e uma sessão de treinamento com a sua equipe.</p></details><details class="qa"><summary><span class="qa-n" aria-hidden="true">05</span><span class="qa-q">Vocês atendem empresas de outras cidades?</span><span class="qa-i" aria-hidden="true"></span></summary><p class="text-sm">Sim. Trabalhamos de forma remota com marcas de todo o Brasil, com reuniões por vídeo e visitas presenciais quando o projeto pede.</p></details><details class="qa"><summary><span class="qa-n" aria-hidden="true">06</span><span class="qa-q">O que recebo no fim do projeto?</span><span class="qa-i" aria-hidden="true"></span></summary><p class="text-sm">Arquivos-fonte, manual da marca, acesso completo ao site e ao domínio e 30 dias de suporte depois do lançamento.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta" id="contato" aria-labelledby="contato-titulo" data-motion>
+  <div class="container">
+    <div class="cta-card" data-reveal>
+      <div class="cta-bg" aria-hidden="true">
+        <video class="cta-video" muted loop playsinline preload="none" poster="assets/video/brasa-cta-bg-poster.webp" width="854" height="468" tabindex="-1">
+          <source src="assets/video/brasa-cta-bg.webm" type="video/webm">
+          <source src="assets/video/brasa-cta-bg.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="eyebrow">Vamos conversar</p>
+      <h2 class="title" id="contato-titulo"><span>Cada projeto é uma brasa</span> <span class="title-2">que a gente acende junto.</span></h2>
+      <p class="text">Pronto para o próximo passo? Deixe seu e-mail e marcamos uma conversa de 15 minutos para entender o seu projeto.</p>
+      <form class="inline-form" data-form="contato">
+        <div class="input-group">
+          <label class="sr-only" for="contato-email">Seu e-mail</label>
+          <input id="contato-email" type="email" name="email" autocomplete="email" required placeholder="Seu melhor e-mail">
+        </div>
+        <button class="btn btn--brasa" type="submit">Quero conversar</button>
+        <p class="form-status" id="aviso-contato" role="status" data-form-status></p>
+      </form>
+      <input class="motion-toggle" type="checkbox" id="pausa-cta" aria-label="Pausar animação" title="Pausar animação">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-in">
+    <div class="footer-brand">
+      <a class="brand" href="#topo" aria-label="Brasa Studio, voltar ao início">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><linearGradient id="chama-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".55" stop-color="#ff5a1f"/><stop offset="1" stop-color="#c4351a"/></linearGradient></defs><path fill="url(#chama-b)" d="M16 3c2 5.6 9 8.3 9 15.6a9 9 0 0 1-18 0c0-4 2-6.5 4-8 0 2.9 1.5 5 3.5 5.5C13 12 13.5 7.2 16 3z"/><path fill="#000" opacity=".55" d="M16.4 16.5c1.4 2 3.6 2.9 3.6 5.2a4 4 0 0 1-8 0c0-1.7 1-2.8 2-3.4.2 1 .8 1.7 1.6 1.9-.4-1.5-.2-2.8.8-3.7z"/></svg>
+        <span class="brand-name">brasa<span>studio</span></span>
+      </a>
+      <hr class="rule">
+      <p class="text">Feito com calor e método<br>pela equipe Brasa Studio.</p>
+      <form class="inline-form inline-form--sm" data-form="newsletter">
+        <div class="input-group">
+          <label class="sr-only" for="carta-email">E-mail para receber a carta mensal</label>
+          <input id="carta-email" type="email" name="email" autocomplete="email" required placeholder="Seu e-mail">
+        </div>
+        <button class="btn btn--brasa btn--sm" type="submit">Assinar a carta</button>
+        <p class="form-status" id="aviso-carta" role="status" data-form-status></p>
+      </form>
+    </div>
+    <nav class="footer-col" aria-labelledby="rodape-paginas">
+      <h2 class="footer-h" id="rodape-paginas">Páginas</h2>
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-labelledby="rodape-estudio">
+      <h2 class="footer-h" id="rodape-estudio">Estúdio</h2>
+      <ul>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+    </nav>
+    <div class="footer-reel">
+      <p class="pill pill--dark">Showreel <strong>2026</strong></p>
+      <a class="preview preview--sm" href="#portfolio">
+        <span class="sr-only">Ver projetos do portfólio</span>
+        <div class="ph ph--a r-3x2" data-slot="rodape-showreel"><picture><source type="image/webp" srcset="assets/img/rodape-showreel-300.webp 300w, assets/img/rodape-showreel-600.webp 600w" sizes="(min-width: 1200px) 230px, (min-width: 810px) calc(50vw - 74px), calc(100vw - 54px)"><img src="assets/img/rodape-showreel-600.webp" width="720" height="480" alt="Claquete num set de filmagem com luz âmbar" loading="lazy" decoding="async"></picture></div>
+        <span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.5 5.8v12.4a.8.8 0 0 0 1.2.7l9.6-6.2a.8.8 0 0 0 0-1.4L9.7 5.1a.8.8 0 0 0-1.2.7z"/></svg></span>
+      </a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Brasa Studio</p>
+    <a href="#topo">Voltar ao topo</a>
+  </div>
+</footer>
+
+<!-- Modal de Diagnóstico & Contato -->
+<div class="modal-backdrop" id="modal-diagnostico" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+  <div class="modal-dialog">
+    <button class="modal-close" type="button" aria-label="Fechar janela" data-close-modal>&times;</button>
+    <div class="modal-header">
+      <p class="eyebrow">Diagnóstico em 15 Minutos</p>
+      <h3 id="modal-titulo">Conte-nos sobre sua marca</h3>
+      <p>Entendemos seu momento e montamos um plano com escopo, prazo e investimento sob medida.</p>
+    </div>
+    <form class="modal-form" data-form="modal">
+      <div class="form-field">
+        <label for="modal-nome">Seu nome ou da sua marca *</label>
+        <input class="form-input" id="modal-nome" name="nome" type="text" required minlength="3" placeholder="Ex: Mariana Lima / Ateliê Aurora">
+        <span class="field-error">Por favor, insira ao menos 3 caracteres.</span>
+      </div>
+      <div class="form-field">
+        <label for="modal-email">Seu melhor e-mail corporativo *</label>
+        <input class="form-input" id="modal-email" name="email" type="email" required placeholder="contato@empresa.com.br">
+        <span class="field-error">Insira um e-mail válido.</span>
+      </div>
+      <div class="form-field">
+        <label for="modal-servico">Tipo de projeto</label>
+        <select class="form-select" id="modal-servico" name="servico">
+          <option value="identidade">Identidade Visual Completa</option>
+          <option value="site">Site Sob Medida / E-commerce</option>
+          <option value="campanha">Direção de Arte & Campanha</option>
+          <option value="estudio">Plano Estúdio Dedicado</option>
+          <option value="outro">Outro formato personalizado</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="modal-mensagem">Conte um pouco sobre o momento e objetivos</label>
+        <textarea class="form-textarea" id="modal-mensagem" name="mensagem" rows="3" placeholder="Objetivos principais, prazos desejados ou referências..."></textarea>
+      </div>
+      <button class="btn btn--brasa" type="submit" style="width: 100%; margin-top: 0.5rem;">Enviar solicitação</button>
+      <p class="form-status" role="status" data-form-status></p>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Notifier -->
+<div class="brasa-toast" id="brasa-toast" role="status" aria-live="polite">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+  <span class="toast-text">Solicitação recebida! Entraremos em contato em até 1 dia útil.</span>
+</div>
+
+</body>
+</html>

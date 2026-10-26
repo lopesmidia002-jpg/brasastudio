@@ -1,0 +1,23 @@
+# Sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Arquivos temporários e backups
+*.tmp
+*.bak
+*.swp
+*.log
+index.html.txt
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Containers e caches locais
+.docker/

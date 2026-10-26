@@ -1,0 +1,26 @@
+{
+  "name": "Brasa Studio — Estúdio Criativo de Marca, Site e Campanha",
+  "short_name": "Brasa Studio",
+  "description": "Design que acende marcas criativas: identidade visual, sites sob medida e campanhas.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#ff5a1f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/brasa-estrela-200.webp",
+      "sizes": "200x200",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/brasa-estrela-400.webp",
+      "sizes": "400x400",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["design", "business", "portfolio"]
+}

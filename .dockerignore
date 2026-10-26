@@ -1,0 +1,8 @@
+.git
+.agents
+*.py
+*.png
+*.jpg
+node_modules
+.DS_Store
+Thumbs.db
