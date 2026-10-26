@@ -651,7 +651,15 @@
   - Linha diagonal alaranjada do valor riscado R$ 4.600 (`.price-diagonal-slash`) perfeitamente alinhada.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 80 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 80 — Padronização Fiel de Depoimentos: 4 Ícones das Marcas e Grid 3x2 sem Divisórias (Conforme Foto 2)**
+  - Atualização dos 4 cartões com ícones geométricos em `.testimonials-brands-grid`: 1º Círculo/Anel (O), 2º Triângulo sólido (▲), 3º Cúpula com base, 4º Ondas duplas sinuosas (≈), perfeitamente fiéis à Foto 2.
+  - Confinamento das asas em marrom-cobre (`.testimonials-wing`) no cabeçalho em perspectiva, sem invadir o grid de depoimentos.
+  - Remoção de todas as linhas divisórias horizontais (`<hr class="rule">`) dentro dos 6 cards de depoimentos.
+  - Estruturação limpa da identificação em duas linhas: `Nome • Cargo` em cima e `Empresa` em baixo com tipografia e cores equilibradas.
+  - Linha de base `.tray` calibrada com glow térmico central âmbar.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 81 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

@@ -982,6 +982,31 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.plan-btn`: calibrado com `background: linear-gradient(180deg, #D83D1E 0%, #C13014 100%);` e glow suave `box-shadow: 0 10px 26px rgba(216, 61, 30, 0.48), 0 0 18px rgba(255, 87, 34, 0.22);`.
     - `.plan-compass-wrap`: reposicionado e redimensionado para `bottom: -15px; right: -15px; width: 230px; height: 230px; filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.35));`, mantendo o centro da estrela dentro do card com elegância impecável.
 - **Execução e Validação Docker:**
+  ### 2.74 Padronização Fiel de Depoimentos: 4 Ícones das Marcas e Grid 3x2 sem Divisórias (Passo 80)
+- **Solicitação do Usuário:**
+  - "substitua esta pagina por esta pagina aqui, quero exatamente igual" (enviando a Foto 1 mostrando a seção com os ícones antigos e cards com divisórias `<hr>`, e a Foto 2 mostrando a versão exata com novos ícones abstratos e cards limpos sem divisórias).
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 1:
+    1. Os 4 ícones nas marcas continham símbolos antigos (cúpula, ondas, losango, grade 4 círculos).
+    2. As asas marrom-cobre laterais se estendiam por toda a altura da seção, invadindo as laterais dos cards de depoimentos.
+    3. Havia uma linha divisória horizontal (`<hr class="rule">`) entre o texto da citação e o nome do autor em cada um dos 6 cards.
+  - Na Foto 2 (referência desejada):
+    1. Os 4 ícones de marcas estão dispostos exatamente na ordem: 1º Círculo/Anel vazado (O), 2º Triângulo sólido com pontas suaves (▲), 3º Cúpula com base horizontal arredondada, 4º Duas ondas sinuosas horizontais (≈).
+    2. As asas laterais marrom-cobre estão confinadas ao cabeçalho com corte angular em perspectiva e fade na base, mantendo o fundo dos 6 cards de depoimentos 100% preto puro.
+    3. Todos os `<hr class="rule">` foram removidos dos cards de depoimentos, com a identificação estruturada em `Nome • Cargo` na primeira linha e `Empresa` na linha abaixo em tom cinza suave.
+    4. Linha divisória de base `.tray` com glow central alaranjado térmico separando elegantemente para a seção seguinte.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Atualizados os 4 SVGs de `.brand-squircle-card` para o anel, triângulo, cúpula com base e ondas sinuosas.
+    - Removidos os elementos `<hr class="rule">` de todos os 6 cards de depoimentos.
+    - Estruturado `.q-meta` com `Nome • Cargo` e `.q-co` com o nome da empresa.
+  - Em `style.css`:
+    - `.testimonials-wing`: altura limitada a `clamp(380px, 44vw, 540px)` com fade mask vertical progressivo, impedindo invasão sobre o grid.
+    - `.brand-squircle-card`: calibrado para `72x72px` com borda suave e cantos arredondados de 18px.
+    - `.quote`: fundo `#0d0e12`, contorno `1px solid rgba(255, 255, 255, 0.08)`, cantos arredondados de 20px e `.rule { display: none; }`.
+    - `.quote figcaption`: tipografia e hierarquia vertical limpa idêntica à Foto 2.
+    - `.tray`: linha escura com halo difuso alaranjado no centro.
+- **Execução e Validação Docker:**
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
