@@ -550,6 +550,31 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.56 Criação da Seção Hero/Cabeçalho Dark Mode Centralizada em Portfólio (Passo 62)
+- **Problema/Objetivo:** O usuário solicitou a criação de um cabeçalho moderno e centralizado em Dark Mode para a seção Portfólio (`#portfolio`):
+  1. *Fundo:* Preto profundo `#0B0B0B` com gradiente radial sutil âmbar/laranja escuro ao fundo.
+  2. *Badge Superior Estilo Cápsula (pill-badge):* Fundo escuro semi-transparente com borda sutil de 1px, bullet laranja brilhante à esquerda, texto "Portfólio" em tipografia sans-serif limpa e clara, e efeito de glow/iluminação âmbar projetado no topo da cápsula.
+  3. *Bloco Tipográfico Centralizado:* Título display ("Projetos selecionados que acendem marcas.") com peso visual forte, branco puro (`#FFFFFF`) e espaçamento elegante; subtítulo/descrição ("Uma seleção de trabalhos recentes, de lojas autorais a escritórios de serviço, em setores diferentes.") em cinza suave (`#A1A1AA`) para contraste hierárquico.
+  4. *Botão CTA Primário:* Botão arredondado com gradiente quente em tons de vermelho/laranja (`#E04423` para `#D13514`), texto "Pedir o portfólio completo" em branco e peso regular/médio, com drop shadow/glow alaranjado difuso e marcante projetado logo abaixo do botão.
+  5. *Composição e Profundidade:* Laterais com silhuetas geométricas ou painéis escuros poligonais em perspectiva sutil, criando profundidade e guiando o olhar para o centro em estilo minimalista tech/high-end.
+- **Decisão e Implementação Técnica:**
+  - Em `index.html`:
+    - Adicionado o container `.portfolio-backdrop` com silhuetas geométricas simétricas `.portfolio-wing--left` e `.portfolio-wing--right`.
+    - Substituída a tag anterior `.portfolio-eyebrow` pelo badge cápsula `.tag-status--portfolio` contendo `.dot` circular laranja e texto "Portfólio".
+    - Atualizado o título `.portfolio-title` estruturado em duas linhas com texto branco `#FFFFFF`.
+    - Mantido o subtítulo `.portfolio-text` e o botão `.portfolio-btn`.
+  - Em `style.css`:
+    - Fundo `.portfolio` fixado em `#0B0B0B`.
+    - Efeito de profundidade nas asas laterais poligonais com `clip-path: polygon(...)`, borda de luz superior `border-top: 1px solid rgba(255, 120, 50, 0.42)` e halo difuso que conduz o olhar diretamente ao centro.
+    - Iluminação centralizada `.portfolio-glow-bg` com degradê elíptico âmbar/laranja difuso (840px de diâmetro e 32px de blur).
+    - `.tag-status--portfolio` formatada em cápsula perfeita (`border-radius: 999px`), bullet circular de 7px com box-shadow âmbar, rebordo sutil e iluminação âmbar superior.
+    - `.portfolio-title` em tipografia display Inter/SF Pro Display robusta (peso 700) em branco `#FFFFFF` e sombra suave de 12px.
+    - `.portfolio-text` com cor `#A1A1AA` e entrelinha 1.65.
+    - `.portfolio-btn` com gradiente vertical `#E04423` a `#D13514`, peso 500 e halo de luz volumétrico projetado para baixo (`box-shadow: 0 12px 32px rgba(224, 68, 35, 0.55), 0 0 24px rgba(209, 53, 20, 0.35)`).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

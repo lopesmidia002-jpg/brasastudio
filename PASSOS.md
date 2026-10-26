@@ -436,7 +436,24 @@
   - Alinhamento à esquerda (`text-align: left`), espaçamento generoso e hierarquia visual refinada idêntica à Imagem 2 de referência.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 62 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 62 — Cabeçalho Hero Dark Mode Moderno e Centralizado da Seção Portfólio**
+  - Fundo da seção `#portfolio` calibrado em preto profundo `#0B0B0B` com gradiente radial sutil âmbar/laranja escuro ao fundo (`.portfolio-glow-bg` de 840px com desfoque de 32px).
+  - Composição e profundidade: implementação de silhuetas geométricas poligonais nas laterais (`.portfolio-backdrop` com `.portfolio-wing--left` e `.portfolio-wing--right`), com corte diagonal em perspectiva sutil (`clip-path`), borda superior iluminada `border-top: 1px solid rgba(255, 120, 50, 0.42)` e halo difuso guiando o olhar diretamente para o centro.
+  - Badge superior estilo cápsula (`.tag-status--portfolio`):
+    - Formato de pílula arredondada (`border-radius: 999px`) em fundo escuro semi-transparente (`rgba(18, 19, 24, 0.85)`).
+    - Borda sutil de 1px com iluminação âmbar projetada na parte superior `border-top: 1px solid rgba(255, 125, 45, 0.88)` e glow suave.
+    - Ponto indicador (bullet) laranja brilhante circular à esquerda (`#ff5a1f` com glow de 8px).
+    - Texto: "Portfólio" em tipografia sans-serif limpa e clara em branco puro (`#ffffff`).
+  - Bloco tipográfico centralizado:
+    - Título (`.portfolio-title`): "Projetos selecionados que acendem marcas." com peso visual forte (700 bold), branco puro (`#FFFFFF`) e espaçamento elegante em duas linhas.
+    - Subtítulo/descrição (`.portfolio-text`): "Uma seleção de trabalhos recentes, de lojas autorais a escritórios de serviço, em setores diferentes." em cinza suave (`#A1A1AA`) e entrelinha 1.65 para contraste hierárquico impecável.
+  - Botão CTA primário (`.portfolio-btn`):
+    - Botão arredondado (`border-radius: 999px`) com gradiente quente em tons de vermelho/laranja (`#E04423` para `#D13514`).
+    - Texto: "Pedir o portfólio completo" em branco puro e peso médio (`font-weight: 500`).
+    - Efeito box-shadow marcante com drop shadow/glow alaranjado difuso projetado logo abaixo do botão (`box-shadow: 0 12px 32px rgba(224, 68, 35, 0.55), 0 0 24px rgba(209, 53, 20, 0.35)`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 63 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
