@@ -506,6 +506,31 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.54 Criação e Padronização do Ícone Vetorial Retículo Tático HUD Sci-Fi e Rosa dos Ventos de Alta Precisão (Passo 60)
+- **Problema/Objetivo:** O usuário solicitou: *"Ícone vetorial de retículo tático HUD sci-fi e rosa dos ventos centralizado sobre fundo preto sólido. No centro, uma estrela sólida de quatro pontas com bordas côncavas e curvas em gradiente laranja-âmbar brilhante. Ao redor da estrela, marcações técnicas com linhas finas e precisas: um círculo contínuo fino, um anel concêntrico externo pontilhado, eixos ortogonais longos cruzados e linhas diagonais de referência a 45 graus. Estilo minimalista de interface espacial/militar futurista, linhas nítidas, luminescência âmbar sutil, design limpo de alta precisão."*, acompanhado de imagem de altíssima definição da mira HUD astronômica.
+- **Investigação Geométrica & Análise Vetorial de Alta Precisão:**
+  - Sistema de coordenadas calibrado em `viewBox="0 0 200 200"` com ponto focal central exato em `(100, 100)`.
+  - **Fundo:** Retângulo preto puro absoluto `<rect width="200" height="200" fill="#000000"/>` garantindo alto contraste e legibilidade técnica.
+  - **Estrela de 4 Pontas Côncava:** Traçado vetorial quadrático cúbico perfeito `d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z"`, com envergadura total de 116px (raio de 58px do centro até cada ponta). Preenchimento em gradiente linear nobre laranja-âmbar brilhante (`#fedc82` a 0%, `#e0aa3a` a 35%, `#bf8322` a 70% e `#945d0e` a 100%) com filtro gaussiano de luminescência âmbar (`stdDeviation="3.2"`).
+  - **Halo Difuso de Fundo:** Gradiente radial centralizado com diâmetro de 96px (`r=48`) transicionando de âmbar brilhante (`#ffbf47` a 55% de opacidade) para transparente.
+  - **Anéis Astronômicos / Marcações Técnicas:**
+    1. *Anel interno pontilhado:* Raio 32px (`r="32"`), espessura 1px, `stroke-dasharray="2.5, 3.5"` e opacidade 0.6.
+    2. *Círculo intermediário contínuo fino:* Raio 58px (`r="58"`), espessura 1.2px e opacidade 0.85 — tangenciando com extrema precisão geométrica as 4 pontas da estrela central.
+    3. *Anel externo pontilhado:* Raio 76px (`r="76"`), espessura 1.1px, `stroke-dasharray="3, 4"` e opacidade 0.75.
+  - **Eixos de Mira:**
+    1. *Eixos ortogonais longos:* Linhas vertical e horizontal estendendo-se por 184px (de 8px a 192px), espessura 1.2px e opacidade 0.9.
+    2. *Linhas diagonais técnicas a 45 graus:* Linhas simétricas com 175px de envergadura (de `38,38` a `162,162` e `38,162` a `162,38`), espessura 0.95px e opacidade 0.55.
+- **Implementação & Padronização Global no Projeto:**
+  - Criado arquivo mestre standalone em [compass-rose-hud.svg](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/assets/img/compass-rose-hud.svg).
+  - Atualizadas todas as instâncias existentes da Rosa dos Ventos no site para a nova matemática e proporção de 200x200:
+    - Hero Section ([index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html#L130-L162)) em `.spark-compass-wrap`.
+    - Seção Como Trabalhamos ([index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html#L398-L435)) na Etapa 3 (`.step-compass-wrap`).
+    - Seção Serviços ([index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html#L810-L846)) no Card 3 (`.svc-compass-wrap`).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+  - Requisição do asset vetorial validada com `Invoke-WebRequest -Uri 'http://localhost:3000/assets/img/compass-rose-hud.svg'`, retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

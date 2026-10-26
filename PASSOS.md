@@ -406,7 +406,23 @@
   - Grade 3x2 responsiva com gap de 1.5rem, adaptando-se para 2 colunas em telas médias e 1 coluna em mobile.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 60 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 60 — Criação do Ícone Vetorial Retículo Tático HUD Sci-Fi e Rosa dos Ventos de Alta Precisão**
+  - Criação do arquivo vetorial mestre independente `assets/img/compass-rose-hud.svg` de acordo com a especificação técnica geométrica e visual:
+    - Fundo preto sólido (`#000000`) de alto contraste.
+    - Estrela sólida de 4 pontas no centro com bordas côncavas curvas em gradiente laranja-âmbar brilhante nobre (`#fedc82` a `#945d0e`) e filtro de luminescência âmbar sutil.
+    - Halo de luminescência radial suave central (`r=48`).
+    - Anel interno concêntrico pontilhado (`r=32`, `stroke-dasharray="2.5, 3.5"`).
+    - Círculo intermediário contínuo fino tangente às 4 pontas da estrela (`r=58`, `stroke-width="1.2"`).
+    - Anel concêntrico externo pontilhado (`r=76`, `stroke-dasharray="3, 4"`).
+    - Eixos ortogonais longos cruzados vertical e horizontal (`184px`).
+    - Linhas diagonais técnicas de mira e referência a 45 graus (`175px`).
+  - Atualização completa com a nova geometria vetorial padronizada em todas as 3 instâncias da Rosa dos Ventos no site:
+    1. Hero Section (`.spark-compass-wrap`) sobreposta ao card de vídeo preview.
+    2. Seção Como Trabalhamos (`.step-compass-wrap`) na Etapa 3 ("Entrega sem atrito").
+    3. Seção Serviços (`.svc-compass-wrap`) no Card 3 ("Lançamento integrado").
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com HTTP 200 OK tanto na raiz quanto na rota do asset vetorial `/assets/img/compass-rose-hud.svg`.
+
+- [ ] **Passo 61 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

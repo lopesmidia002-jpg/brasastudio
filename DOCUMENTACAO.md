@@ -132,7 +132,7 @@ A landing page está apta a ser instalada na tela de início de celulares, table
 - **Acentos e Iluminação:**
   - Laranja Brasa Primário: `#FF5A1F`
   - Gradiente Neon Brasa: `linear-gradient(135deg, #ffa64d, #ff5a1f, #cc3708)`
-  - Rosa dos Ventos: Vetor astronômico com círculos concêntricos pontilhados, eixos de mira e estrela de 4 pontas em tom dourado opaco nobre (`#d8b26e` -> `#b88d3c` -> `#8a6320`)
+  - Rosa dos Ventos / Retículo Tático HUD Sci-Fi: Vetor de alta precisão técnica (`assets/img/compass-rose-hud.svg` e instâncias inline em Hero, Etapa 3 de Como Trabalhamos e Card 3 de Serviços) estruturado em viewBox 200x200 com centro em (100, 100). Contém estrela central sólida de 4 pontas com bordas côncavas perfeitas em gradiente laranja-âmbar (`#fedc82` -> `#e0aa3a` -> `#bf8322` -> `#945d0e`), anel interno concêntrico pontilhado (`r=32`), anel intermediário contínuo fino tangente às pontas da estrela (`r=58`), anel externo concêntrico pontilhado (`r=76`), eixos ortogonais longos cruzados (`184px`), linhas diagonais técnicas a 45 graus (`175px`), halo difuso de luminescência âmbar central e fundo preto sólido (`#000000`).
   - Iluminação do Hero: Gradientes radiais estáticos no topo direito (clarão âmbar 850px) e topo esquerdo (glow difuso 620px)
 
 ---
