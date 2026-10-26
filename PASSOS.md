@@ -170,5 +170,10 @@
   - Desativação completa do container de backdrop com asas laterais (`.results-backdrop { display: none !important; }`), eliminando gradientes alaranjados, bronze e bordas âmbar da seção.
   - Ajuste da sombra do botão `.btn--results` para dispersão neutra escura (`rgba(0, 0, 0, 0.5)`), removendo o halo alaranjado e garantindo fundo 100% preto sólido e puro em toda a área de Resultados.
 
+- [x] **Passo 29 — Nova Fotografia de Moodboard e Moldura com Bordas Idênticas à Foto 2 em Como Trabalhamos**
+  - Substituição da fotografia da seção Como Trabalhamos (`processo-mesa-1040.webp`, `processo-mesa-520.webp`, AVIFs) pela nova imagem da Foto 2 (mãos organizando amostras de tecido, placas de latão e papéis sobre mesa escura em ateliê).
+  - Implementação da moldura da Foto 2 (`.frame--process` / `.sticky-col .frame`) com cantos arredondados de 28px (`border-radius: 28px !important`), contorno `1px solid rgba(255, 255, 255, 0.12) !important`, fundo escuro e linha de acento âmbar neon centralizada na borda inferior com glow sutil.
+
+
 
 

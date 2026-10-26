@@ -1531,10 +1531,25 @@ button, input {
   top: 96px;
 }
 .sticky-col .frame {
-  border-radius: 26px;
-  overflow: hidden;
+  border-radius: 28px !important;
+  overflow: hidden !important;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: #08080c;
+  position: relative;
+}
+.sticky-col .frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 2px;
+  background: radial-gradient(ellipse at center, rgba(255, 90, 31, 0.95), transparent 80%);
+  box-shadow: 0 0 16px 2px rgba(255, 90, 31, 0.75);
+  pointer-events: none;
+  z-index: 2;
 }
 .sticky-col .frame img {
   width: 100%;

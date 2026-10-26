@@ -170,6 +170,12 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Desativação do Backdrop com Asas:** Aplicado `.results-backdrop { display: none !important; }`, eliminando os painéis poligonais laterais que emitiam gradientes âmbar/alaranjados (`rgba(175, 55, 15, 0.35)`) e bordas iluminadas.
   - **Eliminação de Halos e Sombra do Botão:** O botão `.btn--results` teve sua sombra reconfigurada para tom escuro neutro (`box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5)`), erradicando qualquer halo alaranjado e consolidando o visual preto sólido puro e limpo em toda a seção.
 
+### 2.23 Nova Fotografia de Moodboard e Moldura com Bordas Idênticas à Foto 2 em Como Trabalhamos (Passo 29)
+- **Problema/Objetivo:** O usuário solicitou trocar a fotografia da seção Como Trabalhamos pela nova foto enviada (mãos em mesa preta com amostras de tecido, metal dourado/latão e papéis) e aplicar as bordas idênticas às da segunda foto de referência.
+- **Decisão e Implementação:**
+  - **Nova Imagem de Processo:** Extraída em alta resolução a nova fotografia e gerados os ativos otimizados em WebP e AVIF (`processo-mesa-1040.webp` e `processo-mesa-520.webp`), substituindo a imagem anterior de mesa rústica de madeira com lâmpada.
+  - **Moldura e Bordas Idênticas à Foto 2:** Configurada a classe `.frame--process` e `.sticky-col .frame` com cantos arredondados de 28px (`border-radius: 28px !important`), contorno refinado `1px solid rgba(255, 255, 255, 0.12) !important`, fundo escuro e linha de acento âmbar neon centralizada na borda inferior (`::after`) com glow sutil, entregando a fidelidade exata à imagem de referência.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
