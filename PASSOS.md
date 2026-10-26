@@ -343,7 +343,13 @@
     - Glow interno e sombra externa calibrados para halo dourado opaco (`drop-shadow(0 0 20px rgba(200, 155, 70, 0.4))`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 53 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 53 — Padronização dos Badges NOVO e PRO com Tipografia Preta Conforme Foto 2**
+  - Substituição da tipografia branca nos badges `NOVO` e `PRO` por texto preto negrito (`color: #000000; font-weight: 700;`) idêntico à Foto 2 de referência enviada pelo usuário.
+  - Calibração do formato retangular com cantos arredondados suaves (`border-radius: 6px`) e fundo em laranja vibrante (`#ff551b`).
+  - Aplicação global e consistente em todas as seções que utilizam badges: Hero (`.tag-new .badge`), Diferenciais (`.badge--pro`) e Bento Grid de Por Que a Brasa (`.bcard .card-title .badge`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 54 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

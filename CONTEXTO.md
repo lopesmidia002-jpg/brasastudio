@@ -407,6 +407,20 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - Sombra externa e filtro ajustados para um halo dourado opaco sutil (`filter: drop-shadow(0 0 20px rgba(200, 155, 70, 0.4))`).
   - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
 
+### 2.47 Padronização dos Badges NOVO e PRO com Tipografia Preta Conforme Foto 2 (Passo 53)
+- **Problema/Objetivo:** O usuário solicitou trocar os badges ("troque estes icones por este da segunda foto"), comparando diretamente em zoom a versão com texto branco (Foto 1) e a versão com texto preto (Foto 2).
+- **Investigação Visual e Análise Comparativa:**
+  - Foto 1 (anterior): Badge retangular/pílula em laranja vibrante com tipografia em branco puro (`#ffffff`).
+  - Foto 2 (referência): Badge em formato retangular com cantos suaves (`border-radius: 6px`) em fundo laranja vibrante (`#ff551b`), com tipografia em **preto negrito** (`color: #000000; font-weight: 700;`), garantindo contraste nítido, legibilidade e autenticidade ao design original da Brasa Studio.
+- **Decisão e Implementação:**
+  - Padronização em `style.css` das regras `.badge` (global), `.badge--pro` (Diferenciais) e `.bcard .card-title .badge` (Bento Grid de Benefícios):
+    - Fundo: `#ff551b`
+    - Cor do texto: `#000000` (preto puro)
+    - Peso: `font-weight: 700`
+    - Cantos: `border-radius: 6px`
+    - Padding e espaçamento calibrados (`0.22rem 0.58rem`)
+  - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

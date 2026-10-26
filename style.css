@@ -263,15 +263,15 @@ button, input {
 .badge {
   display: inline-flex;
   align-items: center;
-  background: rgba(255, 90, 31, 0.18);
-  color: #ff8552;
-  border: 1px solid rgba(255, 90, 31, 0.35);
+  background: #ff551b;
+  color: #000000;
+  border: none;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.18rem 0.55rem;
-  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  padding: 0.22rem 0.58rem;
+  border-radius: 6px;
   line-height: 1;
 }
 
@@ -1861,18 +1861,18 @@ button, input {
   letter-spacing: -0.02em;
 }
 
-/* Badge PRO em pílula retangular alaranjada com texto branco e glow quente conforme Foto 2 */
+/* Badge PRO em pílula retangular alaranjada com texto preto conforme Foto 2 */
 .badge--pro {
   background: #ff551b;
-  color: #ffffff;
-  font-size: 0.64rem;
-  font-weight: 800;
+  color: #000000;
+  font-size: 0.65rem;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 0.22rem 0.6rem;
   border-radius: 6px;
   line-height: 1;
-  box-shadow: 0 0 12px rgba(255, 85, 27, 0.65);
+  box-shadow: 0 0 10px rgba(255, 85, 27, 0.45);
 }
 
 /* Subtítulo em cinza suave e capitalização natural conforme Foto 2 e 5 */
@@ -2169,15 +2169,15 @@ button, input {
   margin-bottom: 0.75rem;
 }
 
-/* Badges em caixa alta sólida laranja vibrante */
+/* Badges em caixa alta sólida laranja vibrante com texto preto conforme Foto 2 */
 .bcard .card-title .badge {
   background: #ff551b;
-  color: #ffffff;
-  font-size: 0.65rem;
+  color: #000000;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 0.22rem 0.55rem;
+  padding: 0.22rem 0.58rem;
   border-radius: 6px;
   line-height: 1;
   border: none;
