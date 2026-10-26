@@ -176,6 +176,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Nova Imagem de Processo:** Extraída em alta resolução a nova fotografia e gerados os ativos otimizados em WebP e AVIF (`processo-mesa-1040.webp` e `processo-mesa-520.webp`), substituindo a imagem anterior de mesa rústica de madeira com lâmpada.
   - **Moldura e Bordas Idênticas à Foto 2:** Configurada a classe `.frame--process` e `.sticky-col .frame` com cantos arredondados de 28px (`border-radius: 28px !important`), contorno refinado `1px solid rgba(255, 255, 255, 0.12) !important`, fundo escuro e linha de acento âmbar neon centralizada na borda inferior (`::after`) com glow sutil, entregando a fidelidade exata à imagem de referência.
 
+### 2.24 Banners Escuros com Top-Right Glow, Ícone de Pena e Rosa dos Ventos Âmbar em Como Trabalhamos (Passo 30)
+- **Problema/Objetivo:** O usuário solicitou que os banners das etapas em Como Trabalhamos adotassem o estilo escuro com leve efeito na lateral superior direita conforme a Foto 2, atualizassem o ícone para o modelo da terceira imagem (bico de pena tinteiro) e corrigissem as cores e estilo da rosa dos ventos para o padrão âmbar/laranja da Foto 5.
+- **Decisão e Implementação:**
+  - **Cards com Efeito Top-Right Glow (`.step`):** Implementado gradiente radial translúcido no canto superior direito (`radial-gradient(ellipse 70% 60% at 100% 0%, rgba(220, 75, 25, 0.15) 0%, transparent 75%), #08090d`), com cantos arredondados de 24px e sombra profunda.
+  - **Ícone de Pena Tinteiro (`pen-tool`):** Na Etapa 3 ("Entrega"), substituído o ícone de lápis duplicado pelo bico de pena tinteiro clássico com corpo e corte central em tom âmbar vibrante `#ff7a3d`, idêntico à Foto 5.
+  - **Rosa dos Ventos Âmbar/Laranja Brasa:** Substituídos os tons dourados/amarelados anteriores pelo gradiente quente âmbar/laranja (`#ff9d5c` a `#9e2808`) na estrela central de 4 pontas, miras e círculos concêntricos finos em tom bronze/âmbar com glow difuso quente.
+  - **Pílulas de Informação e Etapa:** Texto das pílulas de entregáveis ajustado para tom cinza claro suave (`#c8c8d2`) idêntico à Foto 3 ("Plano de projeto") e pílula escura de identificação da etapa com texto branco nítido conforme a Foto 4 ("Etapa 1").
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

@@ -1414,17 +1414,18 @@ button, input {
   padding: 1.85rem 1.95rem;
   display: flex;
   flex-direction: column;
-  background: #0c0d12;
+  background: radial-gradient(ellipse 70% 60% at 100% 0%, rgba(220, 75, 25, 0.15) 0%, rgba(160, 45, 12, 0.04) 45%, transparent 75%), #08090d;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7);
-  transition: border-color var(--trans-normal), transform var(--trans-normal);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  transition: border-color var(--trans-normal), transform var(--trans-normal), box-shadow var(--trans-normal);
 }
 .step:hover {
   border-color: rgba(255, 90, 31, 0.35);
   transform: translateY(-2px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 90, 31, 0.15);
 }
 
 .step-top {
@@ -1443,6 +1444,15 @@ button, input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.step .pill--dark {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
 }
 
 .step .card-title {
@@ -1476,13 +1486,13 @@ button, input {
 }
 
 .step .pills li {
-  background: #14151a;
+  background: #101117;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 9999px;
   padding: 0.35rem 0.85rem;
   font-size: 0.82rem;
   font-weight: 500;
-  color: #ff7a3d; /* Texto âmbar/laranja idêntico à foto 2 */
+  color: #c8c8d2; /* Cinza suave refinado idêntico à Foto 3 */
 }
 
 .step--last {
@@ -1509,7 +1519,7 @@ button, input {
   box-shadow: 0 12px 28px -2px rgba(220, 60, 20, 0.75) !important;
 }
 
-/* Rosa dos ventos Dourada Astronômica da Etapa 3 conforme foto 2 */
+/* Rosa dos ventos Âmbar Brasa da Etapa 3 idêntica à Foto 5 */
 .step-compass-wrap {
   position: absolute;
   bottom: -18px;
@@ -1518,7 +1528,7 @@ button, input {
   height: 165px;
   pointer-events: none;
   z-index: 2;
-  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.45));
+  filter: drop-shadow(0 0 16px rgba(255, 90, 31, 0.45));
 }
 .step-compass {
   width: 100%;

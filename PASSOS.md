@@ -174,6 +174,13 @@
   - Substituição da fotografia da seção Como Trabalhamos (`processo-mesa-1040.webp`, `processo-mesa-520.webp`, AVIFs) pela nova imagem da Foto 2 (mãos organizando amostras de tecido, placas de latão e papéis sobre mesa escura em ateliê).
   - Implementação da moldura da Foto 2 (`.frame--process` / `.sticky-col .frame`) com cantos arredondados de 28px (`border-radius: 28px !important`), contorno `1px solid rgba(255, 255, 255, 0.12) !important`, fundo escuro e linha de acento âmbar neon centralizada na borda inferior com glow sutil.
 
+- [x] **Passo 30 — Banners Escuros com Top-Right Glow, Ícone de Pena e Rosa dos Ventos Âmbar em Como Trabalhamos**
+  - Estilização dos banners de etapas com fundo escuro `#08090d`, cantos arredondados de 24px, borda suave e efeito de iluminação âmbar suave na lateral superior direita (`radial-gradient` no canto superior direito) conforme a Foto 2.
+  - Correção dos ícones: substituição do lápis duplicado da Etapa 3 pelo ícone clássico de bico de pena tinteiro (`pen-tool`) idêntico à Foto 5.
+  - Calibração da rosa dos ventos da Etapa 3 conforme a Foto 5: estrela central de 4 pontas em degradê quente âmbar/laranja (`#ff9d5c` a `#9e2808`) com círculos astronômicos e miras em bronze/âmbar com glow sutil.
+  - Pílulas de entregáveis com texto em cinza claro refinado (`#c8c8d2`) idênticas à Foto 3 e pill de etapa com texto branco nítido conforme a Foto 4.
+
+
 
 
 

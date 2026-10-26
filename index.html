@@ -380,8 +380,10 @@
           <div class="step-top">
             <span class="icon-box">
               <svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a3d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <path d="M4 20l1-4.5L16 4.5 19.5 8 8.5 19z"/>
-                <path d="m13.5 7 3.5 3.5"/>
+                <path d="m18 2 4 4-5.5 5.5-4-4L18 2z"/>
+                <path d="m12.5 7.5-6.5 6.5L3 21l7-3 6.5-6.5"/>
+                <path d="m3 21 5.5-5.5"/>
+                <circle cx="9.5" cy="14.5" r="0.8" fill="#ff7a3d"/>
               </svg>
             </span>
             <span class="pill pill--dark">Etapa 3</span>
@@ -395,44 +397,44 @@
           </ul>
           <a class="btn btn--brasa btn--sm btn--step" href="#contato" data-open-modal="modal-diagnostico">Agendar conversa</a>
 
-          <!-- Rosa dos Ventos Dourada Astronômica idêntica à Foto 2 -->
+          <!-- Rosa dos Ventos Âmbar / Laranja idêntica à Foto 5 -->
           <div class="step-compass-wrap" aria-hidden="true">
             <svg class="step-compass" width="165" height="165" viewBox="0 0 165 165" fill="none">
               <defs>
                 <radialGradient id="step-compass-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#f5c542" stop-opacity="0.65"/>
-                  <stop offset="45%" stop-color="#b8860b" stop-opacity="0.25"/>
-                  <stop offset="100%" stop-color="#b8860b" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="#ff7a3d" stop-opacity="0.65"/>
+                  <stop offset="50%" stop-color="#c4351a" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#c4351a" stop-opacity="0"/>
                 </radialGradient>
-                <linearGradient id="gold-star-gradient" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#fff8d6"/>
-                  <stop offset="35%" stop-color="#f0c453"/>
-                  <stop offset="70%" stop-color="#c99738"/>
-                  <stop offset="100%" stop-color="#946a18"/>
+                <linearGradient id="amber-star-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ff9d5c"/>
+                  <stop offset="35%" stop-color="#ff6a2b"/>
+                  <stop offset="70%" stop-color="#d84518"/>
+                  <stop offset="100%" stop-color="#9e2808"/>
                 </linearGradient>
-                <filter id="gold-spark-glow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                <filter id="amber-spark-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="blur"/>
                   <feComposite in="SourceGraphic" in2="blur" operator="over"/>
                 </filter>
               </defs>
 
-              <!-- Círculos astronômicos concêntricos finos dourados -->
-              <circle cx="82.5" cy="82.5" r="56" stroke="#bfa152" stroke-width="1.1" stroke-dasharray="2, 3" opacity="0.6"/>
-              <circle cx="82.5" cy="82.5" r="42" stroke="#d4af37" stroke-width="1" opacity="0.75"/>
-              <circle cx="82.5" cy="82.5" r="26" stroke="#c99738" stroke-width="0.9" stroke-dasharray="1.5, 3" opacity="0.45"/>
+              <!-- Círculos astronômicos concêntricos finos âmbar/bronze -->
+              <circle cx="82.5" cy="82.5" r="56" stroke="rgba(255, 120, 50, 0.45)" stroke-width="1.1" stroke-dasharray="2, 3" opacity="0.6"/>
+              <circle cx="82.5" cy="82.5" r="42" stroke="rgba(255, 120, 50, 0.55)" stroke-width="1" opacity="0.75"/>
+              <circle cx="82.5" cy="82.5" r="26" stroke="rgba(255, 120, 50, 0.35)" stroke-width="0.9" stroke-dasharray="1.5, 3" opacity="0.45"/>
 
-              <!-- Eixos de mira cruzados dourados -->
-              <line x1="82.5" y1="12" x2="82.5" y2="153" stroke="#d4af37" stroke-width="1" opacity="0.65"/>
-              <line x1="12" y1="82.5" x2="153" y2="82.5" stroke="#d4af37" stroke-width="1" opacity="0.65"/>
-              <line x1="32" y1="32" x2="133" y2="133" stroke="#bfa152" stroke-width="0.8" opacity="0.4"/>
-              <line x1="32" y1="133" x2="133" y2="32" stroke="#bfa152" stroke-width="0.8" opacity="0.4"/>
+              <!-- Eixos de mira cruzados âmbar/bronze -->
+              <line x1="82.5" y1="12" x2="82.5" y2="153" stroke="rgba(255, 120, 50, 0.5)" stroke-width="1" opacity="0.65"/>
+              <line x1="12" y1="82.5" x2="153" y2="82.5" stroke="rgba(255, 120, 50, 0.5)" stroke-width="1" opacity="0.65"/>
+              <line x1="32" y1="32" x2="133" y2="133" stroke="rgba(255, 120, 50, 0.35)" stroke-width="0.8" opacity="0.4"/>
+              <line x1="32" y1="133" x2="133" y2="32" stroke="rgba(255, 120, 50, 0.35)" stroke-width="0.8" opacity="0.4"/>
 
-              <!-- Glow dourado suave central -->
+              <!-- Glow âmbar suave central -->
               <circle cx="82.5" cy="82.5" r="38" fill="url(#step-compass-glow)"/>
 
-              <!-- Estrela central de 4 pontas pontiaguda dourada -->
-              <path d="M 82.5,42 Q 82.5,82.5 123,82.5 Q 82.5,82.5 82.5,123 Q 82.5,82.5 42,82.5 Q 82.5,82.5 82.5,42 Z" fill="url(#gold-star-gradient)" filter="url(#gold-spark-glow)"/>
-              <path d="M 82.5,42 Q 82.5,82.5 123,82.5 Q 82.5,82.5 82.5,123 Q 82.5,82.5 42,82.5 Q 82.5,82.5 82.5,42 Z" fill="url(#gold-star-gradient)"/>
+              <!-- Estrela central de 4 pontas em tom Brasa Âmbar conforme Foto 5 -->
+              <path d="M 82.5,42 Q 82.5,82.5 123,82.5 Q 82.5,82.5 82.5,123 Q 82.5,82.5 42,82.5 Q 82.5,82.5 82.5,42 Z" fill="url(#amber-star-gradient)" filter="url(#amber-spark-glow)"/>
+              <path d="M 82.5,42 Q 82.5,82.5 123,82.5 Q 82.5,82.5 82.5,123 Q 82.5,82.5 42,82.5 Q 82.5,82.5 82.5,42 Z" fill="url(#amber-star-gradient)"/>
             </svg>
           </div>
         </li>
