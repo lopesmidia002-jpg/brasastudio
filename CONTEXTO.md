@@ -281,6 +281,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Reestilização de `.icon-orb`:** Atualizado o formato para squircle (`border-radius: 14px !important; width: 48px; height: 48px;`), fundo grafite escuro `#0d0e14`, contorno fino laranja/âmbar `1px solid rgba(255, 90, 31, 0.42)`, halo difuso suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.22)`) e traço vetorial interno em laranja vibrante `#ff7a3d` com `stroke-width: 1.8`, replicando com exatidão a estética da imagem de referência.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.35 Remoção dos Ícones de Losango com Ponto e Ampulheta da Hero Section (Passo 41)
+- **Problema/Objetivo:** O usuário solicitou retirar dois ícones exibidos na imagem enviada que estavam na página da Hero Section ("retire estes deois icones que esta na pagina da hero").
+- **Decisão e Implementação:**
+  - **Identificação dos Elementos:** Na seção Hero (`index.html`), o contêiner `.hero-icons-scroll` continha 8 `.icon-card`. Os dois ícones exibidos no recorte eram o penúltimo (`Marca 7`: `<rect ... transform="rotate(45 16 16)"/>` com `<circle cx="16" cy="16" .../>`, representando um losango com ponto no centro) e o último (`Marca 8`: `<path d="M7 7h18v3.5L18 16l7 5.5V25H7v-3.5L14 16 7 10.5V7z" .../>`, representando a ampulheta).
+  - **Remoção Limpa:** Os dois blocos foram removidos de `index.html`, mantendo os 6 ícones restantes alinhados e navegáveis pela barra de rolagem horizontal personalizada.
+  - **Execução e Validação Docker:** Container `brasa-studio-landing` reconstruído via Docker Compose com validação de status HTTP 200 na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

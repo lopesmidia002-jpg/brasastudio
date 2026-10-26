@@ -255,3 +255,9 @@
   - Traço vetorial dos ícones SVG ajustado para laranja vibrante `#ff7a3d` com `stroke-width: 1.8` idêntico à imagem da lupa.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 41 — Remoção dos Ícones de Losango com Ponto e Ampulheta da Hero Section**
+  - Remoção dos dois ícones identificados na imagem enviada pelo usuário (`Marca 7`: losango com ponto central e `Marca 8`: ampulheta) dentro do contêiner `.hero-icons-scroll` em `index.html`.
+  - Preservação da rolagem horizontal suave e dos 6 ícones restantes de marcas parceiras (círculo, triângulo, cúpula/arco com base, ondas duplas, losango vazado oco e grade 2x2 de círculos).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
