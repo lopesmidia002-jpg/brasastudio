@@ -219,6 +219,16 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Badges `PRO` (`.badge--pro`):** Adicionada a pílula retangular arredondada alaranjada `#d84518` ao lado dos títulos dos cards 1 e 5.
   - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
 
+### 2.28 Calibração dos Banners, Cor de Fundo, Tipografia e Pílulas Retangulares Arredondadas em Como Trabalhamos conforme Fotos 2 e 3 (Passo 34)
+- **Problema/Objetivo:** O usuário apontou que os banners de Como Trabalhamos estavam diferentes do padrão pretendido (largos demais, fundo com gradiente excessivo, pílulas ovais 9999px), solicitando ajustar tamanho dos banners, cor de fundo, tamanho e formato das letras e padronizar as pílulas com o estilo retangular arredondado da Foto 3 em todos os banners da seção.
+- **Decisão e Implementação:**
+  - **Dimensões e Proporção dos Banners (`.step` e `.split--steps`):** Redefinido o grid de `.split--steps` para `minmax(0, 510px) 1fr`, delimitando a largura máxima dos banners para 510px (eliminando o esticamento horizontal) com padding compacto de `1.6rem 1.7rem 1.75rem` e cantos arredondados de 22px.
+  - **Cor de Fundo e Iluminação Sutil (`.step`):** Substituído o fundo anterior por preto grafite profundo `#050609` com leve iluminação âmbar difusa restrita ao canto superior direito (`radial-gradient(ellipse 55% 45% at 98% 2%, rgba(200, 60, 20, 0.11) 0%, transparent 65%)`), eliminando tons alaranjados excessivos.
+  - **Pílulas Retangulares Arredondadas idênticas à Foto 3 (`.step .pills li`):** Substituído o raio oval de 9999px pelo formato retangular com cantos suaves de 8px (`border-radius: 8px`), fundo escuro `#111218`, contorno fino `1px solid rgba(255, 255, 255, 0.1)` e texto cinza claro `#d1d5db` idêntico à Foto 3, aplicado uniformemente a todas as pílulas dos 3 banners.
+  - **Badges de Etapa e Botão de Ação:** Badges no canto superior direito (`.step .pill--dark`) padronizadas com o mesmo raio de 8px e botão "Agendar conversa" calibrado com raio de 12px e glow quente inferior.
+  - **Tipografia:** Títulos das etapas ajustados para `1.22rem` (peso 700 em branco puro) e textos descritivos em `0.88rem` / `#8e8e96` com entrelinha de 1.55.
+  - **Execução e Validação Docker:** Container reconstruído e validado com status HTTP 200 OK na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

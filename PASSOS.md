@@ -202,3 +202,12 @@
   - Remoção das linhas horizontais divisórias (`<hr class="rule">`), garantindo acabamento limpo e moderno idêntico à Foto 2.
   - Adição de badge retangular arredondada `PRO` em tom alaranjado nos cards 1 e 5.
   - Reconstrução e validação do container Docker na porta 3000 com HTTP 200 OK.
+
+- [x] **Passo 34 — Calibração dos Banners, Cor de Fundo, Tipografia e Pílulas Retangulares Arredondadas em Como Trabalhamos conforme Fotos 2 e 3**
+  - Redimensionamento e ajuste de proporção dos banners `.step` com largura máxima contida (`minmax(0, 510px)` na grade de duas colunas) e padding compacto `1.6rem 1.7rem 1.75rem`, eliminando o aspecto excessivamente largo.
+  - Aplicação do fundo preto grafite profundo `#050609` com efeito sutil de iluminação âmbar restrito ao canto superior direito (`radial-gradient` a 98% 2%) e cantos arredondados de 22px.
+  - Calibração tipográfica moderada e elegante com título em `1.22rem` e corpo em `0.88rem` / `#8e8e96`.
+  - Padronização de todas as pílulas de entregáveis com o estilo exato da Foto 3: formato retangular arredondado (`border-radius: 8px`), fundo `#111218`, contorno `1px solid rgba(255, 255, 255, 0.1)` e texto cinza claro `#d1d5db`.
+  - Badges de etapa no canto superior direito ajustadas para o mesmo formato retangular arredondado (`border-radius: 8px`) e botão "Agendar conversa" calibrado com raio de 12px.
+  - Reconstrução e validação do container Docker na porta 3000 com HTTP 200 OK.
+
