@@ -866,6 +866,23 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.68 Redução do Efeito Cinza Lateral em Por Que a Brasa (Passo 74)
+- **Solicitação do Usuário:**
+  - Diminuir o efeito cinza da lateral da seção Por Que a Brasa para que fique igual ao da segunda foto enviada.
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 1: o trapézio cinza `.benefits-wing--right` iniciava no topo da seção (`top: 0`), com largura ampla de até 680px e altura de até 780px, ocupando uma área excessiva e gerando poluição visual atrás do título.
+  - Na Foto 2: o bloco cinza está muito mais discreto e contido na margem direita:
+    - O topo do trapézio inicia abaixo da primeira linha do título (`top: clamp(80px, 9.5vw, 140px)`).
+    - A largura máxima foi reduzida para 420px (`clamp(240px, 26vw, 420px)`).
+    - A altura foi reduzida para 380px (`clamp(240px, 26vw, 380px)`).
+    - O degradê cinza é sutil e elegante, preservando o preto absoluto da página.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.benefits-wing--right`: atualizado com `top: clamp(80px, 9.5vw, 140px); width: clamp(240px, 26vw, 420px); height: clamp(240px, 26vw, 380px); clip-path: polygon(28% 0, 100% 0, 100% 100%, 0% 100%); background: linear-gradient(225deg, rgba(255, 255, 255, 0.05) 0%, rgba(20, 22, 28, 0.28) 45%, transparent 100%); border-top: 1px solid rgba(255, 255, 255, 0.14);`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

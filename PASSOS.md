@@ -610,7 +610,14 @@
   - Linha de topo iluminada ajustada para o tom âmbar/alaranjado do design system (`border-top: 1px solid rgba(208, 59, 30, 0.42)`) com sombra difusa suave (`drop-shadow(0 0 35px rgba(208, 59, 30, 0.12))`), idêntica à Foto 2 de referência.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 74 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 74 — Redução das Dimensões do Efeito Cinza Lateral em Por Que a Brasa (Idêntico à Foto 2)**
+  - Redução da escala, altura e posição do efeito trapezoidal cinza da lateral direita (`.benefits-wing--right`):
+    - Topo rebaixado de `0` para `clamp(80px, 9.5vw, 140px)`, alinhando o início do corte superior à altura da segunda linha do título e liberando respiro preto ao redor da badge e da primeira linha.
+    - Largura reduzida de `clamp(380px, 45vw, 680px)` para `clamp(240px, 26vw, 420px)`, evitando sobreposição indesejada no centro.
+    - Altura compactada para `clamp(240px, 26vw, 380px)` com degradê cinza sutil translúcido (`rgba(255, 255, 255, 0.05)` a `rgba(20, 22, 28, 0.28)`) e máscara progressiva, exatamente conforme a Foto 2 de referência.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 75 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
