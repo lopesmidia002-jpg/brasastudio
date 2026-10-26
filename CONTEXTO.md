@@ -81,6 +81,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Ampliadas as dimensões da rosa dos ventos vetorial (`.spark-compass-wrap`) para 260px x 260px com `bottom: -58px` e `right: -52px`, cobrindo de forma destacada o quadrante inferior direito do card com seus eixos de mira, círculos astronômicos concêntricos e estrela alaranjada.
   - Desativada a animação de pulso contínuo (`animation: none;`), garantindo renderização nítida, estável e 100% estática.
 
+### 2.11 Barra de Rolagem Horizontal Manual e Banners Quadrados na Seção Resultados (Passo 17)
+- **Problema/Objetivo:** A seção Resultados utilizava animação automática contínua de marquee infinito com cards altos (`aspect-ratio: 7/8`), enquanto a segunda foto de referência exigia navegação por barra de rolagem horizontal manual e banners com enquadramento proporcional perfeitamente quadrado.
+- **Decisão e Implementação:**
+  - Removido o ticker automático infinito (`animation: marquee`) e os nós duplicados de renderização da lista.
+  - Implementado container com rolagem horizontal livre (`.results-scroll-wrap` e `.results-cases-scroll`), com `overflow-x: auto` e scrollbar personalizada em gradiente neon âmbar/laranja (`#ff7a3d` a `#ff5a1f`) com track translúcido e thumb arredondado com glow.
+  - Redesenhada a imagem dos banners para proporção 1:1 quadrada (`aspect-ratio: 1 / 1`), eliminando a distorção vertical e destacando o enquadramento do produto.
+  - Atualizados os badges dos títulos para etiquetas retangulares com cantos arredondados vermelhas-laranjas (`NOVO` e `RECENTE`) e pílulas de métricas com fundo escuro e tipografia limpa idênticas à foto de referência.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)
