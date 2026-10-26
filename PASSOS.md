@@ -605,7 +605,12 @@
   - Remoção da projeção de halo alaranjado na badge `.tag-status--services` (`box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);`), impedindo qualquer vazamento de luz no fundo escuro.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 73 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 73 — Calibração dos Efeitos de Fundo do Portfólio de Cinza para Alaranjado/Marrom-Cobre (Idêntico à Foto 2)**
+  - Atualização dos painéis poligonais angulares laterais de profundidade do Portfólio (`.portfolio-wing--left` e `.portfolio-wing--right`) substituindo o gradiente cinza/neutro por degradê marrom-cobre / terracota alaranjado escuro quente (`rgba(55, 22, 12, 0.5)` a `rgba(32, 12, 6, 0.22)`).
+  - Linha de topo iluminada ajustada para o tom âmbar/alaranjado do design system (`border-top: 1px solid rgba(208, 59, 30, 0.42)`) com sombra difusa suave (`drop-shadow(0 0 35px rgba(208, 59, 30, 0.12))`), idêntica à Foto 2 de referência.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 74 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

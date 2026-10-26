@@ -851,6 +851,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.67 Calibração dos Efeitos de Fundo do Portfólio de Cinza para Alaranjado (Passo 73)
+- **Solicitação do Usuário:**
+  - Mudar a cor dos efeitos de fundo que estavam cinzas para alaranjado conforme a segunda foto na seção de Portfólio.
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 1: as asas poligonais laterais do Portfólio (`.portfolio-wing--left` e `.portfolio-wing--right`) possuíam preenchimento cinza grafite neutro (`rgba(255, 255, 255, 0.04)` a `rgba(20, 20, 25, 0.25)`) e borda superior cinza `rgba(255, 255, 255, 0.12)`.
+  - Na Foto 2: os blocos angulares laterais aparecem em tom marrom-cobre / terracota alaranjado escuro quente com borda superior iluminada em tom âmbar/alaranjado, criando uma moldura cênica imersiva alinhada às demais seções (Vitrine e Depoimentos).
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.portfolio-wing`: `border-top: 1px solid rgba(208, 59, 30, 0.42); filter: drop-shadow(0 0 35px rgba(208, 59, 30, 0.12));`.
+    - `.portfolio-wing--left`: `background: linear-gradient(135deg, rgba(55, 22, 12, 0.5) 0%, rgba(32, 12, 6, 0.22) 55%, transparent 100%);`.
+    - `.portfolio-wing--right`: `background: linear-gradient(225deg, rgba(55, 22, 12, 0.5) 0%, rgba(32, 12, 6, 0.22) 55%, transparent 100%);`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

@@ -2285,20 +2285,20 @@ button, input {
   height: clamp(260px, 28vw, 400px);
   width: clamp(220px, 25vw, 420px);
   pointer-events: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
+  border-top: 1px solid rgba(208, 59, 30, 0.42);
+  filter: drop-shadow(0 0 35px rgba(208, 59, 30, 0.12));
 }
 
 .portfolio-wing--left {
   left: 0;
   clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(20, 20, 25, 0.25) 42%, transparent 100%);
+  background: linear-gradient(135deg, rgba(55, 22, 12, 0.5) 0%, rgba(32, 12, 6, 0.22) 55%, transparent 100%);
 }
 
 .portfolio-wing--right {
   right: 0;
   clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
-  background: linear-gradient(225deg, rgba(255, 255, 255, 0.04) 0%, rgba(20, 20, 25, 0.25) 42%, transparent 100%);
+  background: linear-gradient(225deg, rgba(55, 22, 12, 0.5) 0%, rgba(32, 12, 6, 0.22) 55%, transparent 100%);
 }
 
 /* Fundo alaranjado difuso removido */
