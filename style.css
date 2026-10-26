@@ -2897,9 +2897,9 @@ button, input {
 .showcase-gallery {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1380px;
   margin: 0 auto;
   padding: 0 clamp(1rem, 3.5vw, 2.5rem);
   box-sizing: border-box;
@@ -2916,9 +2916,24 @@ button, input {
   scroll-behavior: smooth;
   cursor: grab;
   user-select: none;
-  padding-bottom: 14px; /* Espaçamento para visualização nítida da scrollbar */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.28) rgba(255, 255, 255, 0.05);
+}
+
+/* Barra de Rolagem Horizontal no TOPO para a Sequência 1 (Linha 1) */
+#showcase-row-1 {
+  transform: scaleY(-1);
+  padding-top: 14px;
+  padding-bottom: 0;
+}
+#showcase-row-1 .showcase-grid-track {
+  transform: scaleY(-1);
+}
+
+/* Barra de Rolagem Horizontal na BASE para a Sequência 2 (Linha 2) */
+#showcase-row-2 {
+  padding-top: 0;
+  padding-bottom: 14px;
 }
 
 .showcase-scroll-row:focus-visible {
@@ -2939,34 +2954,27 @@ button, input {
 .showcase-scroll-row::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 999px;
-  margin: 0 clamp(20px, 10vw, 120px);
+  margin: 0 clamp(20px, 8vw, 90px);
 }
 
 .showcase-scroll-row::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .showcase-scroll-row::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.55);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 }
 
-/* Grid Track com 4 Colunas */
+/* Grid Track com 4 Colunas Ampliadas Lateralmente (3 Visíveis + 4º Parcialmente Cortado) */
 .showcase-grid-track {
   display: grid;
-  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, clamp(340px, 30.5vw, 440px));
   gap: 16px;
   min-width: 100%;
   width: max-content;
-}
-
-@media (min-width: 1120px) {
-  .showcase-grid-track {
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 /* Cards Quadrados 1:1 */

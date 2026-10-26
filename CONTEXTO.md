@@ -813,6 +813,28 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.65 Barras de Rolagem no Topo e Base e Ampliação Lateral da Galeria Vitrine (Passo 71)
+- **Solicitação do Usuário:**
+  - Posicionar duas barras de rolagem horizontais: uma na parte de cima e outra na parte de baixo.
+  - Aumentar o tamanho lateral dos banners de modo que dois dos banners (o último de cada sequência) só apareçam quando a barra for acionada, exatamente conforme a segunda imagem de referência.
+- **Investigação Visual e Comparação (Imagem 1 vs Imagem 2):**
+  - Na Imagem 1: os 4 banners de cada linha ficavam espremidos na largura total da tela sem rolagem (`grid-template-columns: repeat(4, 1fr)`), com todos os 8 banners 100% visíveis.
+  - Na Imagem 2:
+    1. A largura de cada card é substancialmente maior.
+    2. Exatamente 3 banners cabem inteiros no viewport.
+    3. O 4º banner da linha 1 e o 4º banner da linha 2 (totalizando os dois banners) ficam parcialmente cortados na margem direita (~30-40% visíveis).
+    4. Eles só são completamente revelados quando o usuário aciona a barra de rolagem horizontal ou arrasta (*drag-to-scroll*).
+    5. A barra de rolagem da primeira sequência fica na **parte de cima** (no topo da Linha 1), e a da segunda sequência fica na **parte de baixo** (no fundo da Linha 2).
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `#showcase-row-1`: aplicado `transform: scaleY(-1)` no container com scroll e `.showcase-grid-track { transform: scaleY(-1); }` no track interno, fazendo com que a barra de rolagem nativa/estilizada seja renderizada no **topo** da linha 1, enquanto o conteúdo visual permanece na orientação correta.
+    - `#showcase-row-2`: mantida a barra de rolagem na **base** com `padding-bottom: 14px`.
+    - `.showcase-grid-track`: configurado com `grid-template-columns: repeat(4, clamp(340px, 30.5vw, 440px))` e `width: max-content`, removendo a regra que forçava `width: 100%` e `repeat(4, 1fr)`.
+    - `.showcase-gallery`: ajustado gap para 20px e `max-width: 1380px`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

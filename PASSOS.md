@@ -590,8 +590,18 @@
   - Eliminação da animação contínua de marquee/carrossel anterior (`.marquee--logos`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 71 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 71 — Barras de Rolagem Horizontais no Topo e Base e Ampliação Lateral da Galeria Vitrine (Idêntico à Foto 2)**
+  - Posicionamento de duas barras de rolagem horizontais dedicadas:
+    - Linha 1 (`#showcase-row-1`): barra de rolagem horizontal posicionada na parte de **cima** (topo da sequência) através de espelhamento vertical invertido no container e no track.
+    - Linha 2 (`#showcase-row-2`): barra de rolagem horizontal posicionada na parte de **baixo** (base da sequência).
+  - Ampliação da largura dos banners (`.showcase-grid-track` com `grid-template-columns: repeat(4, clamp(340px, 30.5vw, 440px))`):
+    - Exatamente 3 banners cabem inteiros na largura do viewport visível em desktop e telas médias.
+    - Os dois banners da extremidade direita (o 4º banner da linha 1 e o 4º banner da linha 2) ficam parcialmente cortados na lateral, revelando-se completamente somente quando a barra de rolagem for acionada (ou via drag-to-scroll elástico), idêntico à Foto 2 enviada pelo usuário.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 72 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
+
 
 
 
