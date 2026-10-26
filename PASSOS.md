@@ -290,6 +290,12 @@
   - Aplicação de fundo alaranjado com degradê âmbar quente nas caixas de ícones (`.icon-box` com `radial-gradient(circle at 45% 45%, #3d1f13 0%, #220e06 65%, #0f0502 100%)`), contorno fino âmbar `1px solid rgba(255, 110, 40, 0.45)` e halo difuso suave idêntico à Foto 3.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
 
+- [x] **Passo 46 — Calibração do Container da Hero Section para Exibir 4 Ícones Iniciais e 2 na Rolagem**
+  - Calibração da largura do contêiner `.hero-icons-wrap` para `max-width: 404px` e gap de `1.25rem` (20px), fazendo com que exatamente 4 ícones (Marca 1 a Marca 4) fiquem visíveis no viewport inicial.
+  - Os outros 2 ícones parceiros (Marca 5: losango vazado oco e Marca 6: grade 2x2 de círculos) ficam ocultos à direita e são revelados suavemente assim que o usuário aciona a rolagem horizontal pela barra branca estilizada.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando HTTP 200 OK.
+
+
 
 
 

@@ -327,6 +327,14 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - **Fundo Alaranjado com Degradê nos Ícones (`.icon-box`):** Aplicado gradiente radial âmbar quente (`radial-gradient(circle at 45% 45%, #3d1f13 0%, #220e06 65%, #0f0502 100%)`) com contorno fino em âmbar `1px solid rgba(255, 110, 40, 0.45)` e halo difuso suave (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.22)`), reproduzindo com fidelidade o recorte da Foto 3.
   - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
 
+### 2.40 Calibração do Container da Hero Section para Exibir 4 Ícones Iniciais e 2 na Rolagem (Passo 46)
+- **Problema/Objetivo:** O usuário solicitou que na Hero Section fiquem visíveis apenas quatro ícones inicialmente, e que os outros dois apareçam assim que a rolagem for acionada ("deixe so aparecendo quatro icones e assim que a rolagem funcionar apareça os outros dois icones").
+- **Decisão e Implementação:**
+  - **Cálculo e Calibração Dimensional:** Cada `.icon-card` mede 84px de largura. Com gap de 1.25rem (20px), quatro cards mais três espaçamentos e preenchimento lateral somam exatamente 404px.
+  - **Ajuste no CSS (`style.css`):** O contêiner `.hero-icons-wrap` teve sua largura máxima ajustada de 480px para 404px (`max-width: 404px;`), enquanto `.hero-icons-scroll` foi configurado com `gap: 1.25rem;` e `padding: 0.6rem 4px 1.25rem;`.
+  - **Comportamento Visual Resultante:** Inicialmente apenas os 4 primeiros ícones (círculo, triângulo, cúpula com base e ondas duplas) são enquadrados perfeitamente no visor. Os 2 ícones finais (losango vazado e grade 2x2 de círculos) ficam ocultos à direita e deslizam para dentro da visão suavemente assim que o usuário movimenta a barra de rolagem branca personalizada.
+  - **Execução e Validação Docker:** Container Docker reconstruído com `docker-compose up -d --build` e verificado com status HTTP 200 na porta 3000.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

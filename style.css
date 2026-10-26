@@ -747,12 +747,12 @@ button, input {
   margin-bottom: 2.2rem;
 }
 
-/* Container estendido horizontalmente para exibir os 4 ícones maiores com amplitude conforme Foto 2 */
+/* Container dimensionado com precisão para exibir exatamente 4 ícones inicialmente */
 .hero-icons-wrap {
   margin-top: 1.25rem;
   padding-top: 0.5rem;
   width: 100%;
-  max-width: 480px; /* Estendido horizontalmente conforme a Foto 2 */
+  max-width: 404px; /* Exibe exatamente 4 ícones inicialmente; os outros 2 aparecem com a rolagem horizontal */
   position: relative;
   overflow: visible;
 }
@@ -760,10 +760,10 @@ button, input {
 .hero-icons-scroll {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.25rem;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.6rem 0.2rem 1.25rem;
+  padding: 0.6rem 4px 1.25rem;
   scroll-behavior: smooth;
   /* Scrollbar visível e estilizada em branco puro */
   scrollbar-width: thin;
