@@ -536,7 +536,14 @@
   - Subheadline (`.plans-text`): texto em cinza neutro suave (`#A1A1AA`), entrelinha 1.62 e largura de 630px.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 67 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 67 — Remoção do Fundo Alaranjado da Seção Portfólio**
+  - Remoção total do clarão difuso alaranjado/avermelhado de fundo (`.portfolio-glow-bg` removido do HTML e desativado no CSS).
+  - Fundo da seção `.portfolio` ajustado para preto puro absoluto (`#000000`).
+  - Painéis/asas laterais em perspectiva (`.portfolio-wing--left` e `.portfolio-wing--right`) calibradas para degradê neutro ultra-escuro (`rgba(255, 255, 255, 0.04)` a transparente) com borda superior neutra `border-top: 1px solid rgba(255, 255, 255, 0.12)`, eliminando qualquer sombra ou halo térmico alaranjado residual.
+  - Preservados intactos todos os demais elementos visuais: pill badge "Portfólio" com ponto laranja, título monocromático branco puro, subtítulo cinza e botão CTA com gradiente e glow.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 68 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

@@ -694,6 +694,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
 
+### 2.61 Remoção do Fundo Alaranjado da Seção Portfólio (Passo 67)
+- **Problema/Objetivo:** O usuário solicitou explicitamente retirar o fundo alaranjado da seção Portfólio (`#portfolio`), mantendo todos os outros elementos do cabeçalho ("tire este fundo alaranjado somente o fundo").
+- **Investigação Visual e Diagnóstico:**
+  - Na implementação anterior do cabeçalho de Portfólio, havia um elemento `.portfolio-glow-bg` com `radial-gradient(ellipse ... rgba(224, 68, 35, 0.16) ...)` e filtro de blur de 32px que projetava um clarão avermelhado/alaranjado por trás do título e da pill badge.
+  - Além disso, as asas laterais poligonais (`.portfolio-wing--left` e `.portfolio-wing--right`) possuíam degradê em `rgba(224, 68, 35, 0.24)`, borda superior âmbar `border-top: 1px solid rgba(255, 120, 50, 0.42)` e box-shadow alaranjado.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removida a tag `<div class="portfolio-glow-bg" aria-hidden="true"></div>`.
+  - Em `style.css`:
+    - `.portfolio`: fundo calibrado em preto puro absoluto `#000000`.
+    - `.portfolio-glow-bg`: configurado com `display: none !important;` garantindo que nenhum resíduo de brilho térmico seja renderizado.
+    - `.portfolio-wing`: removido o box-shadow alaranjado e borda alterada para `border-top: 1px solid rgba(255, 255, 255, 0.12)`.
+    - `.portfolio-wing--left` e `.portfolio-wing--right`: degradê ajustado para monocromático/neutro translúcido suave (`rgba(255, 255, 255, 0.04)` desvanecendo para transparente).
+  - Preservados com fidelidade os elementos de primeiro plano: badge em cápsula `.tag-status--portfolio` com bullet laranja, título monocromático em branco puro `#FFFFFF`, texto descritivo `#A1A1AA` e botão CTA `.portfolio-btn` com gradiente e glow.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Requisição validada com `Invoke-WebRequest -Uri 'http://localhost:3000/'`, retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

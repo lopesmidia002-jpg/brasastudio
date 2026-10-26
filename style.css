@@ -2263,11 +2263,11 @@ button, input {
 .portfolio {
   position: relative;
   overflow: visible;
-  background-color: #0B0B0B;
+  background-color: #000000; /* Preto puro absoluto sem fundo alaranjado */
   padding-top: clamp(4rem, 8vw, 6.5rem);
 }
 
-/* Laterais com silhuetas geométricas ou painéis escuros poligonais em perspectiva sutil */
+/* Laterais com silhuetas geométricas neutras sem tons alaranjados de fundo */
 .portfolio-backdrop {
   position: absolute;
   top: 0;
@@ -2285,34 +2285,25 @@ button, input {
   height: clamp(260px, 28vw, 400px);
   width: clamp(220px, 25vw, 420px);
   pointer-events: none;
-  border-top: 1px solid rgba(255, 120, 50, 0.42);
-  box-shadow: 0 -2px 16px rgba(255, 90, 31, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
 }
 
 .portfolio-wing--left {
   left: 0;
   clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%);
-  background: linear-gradient(135deg, rgba(224, 68, 35, 0.24) 0%, rgba(60, 18, 6, 0.12) 42%, rgba(11, 11, 11, 0.88) 85%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(20, 20, 25, 0.25) 42%, transparent 100%);
 }
 
 .portfolio-wing--right {
   right: 0;
   clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
-  background: linear-gradient(225deg, rgba(224, 68, 35, 0.24) 0%, rgba(60, 18, 6, 0.12) 42%, rgba(11, 11, 11, 0.88) 85%, transparent 100%);
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.04) 0%, rgba(20, 20, 25, 0.25) 42%, transparent 100%);
 }
 
-/* Clarão difuso atmosférico âmbar/laranja escuro atrás do cabeçalho */
+/* Fundo alaranjado difuso removido */
 .portfolio-glow-bg {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(840px, 95vw);
-  height: 420px;
-  background: radial-gradient(ellipse 75% 60% at 50% 32%, rgba(224, 68, 35, 0.16) 0%, rgba(140, 40, 12, 0.05) 50%, transparent 75%);
-  filter: blur(32px);
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 .portfolio-head {
