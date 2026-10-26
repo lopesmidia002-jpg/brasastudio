@@ -335,7 +335,15 @@
   - Remoção completa de transformações e elevações bruscas ao passar o mouse (`transform: none`, banners 100% estáticos).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 52 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 52 — Calibração de Dimensões e Cores da Rosa dos Ventos do Hero para Dourado Opaco**
+  - Redução das dimensões da rosa dos ventos vetorial (`.spark-compass-wrap`) de 260px para 200px x 200px (desktop com `bottom: -38px; right: -36px;`) e 160px x 160px no mobile, equilibrando sua presença sobre o card de vídeo.
+  - Substituição da paleta de laranja neon/fogo por uma paleta clássica de dourado opaco fosco:
+    - Estrela central de 4 pontas em gradiente nobre de ouro antigo (`#d8b26e` -> `#b88d3c` -> `#8a6320`).
+    - Círculos concêntricos e eixos de mira astronômicos em dourado suave `#c49a45` com opacidades equilibradas.
+    - Glow interno e sombra externa calibrados para halo dourado opaco (`drop-shadow(0 0 20px rgba(200, 155, 70, 0.4))`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 53 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

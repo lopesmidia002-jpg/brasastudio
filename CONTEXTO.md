@@ -394,6 +394,19 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Em `style.css`: atualizada a classe `.feature` com fundo `#0f1015`, `.feature--hot` com degradê térmico apenas na base, `.badge--pro` com texto branco `#ffffff`, `.feature .rule` estilizada com `border-top: 1px solid rgba(255, 255, 255, 0.1)`, e remoção de transforms nos estados de `:hover`.
   - Reconstrução do container Docker `brasa-studio-landing` na porta 3000 e validação de resposta HTTP 200 OK.
 
+### 2.46 Calibração de Dimensões e Cores da Rosa dos Ventos do Hero para Dourado Opaco (Passo 52)
+- **Problema/Objetivo:** O usuário solicitou diminuir um pouco o tamanho da rosa dos ventos sobre o card de vídeo do Hero e alterar a sua cor para um dourado opaco ("diminua um pouco a rosa os ventos e mude a cor para um dourados opaco").
+- **Investigação da Causa Raiz e Análise Visual:**
+  - A rosa dos ventos vetorial (`.spark-compass-wrap`) estava com dimensões ampliadas de 260px x 260px e um tom laranja neon/fogo muito vibrante (`#ff5a1f` / `#ff7a3d`) com drop-shadow saturado de `28px`, cobrindo de forma excessiva o canto inferior direito do card de preview de vídeo.
+- **Decisão e Implementação:**
+  - **Redução Proporcional:** Dimensões ajustadas de 260px para 200px x 200px no desktop (`bottom: -38px; right: -36px;`) e 160px x 160px no mobile, equilibrando sua presença e dando o respiro perfeito sobre o preview de vídeo.
+  - **Paleta em Dourado Opaco:**
+    - Estrela central de 4 pontas calibrada com gradiente nobre em ouro antigo fosco/opaco: `#d8b26e` (champanhe suave) -> `#b88d3c` (dourado fosco elegante) -> `#8a6320` (bronze dourado suave).
+    - Círculos astronômicos concêntricos e eixos de mira ortogonais/diagonais alterados de laranja avermelhado para dourado suave `#c49a45` com opacidades equilibradas.
+    - Glow radial interno suave em `#cfa14b` com transição para transparente.
+    - Sombra externa e filtro ajustados para um halo dourado opaco sutil (`filter: drop-shadow(0 0 20px rgba(200, 155, 70, 0.4))`).
+  - **Execução e Validação Docker:** Container reconstruído e testado via `Invoke-WebRequest` na porta 3000 retornando status HTTP 200 OK.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

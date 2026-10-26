@@ -889,16 +889,16 @@ button, input {
   border-color: rgba(255, 255, 255, 0.22) !important;
 }
 
-/* Rosa dos ventos Laranja ampliada e estática conforme foto 2 */
+/* Rosa dos ventos em Dourado Opaco calibrada conforme solicitação */
 .spark-compass-wrap {
   position: absolute;
-  bottom: -58px;
-  right: -52px;
-  width: 260px;
-  height: 260px;
+  bottom: -38px;
+  right: -36px;
+  width: 200px;
+  height: 200px;
   pointer-events: none;
   z-index: 5;
-  filter: drop-shadow(0 0 28px rgba(255, 90, 31, 0.65));
+  filter: drop-shadow(0 0 20px rgba(200, 155, 70, 0.4));
 }
 .spark-compass {
   width: 100%;
@@ -922,10 +922,10 @@ button, input {
     flex: 0 1 260px;
   }
   .spark-compass-wrap {
-    bottom: -45px;
-    right: -38px;
-    width: 210px;
-    height: 210px;
+    bottom: -30px;
+    right: -26px;
+    width: 160px;
+    height: 160px;
   }
 }
 
