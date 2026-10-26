@@ -644,7 +644,14 @@
   - Calibração do grid track `.showcase-grid-track` com 4 colunas proporcionais cobrindo de ponta a ponta a viewport lateralmente no desktop (`grid-template-columns: repeat(4, minmax(260px, 1fr))`), exatamente idêntico à Foto 2.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 79 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 79 — Padronização Fiel da Seção de Planos com Fundo Preto Puro e Rosa dos Ventos Perfeita (Conforme Foto 2)**
+  - Fundo da seção `.sec.pricing` padronizado em preto absoluto puro (`#000000`), removendo o trapézio/polígono cinza do fundo dos cards (`.plans-backdrop` desativado).
+  - Posicionamento da marca d'água da rosa dos ventos / estrela de 4 pontas no Card 2 (`.plan-compass-wrap`) no canto inferior direito (`bottom: -15px; right: -15px; width: 230px; height: 230px;`), com o centro da estrela perfeitamente visível dentro do card, alinhado atrás do botão CTA.
+  - Calibração dos botões "Agendar conversa" (`.plan-btn`) com gradiente terracota suave (`#D83D1E` a `#C13014`), borda fina e iluminação difusa controlada na base.
+  - Linha diagonal alaranjada do valor riscado R$ 4.600 (`.price-diagonal-slash`) perfeitamente alinhada.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 80 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

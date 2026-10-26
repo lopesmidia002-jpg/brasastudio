@@ -960,6 +960,28 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Em `main.js`:
     - Adicionada sincronização de rolagem bidirecional em tempo real entre `#showcase-row-1` e `#showcase-row-2` com `requestAnimationFrame`, de modo que o controle pela barra na base ou pelo arraste (*drag-to-scroll*) movimenta ambas as fileiras em perfeita harmonia cinematográfica.
 - **Execução e Validação Docker:**
+  ### 2.73 Padronização Fiel da Seção de Planos com Fundo Preto Puro e Rosa dos Ventos Perfeita (Passo 79)
+- **Solicitação do Usuário:**
+  - "substitua esta pagina por esta pagina aqui quero exatamente igual" (enviando a Foto 1 mostrando a seção com o trapézio cinza à direita e a rosa dos ventos deslocada, e a Foto 2 mostrando a versão limpa com fundo 100% preto e rosa dos ventos perfeitamente encaixada no card).
+- **Investigação Visual e Comparação (Foto 1 vs Foto 2):**
+  - Na Foto 1:
+    1. O fundo atrás dos cards à direita apresentava o corte diagonal e a superfície do trapézio cinza (`.plans-backdrop` / `.plans-wing--right`), que cortava a lateral e descia atrás dos cards de preços.
+    2. A marca d'água da rosa dos ventos no Card 2 (Estúdio) estava deslocada para fora (`bottom: -55px; right: -55px; width: 280px; height: 280px;`), com seu centro fora da borda e glow excessivo.
+    3. Os botões "Agendar conversa" tinham glow alaranjado exagerado e desregulado.
+  - Na Foto 2 (referência desejada):
+    1. Fundo 100% preto absoluto (`#000000`), sem nenhum trapézio cinza ou corte diagonal atrás dos cards.
+    2. A marca d'água da rosa dos ventos / estrela de 4 pontas no Card 2 está posicionada com o centro da estrela perfeitamente visível dentro do card, alinhado atrás do canto direito do botão CTA e na altura do último item da lista ("Cancelamento com 30 dias de aviso").
+    3. Os botões "Agendar conversa" possuem gradiente terracota suave (`#D83D1E` a `#C13014`), borda fina e iluminação difusa controlada na base.
+    4. O risco diagonal alaranjado no preço original R$ 4.600 está perfeitamente alinhado.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removido o bloco `<div class="plans-backdrop">` e a classe `.detail-right` de `<section class="sec pricing" id="planos">`.
+  - Em `style.css`:
+    - `.sec.pricing`: `background-color: #000000;`.
+    - `.plans-backdrop`: `display: none;`.
+    - `.plan-btn`: calibrado com `background: linear-gradient(180deg, #D83D1E 0%, #C13014 100%);` e glow suave `box-shadow: 0 10px 26px rgba(216, 61, 30, 0.48), 0 0 18px rgba(255, 87, 34, 0.22);`.
+    - `.plan-compass-wrap`: reposicionado e redimensionado para `bottom: -15px; right: -15px; width: 230px; height: 230px; filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.35));`, mantendo o centro da estrela dentro do card com elegância impecável.
+- **Execução e Validação Docker:**
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
