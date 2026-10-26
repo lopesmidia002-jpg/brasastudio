@@ -97,6 +97,13 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Implementada rosa dos ventos vetorial astronômica dourada no canto inferior direito da Etapa 3 ("Entrega"), composta por dois círculos astronômicos concêntricos, eixos de mira em cruz `+` e `x` finos dourados, glow difuso e estrela de 4 pontas pontiaguda dourada em gradiente.
   - Mantida a foto da primeira imagem (`processo-mesa-1040.webp`) com acabamento limpo em cantos arredondados de 26px sem borda cinza externa pesada.
 
+### 2.13 Refinamento Visual Fiel da Barra Superior / Header (Passo 19)
+- **Problema/Objetivo:** O header apresentava o sufixo "studio" na cor laranja vibrante e botão CTA em tom laranja claro com forte brilho, enquanto a segunda foto de referência estabelecia o sufixo "studio" em tom cinza médio/prata suave (`#8e8e93`) e botão "Fale com a gente" em vermelho-laranja brasa intenso aveludado com cantos em pílula.
+- **Decisão e Implementação:**
+  - Calibrado o logotipo da marca para exibir "brasa" em branco puro `#ffffff` e "studio" em tom cinza médio/prata `#8e8e93` com peso refinado, harmonizando com a referência visual.
+  - Ajustada a tipografia e cores dos links da navbar com o item ativo "Início" em branco e os demais em cinza claro `#c8c8cc` com espaçamento generoso de 2rem.
+  - Estilizado o botão "Fale com a gente" no gradiente vermelho-laranja brasa aveludado (`#d84518` a `#b82b08`) com cantos de pílula (`9999px`) e sombra quente suave.
+
 ---
 
 ## 3. Arquitetura de Execução (100% Docker)

@@ -509,40 +509,58 @@ button, input {
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
-  color: var(--text-white);
+  color: #ffffff;
 }
 .brand-name span {
-  color: var(--orange-primary);
-  margin-left: 2px;
+  color: #8e8e93; /* Cinza médio/prata idêntico à Foto 2 */
+  font-weight: 400;
+  margin-left: 3px;
 }
 
 .header-sep {
   width: 1px;
-  height: 22px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0 1.25rem 0 1rem;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 1.35rem 0 1.15rem;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.85rem;
+  gap: 2rem;
   flex: 1;
 }
 .nav a {
-  color: var(--text-muted);
+  color: #c8c8cc;
   font-size: 0.92rem;
   font-weight: 500;
   transition: color var(--trans-fast);
   text-decoration: none;
 }
+.nav a:first-child {
+  color: #ffffff;
+  font-weight: 600;
+}
 .nav a:hover {
-  color: var(--text-white);
-  text-shadow: 0 0 10px rgba(255, 90, 31, 0.35);
+  color: #ffffff;
+  text-shadow: none;
 }
 
 .header-cta {
   flex-shrink: 0;
+  background: linear-gradient(135deg, #d84518 0%, #b82b08 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.68rem 1.45rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 18px rgba(184, 43, 8, 0.45) !important;
+  transition: all var(--trans-normal) !important;
+}
+.header-cta:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 24px rgba(220, 60, 20, 0.7) !important;
 }
 
 /* Menu Mobile */
