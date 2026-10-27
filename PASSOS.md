@@ -976,5 +976,17 @@
     - Nos cartões squircle de marcas (`.brand-squircle-card`): adicionado hover com elevação de 2px e ganho de opacidade vetorial para 100%.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 112 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 112 — Calibração Editorial nos Títulos de FAQ e CTA Final e Micro-Interações**
+  - Hierarquia Editorial de Cores em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Título do FAQ (`.faq-title`):
+      - Linha 1 (`.faq-title-line.title-line-1`): `"Perguntas"` estilizada em branco puro vívido (`#ffffff`).
+      - Linha 2 (`.faq-title-line.title-line-2`): `"frequentes."` estilizada em tom cinza suave / prateado refinado mais escuro (`#8e8e93`).
+    - Título do CTA Final (`.cta-title`):
+      - Linha 1 (`.cta-title-line.title-line-1`): `"Cada projeto é uma brasa"` estilizada em branco puro vívido (`#ffffff`).
+      - Linha 2 (`.cta-title-line.title-line-2`): `"que a gente acende junto."` estilizada em tom cinza suave / prateado refinado mais escuro (`#8e8e93`).
+  - Micro-Interações Táteis no FAQ em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Acordeões (`.qa`): adicionada transição elástica suave (`transition: transform var(--trans-fast), border-color var(--trans-fast), background-color var(--trans-fast);`) com elevação de 2px (`transform: translateY(-2px);`) e realce de borda alaranjada térmica no hover.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 113 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

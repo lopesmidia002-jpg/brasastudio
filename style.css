@@ -3951,20 +3951,26 @@ button, input {
   flex-shrink: 0;
 }
 
-/* Título em duas linhas: 100% Branco Puro (sem laranja) */
+/* Título com Hierarquia Editorial: Linha 1 Branco Puro e Linha 2 Cinza Suave */
 .faq-title {
   font-family: var(--font-display, 'Inter', sans-serif);
   font-size: clamp(2.3rem, 3.6vw, 3.4rem);
   font-weight: 600;
   line-height: 1.1;
-  color: #ffffff;
   letter-spacing: -0.025em;
   margin: 0 0 1.25rem 0;
 }
 
 .faq-title-line {
   display: block;
+}
+
+.faq-title-line.title-line-1 {
   color: #ffffff;
+}
+
+.faq-title-line.title-line-2 {
+  color: #8e8e93;
 }
 
 /* Subtítulo em cinza suave e quebra harmoniosa */
@@ -3991,11 +3997,12 @@ button, input {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   overflow: hidden;
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  transition: transform var(--trans-fast), border-color var(--trans-fast), background-color var(--trans-fast);
 }
 
 .qa:hover {
-  border-color: rgba(255, 90, 31, 0.4);
+  border-color: rgba(255, 90, 31, 0.45);
+  transform: translateY(-2px);
 }
 
 .qa[open] {
@@ -4191,13 +4198,12 @@ button, input {
   flex-shrink: 0;
 }
 
-/* Título em duas linhas: 100% Branco Puro (sem laranja) */
+/* Título com Hierarquia Editorial: Linha 1 Branco Puro e Linha 2 Cinza Suave */
 .cta-title {
   font-family: var(--font-display, 'Inter', sans-serif);
   font-size: clamp(2.3rem, 4.4vw, 3.8rem);
   font-weight: 500;
   line-height: 1.15;
-  color: #ffffff;
   letter-spacing: -0.025em;
   margin: 0 auto 1.25rem;
   max-width: 820px;
@@ -4205,7 +4211,14 @@ button, input {
 
 .cta-title-line {
   display: block;
+}
+
+.cta-title-line.title-line-1 {
   color: #ffffff;
+}
+
+.cta-title-line.title-line-2 {
+  color: #8e8e93;
 }
 
 /* Subtítulo em cinza claro com quebra centralizada */

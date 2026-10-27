@@ -1627,6 +1627,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.106 Calibração Editorial nos Títulos de FAQ e CTA Final e Micro-Interações (Passo 112)
+- **Solicitação do Usuário:**
+  - "continue passo 112", dando sequência ao alinhamento editorial de excelência visual em toda a extensão do site.
+- **Diagnóstico e Análise Visual:**
+  - Os títulos das seções FAQ (`.faq-title`) e CTA Final (`.cta-title`) mantinham ambas as linhas em branco puro chapado (`#ffffff`), destoando da refinada hierarquia de duas tonalidades adotada em Sobre, Serviços, Diferenciais, Benefícios, Portfólio, Vitrine e Depoimentos (onde a segunda linha é mais escura em cinza suave / prateado).
+  - Além disso, os acordeões do FAQ careciam de uma micro-interação sutil de elevação tátil no hover para valorizar o feedback de clique.
+- **Solução Técnica e Implementação:**
+  1. *Calibração Cromática em FAQ e CTA Final:*
+     - Em `index.html` e `style.css`, foram introduzidas as classes `.title-line-1` (`#ffffff`) e `.title-line-2` (`#8e8e93`) tanto em `.faq-title-line` quanto em `.cta-title-line`, unificando a identidade tipográfica e editorial de 100% dos títulos do site.
+  2. *Micro-Interação Tátil nos Acordeões do FAQ:*
+     - Em `style.css`, `.qa` recebeu `transition: transform var(--trans-fast), ...` e elevação de `-2px` com realce térmico na borda no `:hover`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
