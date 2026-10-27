@@ -1120,5 +1120,19 @@
     - Cache PWA elevado para `brasa-cache-v5` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e rotina de auto-limpeza de `brasa-cache-v4` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK para o HTML e para todas as imagens `.webp` e `.avif`.
 
-- [ ] **Passo 123 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 123 — Calibração da Altura da Barra Superior para 89px**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print da barra superior (`.site-header`) e solicitou: "deixe essa barra superior com 89 px de altura".
+    - Na configuração anterior, o container interno `.header-in` estava fixado em 68px de altura (`height: 68px;`).
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.site-header`: adicionada altura explícita de `height: 89px;`, assegurando estabilidade dimensional no cabeçalho fixo.
+    - `.header-in`: atualizado para `height: 89px;`, centralizando verticalmente o logotipo, links de navegação e o botão de CTA "Fale com a gente".
+    - `html`: `scroll-padding-top` ajustado para `clamp(89px, 10vh, 105px);`, garantindo que os links âncora continuem parando suavemente abaixo da barra de 89px sem sobreposição de conteúdo.
+    - `.sticky-col`: `top` ajustado para `105px` para manter respiro proporcional na coluna de processo em relação à nova altura do cabeçalho.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento elevado para `?v=2.6` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v6` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v5` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 124 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

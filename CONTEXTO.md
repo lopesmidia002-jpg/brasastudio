@@ -1800,6 +1800,27 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
   - Mapeamento e status HTTP 200 OK validados para o HTML e para todas as imagens `.webp` e `.avif` no servidor Nginx Alpine.
 
+### 2.117 Calibração da Altura da Barra Superior para 89px (Passo 123)
+- **Solicitação do Usuário:**
+  - "deixe essa barra superior com 89 px de altura", acompanhado de imagem do cabeçalho fixo com logo, navegação e botão CTA.
+- **Diagnóstico e Análise Técnica:**
+  - A barra superior (`.site-header`) e seu contêiner interno (`.header-in`) estavam definidos com altura de 68px (`height: 68px;`).
+  - Ao calibrar para 89px, foi necessário também reajustar `scroll-padding-top` no elemento `html` para `clamp(89px, 10vh, 105px)` a fim de preservar o respiro perfeito dos 41 links âncora e evitar sobreposição ao topo das seções.
+  - A coluna fixa `.sticky-col` teve seu offset superior alinhado para `top: 105px;` para manter harmonia espacial com o cabeçalho ampliado.
+- **Solução Técnica e Implementação:**
+  1. *Ajustes de Altura em `style.css`:*
+     - `.site-header`: fixada a propriedade `height: 89px;`.
+     - `.header-in`: alinhado para `height: 89px;`, proporcionando maior respiro e presença visual ao menu.
+     - `html`: `scroll-padding-top` ajustado para `clamp(89px, 10vh, 105px);`.
+     - `.sticky-col`: `top: 105px;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versionamento elevado para `?v=2.6`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v6`.
+     - Em `main.js`: configurada auto-limpeza para `brasa-cache-v5`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
+  - Mapeamento e status HTTP 200 OK validados na porta 3000 com verificação ativa do CSS entregue.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
