@@ -411,4 +411,14 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initGalleryInteractivity();
+
+  // 16. Rolagem horizontal suave com roda do mouse na fileira de ícones de depoimentos
+  const brandsGrid = document.querySelector('.testimonials-brands-grid');
+  if (brandsGrid) {
+    brandsGrid.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        brandsGrid.scrollLeft += e.deltaY;
+      }
+    }, { passive: true });
+  }
 });

@@ -1268,6 +1268,26 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 com status HTTP 200 OK.
 
+### 2.86 Inclusão de 2 Novos Ícones e Barra de Rolagem Horizontal Branca em Depoimentos (Passo 92)
+- **Solicitação do Usuário:**
+  - "coloque a barrade rolagem horizontal e arecesnte mais esses dois icones", fornecendo imagens dos 4 ícones originais e de 2 novos ícones (losango vazado e matriz 2x2 de círculos).
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Adicionado o 5º ícone: Losango / Diamante vazado com contorno grosso de 4.2px (`stroke="#d4d4d4"` com `transform="rotate(45 20 20)"`).
+    - Adicionado o 6º ícone: Quatro círculos preenchidos sólidos em grade simétrica 2x2 com `r="3.8"` e `fill="#d4d4d4"`.
+  - Em `style.css`:
+    - `.testimonials-brands-grid`:
+      - Largura máxima calibrada para `440px` com `margin: 0 auto 36px; padding: 8px 12px 14px; box-sizing: border-box;`.
+      - Habilitado scroll horizontal nativo: `overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;`.
+      - Barra de rolagem estilizada em **branco puro**: `scrollbar-color: #ffffff rgba(255, 255, 255, 0.12);`, com pseudo-elementos `::-webkit-scrollbar` (altura 5px), track translúcido e thumb `#ffffff` arredondado.
+    - `.brand-squircle-card`:
+      - Configurado `flex: 0 0 72px;` (e `flex: 0 0 68px;` na media query mobile) para garantir que os cartões mantenham suas dimensões exatas sem deformação durante a rolagem.
+  - Em `main.js`:
+    - Adicionado event listener de `wheel` para permitir que o usuário use a roda do mouse diretamente sobre a área dos cartões para rolar horizontalmente de forma suave.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint testado e validado em `http://localhost:3000/` com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

@@ -755,7 +755,18 @@
   - Aplicação unificada em todos os 6 cards de depoimentos (`.quote`) na proporção 3x2, mantendo comportamento 100% estático sem elevação/flutuação.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 92 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 92 — Inclusão de 2 Novos Ícones e Barra de Rolagem Horizontal Branca em Depoimentos**
+  - Inclusão dos 2 novos ícones na fileira de marcas (`.testimonials-brands-grid`):
+    - 5º Ícone: Losango / Diamante vazado com contorno de 4.2px (`stroke="#d4d4d4"` e `transform="rotate(45 20 20)"`).
+    - 6º Ícone: Quatro esferas/círculos preenchidos em matriz 2x2 com raio 3.8px centralizados.
+  - Barra de rolagem horizontal branca pura:
+    - Configurado `overflow-x: auto; overflow-y: hidden;` com largura máxima de `440px` centralizada.
+    - Estilização da scrollbar com `scrollbar-color: #ffffff rgba(255, 255, 255, 0.12)`, `::-webkit-scrollbar` de 5px com thumb `#ffffff` arredondado e track translúcido.
+    - Suporte a rolagem horizontal via mouse wheel (`main.js`), toque e arrasto.
+    - Ajustado `flex: 0 0 72px` (e `flex: 0 0 68px` em mobile) em `.brand-squircle-card` para impedir contração dos cartões.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 93 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

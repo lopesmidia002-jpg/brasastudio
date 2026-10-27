@@ -3543,18 +3543,48 @@ button, input {
   text-align: center;
 }
 
-/* Fileira Horizontal de 4 Cartões Quadrados (Squircles) */
+/* Fileira Horizontal de Cartões Quadrados (Squircles com Barra de Rolagem Horizontal Branca) */
 .testimonials-brands-grid {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
-  margin-bottom: 36px;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto 36px;
+  padding: 8px 12px 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  /* Barra de rolagem horizontal de cor branca pura */
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff rgba(255, 255, 255, 0.12);
+}
+
+.testimonials-brands-grid::-webkit-scrollbar {
+  height: 5px;
+}
+
+.testimonials-brands-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.testimonials-brands-grid::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+.testimonials-brands-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .brand-squircle-card {
   width: 72px;
   height: 72px;
+  flex: 0 0 72px;
   border-radius: 18px;
   background: #111216;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3755,6 +3785,7 @@ button, input {
   .brand-squircle-card {
     width: 68px;
     height: 68px;
+    flex: 0 0 68px;
     border-radius: 16px;
   }
   .brand-squircle-card svg {

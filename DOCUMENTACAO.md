@@ -204,11 +204,14 @@ A landing page está apta a ser instalada na tela de início de celulares, table
     - **Pill Badge Superior (`.tag-status--testimonials`):** Pílula escura semi-transparente com borda sutil de 1px, ponto quadrado laranja vibrante (`#FF5722` com glow) à esquerda, halo térmico na borda superior e texto "Depoimentos" em Title Case.
     - **Título Centralizado Monocromático (`.testimonials-title`):** Tipografia sem serifa robusta em destaque, 100% branca (`#FFFFFF`), em duas linhas elegantes ("O que dizem as marcas" / "que passaram por aqui.").
     - **Subtítulo Minimalista (`.testimonials-text`):** Texto em cinza claro (`#A1A1AA`), entrelinha confortável de 1.6 e largura máxima de 620px: "Clientes contam como foi trabalhar com o estúdio e o que mudou depois do lançamento.".
-    - **Fileira Horizontal de 4 Cartões Quadrados (`.testimonials-brands-grid`):** 4 cartões estáticos em formato squircle (`width: 72px; height: 72px; border-radius: 18px; background: #111216; border: 1px solid rgba(255, 255, 255, 0.08)`), contendo ícones monocromáticos abstratos fiéis à Foto 2:
+    - **Fileira Horizontal de Cartões Quadrados com Rolagem (`.testimonials-brands-grid`):** 6 cartões estáticos em formato squircle (`width: 72px; height: 72px; flex: 0 0 72px; border-radius: 18px; background: #111216; border: 1px solid rgba(255, 255, 255, 0.08)`), contendo ícones monocromáticos abstratos:
       1. Círculo / Letra O vazada com contorno grosso.
       2. Triângulo / Pirâmide sólido com cantos arredondados (▲).
       3. Cúpula com base horizontal inferior arredondada.
       4. Ondas duplas sinuosas horizontais (≈).
+      5. **Losango / Diamante Vazado:** Quadrado girado 45° com contorno grosso de 4.2px e orifício central.
+      6. **Quatro Círculos:** Matriz 2x2 com 4 esferas preenchidas sólidas.
+      - *Barra de Rolagem Horizontal Branca:* Scroll horizontal suave (`overflow-x: auto`), largura máxima de `440px`, com barra de rolagem fina estilizada em branco puro (`scrollbar-color: #ffffff rgba(255, 255, 255, 0.12)`) e suporte nativo a arrasto, toque e roda do mouse (`wheel`).
     - **Botão Central CTA (`.testimonials-btn`):** Pílula arredondada em tom vermelho-alaranjado queimado (`#d84315`), texto "Ver portfólio" em branco, e efeito difuso de iluminação projetada logo abaixo (*orange glow* suave).
     - **Grid de Depoimentos 100% Estático (3 Colunas x 2 Linhas — 6 Cards):**
       - *Superfície & Iluminação Cênica (Efeitos da Foto 1):*
