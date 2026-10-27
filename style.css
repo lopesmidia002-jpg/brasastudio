@@ -2767,8 +2767,7 @@ button, input {
 
 .svc {
   position: relative;
-  background-color: #0d0d0f;
-  background-image: radial-gradient(ellipse 90% 70% at 50% 15%, #141416 0%, #0d0d0f 100%);
+  background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 1px solid rgba(255, 87, 34, 0.28);
   border-radius: 24px;
@@ -2917,7 +2916,7 @@ button, input {
   overflow: hidden;
 }
 
-/* Grafismo decorativo de fundo: bússola vetorial no canto inferior direito (sutil conforme Foto 2) */
+/* Grafismo decorativo de fundo: bússola vetorial no canto inferior direito (estática com opacidade 0.55) */
 .svc-compass-wrap {
   position: absolute;
   bottom: -35px;
@@ -2926,7 +2925,8 @@ button, input {
   height: 200px;
   pointer-events: none;
   z-index: 1;
-  transform: none;
+  transform: none !important;
+  animation: none !important;
 }
 
 .svc-compass {
@@ -2936,6 +2936,15 @@ button, input {
   object-fit: contain;
   pointer-events: none;
   filter: none;
+  opacity: .55;
+  transform: none !important;
+  animation: none !important;
+}
+
+.svc:hover .svc-compass-wrap,
+.svc:hover .svc-compass {
+  transform: none !important;
+  animation: none !important;
 }
 
 .btn--svc {
@@ -2976,7 +2985,8 @@ button, input {
     left: auto;
     width: 165px;
     height: 165px;
-    transform: none;
+    transform: none !important;
+    animation: none !important;
   }
 }
 

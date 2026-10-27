@@ -1258,5 +1258,19 @@
     - Cache PWA elevado para `brasa-cache-v16` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v15` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 134 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 134 — Calibração do Background e da Estrela nos Cards de Serviços**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card "Lançamento integrado" da seção Serviços (`#servicos` / `.svc`) e instruiu: "background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card); quero que este card fique com esse background, opacity: .55; quero que a estrela tenha essa opacidade e fique estatica aplique esm todos os cards desta sessao".
+    - Na configuração anterior, os cards de Serviços utilizavam `background-color: #0d0d0f;` e `background-image: radial-gradient(ellipse 90% 70% at 50% 15%, ...);`, e a estrela WebP `.svc-compass` no card 3 ("Lançamento integrado") herdava flutuação e opacidade total da classe global `.spark`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Na regra base `.svc`: aplicado `background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);`, estendendo a iluminação atmosférica âmbar com fusão ao tom `--card` para todos os cards de Serviços (*Site sob medida*, *Identidade completa* e *Lançamento integrado*).
+    - Em `.svc-compass`: aplicado `opacity: .55;`, `animation: none !important;` e `transform: none !important;`.
+    - Em `.svc-compass-wrap`: configurado `animation: none !important;` e `transform: none !important;` tanto na regra principal quanto na media query mobile.
+    - No hover (`.svc:hover .svc-compass-wrap, .svc:hover .svc-compass`): garantido `animation: none !important;` e `transform: none !important;`.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.7` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v17` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v16` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 135 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

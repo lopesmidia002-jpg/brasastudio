@@ -2002,6 +2002,26 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.128 Calibração de Background Radial Âmbar e Estrela Estática nos Cards de Serviços (Passo 134)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do card "Lançamento integrado" da seção Serviços (`#servicos` / `.svc`) e instruiu: `"background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card); quero que este card fique com esse background, opacity: .55; quero que a estrela tenha essa opacidade e fique estatica aplique esm todos os cards desta sessao"`.
+- **Diagnóstico e Análise Técnica:**
+  - Os cards de Serviços (`.svc`) utilizavam `background-color: #0d0d0f;` combinado com `background-image: radial-gradient(ellipse 90% 70% at 50% 15%, ...);`.
+  - A estrela oficial WebP (`.svc-compass`) no card da modalidade "Lançamento integrado" herdava a animação global `.spark` (`sparkFloat`) com flutuação contínua e mantinha opacidade total (`1.0`).
+  - Para harmonizar a atmosfera de iluminação de ateliê em toda a página e atender ao pedido do usuário, o background radial âmbar `radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card)` foi aplicado universalmente a todos os cards da seção (`.svc`), e a estrela recebeu `opacity: .55;` com `animation: none !important;` e `transform: none !important;`.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - Na classe `.svc`: substituídos os backgrounds antigos pela propriedade única `background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);`.
+     - Em `.svc-compass`: aplicado `opacity: .55;`, `animation: none !important;` e `transform: none !important;`.
+     - Em `.svc-compass-wrap`: configurado `animation: none !important;` e `transform: none !important;` tanto na regra principal quanto na media query responsiva de 809px.
+     - No hover (`.svc:hover .svc-compass-wrap, .svc:hover .svc-compass`): garantida a manutenção do estado estático sem animações.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.7`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v17`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v16` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
