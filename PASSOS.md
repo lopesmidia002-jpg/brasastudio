@@ -793,7 +793,24 @@
     - Media query responsiva para mobile abaixo de 480px mantendo encaixe ergonômico.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 95 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 95 — Alinhamento Visual Fino: Vitrine com 2 Barras de Rolagem, Trapézio de Planos, 4 Ícones de Depoimentos com Scrollbar, FAQ Fechado Branco, Banner de CTA e Newsletter em Cápsula**
+  - **Vitrine (`#lancamento`):**
+    - Implementação de duas barras de rolagem horizontais brancas e estilizadas (`#showcase-row-1` e `#showcase-row-2`), uma posicionada no meio da galeria entre a primeira e a segunda fileira de banners, e outra na base da galeria.
+    - Estruturação dos tracks de cards com `display: flex; width: max-content; gap: 16px;` e cards com proporção 1:1 (`clamp(280px, 28vw, 360px)`), permitindo rolagem horizontal suave e contínua.
+  - **Planos (`#planos`):**
+    - Adicionado `.pricing-backdrop` com `.pricing-wing--right` exibindo silhueta angular trapezoidal em perspectiva cinza translúcida no canto superior direito (`clip-path: polygon(28% 0, 100% 0, 100% 100%, 0% 100%)`), topo iluminado com linha suave `border-top: 1px solid rgba(255, 255, 255, 0.18)` e fade vertical progressivo idêntico à Foto 2.
+  - **Depoimentos (`#depoimentos`):**
+    - Reestruturado `.testimonials-brands-grid` com `max-width: 352px;` exibindo rigorosamente 4 cartões squircle por vez (`76px x 76px`, cantos de 19px) com barra de rolagem horizontal branca visível na base (`scrollbar-color: #ffffff rgba(255, 255, 255, 0.12)`), revelando os outros 2 cartões ao rolar.
+    - Calibrado o enquadramento do avatar circular (`.avatar img` com `transform: scale(1.1); object-fit: cover; object-position: center;`) eliminando frestas ou crescentes escuros.
+  - **FAQ (`#faq`):**
+    - Ícone de abertura/fechamento `.qa-i` configurado com linhas em **branco puro (`#ffffff`)** no estado fechado (`+`) e em **laranja vibrante (`#ff5722`)** quando aberto (`✕`).
+  - **CTA Final (`.cta-card`):**
+    - Banner compacto com proporção panorâmica, padding reduzido (`clamp(2.2rem, 3.4vw, 3.2rem) clamp(1.8rem, 4.5vw, 4.5rem);`), iluminação térmica concentrada no topo direito e centro/base em preto profundo `#020203`.
+  - **Footer Newsletter (`.footer-brand .inline-form--sm`):**
+    - Formulário em cápsula pílula unificada contínua (`border-radius: 9999px; max-width: 380px; padding: 4px 4px 4px 18px;`), com campo de e-mail transparente e botão embutido à direita.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 96 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
