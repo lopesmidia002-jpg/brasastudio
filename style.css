@@ -3461,14 +3461,14 @@ button, input {
 .testimonials-wing {
   position: absolute;
   top: clamp(140px, 16vw, 190px);
-  height: clamp(240px, 28vw, 360px);
+  height: clamp(140px, 15vw, 190px);
   width: clamp(260px, 28vw, 440px);
   pointer-events: none;
   z-index: 1;
   border-top: 1px solid rgba(208, 59, 30, 0.42);
   box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.18);
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.65) 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.65) 60%, transparent 100%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 100%);
 }
 
 .testimonials-wing--left {
@@ -3538,7 +3538,7 @@ button, input {
 .testimonials-text {
   color: #a1a1aa;
   font-size: clamp(0.95rem, 1.25vw, 1.08rem);
-  max-width: 620px;
+  max-width: 520px;
   margin: 0 auto 36px;
   line-height: 1.6;
   text-align: center;

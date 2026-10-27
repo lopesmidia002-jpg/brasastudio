@@ -1302,12 +1302,15 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   3. *Acabamento da Fileira de Marcas Squircle (`.testimonials-brands-grid`):*
      - Na Foto 2, a barra física de rolagem sob os ícones não fica visível, proporcionando um acabamento minimalista e moderno sem poluição visual.
      - O contêiner preserva scroll horizontal nativo fluido (`overflow-x: auto`), ocultando apenas a barra visual (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`).
+  4. *Calibração da Quebra do Subtítulo (`.testimonials-text`):*
+     - Largura máxima ajustada para `520px`, reproduzindo com fidelidade a quebra visual exata da Foto 2: "Clientes contam como foi trabalhar com o estúdio e o que mudou depois" / "do lançamento.".
 - **Implementação Técnica:**
   - Em `style.css`:
-    - `.testimonials-wing`: atualizado para `top: clamp(140px, 16vw, 190px); height: clamp(240px, 28vw, 360px); width: clamp(260px, 28vw, 440px);`, com `border-top: 1px solid rgba(208, 59, 30, 0.42); box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.18);`.
+    - `.testimonials-wing`: calibrado para `top: clamp(140px, 16vw, 190px); height: clamp(140px, 15vw, 190px); width: clamp(260px, 28vw, 440px);`, com `border-top: 1px solid rgba(208, 59, 30, 0.42); box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.18);` e máscara vertical suave dissolvendo em preto absoluto em 45% do trajeto antes do botão CTA.
     - `.testimonials-wing--left`: `clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%);` com gradiente térmico a 135deg.
     - `.testimonials-wing--right`: `clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);` com gradiente térmico a 225deg.
     - `.tag-status--testimonials`: adicionado `border-top: 1px solid rgba(255, 115, 45, 0.95);` e halo reforçado em `box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 -4px 18px rgba(255, 87, 34, 0.35);`.
+    - `.testimonials-text`: calibrado `max-width: 520px;` para quebra precisa da Foto 2.
     - `.testimonials-brands-grid`: removida a barra física de rolagem (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`) mantendo a rolagem fluida.
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
