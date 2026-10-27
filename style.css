@@ -2042,25 +2042,25 @@ button, input {
   box-shadow: 0 0 8px rgba(255, 90, 31, 0.7);
 }
 
-/* Título display elegante em 2 linhas monocromáticas em degradê de branco suave idêntico à Foto 2 */
+/* Título display elegante: Primeira linha branca pura e segunda linha mais escura conforme solicitado */
 .title--benefits {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(2.35rem, 4.4vw, 3.8rem);
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: #ffffff;
   margin: 0 0 1.6rem;
   text-align: left;
 }
 
-.title--benefits .title-line-1,
-.title--benefits .title-line-2 {
+.title--benefits .title-line-1 {
   display: block;
   color: #ffffff;
-  background: linear-gradient(180deg, #ffffff 15%, #d4d6e0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+.title--benefits .title-line-2 {
+  display: block;
+  color: #8e8e93; /* Linha de baixo mais escura que a de cima */
 }
 
 /* Organização de pills em duas linhas confortáveis conforme Foto 2 */

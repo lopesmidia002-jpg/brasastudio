@@ -896,5 +896,14 @@
     - `.feature:hover .feature-arrow`: transição da seta diagonal `↗` com deslocamento responsivo `transform: translate(2px, -2px);`, ganho de cor branca pura (`#ffffff`) e opacidade máxima (`opacity: 1`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 105 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 105 — Calibração da Cor do Título de Benefícios com Linha Inferior Mais Escura**
+  - Solicitação e Análise Visual:
+    - O usuário solicitou que no título da seção "Por que a Brasa" (`.title--benefits`), a segunda linha ("a gente coloca no ar.") ficasse mais escura que a primeira ("A gente não só desenha,"), alinhando o contraste cromático e a hierarquia editorial ao padrão já adotado nas seções Sobre e Serviços.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.title--benefits`: ajustado sem cor genérica herdada para que cada linha expresse sua tonalidade exata.
+    - `.title--benefits .title-line-1`: estilizado com `display: block; color: #ffffff;`, destacando a primeira linha em branco puro luminoso.
+    - `.title--benefits .title-line-2`: estilizado com `display: block; color: #8e8e93;`, conferindo o tom cinza suave / prateado refinado mais escuro conforme a referência visual.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 106 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
