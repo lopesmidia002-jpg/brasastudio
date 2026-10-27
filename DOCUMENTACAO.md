@@ -86,6 +86,18 @@ A aplicação foi otimizada para notas elevadas no Google Lighthouse e carregame
 
 ---
 
+## ⚓ Navegação por Âncoras e Scroll Padding
+Todos os 41 links âncora internos da página foram mapeados e auditados, possuindo correspondência exata com seus IDs de destino no DOM. Para assegurar que o topo das seções não seja obstruído pelo cabeçalho sticky/fixo, foi implementado no elemento raiz `html` a diretiva:
+```css
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: clamp(70px, 9vh, 90px);
+}
+```
+Isso proporciona uma parada suave com respiro visual equilibrado em desktops, tablets e smartphones.
+
+---
+
 ## 📬 Sistema de Leads, Formulários e Modal
 
 A aplicação conta com um ecossistema completo de captura e tratamento de leads:

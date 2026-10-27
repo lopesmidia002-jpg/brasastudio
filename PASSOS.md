@@ -988,5 +988,15 @@
     - Acordeões (`.qa`): adicionada transição elástica suave (`transition: transform var(--trans-fast), border-color var(--trans-fast), background-color var(--trans-fast);`) com elevação de 2px (`transform: translateY(-2px);`) e realce de borda alaranjada térmica no hover.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 113 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 113 — Auditoria e Validação Integral de Links Âncora, Formulários e Modal de Diagnóstico**
+  - Auditoria Automatizada no DOM:
+    - Mapeados 56 IDs únicos no HTML e 41 links âncora (`href="#..."`).
+    - Validação de 100% dos destinos: todos os links internos possuem alvos correspondentes existentes e válidos no documento.
+    - Auditados os 6 gatilhos `data-open-modal="modal-diagnostico"`, todos operando perfeitamente.
+    - Auditados os 3 formulários ativos (`contato`, `newsletter` e `modal`), com validação inline RFC de e-mails, classes `.is-valid`/`.is-invalid`, toasts de confirmação e persistência em `localStorage` (`brasa_leads_v1`).
+  - Refinamento de Navegação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Adicionado `scroll-padding-top: clamp(70px, 9vh, 90px);` no seletor `html`, evitando que o cabeçalho fixo cubra o topo de qualquer seção após o clique nos links de navegação.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 114 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

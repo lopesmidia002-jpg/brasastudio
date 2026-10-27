@@ -61,6 +61,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: clamp(70px, 9vh, 90px);
   color-scheme: dark;
   background-color: var(--bg-black);
 }

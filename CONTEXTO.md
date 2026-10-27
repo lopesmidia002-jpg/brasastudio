@@ -1642,6 +1642,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.107 Auditoria Integral de Links Âncora, Formulários e Modal de Diagnóstico (Passo 113)
+- **Solicitação do Usuário:**
+  - "Auditar e validar 100% dos links âncora, formulários e modal de diagnóstico."
+- **Diagnóstico e Execução da Auditoria:**
+  - Executado script de varredura profunda no DOM em `index.html`:
+    - Mapeados 56 IDs únicos e 41 links âncora (`href="#..."`). Constatado que 100% dos links possuem elemento de destino correspondente no HTML.
+    - Todos os 6 botões `data-open-modal="modal-diagnostico"` conectam-se corretamente ao container modal.
+    - Os 3 formulários ativos (`contato`, `newsletter` e `modal`) contam com validação inline em tempo real via regex RFC, classes visuais `.is-valid` e `.is-invalid`, controle de estado com spinner nos botões de submissão e gravação resiliente em `localStorage` sob a chave `brasa_leads_v1`.
+  - *Identificação de Melhoria de Navegação:* Constatado que o seletor `html` possuía `scroll-behavior: smooth;` mas carecia de `scroll-padding-top`, fazendo com que títulos de seções âncora ficassem parcialmente sobrepostos pela navbar fixa ao clicar em links do menu.
+- **Solução Técnica e Implementação:**
+  1. *Ajuste de Scroll Padding no CSS:*
+     - Em `style.css`, adicionado `scroll-padding-top: clamp(70px, 9vh, 90px);` ao seletor `html`, criando respiro geométrico automático e garantindo que o topo das seções pouse com folga elegante abaixo da barra de navegação.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
