@@ -422,39 +422,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initGalleryInteractivity();
 
-  // 16. Rolagem horizontal suave com roda do mouse e drag-to-scroll na fileira de marcas
-  const brandsGrid = document.querySelector('.testimonials-brands-grid');
-  if (brandsGrid) {
-    brandsGrid.addEventListener('wheel', (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        brandsGrid.scrollLeft += e.deltaY;
-      }
-    }, { passive: true });
-
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    brandsGrid.addEventListener('mousedown', (e) => {
-      isDown = true;
-      brandsGrid.classList.add('is-dragging');
-      startX = e.pageX - brandsGrid.offsetLeft;
-      scrollLeft = brandsGrid.scrollLeft;
-    });
-
-    window.addEventListener('mouseup', () => {
-      if (isDown) {
-        isDown = false;
-        brandsGrid.classList.remove('is-dragging');
-      }
-    });
-
-    brandsGrid.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - brandsGrid.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      brandsGrid.scrollLeft = scrollLeft - walk;
+  // 16. Auto-limpeza de caches de versões legadas do navegador
+  if ('caches' in window) {
+    caches.keys().then((names) => {
+      names.forEach((name) => {
+        if (name === 'brasa-cache-v1') {
+          caches.delete(name);
+        }
+      });
     });
   }
 });

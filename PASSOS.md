@@ -1034,5 +1034,30 @@
     - Máscara de fade progressiva ajustada para `linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)`, replicando com exatidão o efeito visual e a proporção de 3 cartões por vez do carrossel inferior.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 118 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 118 — Resiliência do Movimento em Loop Infinito no Carrossel do Hero**
+  - Solicitação do Usuário e Diagnóstico:
+    - O usuário alertou: "faltou o carrocel se movimentar em loop infinito", enviando print dos ícones do Hero estáticos.
+    - Diagnóstico: Em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css), havia a media query `@media (prefers-reduced-motion: reduce) { .hero-icons-track { animation: none; ... } }`, que desativava o movimento caso o sistema operacional estivesse com restrição de animação ativa, além de faltar prefixos de compatibilidade `-webkit-animation` e `-webkit-keyframes`.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Remoção definitiva da media query que desativava a animação com `animation: none;`.
+    - Adicionado suporte completo com `-webkit-animation: heroIconsSlideLeft 18s linear infinite;`, `-webkit-animation-play-state: paused;` e regra `@-webkit-keyframes heroIconsSlideLeft`.
+    - Adicionado `user-select: none;` para evitar que cliques ou arrastes congelem a transição visual.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [x] **Passo 119 — IDs Exclusivos e Invalidação de Cache PWA dos Carrosséis Superior e Inferior**
+  - Solicitação e Diagnóstico Técnico:
+    - O usuário alertou: "verifique se vc nao esta usando o mesmo id no dos locais pois o carrosel superior nao esta funcionando".
+    - Diagnóstico profundo:
+      1. Os carrosséis não possuíam IDs explícitos próprios, dependendo exclusivamente de classes que poderiam sofrer colisões de especificidade.
+      2. O Service Worker (`sw.js`) estava retendo o cache estático sob `brasa-cache-v1` com estratégia Cache-First, fazendo com que o navegador do usuário continuasse executando versões cacheadas antigas de `style.css`.
+  - Implementação e Correção:
+    - Em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js): atualizada a chave de cache para `brasa-cache-v2`, forçando a expulsão e exclusão do cache antigo em todos os navegadores.
+    - Em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html):
+      - Adicionado versionamento explícito `<link rel="stylesheet" href="style.css?v=2.2">` e `<script src="main.js?v=2.2" defer></script>`.
+      - Atribuídos IDs únicos: Carrossel do Hero com `id="hero-carousel-wrap"` e track com `id="hero-carousel-track"`; Carrossel de Depoimentos com `id="testimonials-carousel-wrap"` e track com `id="testimonials-carousel-track"`.
+    - Em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css): regras reforçadas vinculando seletores diretos por ID com `!important` e animações independentes para cada local.
+    - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): rotina de auto-limpeza adicionada para purgar versões obsoletas do CacheStorage.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 120 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

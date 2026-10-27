@@ -749,6 +749,7 @@ button, input {
 }
 
 /* Carrossel em Loop Infinito Contínuo de Ícones do Hero (Exatamente 3 por vez) */
+#hero-carousel-wrap,
 .hero-icons-wrap {
   margin-top: 1.25rem;
   padding: 0.5rem 0 0.8rem;
@@ -761,15 +762,20 @@ button, input {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
+#hero-carousel-track,
 .hero-icons-track {
-  display: flex;
-  width: max-content;
+  display: flex !important;
+  width: max-content !important;
   will-change: transform;
-  animation: heroIconsSlideLeft 18s linear infinite;
+  animation: heroIconsSlideLeft 18s linear infinite !important;
+  -webkit-animation: heroIconsSlideLeft 18s linear infinite !important;
+  user-select: none;
 }
 
+#hero-carousel-wrap:hover #hero-carousel-track,
 .hero-icons-wrap:hover .hero-icons-track {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
+  -webkit-animation-play-state: paused !important;
 }
 
 .hero-icons-group {
@@ -789,10 +795,12 @@ button, input {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-icons-track {
-    animation: none;
-    overflow-x: auto;
+@-webkit-keyframes heroIconsSlideLeft {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -3642,6 +3650,7 @@ button, input {
 }
 
 /* Carrossel em Loop Infinito Contínuo de Ícones de Marcas em Depoimentos (Exatamente 3 por vez) */
+#testimonials-carousel-wrap,
 .testimonials-icons-wrap {
   width: 248px;
   max-width: 248px;
@@ -3652,15 +3661,19 @@ button, input {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
+#testimonials-carousel-track,
 .testimonials-icons-track {
-  display: flex;
-  width: max-content;
-  animation: testimonialsIconsSlideLeft 18s linear infinite;
+  display: flex !important;
+  width: max-content !important;
+  animation: testimonialsIconsSlideLeft 18s linear infinite !important;
+  -webkit-animation: testimonialsIconsSlideLeft 18s linear infinite !important;
   user-select: none;
 }
 
+#testimonials-carousel-wrap:hover #testimonials-carousel-track,
 .testimonials-icons-wrap:hover .testimonials-icons-track {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
+  -webkit-animation-play-state: paused !important;
 }
 
 .testimonials-icons-group {

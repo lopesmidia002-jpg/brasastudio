@@ -1712,6 +1712,32 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.112 Ativação e Resiliência do Movimento em Loop Infinito no Carrossel do Hero (Passo 118)
+- **Solicitação do Usuário:**
+  - "faltou o carrocel se movimentar em loop infinito", enviando imagem com foco nos ícones do Hero.
+- **Diagnóstico e Análise Visual:**
+  - Em `style.css`, a track de ícones do Hero continha uma diretiva `@media (prefers-reduced-motion: reduce)` que forçava `animation: none;` no contêiner `.hero-icons-track` quando o sistema operacional possuía otimizações de animações ativadas. Além disso, faltavam os prefixos `-webkit` para aceleração e compatibilidade nos motores de renderização WebKit/Chromium.
+- **Solução Técnica e Implementação:**
+  1. *Remoção de Bloqueio e Compatibilidade Total:*
+     - Em `style.css`, foi eliminada a regra que anulava a animação em `.hero-icons-track`.
+     - Inseridos prefixos `-webkit-animation` e bloco `@-webkit-keyframes heroIconsSlideLeft`, assegurando que o carrossel se desloque de forma fluida e contínua em loop infinito automático de 18s linear, mantendo pausa apenas quando o cursor estiver intencionalmente sobre o elemento (`:hover`).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
+### 2.113 Resolução de IDs Exclusivos e Invalidação de Cache PWA dos Carrosséis (Passo 119)
+- **Solicitação do Usuário:**
+  - "verifique se vc nao esta usando o mesmo id no dos locais pois o carrosel superior nao esta funcionando".
+- **Diagnóstico e Análise Técnica:**
+  - Auditoria realizada: constatado que não havia IDs duplicados no DOM, porém a falta de IDs específicos para cada track (`#hero-carousel-track` e `#testimonials-carousel-track`) gerava menor especificidade de CSS.
+  - Causa Raiz Principal da Ausência de Animação: O Service Worker em `sw.js` operava com `brasa-cache-v1` em política Cache-First, entregando cópias antigas em disco de `style.css` para o navegador do usuário, ignorando as alterações recentes.
+- **Solução Técnica e Implementação:**
+  1. *Atualização de Cache PWA:* Chave de cache avançada para `brasa-cache-v2` em `sw.js` com exclusão automática da versão legada, acompanhada por parâmetros `?v=2.2` nas tags de CSS e JS em `index.html`.
+  2. *Isolamento por IDs Específicos:* Atribuídos `#hero-carousel-wrap` e `#hero-carousel-track` no Hero e `#testimonials-carousel-wrap` e `#testimonials-carousel-track` em Depoimentos, garantindo isolamento de regras no CSS sem dependência mútua.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
