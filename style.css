@@ -3618,20 +3618,39 @@ button, input {
 }
 
 .quote {
-  background: #0d0e12;
+  position: relative;
+  background:
+    radial-gradient(ellipse 85% 55% at 50% 100%, rgba(185, 55, 18, 0.2) 0%, rgba(110, 32, 10, 0.08) 55%, transparent 85%),
+    linear-gradient(180deg, #0e0f13 0%, #08090c 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  border-top: 1px solid rgba(255, 115, 45, 0.35);
+  border-radius: 22px;
   padding: 2.2rem 1.85rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16);
   cursor: default;
+  overflow: hidden;
+}
+
+/* Destaque incandescente central na borda superior conforme Foto 1 */
+.quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18%;
+  right: 18%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 115, 45, 0.95) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .quote:hover {
   border-color: rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 115, 45, 0.35);
   transform: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16);
 }
 
 .quote figure {
@@ -3644,7 +3663,8 @@ button, input {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 115, 45, 0.28);
+  box-shadow: 0 0 16px rgba(255, 90, 31, 0.2);
   margin-bottom: 1rem;
   overflow: hidden;
 }
@@ -3678,9 +3698,11 @@ button, input {
 .quote figcaption {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   margin-top: auto;
   font-size: 0.88rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.25rem;
 }
 
 .quote .q-meta {
@@ -3701,13 +3723,13 @@ button, input {
 }
 
 .quote .q-role {
-  color: #a1a1aa;
+  color: #d4d4d8;
   font-weight: 400;
 }
 
 .quote .q-co {
-  color: #71717a;
-  font-size: 0.82rem;
+  color: #a1a1aa;
+  font-size: 0.85rem;
   font-weight: 400;
 }
 

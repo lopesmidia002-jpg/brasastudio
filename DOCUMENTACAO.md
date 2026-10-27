@@ -211,11 +211,16 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       4. Ondas duplas sinuosas horizontais (≈).
     - **Botão Central CTA (`.testimonials-btn`):** Pílula arredondada em tom vermelho-alaranjado queimado (`#d84315`), texto "Ver portfólio" em branco, e efeito difuso de iluminação projetada logo abaixo (*orange glow* suave).
     - **Grid de Depoimentos 100% Estático (3 Colunas x 2 Linhas — 6 Cards):**
-      - *Superfície & Acabamento:* 6 cards (`.quote`) com base grafite escura (`#0d0e12`), cantos arredondados de 20px, contorno sutil `1px solid rgba(255, 255, 255, 0.08)`, notas 5 estrelas brancas, citações entre aspas e identificação estruturada em `Nome • Cargo` e `Empresa`.
+      - *Superfície & Iluminação Cênica (Efeitos da Foto 1):*
+        - *Fundo com Atmosfera Térmica:* Gradiente radial elíptico na base (`radial-gradient(ellipse 85% 55% at 50% 100%, rgba(185, 55, 18, 0.2) 0%, ...)`), gerando uma luminosidade quente em cobre e âmbar que sobe a partir da base sobre fundo linear escuro (`#0e0f13` a `#08090c`).
+        - *Top Rim Light & Destaque Incandescente Central:* Borda superior iluminada em tom cobre `1px solid rgba(255, 115, 45, 0.35)` com pseudo-elemento central `::before` de 1.5px em gradiente laranja neon `rgba(255, 115, 45, 0.95)`, criando uma linha de calor viva no topo de cada card.
+        - *Linha Divisória Fina:* Linha horizontal sutil `border-top: 1px solid rgba(255, 255, 255, 0.08)` separando o depoimento da identificação do cliente (`figcaption`).
+        - *Halo no Avatar:* Borda alaranjada suave `1px solid rgba(255, 115, 45, 0.28)` com halo de calor difuso `box-shadow: 0 0 16px rgba(255, 90, 31, 0.2)`.
+        - *Sombras e Projeção:* `box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16)`.
       - *Comportamento 100% Estático:* Desativados todos os efeitos de hover (`transform: translateY(-3px)` desativado, `box-shadow` e `border-color` fixos, `cursor: default`), garantindo que tanto os 6 cards de depoimentos quanto os 4 cartões squircle do cabeçalho permaneçam completamente estáticos e sem flutuação ao passar o mouse.
       - *Avatares Redondos Perfeitamente Enquadrados (`.avatar`):*
-        - Dimensões: 52px x 52px com `border-radius: 50%`, borda fina `1px solid rgba(255, 255, 255, 0.14)` e `overflow: hidden`.
-        - Enquadramento Autoral Fiel à Foto 2: Imagens re-exportadas a partir das matrizes fotográficas de 160x160 com enquadramento perfeitamente centralizado (`object-fit: cover; object-position: center;`), eliminando o antigo deslocamento para cima e o corte em crescente escuro na base, exibindo ombros balanceados, iluminação âmbar nítida e aro perfeitamente circular em todos os 6 clientes.
+        - Dimensões: 52px x 52px com `border-radius: 50%` e `overflow: hidden`.
+        - Enquadramento Autoral Fiel: Imagens re-exportadas a partir das matrizes fotográficas de 160x160 com enquadramento perfeitamente centralizado (`object-fit: cover; object-position: center;`), eliminando o antigo deslocamento para cima e o corte em crescente escuro na base, exibindo ombros balanceados, iluminação âmbar nítida e aro perfeitamente circular em todos os 6 clientes.
 13. **FAQ (Perguntas Frequentes — Layout Split em 2 Colunas Dark Mode Minimalista):**
     - **Fundo & Atmosfera:** Fundo preto absoluto (`#000000`) com espaçamento generoso e arquitetura limpa de 2 colunas assimétricas (`display: grid; grid-template-columns: minmax(280px, 360px) 1fr; gap: clamp(36px, 5.5vw, 84px);`).
     - **Coluna da Esquerda (Cabeçalho 100% Estático sem Efeito de Rolagem):**

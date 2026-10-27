@@ -745,7 +745,17 @@
     - Removido `transform: translateY(-3px);` de `.brand-squircle-card:hover`, mantendo os 4 cartões de marcas 100% estáticos com `cursor: default;`.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 91 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 91 — Aplicação dos Efeitos Cênicos da Foto 1 em Todos os Cards de Depoimentos**
+  - Análise dos efeitos de iluminação e profundidade do card de referência (Foto 1):
+    - Top rim light acobreado (`border-top: 1px solid rgba(255, 115, 45, 0.35)`) com pseudo-elemento central `::before` de 1.5px em gradiente laranja neon (`rgba(255, 115, 45, 0.95)`), gerando uma linha de calor incandescente no topo de cada card.
+    - Atmosfera térmica interna no fundo do card com gradiente radial elíptico na base (`radial-gradient(ellipse 85% 55% at 50% 100%, rgba(185, 55, 18, 0.2) 0%, rgba(110, 32, 10, 0.08) 55%, transparent 85%)`) sobre fundo escuro (`#0e0f13` a `#08090c`).
+    - Linha divisória horizontal sutil (`border-top: 1px solid rgba(255, 255, 255, 0.08)`) separando a citação do cliente da identificação do autor (`figcaption`).
+    - Halo de iluminação difuso ao redor do avatar circular (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.2)` e borda acobreada `rgba(255, 115, 45, 0.28)`).
+    - Projeção de sombra com leve calor térmico no topo: `box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16)`.
+  - Aplicação unificada em todos os 6 cards de depoimentos (`.quote`) na proporção 3x2, mantendo comportamento 100% estático sem elevação/flutuação.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 92 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

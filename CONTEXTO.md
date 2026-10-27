@@ -1241,6 +1241,33 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado com `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.85 Aplicação dos Efeitos Cênicos da Foto 1 em Todos os Cards de Depoimentos (Passo 91)
+- **Solicitação do Usuário:**
+  - "analise este banner e pegue as referencia de efeitos e aplique em todos os banners da segunda foto", enviando como Foto 1 o card individual com efeitos volumétricos e como Foto 2 o grid com os 6 cards de depoimentos da página.
+- **Análise Comparativa de Efeitos (Foto 1 vs Foto 2):**
+  1. *Top Rim Light & Destaque Incandescente Central:*
+     - A Foto 1 apresenta uma linha viva de calor acobreado na borda superior (`border-top: 1px solid rgba(255, 115, 45, 0.35)`), intensificada no centro através de um feixe de luz alaranjado brilhante `rgb(255, 90, 31)`.
+     - Implementado via pseudo-elemento `::before` de 1.5px de altura no topo de `.quote`, cobrindo de 18% a 82% da largura com gradiente linear suave (`linear-gradient(90deg, transparent 0%, rgba(255, 115, 45, 0.95) 50%, transparent 100%)`).
+  2. *Atmosfera Térmica Interna no Fundo:*
+     - Em contraste com o fundo cinza liso e plano `#0d0e12` da Foto 2, a Foto 1 exibe uma iluminação quente suave subindo a partir da base do card (tons de âmbar e terracota escuro), conferindo profundidade volumétrica.
+     - Implementado combinando `radial-gradient(ellipse 85% 55% at 50% 100%, rgba(185, 55, 18, 0.2) 0%, rgba(110, 32, 10, 0.08) 55%, transparent 85%)` com fundo linear escuro (`#0e0f13` a `#08090c`).
+  3. *Linha Divisória Fina:*
+     - A Foto 1 possui uma linha sutil horizontal `border-top: 1px solid rgba(255, 255, 255, 0.08)` separando o texto da citação dos dados do autor (`figcaption`).
+  4. *Halo Térmico no Avatar Circular:*
+     - A Foto 1 destaca o avatar redondo com uma borda sutil acobreada `rgba(255, 115, 45, 0.28)` e um halo de calor suave projetado ao redor (`box-shadow: 0 0 16px rgba(255, 90, 31, 0.2)`).
+  5. *Projeção de Sombra com Calor Térmico Superior:*
+     - `box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16)`.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - Atualizada a regra `.quote` com a nova composição de gradiente térmico de fundo, `border-top`, `border-radius: 22px`, `position: relative; overflow: hidden;` e projeção de sombra profunda.
+    - Adicionado `.quote::before` gerando a linha de destaque incandescente no centro da borda superior.
+    - Atualizado `.quote:hover` garantindo que o card permaneça 100% estático mantendo as cores e sombras fixas sem qualquer movimento.
+    - Atualizado `.avatar` com borda em tom âmbar e halo térmico suave.
+    - Atualizado `.quote figcaption` com `border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.25rem;` e paleta tipográfica refinada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
