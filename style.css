@@ -14,6 +14,7 @@
   --bg-card-hover: #111111;
   --bg-card-subtle: #141414;
   --bg-glass: rgba(11, 11, 11, 0.75);
+  --card: #0d0e12;
 
   /* Acentos de Brasa & Calor */
   --orange-primary: #ff5a1f;
@@ -1515,7 +1516,7 @@ button, input {
   padding: 1.65rem 1.75rem 1.8rem;
   display: flex;
   flex-direction: column;
-  background: #0d0e12;
+  background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   position: relative;

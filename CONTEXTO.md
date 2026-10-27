@@ -1936,6 +1936,25 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.125 Calibração de Background com Iluminação Radial Âmbar nos Cards de Como Trabalhamos (Passo 131)
+- **Solicitação do Usuário:**
+  - O usuário enviou print com comparativo dos cards de etapas da seção "Como Trabalhamos" (`#processo` / `.step`) e instruiu: `"background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card); quero que este card fique com esse background"`.
+- **Diagnóstico e Análise Técnica:**
+  - Na implementação anterior, os cards de etapa utilizavam cor de fundo estática simples (`#0d0e12;`), sem reflexo atmosférico de luz no topo.
+  - A variável `--card` não existia no `:root` (existiam `--bg-card`, `--bg-card-hover` e `--bg-card-subtle`).
+  - O gradiente solicitado projeta uma iluminação radial de calor âmbar discreta e suave (`rgba(255, 90, 31, .06)`) a partir do canto superior direito (`at 100% 0%`) com amplitude `120% 70%`, transicionando suavemente para transparente a partir de 55% sobre a cor de fundo base `var(--card)`.
+- **Solução Técnica e Implementação:**
+  1. *Declaração de Token e Regra CSS em `style.css`:*
+     - No `:root`: adicionado `--card: #0d0e12;` garantindo conformidade com a sintaxe solicitada.
+     - Na classe `.step`: aplicado `background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);`.
+     - Preservados cantos arredondados de 22px (`border-radius: 22px`), ícones squircle translúcidos com borda âmbar, tags de entregáveis e a ilustração oficial da Rosa dos Ventos com halo térmico no card da Etapa 3.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.4`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v14`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v13` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

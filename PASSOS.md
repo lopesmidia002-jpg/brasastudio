@@ -1215,5 +1215,18 @@
     - Cache PWA elevado para `brasa-cache-v13` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v12` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 131 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 131 — Calibração de Background com Iluminação Radial Âmbar nos Cards de Como Trabalhamos**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print das etapas da seção "Como Trabalhamos" (`#processo` / `.step`) e instruiu: "background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card); quero que este card fique com esse background".
+    - Na configuração anterior, os cards possuíam fundo plano em `#0d0e12;` sem a nuance atmosférica âmbar no canto superior direito.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - No `:root`: adicionado o token de design `--card: #0d0e12;`.
+    - Na regra `.step`: aplicado `background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);`, conferindo aos 3 cards de etapa (*Imersão*, *Criação* e *Entrega*) o reflexo de calor sutil e sofisticado no topo direito, com fusão perfeita à cor base.
+    - Preservados o `border-radius: 22px;`, as bordas sutis translúcidas, o ícone squircle com contorno âmbar, a Rosa dos Ventos oficial em imagem WebP e o botão pílula da Etapa 3.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.4` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v14` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v13` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 132 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
