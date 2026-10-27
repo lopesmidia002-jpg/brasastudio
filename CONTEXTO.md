@@ -1886,6 +1886,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.122 Calibração Completa de Dimensões, Tipografia e Bordas do Botão Fale com a Gente (Passo 128)
+- **Solicitação do Usuário:**
+  - "min-height: 46px; padding: 10px 22px; border: 0; border-radius: 999px; font-size: 16px; font-weight: 500; line-height: 26px; quero que este elemento fique com este estilo", acompanhado de imagem do botão "Fale com a gente" (`.header-cta`) do topo.
+- **Diagnóstico e Análise Técnica:**
+  - O botão `.header-cta` já possuía `padding: 10px 22px;`, porém o usuário forneceu o conjunto integral de especificações CSS para controle rigoroso de altura mínima (`min-height: 46px;`), remoção de borda (`border: 0;`), curvatura de pílula (`border-radius: 999px;`), corpo tipográfico (`font-size: 16px;`), entrelinha (`line-height: 26px;`) e peso médio (`font-weight: 500;`).
+- **Solução Técnica e Implementação:**
+  1. *Ajuste de Propriedades em `style.css`:*
+     - `.header-cta`: calibrado com `min-height: 46px !important; padding: 10px 22px !important; border: 0 !important; border-radius: 999px !important; font-size: 16px !important; font-weight: 500 !important; line-height: 26px !important;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.1`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v11`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v10` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

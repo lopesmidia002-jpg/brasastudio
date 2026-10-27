@@ -1181,5 +1181,15 @@
     - Cache PWA elevado para `brasa-cache-v10` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v9` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 128 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 128 — Calibração Completa de Dimensões, Tipografia e Bordas do Botão Fale com a Gente**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do botão "Fale com a gente" (`.header-cta`) e especificou as regras exatas: `min-height: 46px; padding: 10px 22px; border: 0; border-radius: 999px; font-size: 16px; font-weight: 500; line-height: 26px;`.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.header-cta`: calibrado com `min-height: 46px !important; padding: 10px 22px !important; border: 0 !important; border-radius: 999px !important; font-size: 16px !important; font-weight: 500 !important; line-height: 26px !important;`, mantendo a flexibilidade dimensional do botão, o gradiente brasa aveludado e o box-shadow quente.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.1` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v11` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v10` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 129 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
