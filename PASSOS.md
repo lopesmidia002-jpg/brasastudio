@@ -998,5 +998,15 @@
     - Adicionado `scroll-padding-top: clamp(70px, 9vh, 90px);` no seletor `html`, evitando que o cabeçalho fixo cubra o topo de qualquer seção após o clique nos links de navegação.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 114 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 114 — Ampliação da Largura dos Cards de Planos Alinhados nas Laterais**
+  - Solicitação e Diagnóstico Visual:
+    - O usuário solicitou: "aumente o tamanho dos cards para ficar alinhado nas laterais", enviando print dos dois cards de planos (Essencial e Estúdio).
+    - Anteriormente, o grid `.plans` possuía `max-width: 960px;`, o que deixava os cards mais estreitos e recuados em relação à largura padrão de 1240px do `.container` da página.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.plans`: atualizado para `width: 100%; max-width: 100%;`, preenchendo toda a extensão útil do container e alinhando perfeitamente os cards nas laterais com as demais seções do site e com o cabeçalho da seção.
+    - `.plan`: padding refinado para `clamp(1.85rem, 2.5vw, 2.35rem);`, conferindo respiro geométrico equilibrado aos valores, listas de checks, rosa dos ventos e botões.
+    - `.plan:hover`: adicionada micro-interação elástica suave de elevação vertical (`transform: translateY(-4px);`), realce térmico na borda superior (`border-top-color: rgba(255, 115, 45, 0.5);`) e sombra volumétrica aprofundada.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 115 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

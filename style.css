@@ -3292,14 +3292,15 @@ button, input {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 960px;
+  width: 100%;
+  max-width: 100%;
   margin: 3rem auto 0;
   position: relative;
   z-index: 2;
 }
 
 .plan {
-  padding: 1.85rem 1.65rem 1.65rem;
+  padding: clamp(1.85rem, 2.5vw, 2.35rem);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -3309,6 +3310,14 @@ button, input {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 1px solid rgba(255, 87, 34, 0.22);
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 87, 34, 0.12);
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.plan:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 115, 45, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 25px -5px rgba(255, 90, 31, 0.18);
 }
 
 .plan .step-top {

@@ -1658,6 +1658,20 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.108 Ampliação da Largura dos Cards de Planos Alinhados nas Laterais (Passo 114)
+- **Solicitação do Usuário:**
+  - "aumente o tamanho dos cards para ficar alinhado nas laterais", enviando print dos dois cards de planos (Essencial e Estúdio) com foco nas laterais.
+- **Diagnóstico e Análise Visual:**
+  - O seletor `.plans` estava limitado com `max-width: 960px;`, criando um recuo excessivo em relação às margens naturais do `.container` (1240px) e desalinhando visualmente os cards da grade geral da landing page.
+- **Solução Técnica e Implementação:**
+  1. *Expansão de Largura em `style.css`:*
+     - `.plans` recebeu `width: 100%; max-width: 100%;`, distribuindo os dois cards de forma equilibrada por toda a largura útil do contêiner.
+     - O padding interno dos cards `.plan` foi ajustado para `clamp(1.85rem, 2.5vw, 2.35rem);`, garantindo leitura limpa, espaçamento arejado para a rosa dos ventos e posicionamento impecável do botão "Agendar conversa" alinhado à esquerda.
+     - Adicionada micro-interação elástica suave com elevação de `-4px` no hover.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
