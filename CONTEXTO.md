@@ -1901,6 +1901,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.123 Calibração de Espaçamento Lateral do Card Âmbar Joias Conforme Referência Torra Rubi (Passo 129)
+- **Solicitação do Usuário:**
+  - "Ajuste o espaçamento lateral do card do projeto **Âmbar Joias** para ficar visualmente igual ao card do projeto **Torra Rubi**, utilizado como referência na segunda imagem", acompanhado de regras estritas (preservar border-radius, fundo escuro, manter card centralizado, preservar elementos internos e não alterar os demais projetos).
+- **Diagnóstico e Análise Técnica:**
+  - No slide horizontal de Resultados, o card individual de cada case (`.case`) possui a foto em camada absoluta (`.case-img`) e o card de texto com glassmorphism (`.case-box`) sobreposto na base.
+  - No projeto Âmbar Joias, o bloco de texto estava se estendendo horizontalmente até as margens internas do container pai com recuo mínimo, enquanto na referência visual do projeto Torra Rubi o card de texto possui uma margem lateral visivelmente maior (`margin-left: 10px; margin-right: 10px;`), deixando a foto de fundo respirar nas laterais com simetria perfeita.
+- **Solução Técnica e Implementação:**
+  1. *Regra CSS em `style.css`:*
+     - Criada a regra dedicada `.case--ambar .case-box, .case:has([data-slot="caso-ambar-joias"]) .case-box, .case-box--ambar` com `margin-left: 10px; margin-right: 10px; box-sizing: border-box; width: auto;`, preservando intactos o `border-radius: 18px;`, a sombra, a tipografia e o alinhamento vertical via `margin-top: auto;`.
+  2. *Marcação Semântica em `index.html`:*
+     - Adicionadas as classes `case--ambar` e `case-box--ambar` no card do projeto Âmbar Joias em ambos os grupos do carrossel infinito contínuo (Grupo 1 e Grupo 2 duplicado).
+  3. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.2`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v12`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v11` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

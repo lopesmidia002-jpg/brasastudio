@@ -1372,6 +1372,16 @@ button, input {
   gap: 0.52rem;
 }
 
+/* Card Âmbar Joias: espaçamento lateral ampliado idêntico à referência Torra Rubi */
+.case--ambar .case-box,
+.case:has([data-slot="caso-ambar-joias"]) .case-box,
+.case-box--ambar {
+  margin-left: 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  width: auto;
+}
+
 .case-mark {
   width: 24px;
   height: 24px;

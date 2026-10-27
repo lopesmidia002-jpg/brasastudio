@@ -1191,5 +1191,18 @@
     - Cache PWA elevado para `brasa-cache-v11` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v10` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 129 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 129 — Calibração do Espaçamento Lateral do Card Âmbar Joias Conforme Referência Torra Rubi**
+  - Solicitação do Usuário e Análise Visual Comparativa:
+    - O usuário enviou imagens comparativas entre o card do projeto "Âmbar Joias" e o card do projeto "Torra Rubi", solicitando que o espaçamento lateral do bloco de texto interno em relação às bordas do container seja ampliado de modo a reproduzir fielmente a proporção visual do Torra Rubi.
+    - Na configuração anterior, o bloco de texto interno `.case-box` do Âmbar Joias ocupava quase a totalidade da largura do container `.case`, com margens mínimas em relação à borda externa.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css) e [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html):
+    - Em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css): adicionada a regra dedicada `.case--ambar .case-box, .case:has([data-slot="caso-ambar-joias"]) .case-box, .case-box--ambar` configurada com `margin-left: 10px; margin-right: 10px; box-sizing: border-box; width: auto;`.
+    - Em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html): adicionadas as classes auxiliares `case--ambar` no container `<li>` e `case-box--ambar` no bloco `.case-box` do projeto Âmbar Joias em ambos os grupos do carrossel em loop contínuo (Grupo 1 e Grupo 2 duplicado).
+    - Preservados rigorosamente o `border-radius: 18px;`, o fundo escuro com glassmorphism, a imagem de fundo sobreposta, os textos, os ícones, as etiquetas ("RECENTE") e os indicadores de resultados ("+61% de visitas qualificadas" e "+29% no ticket médio"), mantendo os demais projetos (*Casa Ocre*, *Torra Rubi* e *Vento Sul Bikes*) intactos.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.2` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v12` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v11` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 130 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
