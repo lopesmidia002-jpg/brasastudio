@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initGalleryInteractivity();
 
-  // 16. Rolagem horizontal suave com roda do mouse na fileira de ícones de depoimentos
+  // 16. Rolagem horizontal suave com roda do mouse e drag-to-scroll na fileira de marcas
   const brandsGrid = document.querySelector('.testimonials-brands-grid');
   if (brandsGrid) {
     brandsGrid.addEventListener('wheel', (e) => {
@@ -430,5 +430,31 @@ document.addEventListener('DOMContentLoaded', () => {
         brandsGrid.scrollLeft += e.deltaY;
       }
     }, { passive: true });
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    brandsGrid.addEventListener('mousedown', (e) => {
+      isDown = true;
+      brandsGrid.classList.add('is-dragging');
+      startX = e.pageX - brandsGrid.offsetLeft;
+      scrollLeft = brandsGrid.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        brandsGrid.classList.remove('is-dragging');
+      }
+    });
+
+    brandsGrid.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - brandsGrid.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      brandsGrid.scrollLeft = scrollLeft - walk;
+    });
   }
 });

@@ -836,7 +836,18 @@
     - Rosa dos ventos no Card 2 perfeitamente posicionada e dimensionada no canto inferior direito (`width: 220px; height: 220px; bottom: -25px; right: -25px;`).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 99 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 99 — Barra de Rolagem Horizontal na Fileira de Marcas com 4 dos 6 Ícones à Mostra**
+  - Calibração dimensional da fileira `.testimonials-brands-grid`:
+    - Largura fixa estipulada em `width: 336px; box-sizing: content-box;` no desktop e `width: 308px;` no mobile (`max-width: 768px`), correspondendo à largura exata de 4 cartões squircle com seus respectivos espaçamentos (`gap: 16px` no desktop e `gap: 12px` no mobile).
+    - Exatamente 4 dos seis cartões permanecem visíveis à mostra no carregamento inicial, com os outros 2 cartões ocultos no overflow horizontal.
+  - Implementação da barra de rolagem horizontal personalizada:
+    - Ativada scrollbar horizontal visível estilizada com altura de 6px (`scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);`).
+    - Trilho arredondado translúcido (`::-webkit-scrollbar-track`) e thumb em branco suave com brilho volumétrico (`::-webkit-scrollbar-thumb`).
+  - Interatividade e Acionamento:
+    - Ao acionar a barra de rolagem (arraste do thumb, rolagem horizontal via roda do mouse ou arraste direto dos cartões com suporte a `drag-to-scroll` no `main.js`), os outros dois ícones aparecem de forma fluida.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 100 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

@@ -1417,6 +1417,25 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.93 Barra de Rolagem Horizontal na Fileira de Marcas com 4 dos 6 Ícones à Mostra (Passo 99)
+- **Solicitação do Usuário:**
+  - "coloque a barra de rolagem horizontal e deixe 4 dos seis amostra e quando acionado os ootros dois aparecem", enviando imagem da fileira de marcas com ícones squircle na seção Depoimentos.
+- **Análise dos Requisitos:**
+  1. *4 dos 6 à Mostra:* A fileira `.testimonials-brands-grid` possui 6 cartões squircle de 72px com gap de 16px. Para exibir exatamente 4 cartões com seus 3 gaps no estado inicial, a largura visível deve ser cravada em `width: 336px; box-sizing: content-box;` (4 * 72px + 3 * 16px = 336px). No mobile (`max-width: 768px`), com cartões de 68px e gap de 12px, a largura é `width: 308px;` (4 * 68px + 3 * 12px = 308px).
+  2. *Barra de Rolagem Horizontal Visível:* A barra de rolagem horizontal, que estava oculta anteriormente (`scrollbar-width: none`), agora deve ser visível, estilizada com altura fina de 6px, trilho sutil e thumb suave em branco translúcido (`rgba(255, 255, 255, 0.45)`).
+  3. *Acionamento:* Quando acionado (seja arrastando o thumb da scrollbar, usando a roda do mouse via `wheel` ou arrastando os cartões diretamente via `drag-to-scroll` no desktop/mobile), os 2 cartões excedentes entram em visualização suavemente.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.testimonials-brands-grid`: largura definida para `width: 336px; max-width: calc(100vw - 32px); box-sizing: content-box; padding: 4px 0 14px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);`.
+    - `::-webkit-scrollbar`: altura de 6px ativa com trilho em `rgba(255, 255, 255, 0.08)` e thumb em `rgba(255, 255, 255, 0.45)`.
+    - No `@media (max-width: 768px)`: `width: 308px; gap: 12px;`.
+  - Em `main.js`:
+    - Adicionado suporte a *drag-to-scroll* (`mousedown`, `mousemove`, `mouseup`) e refinado listener de rolagem horizontal `wheel` em `.testimonials-brands-grid`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
+
 
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.

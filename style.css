@@ -3573,27 +3573,51 @@ button, input {
   text-align: center;
 }
 
-/* Fileira Horizontal de Cartões Quadrados (Squircles com Rolagem Limpa Idêntica à Foto 2) */
+/* Fileira Horizontal de Cartões Quadrados (4 dos 6 à mostra com barra de rolagem horizontal visível) */
 .testimonials-brands-grid {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 16px;
-  max-width: 440px;
-  width: 100%;
+  width: 336px;
+  max-width: calc(100vw - 32px);
   margin: 0 auto 36px;
-  padding: 4px 12px 10px;
+  padding: 4px 0 14px;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  box-sizing: content-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+
+.testimonials-brands-grid.is-dragging {
+  scroll-behavior: auto;
+  cursor: grabbing;
 }
 
 .testimonials-brands-grid::-webkit-scrollbar {
-  display: none;
+  height: 6px;
+  display: block;
+}
+
+.testimonials-brands-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  margin: 0 4px;
+}
+
+.testimonials-brands-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  transition: background 0.2s ease;
+}
+
+.testimonials-brands-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .brand-squircle-card {
@@ -3796,6 +3820,8 @@ button, input {
   }
   .testimonials-brands-grid {
     gap: 12px;
+    width: 308px;
+    max-width: calc(100vw - 32px);
   }
   .brand-squircle-card {
     width: 68px;

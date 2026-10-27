@@ -211,7 +211,7 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       4. Ondas duplas sinuosas horizontais (≈).
       5. **Losango / Diamante Vazado:** Quadrado girado 45° com contorno grosso de 4.2px e orifício central.
       6. **Quatro Círculos:** Matriz 2x2 com 4 esferas preenchidas sólidas.
-      - *Rolagem Horizontal Limpa sem Barra Visível:* Scroll horizontal fluido (`overflow-x: auto`) com barra de rolagem visual oculta (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`), eliminando poluição visual e garantindo acabamento minimalista idêntico à Foto 2 com suporte pleno a arrasto, toque e roda do mouse.
+      - *Rolagem Horizontal com 4 dos 6 Ícones à Mostra e Barra Visível:* O contêiner possui largura fixa estipulada de `width: 336px; box-sizing: content-box;` (e `width: 308px;` no mobile), permitindo que exatamente 4 dos seis cartões squircle permaneçam visíveis à mostra no estado inicial. Barra de rolagem horizontal estilizada fina de 6px ativa (`scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);`), revelando os outros 2 cartões de forma fluida quando acionada via arraste do thumb, roda do mouse (`wheel`) ou arraste direto com o cursor (`drag-to-scroll`).
     - **Botão Central CTA (`.testimonials-btn`):** Pílula arredondada em tom vermelho-alaranjado queimado (`#d84315`), texto "Ver portfólio" em branco, e efeito difuso de iluminação projetada logo abaixo (*orange glow* suave).
     - **Grid de Depoimentos 100% Estático (3 Colunas x 2 Linhas — 6 Cards):**
       - *Superfície & Iluminação Cênica (Efeitos da Foto 1):*
