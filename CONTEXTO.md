@@ -1101,6 +1101,35 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.79 Reformulação do Card de CTA (Contato) com Iluminação Térmica e Tipografia Monocromática (Passo 85)
+- **Solicitação do Usuário:**
+  - "mude esta pagina para exatamente esta segunda imagem" enviando:
+    - Foto 1: Card de CTA anterior com eyebrow laranja em caixa alta, título com "que a gente acende junto." em laranja e sem gradiente térmico de canto.
+    - Foto 2: Card de CTA premium com gradiente radial alaranjado/acobreado no topo direito, dark pill badge "Vamos conversar" com ponto laranja neon, título massivo 100% branco ("Cada projeto é uma brasa / que a gente acende junto.") e subtítulo cinza em 2 linhas centrais.
+- **Investigação Visual e Comparação (Imagem 1 vs Imagem 2):**
+  1. *Fundo & Iluminação do Card:* Na Imagem 1, o card era predominantemente escuro com sombra difusa genérica. Na Imagem 2, há um clarão/gradiente térmico acobreado e âmbar rico projetado no canto superior direito (`radial-gradient(circle 600px at 84% 18%, ...)` com camada difusa `.cta-glow`).
+  2. *Badge Superior:* Substituição do texto simples `VAMOS CONVERSAR` por uma dark rounded pill badge (`.tag-status--cta`) com bullet quadrado laranja neon (`#ff5722` com glow) e texto "Vamos conversar" em branco puro.
+  3. *Tipografia do Título:* Título em duas linhas agora **100% monocromático branco puro (`#ffffff`)**, eliminando a cor laranja da segunda linha presente na Imagem 1.
+  4. *Subtítulo:* Texto em cinza neutro (`#a1a1aa`) formatado com quebra centralizada em 2 linhas de leitura confortável.
+  5. *Formulário Inline:* Campo de e-mail pílula translúcido com placeholder `#71717a` e botão CTA "Quero conversar" em gradiente terracota/laranja com sombra difusa volumétrica projetada na base.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Inserida a camada `.cta-glow`.
+    - Adicionada a pill badge `.tag-status--cta` com `.dot` e texto "Vamos conversar".
+    - Atualizado o título com `.cta-title` em duas linhas brancas.
+    - Atualizado o subtítulo com `.cta-text` centralizado.
+  - Em `style.css`:
+    - `.sec.cta`: fundo preto puro `#000000`.
+    - `.cta-card`: gradiente térmico acobreado com borda sutil, top rim light iluminado e sombra profunda.
+    - `.cta-glow`: radial blur âmbar difuso no canto superior direito.
+    - `.tag-status--cta`: pill badge dark glassmorphic com bullet laranja.
+    - `.cta-title`: tipografia sem serifa 100% branca pura.
+    - `.cta-text`: entrelinha 1.62 e centralização simétrica.
+    - `.cta-card .inline-form`: espaçamento e input pílula integrados com botão com glow.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

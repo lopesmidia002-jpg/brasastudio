@@ -1425,18 +1425,19 @@
   </div>
 </section>
 
-<section class="sec cta" id="contato" aria-labelledby="contato-titulo" data-motion>
+<section class="sec cta" id="contato" aria-labelledby="contato-titulo">
   <div class="container">
     <div class="cta-card" data-reveal>
-      <div class="cta-bg" aria-hidden="true">
-        <video class="cta-video" muted loop playsinline preload="none" poster="assets/video/brasa-cta-bg-poster.webp" width="854" height="468" tabindex="-1">
-          <source src="assets/video/brasa-cta-bg.webm" type="video/webm">
-          <source src="assets/video/brasa-cta-bg.mp4" type="video/mp4">
-        </video>
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="tag-status tag-status--cta">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Vamos conversar</span>
       </div>
-      <p class="eyebrow">Vamos conversar</p>
-      <h2 class="title" id="contato-titulo"><span>Cada projeto é uma brasa</span> <span class="title-2">que a gente acende junto.</span></h2>
-      <p class="text">Pronto para o próximo passo? Deixe seu e-mail e marcamos uma conversa de 15 minutos para entender o seu projeto.</p>
+      <h2 class="title cta-title" id="contato-titulo">
+        <span class="cta-title-line">Cada projeto é uma brasa</span>
+        <span class="cta-title-line">que a gente acende junto.</span>
+      </h2>
+      <p class="text cta-text">Pronto para o próximo passo? Deixe seu e-mail e marcamos uma conversa de 15 minutos para entender o seu projeto.</p>
       <form class="inline-form" data-form="contato">
         <div class="input-group">
           <label class="sr-only" for="contato-email">Seu e-mail</label>
@@ -1445,7 +1446,6 @@
         <button class="btn btn--brasa" type="submit">Quero conversar</button>
         <p class="form-status" id="aviso-contato" role="status" data-form-status></p>
       </form>
-      <input class="motion-toggle" type="checkbox" id="pausa-cta" aria-label="Pausar animação" title="Pausar animação">
     </div>
   </div>
 </section>

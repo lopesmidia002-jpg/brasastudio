@@ -223,5 +223,14 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       - Título da pergunta em branco puro (`#ffffff`), peso 500.
       - Ícone de expansão minimalista em cruz/plus fino (`+`) que gira e converte para menos (`-`) suavemente quando o card é aberto.
       - Resposta expansível em cinza claro com entrelinha legível.
-14. **CTA Final:** Chamada de fechamento para conversão imediata com garantia e agendamento.
+14. **CTA Final (`.cta` #contato — Card Dark Mode com Iluminação Térmica e Tipografia Monocromática):**
+    - **Fundo & Atmosfera:** Fundo preto absoluto (`#000000`).
+    - **Card Central (`.cta-card`):**
+      - Fundo grafite profundo com **gradiente radial térmico alaranjado/acobreado** no canto superior direito (`radial-gradient(circle 600px at 84% 18%, rgba(210, 75, 20, 0.48) 0%, rgba(160, 48, 12, 0.22) 42%, rgba(13, 14, 18, 0.95) 75%), #0c0d12;`).
+      - Camada difusa de iluminação cênica âmbar (`.cta-glow`) com blur de 48px proporcionando acabamento cinematográfico incandescente.
+      - Cantos arredondados amplos de 32px (`border-radius: 32px`), contorno fino de 1px e borda superior iluminada `border-top: 1px solid rgba(255, 115, 45, 0.45)`.
+    - **Pill Badge Superior (`.tag-status--cta`):** Pílula em dark glassmorphism com borda fina iluminada no topo, bullet quadrado laranja neon (`#ff5722` com glow) e texto "Vamos conversar" em branco puro.
+    - **Título Principal (`.cta-title`):** 100% Branco Puro (`#ffffff`) sem serifa, peso medium (500), em duas linhas equilibradas ("Cada projeto é uma brasa" / "que a gente acende junto."), eliminando completamente a cor laranja anterior conforme a Foto 2.
+    - **Subtítulo (`.cta-text`):** Texto em cinza claro (`#a1a1aa`), entrelinha 1.62 e largura de 520px centralizado em 2 linhas.
+    - **Formulário Inline (`.inline-form`):** Campo de e-mail pílula translúcido com placeholder cinza `#71717a` e botão CTA "Quero conversar" em gradiente terracota/vermelho-alaranjado vibrante com sombra difusa âmbar projetada.
 15. **Footer:** Links institucionais, redes sociais e direitos reservados.

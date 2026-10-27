@@ -691,7 +691,15 @@
   - Fundo em preto absoluto (`#000000`) e responsividade fluida para mobile e tablet.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 85 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 85 — Reformulação da Seção CTA (Contato) com Gradiente Térmico e Tipografia Monocromática (Idêntico à Foto 2)**
+  - Fundo do card `.cta-card` com gradiente radial térmico acobreado no topo direito (`radial-gradient(circle 600px at 84% 18%, ...)`), cantos arredondados de 32px e camada de iluminação cênica `.cta-glow`.
+  - Inserção da dark rounded pill badge (`.tag-status--cta`) com bullet quadrado laranja neon (`#ff5722` com glow) e texto "Vamos conversar" em branco puro.
+  - Título monocromático 100% branco puro (`#ffffff`) em duas linhas ("Cada projeto é uma brasa" / "que a gente acende junto."), eliminando a cor laranja da segunda linha.
+  - Subtítulo em cinza claro (`#a1a1aa`) perfeitamente centralizado em 2 linhas.
+  - Formulário inline com input pílula escuro e botão "Quero conversar" em gradiente terracota/laranja com glow suave.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 86 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
