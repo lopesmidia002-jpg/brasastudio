@@ -875,18 +875,16 @@
     - Aplicado `animation-play-state: paused;` em `.results-scroll-wrap:hover .results-marquee-track` e `.results-marquee-track:hover`, pausando instantaneamente o deslizamento ao posicionar o mouse sobre qualquer case e retomando com fluidez ao retirar o cursor.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 103 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 103 — Posicionamento da Imagem de Fundo Cobrindo Todo o Card por Trás do Box de Texto (Conforme Foto 2)**
+  - Análise comparativa entre as imagens enviadas pelo usuário:
+    - Na Foto 1, a imagem do case terminava logo na altura do topo do `.case-box` (`aspect-ratio: 880 / 555` com `margin-top: -38px;`), deixando o fundo escuro sólido de `.case` visível por baixo e nas laterais da caixa de texto (onde as setas vermelhas apontavam).
+    - Na Foto 2, a imagem fotográfica preenche toda a extensão do card (do topo até a borda inferior), e o card de texto (`.case-box`) fica elegantemente sobreposto na parte inferior com efeito dark glassmorphism, permitindo que a imagem continue visível por trás e nas frestas laterais.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.case`: configurado com `min-height: 520px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; padding: 8px 8px 10px 8px; border-radius: 24px;`.
+    - `.case-img`: posicionado com camada absoluta total cobrindo o card (`position: absolute; inset: 8px 8px 10px 8px; z-index: 1; border-radius: 18px; overflow: hidden;`), contendo `img` com `width: 100%; height: 100%; object-fit: cover; object-position: center top;` e 100% estática sem efeitos de zoom.
+    - `.case-box`: camada de texto sobreposta (`position: relative; z-index: 2; margin-top: auto; background: rgba(7, 8, 12, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 0.95rem 1.15rem 1.15rem;`), exatamente idêntica à Foto 2.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 104 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
-
-
-
-
-
-
-
-
-
-
-
-
 

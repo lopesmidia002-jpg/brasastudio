@@ -1475,12 +1475,25 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
      - Configurado `animation-play-state: paused;` para `.results-scroll-wrap:hover .results-marquee-track` e `.results-marquee-track:hover`, pausando o carrossel no instante exato em que o cursor do usuário entra na área dos cards e retomando suavemente ao retirar o mouse.
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+### 2.97 Imagem Ocupando Todo o Fundo do Case por Trás do Card de Texto Conforme Foto 2 (Passo 103)
+- **Solicitação do Usuário:**
+  - "nesse mesmo card desse slide, pode perceber que a imagem fica atras desse card que fica o texto, deve ficar igual a segunda imagem", acompanhada de duas fotos comparativas detalhando o card "Casa Ocre" no slide de Resultados: a Foto 1 (estado anterior) e a Foto 2 (referência com duas setas vermelhas apontando para as laterais onde a foto continua por trás do card de texto).
+- **Diagnóstico e Causa Raiz:**
+  - Anteriormente, o elemento `.case-img` possuía uma proporção fixa (`aspect-ratio: 880 / 555`) e terminava logo na altura do topo do `.case-box` (`margin-top: -38px`).
+  - O restante do card para baixo exibia o fundo cinza escuro sólido `#06070a` de `.case`. Nas frestas laterais indicadas pelas setas da Foto 2, o usuário via o fundo escuro do container em vez da continuidade da imagem.
+- **Solução Técnica e Implementação:**
+  1. *Camada Absoluta de Imagem de Fundo (`.case-img`):*
+     - Definido `position: absolute; inset: 8px 8px 10px 8px; z-index: 1; border-radius: 18px; overflow: hidden;` cobrindo 100% da área do card do topo à base.
+     - As imagens (`img`) foram configuradas com `width: 100%; height: 100%; object-fit: cover; object-position: center top;` e comportamento 100% estático (sem zoom ou transformações no hover).
+  2. *Card de Texto Sobreposto (`.case-box`):*
+     - Elevado para `z-index: 2; position: relative; margin-top: auto;`.
+     - Fundo escuro com desfoque de vidro acentuado (`background: rgba(7, 8, 12, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);`), borda sutil `1px solid rgba(255, 255, 255, 0.08)` e sombra volumétrica de profundidade (`box-shadow: 0 12px 28px rgba(0, 0, 0, 0.88), 0 -2px 14px rgba(0, 0, 0, 0.5)`).
+     - Com isso, a fotografia cobre toda a extensão vertical do case por trás do texto, e permanece visível nas laterais e acima do card de texto, reproduzindo com fidelidade milimétrica a Foto 2.
+  3. *Dimensões do Card (`.case`):*
+     - Altura mínima ajustada para `min-height: 520px;` com `display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden;`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
-
-
-
-
-
 
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
