@@ -1170,5 +1170,16 @@
     - Cache PWA elevado para `brasa-cache-v9` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v8` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 127 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 127 — Calibração de Padding (10px 22px) no Botão de CTA da Barra Superior**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print focado no botão "Fale com a gente" do cabeçalho superior (`.header-cta`) e instruiu: "padding: 10px 22px; quero que elemento com esse espaçamento".
+    - Na configuração anterior, o botão possuía `padding: 0.68rem 1.45rem !important;` (~10.8px x 23.2px).
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.header-cta`: espaçamento interno fixado em `padding: 10px 22px !important;`, mantendo a estabilidade vertical perfeitamente harmonizada com a barra de 89px e o raio de pílula (`border-radius: 9999px`).
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.0` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v10` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v9` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 128 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

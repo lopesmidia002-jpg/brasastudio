@@ -1870,6 +1870,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` validado via Docker Compose.
   - Retorno HTTP 200 OK confirmado na porta 3000.
 
+### 2.121 Calibração de Padding (10px 22px) no Botão de CTA da Barra Superior (Passo 127)
+- **Solicitação do Usuário:**
+  - "padding: 10px 22px; quero que elemento com esse espaçamento", acompanhado de imagem em destaque do botão "Fale com a gente" (`.header-cta`) do cabeçalho superior.
+- **Diagnóstico e Análise Técnica:**
+  - O botão de ação rápida do cabeçalho estava utilizando anteriormente `padding: 0.68rem 1.45rem !important;`.
+  - O usuário solicitou explicitamente a aplicação de `padding: 10px 22px;`, proporcionando um respiro vertical e horizontal equilibrado, mantendo a harmonia com o cabeçalho fixo de 89px e seu formato de pílula (`border-radius: 9999px`).
+- **Solução Técnica e Implementação:**
+  1. *Ajuste de Propriedades em `style.css`:*
+     - `.header-cta`: atualizado com `padding: 10px 22px !important;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.0`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v10`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v9` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
