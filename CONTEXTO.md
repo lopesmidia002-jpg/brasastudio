@@ -1313,8 +1313,28 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.testimonials-text`: calibrado `max-width: 520px;` para quebra precisa da Foto 2.
     - `.testimonials-brands-grid`: removida a barra física de rolagem (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`) mantendo a rolagem fluida.
 - **Execução e Validação Docker:**
+### 2.88 Unificação do Formulário de Contato em Cápsula Pílula Integrada (Passo 94)
+- **Solicitação do Usuário:**
+  - "mude esta barra para exatamnet iguala a essa da segunda foto", fornecendo imagens comparativas do formulário de contato por e-mail da seção CTA final.
+- **Análise Comparativa (Foto 1 vs Foto 2):**
+  1. *Foto 1 (Estado Anterior):*
+     - O formulário apresentava o campo de e-mail e o botão de envio como dois blocos dissociados:
+     - O input possuía sua própria pílula com borda cinza individual e fundo cinza translúcido.
+     - O botão "Quero conversar" ficava fora do input, separado por um espaço (`gap: 12px`), com glow difuso alaranjado expansivo que vazava para fora desproporcionalmente.
+  2. *Foto 2 (Estado Desejado):*
+     - Uma única barra/cápsula pílula unificada (`border-radius: 9999px;`):
+     - Contêiner contínuo com contorno fino suave (`1px solid rgba(255, 255, 255, 0.16)`) e fundo escuro semi-translúcido com glassmorphism.
+     - O campo de texto para digitar o e-mail fica embutido no lado esquerdo com fundo 100% transparente, sem bordas próprias, e com placeholder `#71717a`.
+     - O botão "Quero conversar" fica embutido confortavelmente no lado direito da cápsula, com cantos arredondados suaves em pílula, margem interna uniforme de ~6px, cor terracota vívida e sombra sutil contida, conferindo um design limpo, moderno e premium.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.cta-card .inline-form`: reconfigurado como contêiner flexível unificado com `border-radius: 9999px; max-width: 480px; width: 100%; padding: 6px 6px 6px 24px; background: rgba(14, 15, 20, 0.72); border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(12px);`.
+    - `.cta-card .inline-form input[type="email"]`: definido com `background: transparent; border: none; outline: none; padding: 8px 12px 8px 0; color: #ffffff;`.
+    - `.cta-card .btn--brasa`: embutido com `flex: 0 0 auto; background: linear-gradient(180deg, #d84315 0%, #c43812 100%); padding: 11px 24px; font-weight: 600; font-size: 0.92rem; border-radius: 9999px; border: none; box-shadow: 0 4px 14px rgba(196, 53, 26, 0.45);`.
+    - Adicionada media query para dispositivos móveis abaixo de 480px com ajuste de padding proporcional.
+- **Execução e Validação Docker:**
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
-  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+  - Endpoint testado e validado em `http://localhost:3000/` com status HTTP 200 OK.
 
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.

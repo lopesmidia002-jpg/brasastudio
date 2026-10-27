@@ -780,7 +780,20 @@
     - Ocultada a barra de rolagem física visual (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`) mantendo a rolagem fluida e suave por toque, arrasto e scroll horizontal, eliminando interferências visuais conforme a Foto 2.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 94 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 94 — Unificação do Formulário de Contato em Cápsula Pílula Integrada (Idêntico à Foto 2)**
+  - Reestruturação do contêiner do formulário `.cta-card .inline-form`:
+    - Integração do input e do botão de ação em uma única barra pílula unificada (`border-radius: 9999px; max-width: 480px; width: 100%;`).
+    - Fundo escuro translúcido com glassmorphism (`background: rgba(14, 15, 20, 0.72); backdrop-filter: blur(12px);`), contorno sutil `1px solid rgba(255, 255, 255, 0.16)` e sombra suave `box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5)`.
+    - Padding perfeitamente ajustado de `6px 6px 6px 24px` para acomodar o botão com margem uniforme interna de 6px.
+  - Estilização do campo de entrada `.cta-card .inline-form input[type="email"]`:
+    - Remoção de bordas e fundos individuais (`background: transparent; border: none; outline: none; padding: 8px 12px 8px 0;`), integrando perfeitamente o texto com placeholder `#71717a`.
+  - Estilização do botão embutido `.cta-card .btn--brasa`:
+    - Encaixe fluido na lateral direita da cápsula com `padding: 11px 24px; font-weight: 600; font-size: 0.92rem; border-radius: 9999px;`.
+    - Gradiente terracota suave (`#d84315` a `#c43812`), sombra contida `box-shadow: 0 4px 14px rgba(196, 53, 26, 0.45)`, eliminando o antigo glow excessivo externo e a separação dos elementos conforme a Foto 2.
+    - Media query responsiva para mobile abaixo de 480px mantendo encaixe ergonômico.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 95 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
