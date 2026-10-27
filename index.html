@@ -1256,48 +1256,85 @@
         </h2>
         <p class="testimonials-text">Clientes contam como foi trabalhar com o estúdio e o que mudou depois do lançamento.</p>
 
-        <!-- Fileira Horizontal de Cartões Quadrados com Cantos Arredondados Escuros (6 Ícones com Rolagem Horizontal) -->
-        <div class="testimonials-brands-grid" aria-hidden="true">
-          <!-- 1. Círculo / Letra O -->
-          <div class="brand-squircle-card">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-              <circle cx="20" cy="20" r="9.5" stroke="#d4d4d4" stroke-width="4.2"/>
-            </svg>
-          </div>
-          <!-- 2. Triângulo / Pirâmide -->
-          <div class="brand-squircle-card">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-              <path d="M20 9.5 L31.5 29.5 L8.5 29.5 Z" fill="#d4d4d4" stroke="#d4d4d4" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <!-- 3. Cúpula com base -->
-          <div class="brand-squircle-card">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-              <path d="M10 18a10 10 0 0 1 20 0z" fill="#d4d4d4"/>
-              <rect x="10" y="21.5" width="20" height="4" rx="2" fill="#d4d4d4"/>
-            </svg>
-          </div>
-          <!-- 4. Ondas duplas -->
-          <div class="brand-squircle-card">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-              <path d="M8 16.5c4-5 8-5 12 0s8 5 12 0" stroke="#d4d4d4" stroke-width="3.2" stroke-linecap="round"/>
-              <path d="M8 23.5c4-5 8-5 12 0s8 5 12 0" stroke="#d4d4d4" stroke-width="3.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <!-- 5. Losango / Diamante Vazado -->
-          <div class="brand-squircle-card">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-              <rect x="13" y="13" width="14" height="14" rx="1.5" stroke="#d4d4d4" stroke-width="4.2" fill="none" transform="rotate(45 20 20)"/>
-            </svg>
-          </div>
-          <!-- 6. Quatro Círculos / Grade 2x2 de Bolinhas -->
-          <div class="brand-squircle-card">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-              <circle cx="15" cy="15" r="3.8" fill="#d4d4d4"/>
-              <circle cx="25" cy="15" r="3.8" fill="#d4d4d4"/>
-              <circle cx="15" cy="25" r="3.8" fill="#d4d4d4"/>
-              <circle cx="25" cy="25" r="3.8" fill="#d4d4d4"/>
-            </svg>
+        <!-- Carrossel em Loop Infinito Contínuo de Marcas Parceiras (sem barra de rolagem horizontal) -->
+        <div class="testimonials-icons-wrap" aria-label="Marcas parceiras em carrossel contínuo">
+          <div class="testimonials-icons-track">
+            <!-- Grupo 1 -->
+            <div class="testimonials-icons-group">
+              <div class="brand-squircle-card" title="Marca 1">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="20" cy="20" r="9.5" stroke="#d4d4d4" stroke-width="4.2"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 2">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <path d="M20 9.5 L31.5 29.5 L8.5 29.5 Z" fill="#d4d4d4" stroke="#d4d4d4" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 3">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <path d="M10 18a10 10 0 0 1 20 0z" fill="#d4d4d4"/>
+                  <rect x="10" y="21.5" width="20" height="4" rx="2" fill="#d4d4d4"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 4">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <path d="M8 16.5c4-5 8-5 12 0s8 5 12 0" stroke="#d4d4d4" stroke-width="3.2" stroke-linecap="round"/>
+                  <path d="M8 23.5c4-5 8-5 12 0s8 5 12 0" stroke="#d4d4d4" stroke-width="3.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 5">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <rect x="13" y="13" width="14" height="14" rx="1.5" stroke="#d4d4d4" stroke-width="4.2" fill="none" transform="rotate(45 20 20)"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 6">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="15" cy="15" r="3.8" fill="#d4d4d4"/>
+                  <circle cx="25" cy="15" r="3.8" fill="#d4d4d4"/>
+                  <circle cx="15" cy="25" r="3.8" fill="#d4d4d4"/>
+                  <circle cx="25" cy="25" r="3.8" fill="#d4d4d4"/>
+                </svg>
+              </div>
+            </div>
+            <!-- Grupo 2 (duplicado para loop contínuo) -->
+            <div class="testimonials-icons-group" aria-hidden="true">
+              <div class="brand-squircle-card" title="Marca 1">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+                  <circle cx="20" cy="20" r="9.5" stroke="#d4d4d4" stroke-width="4.2"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 2">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+                  <path d="M20 9.5 L31.5 29.5 L8.5 29.5 Z" fill="#d4d4d4" stroke="#d4d4d4" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 3">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+                  <path d="M10 18a10 10 0 0 1 20 0z" fill="#d4d4d4"/>
+                  <rect x="10" y="21.5" width="20" height="4" rx="2" fill="#d4d4d4"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 4">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+                  <path d="M8 16.5c4-5 8-5 12 0s8 5 12 0" stroke="#d4d4d4" stroke-width="3.2" stroke-linecap="round"/>
+                  <path d="M8 23.5c4-5 8-5 12 0s8 5 12 0" stroke="#d4d4d4" stroke-width="3.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 5">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+                  <rect x="13" y="13" width="14" height="14" rx="1.5" stroke="#d4d4d4" stroke-width="4.2" fill="none" transform="rotate(45 20 20)"/>
+                </svg>
+              </div>
+              <div class="brand-squircle-card" title="Marca 6">
+                <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+                  <circle cx="15" cy="15" r="3.8" fill="#d4d4d4"/>
+                  <circle cx="25" cy="15" r="3.8" fill="#d4d4d4"/>
+                  <circle cx="15" cy="25" r="3.8" fill="#d4d4d4"/>
+                  <circle cx="25" cy="25" r="3.8" fill="#d4d4d4"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
 

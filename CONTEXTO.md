@@ -1607,6 +1607,26 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.105 Refinamento Completo da Seção de Depoimentos (Passo 111)
+- **Solicitação do Usuário:**
+  - "Refinar a seção de Depoimentos (Testimonials) seguindo o padrão das seções anteriores."
+- **Diagnóstico e Análise Visual:**
+  - O título `.testimonials-title` aplicava branco chapado (`#ffffff`) em ambas as linhas, sem a hierarquia de duas tonalidades adotada nas demais seções (Sobre, Benefícios, Portfólio, Serviços e Vitrine).
+  - A fileira de marcas parceiras utilizava `.testimonials-brands-grid` com barra de rolagem horizontal manual e scrollbar estilizada, ao passo que o novo padrão de excelência visual adota carrossel contínuo em loop infinito sem scrollbar e com pausa no hover.
+  - Os cards de depoimentos (`.quote`) e os cartões de marcas squircle eram completamente estáticos, sem micro-interações de feedback tátil ao posicionar o cursor.
+- **Solução Técnica e Implementação:**
+  1. *Calibração Cromática do Título:*
+     - Em `style.css`, `.testimonials-title .title-line-1` foi configurado em branco puro (`#ffffff`) e `.testimonials-title .title-line-2` em cinza suave / prateado refinado mais escuro (`#8e8e93`).
+  2. *Carrossel Contínuo Infinito sem Barra de Rolagem:*
+     - Em `index.html` e `style.css`, a fileira de marcas foi reestruturada como `.testimonials-icons-wrap` com track dupla (`.testimonials-icons-track` e 2x `.testimonials-icons-group`).
+     - Implementada animação `@keyframes testimonialsIconsSlideLeft` (18s linear infinite), máscara de fade linear transparente nas bordas laterais e pausa automática imediata ao passar o mouse (`animation-play-state: paused;`).
+  3. *Micro-Interações Táteis Suaves:*
+     - Em `.quote`, adicionadas transições suaves de `transform`, `border-color` e `box-shadow` com elevação de `-4px` no hover e realce térmico na borda superior.
+     - Em `.brand-squircle-card`, adicionada elevação sutil de `-2px` e realce de brilho no hover.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

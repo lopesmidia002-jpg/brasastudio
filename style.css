@@ -3600,17 +3600,26 @@ button, input {
   box-shadow: 0 0 8px #ff5722;
 }
 
-/* Título Monocromático Branco e Subtítulo Cinza */
+/* Título com Hierarquia Editorial: Linha 1 em Branco Puro e Linha 2 em Cinza Suave */
 .testimonials-title {
   font-size: clamp(2.3rem, 4.4vw, 3.8rem);
   font-weight: 600;
   line-height: 1.15;
-  color: #ffffff;
   letter-spacing: -0.03em;
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.testimonials-title .title-line-1 {
+  display: block;
+  color: #ffffff;
+}
+
+.testimonials-title .title-line-2 {
+  display: block;
+  color: #8e8e93;
 }
 
 .testimonials-text {
@@ -3622,51 +3631,42 @@ button, input {
   text-align: center;
 }
 
-/* Fileira Horizontal de Cartões Quadrados (4 dos 6 à mostra com barra de rolagem horizontal visível) */
-.testimonials-brands-grid {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 16px;
-  width: 336px;
-  max-width: calc(100vw - 32px);
+/* Carrossel em Loop Infinito Contínuo de Ícones de Marcas em Depoimentos (sem barra horizontal) */
+.testimonials-icons-wrap {
+  width: 100%;
+  max-width: 440px;
   margin: 0 auto 36px;
-  padding: 4px 0 14px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  box-sizing: content-box;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.testimonials-icons-track {
+  display: flex;
+  width: max-content;
+  animation: testimonialsIconsSlideLeft 18s linear infinite;
   user-select: none;
 }
 
-.testimonials-brands-grid.is-dragging {
-  scroll-behavior: auto;
-  cursor: grabbing;
+.testimonials-icons-wrap:hover .testimonials-icons-track {
+  animation-play-state: paused;
 }
 
-.testimonials-brands-grid::-webkit-scrollbar {
-  height: 6px;
-  display: block;
+.testimonials-icons-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 16px;
 }
 
-.testimonials-brands-grid::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  margin: 0 4px;
-}
-
-.testimonials-brands-grid::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.45);
-  border-radius: 999px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
-  transition: background 0.2s ease;
-}
-
-.testimonials-brands-grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.75);
+@keyframes testimonialsIconsSlideLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .brand-squircle-card {
@@ -3681,13 +3681,14 @@ button, input {
   justify-content: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
   cursor: default;
+  transition: border-color var(--trans-fast), transform var(--trans-fast);
 }
 
 .brand-squircle-card:hover {
-  transform: none;
-  background: #111216;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+  background: #14151b;
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.85);
 }
 
 .brand-squircle-card svg {
@@ -3695,7 +3696,7 @@ button, input {
 }
 
 .brand-squircle-card:hover svg {
-  opacity: 0.85;
+  opacity: 1;
 }
 
 /* Botão Pill Shape Vermelho-Alaranjado Queimado com Orange Glow Inferior */
@@ -3723,7 +3724,7 @@ button, input {
   box-shadow: 0 10px 28px rgba(216, 67, 21, 0.55), 0 20px 50px rgba(255, 87, 34, 0.45);
 }
 
-/* Grid de Depoimentos (100% Estático sem Efeito de Elevação/Hover) */
+/* Grid de Depoimentos com Micro-Interações Sutis no Hover */
 .quotes {
   position: relative;
   z-index: 2;
@@ -3749,6 +3750,7 @@ button, input {
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16);
   cursor: default;
   overflow: hidden;
+  transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);
 }
 
 /* Destaque incandescente central na borda superior conforme Foto 1 */
@@ -3765,10 +3767,10 @@ button, input {
 }
 
 .quote:hover {
-  border-color: rgba(255, 255, 255, 0.08);
-  border-top-color: rgba(255, 115, 45, 0.35);
-  transform: none;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 -2px 25px rgba(255, 90, 31, 0.16);
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 115, 45, 0.65);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 25px -5px rgba(255, 90, 31, 0.2);
 }
 
 .quote figure {

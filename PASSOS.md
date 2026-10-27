@@ -961,5 +961,20 @@
     - Adicionada pausa instantânea no hover (`.hero-icons-wrap:hover .hero-icons-track { animation-play-state: paused; }`), parando a animação ao passar o cursor sobre os ícones e retomando suavemente ao retirá-lo.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 111 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 111 — Refinamento Completo da Seção de Depoimentos (Testimonials)**
+  - Hierarquia Editorial do Título em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.testimonials-title`: remoção da cor branca herdada de forma chapada.
+    - `.testimonials-title .title-line-1`: estilizado com `display: block; color: #ffffff;`, destacando a linha 1 em branco puro luminoso.
+    - `.testimonials-title .title-line-2`: estilizado com `display: block; color: #8e8e93;`, conferindo o tom cinza suave / prateado refinado mais escuro conforme o padrão editorial consolidado no projeto.
+  - Carrossel em Loop Infinito Contínuo de Marcas em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Remoção completa da barra de rolagem horizontal manual (`overflow-x: auto;`, `scrollbar-width: thin;`, `::-webkit-scrollbar*`).
+    - Estruturado `.testimonials-icons-wrap` com `.testimonials-icons-track` e 2 grupos idênticos de 6 ícones squircle (`.testimonials-icons-group`, o segundo com `aria-hidden="true"`).
+    - Animação contínua `@keyframes testimonialsIconsSlideLeft` em `18s linear infinite`, com máscara de fade suave nas pontas (`mask-image: linear-gradient(...)`) e pausa instantânea no hover (`.testimonials-icons-wrap:hover .testimonials-icons-track { animation-play-state: paused; }`).
+  - Micro-Interações Táteis Suaves nos Cards de Depoimento (`.quote`):
+    - Adicionada transição suave de movimentação física e profundidade (`transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal);`).
+    - No hover (`.quote:hover`): elevação suave com `transform: translateY(-4px);`, realce térmico na borda superior (`border-top-color: rgba(255, 115, 45, 0.65);`) e aprofundamento aveludado de sombra volumétrica.
+    - Nos cartões squircle de marcas (`.brand-squircle-card`): adicionado hover com elevação de 2px e ganho de opacidade vetorial para 100%.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 112 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
