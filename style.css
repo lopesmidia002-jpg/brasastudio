@@ -2392,23 +2392,26 @@ button, input {
   flex-shrink: 0;
 }
 
-/* 2. Bloco tipográfico centralizado */
+/* 2. Bloco tipográfico centralizado: Primeira linha branca e segunda linha mais escura */
 .portfolio-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
   font-size: clamp(2.45rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  color: #FFFFFF;
   margin: 0 0 1.4rem;
   text-align: center;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
-.portfolio-title .title-line-1,
+.portfolio-title .title-line-1 {
+  display: block;
+  color: #ffffff;
+}
+
 .portfolio-title .title-line-2 {
   display: block;
-  color: #FFFFFF;
+  color: #8e8e93; /* Linha de baixo mais escura que a de cima */
 }
 
 .portfolio-text {

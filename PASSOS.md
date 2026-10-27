@@ -905,5 +905,14 @@
     - `.title--benefits .title-line-2`: estilizado com `display: block; color: #8e8e93;`, conferindo o tom cinza suave / prateado refinado mais escuro conforme a referência visual.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 106 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 106 — Calibração da Cor do Título de Portfólio com Linha Inferior Mais Escura**
+  - Solicitação e Análise Visual:
+    - O usuário solicitou que no título da seção Portfólio (`.portfolio-title`), a segunda linha ("que acendem marcas.") ficasse mais escura que a primeira ("Projetos selecionados"), aplicando a mesma hierarquia e contraste editorial das seções anteriores.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.portfolio-title`: removida a cor branca genérica herdada por ambas as linhas.
+    - `.portfolio-title .title-line-1`: estilizado com `display: block; color: #ffffff;`, mantendo a primeira linha em branco puro vívido.
+    - `.portfolio-title .title-line-2`: estilizado com `display: block; color: #8e8e93;`, definindo a segunda linha em tom cinza suave / prateado refinado mais escuro.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 107 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
