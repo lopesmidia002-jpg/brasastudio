@@ -1817,9 +1817,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
      - Em `index.html`: versionamento elevado para `?v=2.6`.
      - Em `sw.js`: cache PWA elevado para `brasa-cache-v6`.
      - Em `main.js`: configurada auto-limpeza para `brasa-cache-v5`.
+### 2.118 Calibração da Tag de Status do Hero Idêntica à Referência Original (Passo 124)
+- **Solicitação do Usuário:**
+  - "eu quero que deixe igual ao original", acompanhado de imagens comparativas detalhadas da tag de status do Hero (`.tag-new`), destacando a pílula interna `NOVO` e o texto `Agenda aberta para 2027`.
+- **Diagnóstico e Análise Técnica Visual:**
+  - *Imagem de Referência Original:* O badge `NOVO` possui formato pill 100% arredondado (`border-radius: 9999px`), preenchimento sólido em laranja vibrante (`#ff551b`), tipografia em caixa alta negrito com alto contraste em preto (`#000000`, `font-weight: 800`) e glow térmico contido. A pílula externa translúcida possui respiro assimétrico confortável (`padding: 4px 16px 4px 5px`), gap de `0.75rem` e o texto `Agenda aberta para 2027` em branco vívido (`#ffffff`) com peso semi-bold (`font-weight: 600`) na fonte display.
+  - *Estado Anterior:* O badge estava com cantos quase retos (raio de 6px) e peso de texto moderado (`500`), gerando uma aparência retangular divergente do design de ateliê da referência.
+- **Solução Técnica e Implementação:**
+  1. *Calibração Estética em `style.css`:*
+     - `.tag-new`: configurado com `border-radius: 9999px; padding: 4px 16px 4px 5px; gap: 0.75rem; background: rgba(13, 13, 13, 0.75); border: 1px solid rgba(255, 255, 255, 0.15); font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: #ffffff; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); letter-spacing: -0.015em;`.
+     - `.tag-new .badge`: atualizado para `border-radius: 9999px; padding: 0.38rem 0.85rem; background: #ff551b; color: #000000; font-family: var(--font-display); font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; border: none; line-height: 1; box-shadow: 0 0 16px rgba(255, 85, 27, 0.35);`.
+     - `.tag-new span:last-child`: declarado com `color: #ffffff; font-weight: 600; letter-spacing: -0.01em;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=2.7`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v7`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v6` adicionada na ativação.
 - **Execução e Validação Docker:**
-  - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
-  - Mapeamento e status HTTP 200 OK validados na porta 3000 com verificação ativa do CSS entregue.
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Validação de entrega HTTP 200 OK na porta 3000 para o documento principal e para os estilos calibrados.
 
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.

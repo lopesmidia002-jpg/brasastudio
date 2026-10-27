@@ -1134,5 +1134,19 @@
     - Cache PWA elevado para `brasa-cache-v6` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v5` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 124 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 124 — Calibração da Tag de Status do Hero Idêntica à Referência Original**
+  - Solicitação do Usuário e Análise Visual Comparativa:
+    - O usuário enviou duas imagens comparativas da tag de status do Hero ("NOVO Agenda aberta para 2027") e instruiu: "eu quero que deixe igual ao original".
+    - Na imagem de referência (original): o badge interno "NOVO" possui formato pill totalmente arredondado (`border-radius: 9999px`), preenchimento em laranja vibrante (`#ff551b`), texto em caixa alta negrito preto, respiro lateral confortável e espaçamento generoso em relação ao texto "Agenda aberta para 2027", que se apresenta em branco puro vívido com peso semi-bold (`font-weight: 600`) na tipografia display.
+    - Na implementação anterior: o badge apresentava cantos quase retos/retangulares de 6px (`border-radius: 6px`) e o texto estava com peso mais fino (`500`) e menor contraste.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.tag-new`: configurado com `padding: 4px 16px 4px 5px; gap: 0.75rem; border-radius: 9999px; background: rgba(13, 13, 13, 0.75); border: 1px solid rgba(255, 255, 255, 0.15); font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: #ffffff; backdrop-filter: blur(12px);`.
+    - `.tag-new .badge`: atualizado para `border-radius: 9999px; padding: 0.38rem 0.85rem; background: #ff551b; color: #000000; font-family: var(--font-display); font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; box-shadow: 0 0 16px rgba(255, 85, 27, 0.35);`.
+    - `.tag-new span:last-child`: estilizado com `color: #ffffff; font-weight: 600; letter-spacing: -0.01em;`.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento elevado para `?v=2.7` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v7` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v6` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 125 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
