@@ -926,5 +926,14 @@
       - Estrela sólida de 4 pontas preenchida em camada única com degradê terracota suave (`#e65100` -> `#d84315` -> `#bf360c` -> `#5c1504`) sem duplicação e sem filtros de blur incandescente.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 108 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 108 — Calibração da Cor do Título da Vitrine com Linha Inferior Mais Escura**
+  - Solicitação e Análise Visual:
+    - O usuário solicitou que no título da seção Vitrine / Lance seu projeto (`.showcase-title`), a segunda linha ("de marcas em crescimento.") ficasse mais escura que a primeira ("O parceiro criativo"), consolidando a consistência e hierarquia editorial em todas as seções do site.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.showcase-title`: removida a cor branca direta herdada no container pai.
+    - `.showcase-title .title-line-1`: estilizado com `display: block; color: #ffffff;`, destacando a primeira linha em branco puro vívido.
+    - `.showcase-title .title-line-2`: estilizado com `display: block; color: #8e8e93;`, definindo a segunda linha em tom cinza suave / prateado refinado mais escuro.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 109 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

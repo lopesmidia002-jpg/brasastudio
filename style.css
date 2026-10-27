@@ -3119,23 +3119,26 @@ button, input {
   flex-shrink: 0;
 }
 
-/* 2. Título (H1/H2): O parceiro criativo / de marcas em crescimento, peso medium, cor branca (#FFFFFF) */
+/* 2. Título (H1/H2): Primeira linha branca pura e segunda linha mais escura conforme solicitado */
 .showcase-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', 'Geist Sans', sans-serif;
   font-size: clamp(2.4rem, 4.8vw, 3.9rem);
   font-weight: 500; /* Peso medium conforme solicitado */
   line-height: 1.14;
   letter-spacing: -0.025em;
-  color: #FFFFFF;
   margin: 0 0 1.45rem;
   text-align: center;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-.showcase-title .title-line-1,
+.showcase-title .title-line-1 {
+  display: block;
+  color: #ffffff;
+}
+
 .showcase-title .title-line-2 {
   display: block;
-  color: #FFFFFF;
+  color: #8e8e93; /* Linha de baixo mais escura que a de cima */
 }
 
 /* 3. Subtítulo: Do primeiro esboço ao site no ar..., em cinza claro (#A1A1AA) */

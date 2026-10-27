@@ -1558,6 +1558,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.102 Calibração de Cor no Título da Vitrine com Linha Inferior Mais Escura (Passo 108)
+- **Solicitação do Usuário:**
+  - "aqui tbm a linha debaixo mais escura que a de cima", enviando imagem com foco no título da seção Vitrine / Lance seu projeto ("O parceiro criativo / de marcas em crescimento.").
+- **Diagnóstico e Análise Visual:**
+  - O elemento `.showcase-title` aplicava a cor `#FFFFFF` herdada em ambas as linhas `.title-line-1` e `.title-line-2`, mantendo as duas frases com o mesmo branco puro chapado.
+  - Alinhando com as seções Sobre, Serviços, Por Que a Brasa e Portfólio, a linha superior deve permanecer em branco puro vívido (`#ffffff`), enquanto a linha inferior assume o tom cinza suave / prateado refinado mais escuro (`#8e8e93`).
+- **Solução Técnica e Implementação:**
+  1. *Segmentação das Linhas em `style.css`:*
+     - `.showcase-title`: removida a cor branca direta do container pai.
+     - `.showcase-title .title-line-1`: configurada com `display: block; color: #ffffff;` (branco puro).
+     - `.showcase-title .title-line-2`: configurada com `display: block; color: #8e8e93;` (cinza suave / prateado mais escuro que a linha superior).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
