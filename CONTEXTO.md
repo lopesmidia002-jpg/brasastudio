@@ -1192,6 +1192,30 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado com `docker-compose up -d --build`.
   - Endpoint `http://localhost:3000/` validado com status HTTP 200 OK.
 
+### 2.83 Reformulação do Card de Showreel no Rodapé (Passo 89)
+- **Solicitação do Usuário:**
+  - "mude este banner para este da segunda foto", fornecendo imagens comparativas do badge "Showreel 2026" e do card de vídeo localizado no rodapé do site.
+- **Análise Comparativa (Foto 1 vs Foto 2):**
+  1. *Badge "Showreel 2026":*
+     - Na Foto 1, o badge era uma cápsula oval estilizada como pílula (`border-radius: 9999px`), onde a palavra "Showreel" era cinza apagada e "2026" era laranja, criando um visual desarmônico.
+     - Na Foto 2, o badge é um retângulo moderno com cantos arredondados suaves (`border-radius: 12px`), com tipografia 100% branca pura (`#ffffff`) sem serifa e sem cor laranja.
+  2. *Card de Pré-visualização do Vídeo:*
+     - Na Foto 1, o card `.preview--sm` sofria um esticamento vertical anormal devido ao `flex: 0 1 380px;` herdado da classe base `.preview` dentro do container flex de direção coluna (`.footer-reel`). Isso forçava uma altura de 380px, gerando um espaço preto vazio de mais de 200px abaixo da imagem (que possui proporção 3:2, com apenas 160px de altura).
+     - Além disso, o elemento `<span class="play">` em HTML era posicionado em `top: 50%` do card esticado, flutuando no meio do espaço preto vazio, enquanto a imagem da claquete já continha seu próprio botão de reprodução circular embutido.
+     - Na Foto 2, o card é compacto e contorna perfeitamente a imagem (proporção 3:2), com cantos arredondados de 18px e apenas um botão de play (o centralizado na claquete).
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Substituído `<p class="pill pill--dark">` por `<span class="footer-reel-badge">Showreel 2026</span>`.
+    - Removido o `<span class="play">` duplicado de dentro de `<a class="preview preview--sm">`.
+  - Em `style.css`:
+    - `.footer-reel`: ajustado para `display: flex; flex-direction: column; align-items: flex-start; gap: 0.95rem;`.
+    - `.footer-reel-badge`: criado com tipografia branca `#ffffff`, `font-weight: 600`, fundo translúcido escuro `rgba(255, 255, 255, 0.05)`, contorno `1px solid rgba(255, 255, 255, 0.1)` e cantos arredondados de `12px`.
+    - `.preview--sm`: sobrescrito com `flex: none; height: auto; width: 100%; max-width: 250px; align-self: flex-start; border-radius: 18px;`, contorno `1px solid rgba(255, 255, 255, 0.12)`, fundo escuro e sombra profunda.
+    - `.preview--sm .play`: configurado com `display: none;` para garantir ausência de play redundante.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

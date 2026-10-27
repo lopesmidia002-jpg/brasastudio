@@ -240,4 +240,10 @@ A landing page está apta a ser instalada na tela de início de celulares, table
     - **Título Principal (`.cta-title`):** 100% Branco Puro (`#ffffff`) sem serifa, peso medium (500), em duas linhas perfeitamente legíveis ("Cada projeto é uma brasa" / "que a gente acende junto.").
     - **Subtítulo (`.cta-text`):** Texto em cinza claro (`#a1a1aa`), entrelinha 1.62 e largura de 520px centralizado em 2 linhas.
     - **Formulário Inline (`.inline-form`):** Campo de e-mail pílula translúcido com placeholder cinza `#71717a` e botão CTA "Quero conversar" em gradiente terracota/vermelho-alaranjado vibrante com sombra difusa âmbar projetada.
-15. **Footer:** Links institucionais, redes sociais e direitos reservados.
+15. **Footer (`.site-footer`):**
+    - **Links e Estrutura Geral:** Marca autoral com chama em gradiente âmbar, newsletter institucional, navegação por Páginas e Estúdio, e copyright com atalho de retorno ao topo.
+    - **Card Showreel 2026 (`.footer-reel` — Idêntico à Foto 2):**
+      - *Badge Superior (`.footer-reel-badge`):* Formato de retângulo suavemente arredondado (`border-radius: 12px`), fundo translúcido escuro (`rgba(255, 255, 255, 0.05)`), borda fina de 1px (`rgba(255, 255, 255, 0.1)`), tipografia 100% branca pura (`#ffffff`) em negrito/médio ("Showreel 2026"), eliminando o destaque laranja anterior e a cápsula pill genérica.
+      - *Banner de Vídeo (`.preview--sm`):* Proporção natural panorâmica 3:2 ajustada à imagem (`max-width: 250px; flex: none; height: auto;`), eliminando o esticamento vertical e o espaço vazio preto inferior.
+      - *Cantos & Bordas:* Cantos arredondados elegantes de 18px (`border-radius: 18px`), borda contínua sutil `1px solid rgba(255, 255, 255, 0.12)` e sombra de profundidade `box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85)`.
+      - *Botão de Reprodução Único:* Mantido apenas o botão de play circular centralizado sobre a claquete na própria arte (`rodape-showreel`), com remoção da camada duplicada `<span class="play">` em HTML, garantindo uma interface limpa e fiel à Foto 2.

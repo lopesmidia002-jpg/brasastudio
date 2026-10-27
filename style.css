@@ -4409,15 +4409,43 @@ button, input {
 .footer-reel {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  align-items: flex-start;
+  gap: 0.95rem;
+}
+.footer-reel-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 0.5rem 1.05rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 .preview--sm {
-  max-width: 240px;
-  border-radius: 14px;
+  width: 100%;
+  max-width: 250px;
+  flex: none;
+  height: auto;
+  align-self: flex-start;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0d0e12;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal), border-color var(--trans-normal);
+}
+.preview--sm:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 90, 31, 0.2);
 }
 .preview--sm .play {
-  width: 44px;
-  height: 44px;
+  display: none;
 }
 
 .footer-bottom {

@@ -723,7 +723,19 @@
   - Acabamento de borda com contorno fino de 1px em `rgba(255, 255, 255, 0.08)`, rim light superior acobreado `border-top: 1px solid rgba(255, 115, 45, 0.38)` e projeção de sombra `box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(210, 75, 20, 0.14)`.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 89 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 89 — Reformulação do Card de Showreel no Rodapé (Idêntico à Foto 2)**
+  - Correção da estrutura do badge superior:
+    - Criação da classe `.footer-reel-badge` com formato de retângulo de cantos arredondados (`border-radius: 12px;`).
+    - Tipografia 100% branca pura (`#ffffff`) sem serifa e com peso semi-bold (`font-weight: 600;`), eliminando o destaque alaranjado no ano ("2026") e a cápsula pill genérica anterior.
+    - Fundo translúcido escuro (`rgba(255, 255, 255, 0.05)`) com borda suave de 1px (`rgba(255, 255, 255, 0.1)`).
+  - Correção da proporção e formato do banner `.preview--sm`:
+    - Redefinição com `flex: none; height: auto; align-self: flex-start; max-width: 250px;`, neutralizando o `flex-basis: 380px` herdado de `.preview` que causava esticamento vertical do card e gerava um bloco vazio preto de ~220px na parte inferior.
+    - O card agora abraça perfeitamente a imagem do vídeo com proporção 3:2 e cantos arredondados de 18px (`border-radius: 18px;`).
+  - Eliminação da duplicidade do ícone de reprodução:
+    - Ocultado/removido o `<span class="play">` em HTML, aproveitando o botão circular de reprodução já renderizado na imagem autoral `rodape-showreel`, eliminando o ícone flutuante duplicado.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 90 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
