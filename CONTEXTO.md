@@ -1288,6 +1288,31 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint testado e validado em `http://localhost:3000/` com status HTTP 200 OK.
 
+### 2.87 Calibração das Asas Trapezoidais em Perspectiva e Iluminação da Badge em Depoimentos (Passo 93)
+- **Solicitação do Usuário:**
+  - "mude esta pagina para exatamente essa da segunda foto", fornecendo imagem comparativa focada no cabeçalho da seção de depoimentos (`#depoimentos`).
+- **Análise Comparativa (Foto 1 vs Foto 2):**
+  1. *Asas Laterais de Profundidade (`.testimonials-wing`):*
+     - Na Foto 1, as asas marrons eram triangulares e começavam muito altas (`top: 40px`, com altura excessiva), interferindo na área do título principal.
+     - Na Foto 2, as asas começam no terço médio (`top: clamp(140px, 16vw, 190px)`), alinhadas horizontalmente à altura do subtítulo e dos cartões squircle de marcas.
+     - O corte não é um triângulo inclinado no topo, mas sim um trapézio em perspectiva idêntico ao da Vitrine: o topo é 100% horizontal de x=0 até x=205 (proporção ~72% da largura do bloco) e então inclina em diagonal para dentro até a base (`clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%)` na asa esquerda e `clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%)` na asa direita).
+     - Possui um rim light fino acobreado na borda horizontal do topo `border-top: 1px solid rgba(208, 59, 30, 0.42)` com leve halo superior `box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.18)` e gradiente térmico translúcido.
+  2. *Badge Superior Estilo Cápsula (`.tag-status--testimonials`):*
+     - Na Foto 2, o topo da pill badge possui um rim light incandescente alaranjado vivo `border-top: 1px solid rgba(255, 115, 45, 0.95)` e um halo térmico ascendente suave `box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 -4px 18px rgba(255, 87, 34, 0.35)`.
+  3. *Acabamento da Fileira de Marcas Squircle (`.testimonials-brands-grid`):*
+     - Na Foto 2, a barra física de rolagem sob os ícones não fica visível, proporcionando um acabamento minimalista e moderno sem poluição visual.
+     - O contêiner preserva scroll horizontal nativo fluido (`overflow-x: auto`), ocultando apenas a barra visual (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`).
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.testimonials-wing`: atualizado para `top: clamp(140px, 16vw, 190px); height: clamp(240px, 28vw, 360px); width: clamp(260px, 28vw, 440px);`, com `border-top: 1px solid rgba(208, 59, 30, 0.42); box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.18);`.
+    - `.testimonials-wing--left`: `clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%);` com gradiente térmico a 135deg.
+    - `.testimonials-wing--right`: `clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);` com gradiente térmico a 225deg.
+    - `.tag-status--testimonials`: adicionado `border-top: 1px solid rgba(255, 115, 45, 0.95);` e halo reforçado em `box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 -4px 18px rgba(255, 87, 34, 0.35);`.
+    - `.testimonials-brands-grid`: removida a barra física de rolagem (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`) mantendo a rolagem fluida.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

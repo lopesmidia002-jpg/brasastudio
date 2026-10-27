@@ -766,7 +766,19 @@
     - Ajustado `flex: 0 0 72px` (e `flex: 0 0 68px` em mobile) em `.brand-squircle-card` para impedir contração dos cartões.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 93 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 93 — Calibração das Asas Trapezoidais em Perspectiva e Iluminação da Badge em Depoimentos (Idêntico à Foto 2)**
+  - Reestruturação das asas laterais de profundidade (`.testimonials-wing`):
+    - Posicionamento rebaixado em `top: clamp(140px, 16vw, 190px)` e altura `clamp(240px, 28vw, 360px)`, alinhando o início das asas com o subtítulo e os ícones de marcas.
+    - Geometria trapezoidal em perspectiva com topo horizontal e corte diagonal para dentro: `clip-path: polygon(0 0, 72% 0, 100% 100%, 0 100%)` na asa esquerda e `clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%)` na asa direita.
+    - Rim light fino superior em cobre `border-top: 1px solid rgba(208, 59, 30, 0.42)` com halo luminoso âmbar `box-shadow: 0 -2px 16px rgba(208, 59, 30, 0.18)` e gradiente térmico translúcido idêntico à Foto 2.
+  - Intensificação do halo na pill badge superior (`.tag-status--testimonials`):
+    - Rim light superior vibrante `border-top: 1px solid rgba(255, 115, 45, 0.95)`.
+    - Halo alaranjado ascendente suave `box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 -4px 18px rgba(255, 87, 34, 0.35)`.
+  - Acabamento ultra-clean na fileira de ícones squircle (`.testimonials-brands-grid`):
+    - Ocultada a barra de rolagem física visual (`scrollbar-width: none; -ms-overflow-style: none; ::-webkit-scrollbar { display: none; }`) mantendo a rolagem fluida e suave por toque, arrasto e scroll horizontal, eliminando interferências visuais conforme a Foto 2.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 94 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
