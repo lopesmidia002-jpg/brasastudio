@@ -1290,5 +1290,49 @@
     - Cache PWA elevado para `brasa-cache-v18` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v17` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 136 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 136 — Calibração Tipográfica dos Preços, Background Âmbar e Estrela Estática em Planos**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print dos cards da seção Planos (`.pricing` / `.plans`) e instruiu: "o tamanho da fonte do valor do card e essa font-size: 54px, o tamnaho da fonte do valor cortado e 40px, o tamanho da palavra mes e 18px, e o background e esse background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card); quero que este card fique com esse background, opacity: .55; quero que a estrela tenha essa opacidade e fique estatica aplique esm todos os cards desta sessao,".
+    - Na configuração anterior, o valor principal dos planos utilizava `font-size: 2.15rem`, o valor original cortado utilizava `font-size: 1.05rem`, a unidade utilizava `0.82rem`, o background utilizava degradê elíptico antigo em tons `#141416` a `#0d0d0f`, e a estrela WebP no Card Estúdio herdava flutuação da classe global `.spark`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - No valor do plano (`.plan .price-v`): aplicado `font-size: 54px; font-weight: 700; line-height: 1;`.
+    - No valor cortado (`.price-diagonal-slash`): aplicado `font-size: 40px; font-weight: 500; line-height: 1;` com risco diagonal proporcional (`height: 2px;`).
+    - Na palavra do período (`.plan .price-u`): aplicado `font-size: 18px; font-weight: 500;`.
+    - No container dos cards (`.plan`): aplicado `background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);` universalmente aos dois planos (*Essencial* e *Estúdio*).
+    - Na estrela do Card Estúdio (`.plan-compass-wrap` e `.plan-compass`): aplicado `opacity: .55;`, `animation: none !important;` e `transform: none !important;` tanto na regra padrão, no hover quanto na media query mobile.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.9` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v19` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v18` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 137 — Calibração dos Badges, Pílulas, Descrição e Lista de Benefícios dos Planos**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou imagens dos badges e pílulas de Planos (*Recomendado*, *Mais escolhido*, *8 peças por mês*, *2 rodadas de ajuste*, *24 peças por mês*, *Ajustes sem limite*) solicitando: `padding: 5px 13px; border-radius: 10px; color: #a6a6a6; font-size: 15px; line-height: 26px;`.
+    - Solicitou aumento do tamanho de fonte da descrição dos planos para `font-size: 15.5px;`.
+    - Solicitou para a lista de itens/benefícios: `color: #a6a6a6;`, `font-size: 16px;` e espaçamento entre os itens com `gap: 18px;`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Em `.plan .pill--dark` (*Recomendado* e *Mais escolhido*): aplicado `padding: 5px 13px; border-radius: 10px; color: #a6a6a6; font-size: 15px; line-height: 26px; font-weight: 500;`.
+    - Em `.plan .pills--strong li` (*8 peças por mês*, *2 rodadas de ajuste*, *24 peças por mês*, *Ajustes sem limite*): aplicado `padding: 5px 13px; border-radius: 10px; color: #a6a6a6; font-size: 15px; line-height: 26px; font-weight: 500;` mantendo `strong` com `color: #FFFFFF; font-weight: 700;`.
+    - Em `.plan .text-sm` (texto descritivo do plano): atualizado para `font-size: 15.5px; line-height: 1.5;`.
+    - Em `.plan .checks` (lista de benefícios): atualizado para `display: flex; flex-direction: column; gap: 18px;`.
+    - Em `.plan .checks li` (itens individuais de benefício): atualizado para `font-size: 16px; color: #a6a6a6; font-weight: 500; line-height: 1.45;`.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.0` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v20` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v19` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 138 — Calibração Tipográfica e Cromática dos Depoimentos (Texto em #a6a6a6 de 16px e Cargo em Branco)**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card de depoimento de *Helena Duarte* da seção Depoimentos (`.testimonials` / `.quotes`) e instruiu: "mude a cor dos texto do depoimento para essa #a6a6a6do e para o tamnho de 16px, e a cor do cargo para branco e aplique para todos os depoimentos".
+    - Na configuração anterior, o texto da citação (`.quote blockquote`) utilizava `font-size: 0.96rem` (~15.3px) e `color: #ffffff;`, enquanto a indicação do cargo (`.quote .q-role`) utilizava tom cinza suave `color: #d4d4d8;`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - No texto das citações (`.quote blockquote`): aplicado `font-size: 16px; line-height: 1.6; color: #a6a6a6;`.
+    - No cargo do cliente (`.quote .q-role`): aplicado `color: #ffffff; font-weight: 400;`, harmonizando perfeitamente com o nome do cliente (`.quote .q-name`) também em branco puro (`#ffffff`).
+    - As alterações propagam-se de forma consistente e elegante a todos os 6 cards de depoimentos da grade (*Helena Duarte*, *Rafael Moura*, *Lívia Campos*, *Carlos Eduardo*, *Beatriz Lima* e *Thiago Mendes*).
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.1` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v21` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v20` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 139 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

@@ -2048,6 +2048,68 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.130 Calibração Tipográfica dos Preços, Background Âmbar e Estrela Estática em Planos (Passo 136)
+- **Solicitação do Usuário:**
+  - O usuário enviou print dos cards de Planos (`#planos` / `.plans`) e instruiu: `"o tamanho da fonte do valor do card e essa font-size: 54px, o tamnaho da fonte do valor cortado e 40px, o tamanho da palavra mes e 18px, e o background e esse background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card); quero que este card fique com esse background, opacity: .55; quero que a estrela tenha essa opacidade e fique estatica aplique esm todos os cards desta sessao,"`.
+- **Diagnóstico e Análise Técnica:**
+  - Na configuração anterior, a escala tipográfica dos valores utilizava unidades relativas menores (`font-size: 2.15rem` para o valor, `1.05rem` para o valor riscado e `0.82rem` para a unidade `/ mês`).
+  - Os cards utilizavam degradê elíptico cinza profundo `#141416` a `#0d0d0f`, divergindo da nova iluminação quente âmbar radial já adotada em *Como Trabalhamos* e *Serviços*.
+  - A estrela oficial WebP (`.plan-compass`) no Card Estúdio herdava a animação global `.spark` (`sparkFloat`), gerando oscilação contínua e mantendo opacidade total (1.0).
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.plan .price-v`: calibrado com `font-size: 54px; font-weight: 700; line-height: 1;`.
+     - `.price-diagonal-slash`: calibrado com `font-size: 40px; font-weight: 500; line-height: 1;` com risco diagonal proporcional de 2px.
+     - `.plan .price-u`: calibrado com `font-size: 18px; font-weight: 500;`.
+     - `.plan`: aplicado `background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);` universalmente aos cards *Essencial* e *Estúdio*.
+     - `.plan-compass` e `.plan-compass-wrap`: configurados com `opacity: .55;`, `animation: none !important;` e `transform: none !important;` em desktop, hover e mobile.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.9`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v19`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v18` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
+### 2.131 Calibração dos Badges, Pílulas, Descrição e Lista de Benefícios dos Planos (Passo 137)
+- **Solicitação do Usuário:**
+  - O usuário enviou imagens dos badges e pílulas de Planos (*Recomendado*, *Mais escolhido*, *8 peças por mês*, *2 rodadas de ajuste*, *24 peças por mês*, *Ajustes sem limite*) solicitando: `"quero estes elementos fiquem padding: 5px 13px; border-radius: 10px; color: #a6a6a6; font-size: 15px; line-height: 26px;"`.
+  - Solicitou aumento do tamanho de fonte da descrição para `font-size: 15.5px;`.
+  - Solicitou para a lista de benefícios: `"eu quero que a cor de texto seja essa #a6a6a6 o tamanho e 16px o espaçamento entre os intens e gap: 18"`.
+- **Diagnóstico e Análise Técnica:**
+  - Os badges superiores (`.plan .pill--dark`) e as pílulas de características de entregáveis (`.plan .pills--strong li`) utilizavam `border-radius: 999px;` (estilo cápsula circular), padding de `0.26rem 0.78rem` e tipografia menor (`0.76rem` e `0.78rem`).
+  - A descrição dos planos (`.plan .text-sm`) estava configurada com `0.82rem` (~13.1px).
+  - A lista de benefícios (`.plan .checks` e `.plan .checks li`) possuía `gap: 0.62rem` (~10px), cor `#ffffff` e `font-size: 0.85rem` (~13.6px).
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.plan .pill--dark`: aplicado `padding: 5px 13px; border-radius: 10px; color: #a6a6a6; font-size: 15px; line-height: 26px; font-weight: 500;`.
+     - `.plan .pills--strong li`: aplicado `padding: 5px 13px; border-radius: 10px; color: #a6a6a6; font-size: 15px; line-height: 26px; font-weight: 500;`, mantendo `.plan .pills--strong li strong` com `color: #FFFFFF; font-weight: 700;` para que os números de destaque fiquem com alto contraste.
+     - `.plan .text-sm`: atualizado para `font-size: 15.5px; line-height: 1.5;`.
+     - `.plan .checks`: atualizado para `display: flex; flex-direction: column; gap: 18px;`.
+     - `.plan .checks li`: atualizado para `font-size: 16px; color: #a6a6a6; font-weight: 500; line-height: 1.45;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de `style.css` e `main.js` elevada para `?v=4.0`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v20`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v19` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.132 Calibração Tipográfica e Cromática dos Depoimentos (Passo 138)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do card de depoimento de *Helena Duarte* da seção Depoimentos (`.testimonials` / `.quotes`) e instruiu: `"mude a cor dos texto do depoimento para essa #a6a6a6do e para o tamnho de 16px, e a cor do cargo para branco e aplique para todos os depoimentos"`.
+- **Diagnóstico e Análise Técnica:**
+  - Na configuração anterior, o texto da citação (`.quote blockquote`) estava configurado com `font-size: 0.96rem` (~15.3px) e `color: #ffffff;`.
+  - A menção ao cargo do cliente no rodapé do cartão (`.quote .q-role`) utilizava o tom cinza `color: #d4d4d8;`.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.quote blockquote`: calibrado para `font-size: 16px; line-height: 1.6; color: #a6a6a6;`.
+     - `.quote .q-role`: atualizado para `color: #ffffff; font-weight: 400;`, harmonizando com o nome do cliente (`.quote .q-name`) também em branco puro (`#ffffff`).
+     - As regras cobrem e padronizam uniformemente todos os 6 cartões da seção de depoimentos.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=4.1`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v21`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v20` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

@@ -3414,7 +3414,7 @@ button, input {
   position: relative;
   border-radius: 22px;
   overflow: hidden;
-  background: radial-gradient(ellipse 90% 70% at 50% 15%, #141416 0%, #0d0d0f 100%);
+  background: radial-gradient(120% 70% at 100% 0%, rgba(255, 90, 31, .06), transparent 55%), var(--card);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 1px solid rgba(255, 87, 34, 0.22);
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 87, 34, 0.12);
@@ -3451,11 +3451,12 @@ button, input {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  color: #A1A1AA;
-  font-size: 0.76rem;
+  color: #a6a6a6;
+  font-size: 15px;
+  line-height: 26px;
   font-weight: 500;
-  padding: 0.26rem 0.78rem;
-  border-radius: 999px;
+  padding: 5px 13px;
+  border-radius: 10px;
 }
 
 .plan .plan-name {
@@ -3476,14 +3477,15 @@ button, input {
 
 .plan .price-v {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 2.15rem;
+  font-size: 54px;
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: -0.025em;
+  line-height: 1;
 }
 
 .plan .price-u {
-  font-size: 0.82rem;
+  font-size: 18px;
   color: #71717A;
   font-weight: 500;
 }
@@ -3493,10 +3495,11 @@ button, input {
   position: relative;
   display: inline-block;
   color: #71717A;
-  font-size: 1.05rem;
+  font-size: 40px;
   font-weight: 500;
   margin-left: 0.65rem;
   text-decoration: none;
+  line-height: 1;
 }
 
 .price-diagonal-slash::after {
@@ -3505,7 +3508,7 @@ button, input {
   left: -2px;
   right: -2px;
   top: 50%;
-  height: 1.5px;
+  height: 2px;
   background: #FF5722;
   transform: rotate(-13deg);
   transform-origin: center;
@@ -3519,7 +3522,7 @@ button, input {
 
 .plan .text-sm {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.82rem;
+  font-size: 15.5px;
   line-height: 1.5;
   color: #8E8E96;
   margin-bottom: 0.85rem;
@@ -3539,10 +3542,11 @@ button, input {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  color: #71717A;
+  padding: 5px 13px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 26px;
+  color: #a6a6a6;
   font-weight: 500;
 }
 
@@ -3558,7 +3562,7 @@ button, input {
   margin: 0 0 1.35rem;
   display: flex;
   flex-direction: column;
-  gap: 0.62rem;
+  gap: 18px;
 }
 
 .plan .checks li {
@@ -3566,8 +3570,8 @@ button, input {
   align-items: center;
   gap: 0.65rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.85rem;
-  color: #FFFFFF;
+  font-size: 16px;
+  color: #a6a6a6;
   font-weight: 500;
   line-height: 1.45;
 }
@@ -3605,7 +3609,7 @@ button, input {
   filter: brightness(1.06);
 }
 
-/* Rosa dos Ventos / Marca d'água no canto inferior direito do Card 2 sutil conforme Foto 2 */
+/* Rosa dos Ventos / Marca d'água no canto inferior direito do Card 2 (estática com opacidade 0.55) */
 .plan-compass-wrap {
   position: absolute;
   bottom: -25px;
@@ -3615,7 +3619,9 @@ button, input {
   pointer-events: none;
   z-index: 1;
   overflow: hidden;
-  filter: none; /* Removido glow incandescente para acabamento técnico sutil e limpo conforme Foto 2 */
+  filter: none;
+  transform: none !important;
+  animation: none !important;
 }
 
 .plan-compass-wrap svg,
@@ -3626,6 +3632,15 @@ button, input {
   display: block;
   object-fit: contain;
   pointer-events: none;
+  opacity: .55;
+  transform: none !important;
+  animation: none !important;
+}
+
+.plan:hover .plan-compass-wrap,
+.plan:hover .plan-compass {
+  transform: none !important;
+  animation: none !important;
 }
 
 @media (max-width: 809px) {
@@ -3637,6 +3652,8 @@ button, input {
     right: -10px;
     width: 190px;
     height: 190px;
+    transform: none !important;
+    animation: none !important;
   }
 }
 
@@ -3931,9 +3948,9 @@ button, input {
 }
 
 .quote blockquote {
-  font-size: 0.96rem;
+  font-size: 16px;
   line-height: 1.6;
-  color: #ffffff;
+  color: #a6a6a6;
   margin-bottom: 1.5rem;
   flex-grow: 1;
 }
@@ -3970,7 +3987,7 @@ button, input {
 }
 
 .quote .q-role {
-  color: #d4d4d8;
+  color: #ffffff;
   font-weight: 400;
 }
 
