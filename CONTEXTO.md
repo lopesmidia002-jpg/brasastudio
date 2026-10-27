@@ -2252,6 +2252,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
 
+### 2.139 Unificação do Formulário da Newsletter no Rodapé em Cápsula Integrada (Passo 145)
+- **Solicitação do Usuário:**
+  - O usuário enviou print comparando o formulário atual do rodapé (com input e botão empilhados) com o do CTA (cápsula única integrada), solicitando: `"aplique o mesmo estilo no campo do rodape"`.
+- **Diagnóstico e Análise Técnica:**
+  - O formulário `.footer-brand .inline-form` / `.inline-form--sm` não compartilhava as regras de cápsula unificada aplicadas ao CTA. O input assumia 100% de largura como pílula separada e o botão `"Assinar a carta"` ficava posicionado na linha de baixo.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - Container `.footer-brand .inline-form` / `.inline-form--sm`: configurado como cápsula pílula flex (`display: flex; align-items: center; justify-content: space-between; max-width: 440px; border-radius: 9999px; background: rgba(14, 15, 20, 0.72); border: 1px solid rgba(255, 255, 255, 0.16); padding: 6px 6px 6px 20px; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);`).
+     - Input transparente com `padding: 8px 12px 8px 0; color: #ffffff; font-size: 16px; border: none; outline: none; box-shadow: none;` ocupando a área esquerda da cápsula.
+     - Botão `.btn--brasa` ("Assinar a carta") embutido e alinhado à direita com `margin-left: auto; min-height: 46px; padding: 10px 22px; border-radius: 999px; font-size: 16px; font-weight: 500; line-height: 26px; cursor: pointer; transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;`.
+     - Elemento `.form-status` posicionado absolutamente abaixo da pílula (`position: absolute; top: 100%; margin-top: 10px;`).
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.8`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v28`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v27` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

@@ -4800,14 +4800,132 @@ button, input {
   display: flex;
   flex-direction: column;
 }
+
+/* Formulário da Newsletter no Rodapé em Cápsula Unificada Idêntica ao CTA */
+.footer-brand .inline-form,
 .inline-form--sm {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 440px;
   margin: 1.5rem 0 0;
-  max-width: 100%;
-  justify-content: flex-start;
+  background: rgba(14, 15, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+  padding: 6px 6px 6px 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: border-color var(--trans-fast), box-shadow var(--trans-fast);
 }
-.inline-form--sm input {
-  padding: 0.55rem 1.15rem;
-  font-size: 0.85rem;
+
+.footer-brand .inline-form:focus-within,
+.inline-form--sm:focus-within {
+  border-color: rgba(255, 87, 34, 0.65);
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.25), 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.footer-brand .inline-form .input-group,
+.inline-form--sm .input-group {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+}
+
+.footer-brand .inline-form input[type="email"],
+.inline-form--sm input[type="email"] {
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 8px 12px 8px 0 !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+}
+
+.footer-brand .inline-form input[type="email"]::placeholder,
+.inline-form--sm input[type="email"]::placeholder {
+  color: #71717a !important;
+  opacity: 1 !important;
+}
+
+.footer-brand .inline-form input[type="email"]:focus,
+.inline-form--sm input[type="email"]:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Botão Assinar a carta Embutido e Alinhado à Direita na Pílula */
+.footer-brand .inline-form .btn--brasa,
+.inline-form--sm .btn--brasa {
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #d84315 0%, #c43812 100%);
+  color: #ffffff !important;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  border: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(196, 53, 26, 0.45);
+  transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.footer-brand .inline-form .btn--brasa:hover,
+.inline-form--sm .btn--brasa:hover {
+  background: linear-gradient(180deg, #e64a19 0%, #d84315 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(216, 67, 21, 0.55);
+}
+
+.footer-brand .inline-form .form-status,
+.inline-form--sm .form-status {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 10px 0 0 0;
+  text-align: left;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .footer-brand .inline-form,
+  .inline-form--sm {
+    padding: 5px 5px 5px 16px;
+  }
+
+  .footer-brand .inline-form input[type="email"],
+  .inline-form--sm input[type="email"] {
+    font-size: 0.9rem !important;
+  }
+
+  .footer-brand .inline-form .btn--brasa,
+  .inline-form--sm .btn--brasa {
+    min-height: 42px;
+    padding: 8px 18px;
+    font-size: 15px;
+    line-height: 24px;
+  }
 }
 
 .footer-h {

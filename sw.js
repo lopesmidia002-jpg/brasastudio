@@ -5,7 +5,7 @@
  * - Network-First com fallback para Cache em navegação HTML
  */
 
-const CACHE_NAME = 'brasa-cache-v27';
+const CACHE_NAME = 'brasa-cache-v28';
 
 const STATIC_ASSETS = [
   '/',

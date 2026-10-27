@@ -1431,5 +1431,22 @@
     - Cache PWA elevado para `brasa-cache-v27` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v26` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 145 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 145 — Unificação do Formulário da Newsletter no Rodapé em Cápsula Integrada**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print comparando o formulário atual da newsletter do rodapé (onde o input e o botão "Assinar a carta" estavam empilhados verticalmente como caixas separadas) com o formulário do CTA (cápsula integrada tipo pílula com input à esquerda e botão embutido à direita), instruindo: "aplique o mesmo estilo no campo do rodape".
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Reestruturado o container `.footer-brand .inline-form` / `.inline-form--sm` como cápsula pílula horizontal contínua:
+      - `display: flex; align-items: center; justify-content: space-between;`
+      - `max-width: 440px; border-radius: 9999px;`
+      - `background: rgba(14, 15, 20, 0.72); border: 1px solid rgba(255, 255, 255, 0.16);`
+      - `padding: 6px 6px 6px 20px; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);`
+    - Campo de e-mail `.footer-brand .inline-form input[type="email"]` / `.inline-form--sm input[type="email"]` transparente (`background: transparent; border: none; outline: none; padding: 8px 12px 8px 0; color: #ffffff; font-size: 16px;`) ocupando toda a porção esquerda.
+    - Botão `.footer-brand .inline-form .btn--brasa` / `.inline-form--sm .btn--brasa` ("Assinar a carta") embutido e alinhado perfeitamente à direita (`margin-left: auto; min-height: 46px; padding: 10px 22px; border-radius: 999px; font-size: 16px; font-weight: 500; line-height: 26px; cursor: pointer; transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;`).
+    - Elemento `.form-status` posicionado absolutamente logo abaixo da cápsula (`position: absolute; top: 100%; margin-top: 10px;`).
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.8` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v28` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v27` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 146 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
