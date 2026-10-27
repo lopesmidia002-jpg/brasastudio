@@ -1241,5 +1241,22 @@
     - Cache PWA elevado para `brasa-cache-v15` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v14` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 133 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 133 — Calibração do Estilo Tipográfico e Dimensional das Tags do Portfólio**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print das tags do card do Portfólio ("Site institucional" e "Direção de arte") e instruiu: "padding: 5px 13px; border-radius: 10px; color: #a6a6a6 font-size: 15px; line-height: 26px; deixe estes elementos com este estilo".
+    - Na implementação anterior, as tags da barra inferior dos cards de projetos (`.work-bar .pills li`) herdavam a regra genérica global de `.pills li`, que aplicava cor laranja (`var(--orange-light)`), `border-radius: 9999px` (formato cápsula totalmente circular), `font-size: 0.78rem` e padding reduzido.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Criada a regra dedicada `.work-bar .pills li` com:
+      - `padding: 5px 13px;`
+      - `border-radius: 10px;`
+      - `color: #a6a6a6;`
+      - `font-size: 15px;`
+      - `line-height: 26px;`
+    - A nova estilização foi estendida uniformemente aos 3 cases do Portfólio (*Casa Ocre*, *Torra Rubi* e *Lume Arquitetura*), conferindo às tags de categoria um acabamento retangular sutilmente arredondado com tipografia cinza elegante (`#a6a6a6`) de alta legibilidade.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.6` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v16` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v15` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 134 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

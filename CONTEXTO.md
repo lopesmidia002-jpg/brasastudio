@@ -1973,6 +1973,35 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.127 Calibração de Estilo Tipográfico e Dimensional das Tags do Portfólio (Passo 133)
+- **Solicitação do Usuário:**
+  - O usuário enviou print com foco nas tags da barra inferior dos cases de Portfólio ("Site institucional" e "Direção de arte") com as especificações:
+    ```css
+    padding: 5px 13px;
+    border-radius: 10px;
+    color: #a6a6a6;
+    font-size: 15px;
+    line-height: 26px;
+    ```
+- **Diagnóstico e Análise Técnica:**
+  - As tags do rodapé dos cards de projetos (`.work-bar .pills li`) não possuíam regra CSS dedicada e herdavam o estilo genérico global `.pills li`, o qual determinava `border-radius: 9999px` (formato cápsula circular), texto em tom laranja quente (`color: var(--orange-light)`), fonte menor (`0.78rem`) e padding compacto.
+  - Para atender estritamente ao novo design system com estética editorial refinada, era necessário definir a regra de maior especificidade `.work-bar .pills li` com o formato retangular suavemente arredondado (10px) e cor cinza médio elegante (`#a6a6a6`).
+- **Solução Técnica e Implementação:**
+  1. *Regra CSS em `style.css`:*
+     - Criada a regra `.work-bar .pills li` com:
+       - `padding: 5px 13px;`
+       - `border-radius: 10px;`
+       - `color: #a6a6a6;`
+       - `font-size: 15px;`
+       - `line-height: 26px;`
+     - O ajuste foi aplicado uniformemente a todos os 3 cases da seção Portfólio (*Casa Ocre*, *Torra Rubi* e *Lume Arquitetura*).
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.6`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v16`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v15` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

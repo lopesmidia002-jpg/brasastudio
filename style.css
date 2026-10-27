@@ -2584,6 +2584,14 @@ button, input {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.work-bar .pills li {
+  padding: 5px 13px;
+  border-radius: 10px;
+  color: #a6a6a6;
+  font-size: 15px;
+  line-height: 26px;
+}
+
 .work-progress {
   position: absolute;
   top: 0;
