@@ -1332,41 +1332,32 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.cta-card .inline-form input[type="email"]`: definido com `background: transparent; border: none; outline: none; padding: 8px 12px 8px 0; color: #ffffff;`.
     - `.cta-card .btn--brasa`: embutido com `flex: 0 0 auto; background: linear-gradient(180deg, #d84315 0%, #c43812 100%); padding: 11px 24px; font-weight: 600; font-size: 0.92rem; border-radius: 9999px; border: none; box-shadow: 0 4px 14px rgba(196, 53, 26, 0.45);`.
     - Adicionada media query para dispositivos móveis abaixo de 480px com ajuste de padding proporcional.
+### 2.89 Duas Barras de Rolagem Horizontais e Remoção do Efeito Mãozinha do Mouse na Vitrine (Passo 95)
+- **Solicitação do Usuário:**
+  - "coloque duas barras de rolagem horizontal uma no meio e outra embaixo e tire o efeito maozinha do mouse", enviando a imagem da seção Vitrine (`.showcase` #lancamento) com as 2 fileiras de cards quadrados.
+- **Análise dos Requisitos:**
+  1. *Duas Barras de Rolagem Horizontais:*
+     - A Linha 1 (`#showcase-row-1`) deve ter sua própria barra de rolagem horizontal na base, posicionada no meio da galeria (entre a primeira e a segunda fileira de banners).
+     - A Linha 2 (`#showcase-row-2`) deve ter sua própria barra de rolagem horizontal na base, posicionada embaixo de toda a galeria.
+     - As barras devem ser finas (6px), com trilho translúcido sutil e thumb arredondado com realce no hover.
+     - Para permitir rolagem fluida e confortável, `.showcase-grid-track` foi configurado com 4 colunas (`repeat(4, clamp(280px, 28vw, 380px))`) e `width: max-content;`.
+  2. *Remoção Total do Efeito Mãozinha do Mouse:*
+     - Nenhum elemento da galeria deve alterar o cursor do mouse para `pointer`, `grab`, `grabbing` ou `hand`.
+     - Todos os seletores (`.showcase-scroll-row`, `.showcase-grid-track`, `.gallery-card`, `picture`, `img`, `:hover`, `:active`) foram forçados com `cursor: default !important;`.
+  3. *Interatividade com Roda do Mouse:*
+     - Em `main.js`, adicionado suporte a rolagem horizontal via roda do mouse (`wheel`) em ambas as linhas, permitindo navegação ergonômica sem qualquer efeito de arraste ou cursor de mãozinha.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.showcase-scroll-row`: configurado com `overflow-x: auto; overflow-y: hidden; cursor: default !important; padding-bottom: 14px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.06);`.
+    - `#showcase-row-1`: `margin-bottom: 8px;` para espaçamento entre a scrollbar do meio e a segunda linha.
+    - Pseudo-elementos `::-webkit-scrollbar` ativados com altura de 6px, track com margem e thumb arredondado translúcido.
+    - `.showcase-grid-track`: `grid-template-columns: repeat(4, clamp(280px, 28vw, 380px)); width: max-content; cursor: default !important;`.
+    - `.gallery-card`, `picture`, `img`, `:hover`, `:active`: `cursor: default !important;`.
+  - Em `main.js`:
+    - Adicionado listener de evento `wheel` em `#showcase-row-1` e `#showcase-row-2` para converter rolagem vertical do mouse em horizontal suave.
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
-  - Endpoint testado e validado em `http://localhost:3000/` com status HTTP 200 OK.
-
-### 2.89 Alinhamento Fino Multisseção: Vitrine com 2 Barras de Rolagem, Trapézio de Planos, 4 Ícones de Depoimentos com Scrollbar, FAQ Fechado Branco, Banner de CTA e Newsletter em Cápsula (Passo 95)
-- **Solicitações do Usuário:**
-  1. *Vitrine (`#lancamento`):* "coloque duas barra de rolagens horizontinais neste banners uma na parte debaixo e outro no meio dos banners".
-  2. *Planos (`#planos`):* "coiloque o efeito de fundo do trapezio cinza de canto igual a da segunda foto".
-  3. *Depoimentos (`#depoimentos`):* "aumnte os icones e coloque uma barra de rolagem horizontal embaixo dos icones, deixe somente quadro icones aparecendo e quando a barra for acionada revelando os outros dois icones" e "ajuste a foto dentro do circulo igual a da segunda foto".
-  4. *FAQ (`#faq`):* "coloque este icones ds depoimentos [ícone `+`] na cor branca quando fechado".
-  5. *CTA Final (`.cta-card`):* "mudes este dois banners para exatamente igual cor, letras, efeito de fundo, bordas e demais caracteristicas para que fique igual a da segunda foto".
-  6. *Footer Newsletter (`.footer-brand .inline-form--sm`):* "corrieja esta barra de modo que fique exatamente igual a essa da segunda foto".
-- **Implementações Técnicas Detalhadas:**
-  - **Vitrine (`#lancamento`):**
-    - Desacoplamento da rolagem horizontal em duas fileiras independentes (`#showcase-row-1` e `#showcase-row-2`).
-    - Cada fileira recebeu `.showcase-grid-track` configurado com `display: flex; width: max-content; gap: 16px;`.
-    - `#showcase-row-1` recebeu barra de rolagem estilizada em branco puro (`scrollbar-color: #ffffff rgba(255, 255, 255, 0.1); ::-webkit-scrollbar` de 5px) posicionada no meio da galeria entre a primeira e a segunda linha.
-    - `#showcase-row-2` recebeu a segunda barra de rolagem horizontal branca na base da galeria.
-  - **Planos (`#planos`):**
-    - Adicionado `.pricing-backdrop` em `index.html` com `.pricing-wing--right` em perspectiva angular no canto superior direito (`clip-path: polygon(28% 0, 100% 0, 100% 100%, 0% 100%)`).
-    - Aplicado gradiente translúcido cinza/prata com topo iluminado `border-top: 1px solid rgba(255, 255, 255, 0.18)` e fade vertical progressivo idêntico à Foto 2.
-  - **Depoimentos (`#depoimentos`):**
-    - Contêiner `.testimonials-brands-grid` calibrado com `max-width: 352px;` (exatamente 4 cartões de 76px + 3 gaps de 16px = 352px), mantendo 4 cartões visíveis simultaneamente e ocultando o 5º e 6º.
-    - Barra de rolagem horizontal branca fina na base (`scrollbar-color: #ffffff rgba(255, 255, 255, 0.12);`), revelando os cartões adicionais durante o scroll.
-    - Avatar circular calibrado com `transform: scale(1.1); object-fit: cover; object-position: center;`, eliminando qualquer fresta escura.
-  - **FAQ (`#faq`):**
-    - O ícone `.qa-i` foi atualizado para exibir barras em **branco puro (`#ffffff`)** no estado fechado (`+`), mudando dinamicamente para **laranja vibrante (`#ff5722`)** quando aberto (`✕`).
-  - **CTA Final (`.cta-card`):**
-    - Proporção widescreen panorâmica compacta com padding reduzido para `clamp(2.2rem, 3.4vw, 3.2rem) clamp(1.8rem, 4.5vw, 4.5rem);`.
-    - Efeito de iluminação térmica concentrado no topo direito com fundo profundo `#020203`.
-  - **Footer Newsletter (`.footer-brand .inline-form--sm`):**
-    - Transformado em cápsula pílula unificada contínua (`border-radius: 9999px; max-width: 380px; padding: 4px 4px 4px 18px;`), com campo de e-mail transparente e botão embutido à direita.
-- **Execução e Validação Docker:**
-  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
-  - Endpoint testado e validado em `http://localhost:3000/` com status HTTP 200 OK.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.

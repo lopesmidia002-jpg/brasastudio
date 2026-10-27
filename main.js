@@ -405,9 +405,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
-  // 15. Galeria de Banners: Layout 100% Estático (sem drag, inércia ou barras de rolagem)
+  // 15. Galeria de Banners Vitrine: Suporte a rolagem horizontal suave via roda do mouse (sem mãozinha)
   const initGalleryInteractivity = () => {
-    // Banners mantidos 100% estáticos conforme solicitado
+    const row1 = document.getElementById('showcase-row-1');
+    const row2 = document.getElementById('showcase-row-2');
+    [row1, row2].forEach((row) => {
+      if (row) {
+        row.addEventListener('wheel', (e) => {
+          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            row.scrollLeft += e.deltaY;
+          }
+        }, { passive: true });
+      }
+    });
   };
 
   initGalleryInteractivity();
