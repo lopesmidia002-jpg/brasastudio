@@ -213,7 +213,8 @@ A landing page está apta a ser instalada na tela de início de celulares, table
     - **Grid de Depoimentos (3 Colunas x 2 Linhas — 6 Cards):** 6 cards com superfície grafite escura (`#0d0e12`), cantos arredondados de 20px, avatares reais redondos, notas 5 estrelas brancas, citações entre aspas sem linhas divisórias (`<hr>` removido) e identificação estruturada em `Nome • Cargo` e na linha inferior a `Empresa` em tom cinza suave.
 13. **FAQ (Perguntas Frequentes — Layout Split em 2 Colunas Dark Mode Minimalista):**
     - **Fundo & Atmosfera:** Fundo preto absoluto (`#000000`) com espaçamento generoso e arquitetura limpa de 2 colunas assimétricas (`display: grid; grid-template-columns: minmax(280px, 360px) 1fr; gap: clamp(36px, 5.5vw, 84px);`).
-    - **Coluna da Esquerda (Cabeçalho Fixo/Sticky):**
+    - **Coluna da Esquerda (Cabeçalho 100% Estático sem Efeito de Rolagem):**
+      - *Posicionamento Estático:* `position: static;` eliminando a fixação flutuante durante a rolagem (sticky) e mantendo o cabeçalho ancorado no topo natural da seção.
       - *Pill Badge Superior (`.tag-status--faq`):* Pílula arredondada em dark glassmorphism com borda superior iluminada `border-top: 1px solid rgba(255, 115, 45, 0.88)`, bullet quadrado laranja neon (`#ff5722` com glow) e texto "FAQ" em branco puro.
       - *Título Principal (`.faq-title`):* Tipografia moderna sem serifa, peso 600, 100% branca pura (`#ffffff`) em duas linhas elegantes ("Perguntas" / "frequentes."), eliminando completamente a cor laranja no título conforme a Foto 2.
       - *Subtítulo (`.faq-text`):* Texto em cinza claro neutro (`#a1a1aa`), entrelinha 1.62 e largura confortável de 320px.

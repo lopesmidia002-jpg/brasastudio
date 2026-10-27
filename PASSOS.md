@@ -708,7 +708,12 @@
   - Resposta `.text-sm` com largura confortável (`max-width: 640px`) e quebra em 3 linhas idêntica à imagem.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 87 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 87 — Desativação do Efeito de Rolagem no Cabeçalho do FAQ (Texto 100% Estático)**
+  - Remoção de `position: sticky; top: 100px;` de `.faq-head`, definindo como `position: static;`.
+  - O bloco contendo a pill badge "FAQ", o título "Perguntas frequentes." e o subtítulo permanece 100% estático no topo da seção, sem flutuar ou acompanhar a rolagem da página.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 88 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

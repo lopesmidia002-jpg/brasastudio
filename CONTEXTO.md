@@ -1151,6 +1151,19 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.81 Desativação da Rolagem no Cabeçalho do FAQ (Passo 87)
+- **Solicitação do Usuário:**
+  - "deixe este texto estatico sem o efeito de rolagem" enviando imagem da coluna esquerda da seção FAQ (pill badge "FAQ", título "Perguntas frequentes." e subtítulo).
+- **Investigação Técnica:**
+  - Anteriormente, `.faq-head` possuía `position: sticky; top: 100px;`, fazendo com que todo o bloco de cabeçalho acompanhasse a viewport enquanto o usuário rolava os 6 acordeões de perguntas.
+  - Para atender rigorosamente ao pedido do usuário de deixar o texto estático sem rolagem, a regra foi redefinida para `position: static;`.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.faq-head`: atualizado de `position: sticky; top: 100px;` para `position: static;`, mantendo o bloco firmemente ancorado no topo da seção FAQ.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

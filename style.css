@@ -3759,11 +3759,10 @@ button, input {
   box-sizing: border-box;
 }
 
-/* Coluna da Esquerda: Cabeçalho com Pill Badge, Título e Subtítulo */
+/* Coluna da Esquerda: Cabeçalho 100% Estático (sem efeito de rolagem/sticky) */
 .faq-head {
   text-align: left;
-  position: sticky;
-  top: 100px;
+  position: static;
 }
 
 /* Pill Badge Superior "FAQ" com ponto laranja neon */
