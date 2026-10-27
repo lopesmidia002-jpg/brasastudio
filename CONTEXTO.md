@@ -1462,6 +1462,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.96 Slide Horizontal Contínuo Full-Width para a Esquerda com Pausa no Hover nos Cases (Passo 102)
+- **Solicitação do Usuário:**
+  - "aqui um slide horizontal para a esquerda cobrindo a tela toda horizontalmente,e quando eu passar o mouse em cima deve pausar a animacao", enviando imagem dos cards de cases (Casa Ocre, Torra Rubi, Âmbar Joias) na seção Resultados (`.results` / `#resultados`).
+- **Análise dos Requisitos e Arquitetura Técnica:**
+  1. *Cobertura Horizontal Total (Full-Width de Ponta a Ponta):*
+     - Para que o slide cubra 100% da viewport horizontal sem restrições do contêiner centralizado, `.results-scroll-wrap` foi configurado com `width: 100vw; max-width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 0; overflow: hidden;`.
+  2. *Slide Infinito Contínuo para a Esquerda:*
+     - Em `index.html`, a lista de cases foi dividida em dois grupos idênticos (`.results-cases-group`): o primeiro grupo semântico original e o segundo grupo com `aria-hidden="true"` para acessibilidade.
+     - Em `style.css`, a track `.results-marquee-track` move-se continuamente com `@keyframes slideResultsLeft` de `translate3d(0, 0, 0)` para `translate3d(-50%, 0, 0)` em `35s linear infinite`, operando um loop imperceptível e fluido.
+  3. *Pausa Automática no Hover:*
+     - Configurado `animation-play-state: paused;` para `.results-scroll-wrap:hover .results-marquee-track` e `.results-marquee-track:hover`, pausando o carrossel no instante exato em que o cursor do usuário entra na área dos cards e retomando suavemente ao retirar o mouse.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
+
 
 
 

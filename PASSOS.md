@@ -865,7 +865,17 @@
     - `.spark-compass-wrap`: filtro atualizado para `filter: drop-shadow(0 0 20px rgba(230, 74, 25, 0.45));`, emitindo uma iluminação alaranjada coesa com o preview de vídeo e a identidade da Brasa.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 102 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 102 — Slide Horizontal Contínuo Full-Width para a Esquerda com Pausa no Hover nos Cases**
+  - Implementação de contêiner de largura total horizontal (`.results-scroll-wrap`):
+    - Configurado com `width: 100vw; max-width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 0; overflow: hidden;`, cobrindo 100% da viewport de ponta a ponta sem cortes laterais.
+  - Arquitetura de marquee infinito contínuo em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Estruturado `.results-marquee-track` com dois grupos idênticos de 4 cases (`.results-cases-group`), onde o segundo grupo possui `aria-hidden="true"`.
+    - Animação CSS `@keyframes slideResultsLeft` deslizando continuamente de `translate3d(0, 0, 0)` para `translate3d(-50%, 0, 0)` em `35s linear infinite`, garantindo um loop matematicamente perfeito e imperceptível.
+  - Pausa interativa no hover:
+    - Aplicado `animation-play-state: paused;` em `.results-scroll-wrap:hover .results-marquee-track` e `.results-marquee-track:hover`, pausando instantaneamente o deslizamento ao posicionar o mouse sobre qualquer case e retomando com fluidez ao retirar o cursor.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 103 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
