@@ -1148,5 +1148,27 @@
     - Cache PWA elevado para `brasa-cache-v7` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v6` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 125 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 125 — Calibração de Bordas (border-radius: 12px) e Espaçamento (padding: 5px 12px 5px 5px) na Tag de Status do Hero**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print da tag de status do Hero (`.tag-new`) e instruiu: "eu quero as bordas desse elemento com border-radius: 12px" e em seguida complementou: "padding: 5px 12px 5px 5px; o espaçamento desse elemento".
+    - Na configuração anterior, a cápsula externa `.tag-new` estava com formato semicircular completo (`border-radius: 9999px`) e padding de `4px 16px 4px 5px`.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.tag-new`: bordas calibradas para `border-radius: 12px;` e espaçamento interno refinado para `padding: 5px 12px 5px 5px;`, mantendo alinhamento flexível com o badge interno `NOVO` e o texto "Agenda aberta para 2027".
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=2.8` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v8` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v7` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 126 — Calibração de Bordas (border-radius: 6px) e Padding (7px 10px) no Badge Laranja do Hero**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print focado exclusivamente no badge laranja `NOVO` e instruiu: "padding: 7px 10px; border-radius border-radius: 6px; so este elemento laranja".
+    - Na configuração anterior, o badge interno `.tag-new .badge` estava com formato pill (`border-radius: 9999px`) e padding de `0.38rem 0.85rem`.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.tag-new .badge`: atualizado com `padding: 7px 10px;` e `border-radius: 6px;`, mantendo a tipografia display negrito (`font-weight: 800; font-size: 0.76rem;`), o fundo laranja vibrante (`#ff551b`) e a sombra de calor contida.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=2.9` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v9` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v8` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 127 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

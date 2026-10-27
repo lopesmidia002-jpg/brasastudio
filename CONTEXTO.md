@@ -1836,6 +1836,40 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Validação de entrega HTTP 200 OK na porta 3000 para o documento principal e para os estilos calibrados.
 
+### 2.119 Calibração de Bordas (border-radius: 12px) e Espaçamento (padding: 5px 12px 5px 5px) na Tag de Status do Hero (Passo 125)
+- **Solicitação do Usuário:**
+  - "eu quero as bordas desse elemento com border-radius: 12px" e "padding: 5px 12px 5px 5px; o espaçamento desse elemento", com imagem recortada da tag de status `.tag-new`.
+- **Diagnóstico e Análise Técnica:**
+  - A cápsula externa `.tag-new` estava configurada anteriormente com cantos 100% semicirculares (`border-radius: 9999px`) e padding assimétrico de `4px 16px 4px 5px`.
+  - O usuário instruiu a alteração explícita do raio de curvatura dos cantos para `12px` e o ajuste fino do preenchimento interno para `5px 12px 5px 5px`, proporcionando uma moldura mais compacta e suavemente arredondada (estilo squircle sutil).
+- **Solução Técnica e Implementação:**
+  1. *Ajuste de Propriedades em `style.css`:*
+     - `.tag-new`: atualizado com `border-radius: 12px;` e `padding: 5px 12px 5px 5px;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versionamento avançado para `?v=2.8`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v8`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v7` adicionada na inicialização.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado via Docker Compose.
+  - Validação de entrega HTTP 200 OK na porta 3000.
+
+### 2.120 Calibração de Bordas (border-radius: 6px) e Padding (7px 10px) no Badge Laranja do Hero (Passo 126)
+- **Solicitação do Usuário:**
+  - "padding: 7px 10px; border-radius border-radius: 6px; so este elemento laranja", com print focado estritamente no badge laranja `NOVO`.
+- **Diagnóstico e Análise Técnica:**
+  - O badge interno `.tag-new .badge` estava configurado anteriormente com formato pill 100% arredondado (`border-radius: 9999px`) e padding de `0.38rem 0.85rem`.
+  - O usuário instruiu a calibração cirúrgica apenas desse elemento laranja, definindo cantos com raio suave de `6px` e preenchimento interno de `7px 10px`, preservando intacta a cápsula externa `.tag-new` (que possui `border-radius: 12px; padding: 5px 12px 5px 5px;`).
+- **Solução Técnica e Implementação:**
+  1. *Ajuste de Propriedades em `style.css`:*
+     - `.tag-new .badge`: atualizado com `padding: 7px 10px;` e `border-radius: 6px;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versionamento avançado para `?v=2.9`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v9`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v8` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado via Docker Compose.
+  - Retorno HTTP 200 OK confirmado na porta 3000.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
