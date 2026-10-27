@@ -1355,6 +1355,18 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.gallery-card`, `picture`, `img`, `:hover`, `:active`: `cursor: default !important;`.
   - Em `main.js`:
     - Adicionado listener de evento `wheel` em `#showcase-row-1` e `#showcase-row-2` para converter rolagem vertical do mouse em horizontal suave.
+### 2.90 Redução Dimensional da Rosa dos Ventos no Canto do Banner de Serviços (Passo 96)
+- **Solicitação do Usuário:**
+  - "neste banner diminua a rosa dos ventos do canto do banner", enviando imagem do Card 3 ("Lançamento integrado") da seção Serviços.
+- **Análise dos Requisitos:**
+  - Anteriormente, a rosa dos ventos / bússola vetorial astronômica decorativa possuía 280px x 280px de dimensão, ocupando uma grande porção do canto inferior direito e avançando sobre a área dos checks e do botão "Agendar conversa".
+  - O usuário solicitou explicitamente a redução dimensional desse grafismo no canto do banner para um acabamento mais discreto, proporcional e equilibrado.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.svc-compass-wrap`: dimensões reduzidas de 280px para 200px no desktop (`width: 200px; height: 200px; bottom: -35px; right: -35px;`) e de 220px para 165px no mobile (`width: 165px; height: 165px; bottom: -28px; right: -28px;`).
+    - `.svc-compass`: filtro de drop-shadow atenuado para `drop-shadow(0 0 16px rgba(230, 74, 25, 0.4))`.
+  - Em `index.html`:
+    - Atributos `width` e `height` do elemento `<svg class="svc-compass">` atualizados de 280 para 200.
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.

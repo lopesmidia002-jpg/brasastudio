@@ -805,7 +805,15 @@
     - Adicionado suporte a rolagem horizontal via roda do mouse (`wheel`) em `main.js` para ambas as linhas de forma independente.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 96 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 96 — Redução Dimensional da Rosa dos Ventos no Canto do Banner de Serviços**
+  - Redução proporcional da rosa dos ventos / bússola vetorial no Card 3 ("Lançamento integrado"):
+    - Dimensões de `.svc-compass-wrap` reduzidas de 280px para 200px no desktop (`width: 200px; height: 200px; bottom: -35px; right: -35px;`) e de 220px para 165px no mobile (`width: 165px; height: 165px; bottom: -28px; right: -28px;`).
+    - Atributos SVG em `index.html` calibrados para `width="200" height="200"`.
+    - Drop-shadow atenuado suavemente (`filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.4))`).
+    - O grafismo agora fica perfeitamente contido no canto inferior direito do card, eliminando a invasão visual sobre os itens de checks e o botão de ação "Agendar conversa".
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 97 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
