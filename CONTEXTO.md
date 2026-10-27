@@ -2184,6 +2184,74 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
 
+### 2.137 Padronização Global dos Badges de Seção (.tag-status) (Passo 143)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do badge de cabeçalho com bullet laranja neon (`▪ Vamos conversar`) e instruiu:
+    ```css
+    padding: 5px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    background: rgba(255, 255, 255, .05);
+    ```
+    "quero que este todos os itens com estes elemento fiquem com este estilo".
+- **Diagnóstico e Análise Técnica:**
+  - Todas as seções da landing page possuem badges superiores identificadores com bullet point alaranjado (`.tag-status` e modificadores específicos por seção: `.tag-status--process`, `.tag-status--features`, `.tag-status--benefits`, `.tag-status--portfolio`, `.tag-status--services`, `.tag-status--showcase`, `.tag-status--plans`, `.tag-status--testimonials`, `.tag-status--faq`, `.tag-status--cta` e `.results-head .tag-status`).
+  - Anteriormente, alguns desses badges utilizavam alturas variáveis, paddings rem (`0.36rem 0.95rem` a `0.42rem 1.05rem`), border-radius 9999px (formato pílula oval circular) ou backgrounds escuros mais opacos.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - Definida regra global unificada para `.tag-status, [class*="tag-status--"]` aplicando exatamente os atributos fornecidos:
+       ```css
+       padding: 5px 14px;
+       border-radius: 10px;
+       font-size: 16px;
+       line-height: 26px;
+       background: rgba(255, 255, 255, 0.05);
+       ```
+     - Atualizadas todas as 12 ocorrências e variações de seletores específicos de `.tag-status` ao longo de `style.css` para manter consistência absoluta, contorno suave translúcido e o bullet laranja característico.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.6`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v26`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v25` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.138 Calibração e Alinhamento à Direita do Botão do Formulário CTA (Passo 144)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do formulário da seção CTA Final (`.inline-form` / `#contato`), indicando o botão "Quero conversar" e instruiu:
+    ```css
+    min-height: 46px;
+    padding: 10px 22px;
+
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    cursor: pointer;
+    transition: transform .25s ease, background-color .25s ease, box-shadow
+    ```
+    "quero o botao ainhado a direita com este estilo".
+- **Diagnóstico e Análise Técnica:**
+  - Na estrutura anterior, o formulário `.inline-form` continha 3 filhos no layout flex: `.input-group`, `.btn.btn--brasa` e `<p class="form-status">`. Como `.form-status` mantinha dimensões de bloco dentro do flexbox, o botão ficava centralizado e criava uma folga vazia preta indesejada no terço direito da cápsula.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.cta-card .inline-form .form-status`: configurado com `position: absolute; top: 100%; left: 0; right: 0; width: 100%; margin: 10px 0 0 0; text-align: center; pointer-events: none;`, liberando completamente o fluxo interno da pílula.
+     - `.cta-card .btn--brasa` e `.cta-card .inline-form .btn--brasa`:
+       - `flex: 0 0 auto; margin-left: auto;`
+       - `min-height: 46px;`
+       - `padding: 10px 22px;`
+       - `border-radius: 999px;`
+       - `font-size: 16px; font-weight: 500; line-height: 26px;`
+       - `cursor: pointer;`
+       - `transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;`
+     - Campo de entrada `.cta-card .inline-form input[type="email"]` ajustado com `font-size: 16px;` e ocupando todo o espaço restante à esquerda.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.7`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v27`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v26` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

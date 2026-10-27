@@ -1390,5 +1390,46 @@
     - Cache PWA elevado para `brasa-cache-v25` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v24` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 143 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 143 — Calibração Global das Badges de Status das Seções (.tag-status)**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do badge pill com ponto laranja neon (`Vamos conversar`) e instruiu: "quero que este todos os itens com estes elemento fiquem com este estilo padding: 5px 14px; border-radius: 10px; font-size: 16px; line-height: 26px; background: rgba(255, 255, 255, .05);".
+    - Na configuração anterior, cada seção possuía variações locais de padding (`0.35rem 0.95rem`, `6px 14px`, `6px 16px`), border-radius (`8px`, `9px`, `999px`), fundos ligeiramente discrepantes (`#0c0d12`, `rgba(18, 19, 24, 0.85)`, etc.) e tipografia variando entre `0.8rem` e `0.92rem`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Calibrados com precisão cirúrgica a classe base `.tag-status` e todos os seus seletores modificadores (`.results-head .tag-status`, `.tag-status--process`, `.tag-status--features`, `.tag-status--benefits`, `.tag-status--portfolio`, `.tag-status--services`, `.tag-status--showcase`, `.tag-status--plans`, `.tag-status--testimonials`, `.tag-status--faq` e `.tag-status--cta`):
+      - `padding: 5px 14px;`
+      - `border-radius: 10px;`
+      - `font-size: 16px;`
+      - `line-height: 26px;`
+      - `background: rgba(255, 255, 255, 0.05);`
+    - Adicionada regra unificada de reforço para `.tag-status, [class*="tag-status--"]` assegurando consistência matemática de 100% dos badges da landing page, mantendo intactos seus pontos indicadores laranjas incandescentes (`.dot`).
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.6` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v26` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v25` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 144 — Calibração e Alinhamento à Direita do Botão do Formulário CTA**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do formulário inline da seção CTA (`.inline-form`), onde o botão "Quero conversar" ficava centralizado deixando uma área vazia preta à direita, e instruiu: "quero o botao ainhado a direita com este estilo min-height: 46px; padding: 10px 22px; border-radius: 999px; font-size: 16px; font-weight: 500; line-height: 26px; cursor: pointer; transition: transform .25s ease, background-color .25s ease, box-shadow".
+    - Na configuração anterior, o elemento `<p class="form-status">` como filho flex da cápsula ocupava espaço lateral empurrando o botão para o meio.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Configurado o botão `.cta-card .btn--brasa` e `.cta-card .inline-form .btn--brasa`:
+      - `flex: 0 0 auto;`
+      - `margin-left: auto;` (garantindo alinhamento firme e perfeito à direita da pílula)
+      - `display: inline-flex; align-items: center; justify-content: center;`
+      - `min-height: 46px;`
+      - `padding: 10px 22px;`
+      - `border-radius: 999px;`
+      - `font-size: 16px;`
+      - `font-weight: 500;`
+      - `line-height: 26px;`
+      - `cursor: pointer;`
+      - `transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;`
+    - Reposicionado o elemento `.cta-card .inline-form .form-status` como `position: absolute; top: 100%; left: 0; right: 0; width: 100%; margin: 10px 0 0 0; text-align: center; pointer-events: none;`, liberando o fluxo interno da pílula e mantendo as notificações visíveis abaixo da cápsula.
+    - Otimização do campo de entrada `.cta-card .inline-form input[type="email"]` ocupando todo o espaço restante à esquerda (`flex: 1 1 auto`) com `font-size: 16px;`.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.7` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v27` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v26` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 145 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

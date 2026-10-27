@@ -1041,16 +1041,26 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0.35rem 0.95rem;
-  border-radius: 8px;
-  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 1.4rem;
   width: fit-content;
   backdrop-filter: blur(8px);
+}
+
+.tag-status,
+[class*="tag-status--"] {
+  padding: 5px 14px !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 .tag-status .dot {
   width: 6px;
@@ -1204,10 +1214,12 @@ button, input {
 
 .results-head .tag-status {
   margin-bottom: 1.5rem;
-  border-radius: 9px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.35rem 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px 14px;
+  font-size: 16px;
+  line-height: 26px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
@@ -1449,14 +1461,15 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.05);
   /* Clarão de luz âmbar superior no topo da pílula exatamente conforme a Foto 3 */
   background-image: radial-gradient(ellipse 65% 55% at 50% -10%, rgba(255, 95, 30, 0.6) 0%, rgba(255, 95, 30, 0.15) 50%, transparent 75%);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-top: 1px solid rgba(255, 120, 45, 0.7);
-  padding: 0.35rem 1rem;
+  padding: 5px 14px;
   border-radius: 10px;
-  font-size: 0.88rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 1.6rem;
@@ -1767,14 +1780,15 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0.05);
   background-image: radial-gradient(ellipse 65% 55% at 50% -10%, rgba(255, 95, 30, 0.6) 0%, rgba(255, 95, 30, 0.15) 50%, transparent 75%);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-top: 1px solid rgba(255, 120, 45, 0.7);
-  padding: 0.35rem 1rem;
+  padding: 5px 14px;
   border-radius: 10px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.88rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 1.5rem;
@@ -2084,13 +2098,14 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: #0c0d12;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 1px solid rgba(255, 120, 50, 0.58);
-  border-radius: 9px;
-  padding: 0.35rem 0.85rem;
+  border-radius: 10px;
+  padding: 5px 14px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.84rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -2430,14 +2445,15 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: rgba(18, 19, 24, 0.85);
+  background-color: rgba(255, 255, 255, 0.05);
   background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 95, 30, 0.55) 0%, rgba(255, 95, 30, 0.12) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 125, 45, 0.88);
-  padding: 0.38rem 1.05rem;
-  border-radius: 999px;
+  padding: 5px 14px;
+  border-radius: 10px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.88rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -2681,13 +2697,14 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: rgba(18, 20, 26, 0.88);
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 120, 45, 0.85);
-  padding: 0.42rem 1.05rem;
+  padding: 5px 14px;
   border-radius: 10px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.92rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 1.6rem;
@@ -3208,14 +3225,15 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: rgba(14, 15, 18, 0.85);
+  background-color: rgba(255, 255, 255, 0.05);
   background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.55) 0%, rgba(255, 87, 34, 0.12) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 115, 45, 0.88);
-  padding: 0.38rem 1.1rem;
-  border-radius: 999px;
+  padding: 5px 14px;
+  border-radius: 10px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.88rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -3327,14 +3345,15 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background-color: rgba(16, 17, 22, 0.85);
+  background-color: rgba(255, 255, 255, 0.05);
   background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.45) 0%, rgba(255, 87, 34, 0.1) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 115, 45, 0.88);
-  padding: 0.38rem 1.1rem;
-  border-radius: 999px;
+  padding: 5px 14px;
+  border-radius: 10px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.88rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   color: #FFFFFF;
   letter-spacing: -0.01em;
@@ -3718,13 +3737,14 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
-  background: rgba(18, 18, 22, 0.85);
+  padding: 5px 14px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 115, 45, 0.95);
-  border-radius: 9999px;
+  border-radius: 10px;
   color: #f4f4f5;
-  font-size: 0.82rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   letter-spacing: 0.02em;
   margin-bottom: 24px;
@@ -4072,15 +4092,16 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background-color: rgba(18, 19, 24, 0.85);
+  padding: 5px 14px;
+  background-color: rgba(255, 255, 255, 0.05);
   background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.45) 0%, rgba(255, 87, 34, 0.1) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 115, 45, 0.88);
-  border-radius: 999px;
+  border-radius: 10px;
   color: #ffffff;
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.8rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   letter-spacing: 0.04em;
   margin-bottom: 24px;
@@ -4352,15 +4373,16 @@ button, input {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background-color: rgba(18, 19, 24, 0.85);
+  padding: 5px 14px;
+  background-color: rgba(255, 255, 255, 0.05);
   background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.45) 0%, rgba(255, 87, 34, 0.1) 55%, transparent 80%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 1px solid rgba(255, 115, 45, 0.88);
-  border-radius: 999px;
+  border-radius: 10px;
   color: #ffffff;
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 0.8rem;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 500;
   letter-spacing: 0.02em;
   margin-bottom: 24px;
@@ -4413,6 +4435,7 @@ button, input {
 
 /* Formulário Inline Cápsula Unificada Idêntica à Foto 2 */
 .cta-card .inline-form {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -4451,7 +4474,7 @@ button, input {
   outline: none;
   padding: 8px 12px 8px 0;
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: 16px;
   font-family: inherit;
   box-shadow: none;
 }
@@ -4468,27 +4491,47 @@ button, input {
   background: transparent;
 }
 
-/* Botão Quero conversar Embutido na Pílula */
-.cta-card .btn--brasa {
+/* Botão Quero conversar Alinhado à Direita com Estilo Calibrado */
+.cta-card .btn--brasa,
+.cta-card .inline-form .btn--brasa {
   flex: 0 0 auto;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  cursor: pointer;
   background: linear-gradient(180deg, #d84315 0%, #c43812 100%);
   color: #ffffff !important;
   font-family: var(--font-body, 'Inter', sans-serif);
-  font-weight: 600;
-  font-size: 0.92rem;
-  padding: 11px 24px;
-  border-radius: 9999px;
   border: none;
-  cursor: pointer;
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(196, 53, 26, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
 }
 
-.cta-card .btn--brasa:hover {
+.cta-card .btn--brasa:hover,
+.cta-card .inline-form .btn--brasa:hover {
   background: linear-gradient(180deg, #e64a19 0%, #d84315 100%);
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(216, 67, 21, 0.55);
+}
+
+/* Mensagem de status posicionada externamente abaixo da cápsula */
+.cta-card .inline-form .form-status {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 10px 0 0 0;
+  text-align: center;
+  pointer-events: none;
 }
 
 @media (max-width: 480px) {
@@ -4497,12 +4540,15 @@ button, input {
   }
 
   .cta-card .inline-form input[type="email"] {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
   }
 
-  .cta-card .btn--brasa {
-    padding: 9px 18px;
-    font-size: 0.85rem;
+  .cta-card .btn--brasa,
+  .cta-card .inline-form .btn--brasa {
+    min-height: 42px;
+    padding: 8px 18px;
+    font-size: 15px;
+    line-height: 24px;
   }
 }
 
