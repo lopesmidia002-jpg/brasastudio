@@ -1573,6 +1573,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.103 Calibração Compacta do Botão Alinhado à Esquerda e Rosa dos Ventos Sutil em Planos (Passo 109)
+- **Solicitação do Usuário:**
+  - "e no card diminuir o botao e alinhar a esquerda e deixar a estrela mais sutil assim como o original, dessa forma", enviando duas imagens comparativas do Card 2 ("Estúdio") da seção de Planos: a Foto 1 (botão ocupando 100% da largura centralizado e estrela muito incandescente com drop shadow borrado) e a Foto 2 (botão compacto alinhado à esquerda e estrela sutil em marca d'água técnica limpa).
+- **Diagnóstico e Análise Visual:**
+  - O botão `.plan-btn` possuía `width: 100%;` e ficava esticado por toda a largura do card, diferentemente da referência na Foto 2 onde ele é compacto e ancorado à esquerda.
+  - A rosa dos ventos `.plan-compass-wrap` possuía `filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.35));`, contorno amarelo incandescente (`#ffd79a`) e opacidades elevadas, ofuscando a leitura dos checks de benefícios.
+- **Solução Técnica e Implementação:**
+  1. *Calibração do Botão `.plan-btn`:*
+     - Em `style.css`, o botão recebeu `width: fit-content; display: inline-flex; align-self: flex-start; padding: 0.72rem 1.8rem;`, reduzindo a largura para o tamanho ideal da pílula e alinhando-o à esquerda na base do card.
+  2. *Refinamento Sutil da Rosa dos Ventos no SVG e CSS:*
+     - Em `style.css`, `.plan-compass-wrap` recebeu `filter: none;`, removendo o borrão alaranjado difuso.
+     - Em `index.html`, o halo central foi contido (`stop-opacity="0.16"` e `0.06"`), o retículo HUD passou a utilizar traços finos (`0.75` a `0.9`) com opacidades tênues (`0.25` a `0.45`), e a estrela de 4 pontas foi configurada com degradê terracota suave (`#e65100` a `#5c1504`) e contorno terracota sutil (`stroke="#d6682a"`), eliminando a incandescência amarela e reproduzindo a estética de marca d'água técnica elegante da Foto 2.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

@@ -3453,13 +3453,14 @@ button, input {
   flex-shrink: 0;
 }
 
-/* Botão CTA Pill-Shaped com Gradiente Terracota / Laranja e Glow Suave */
+/* Botão CTA Pill-Shaped com Gradiente Terracota / Laranja, Compacto e Alinhado à Esquerda conforme Foto 2 */
 .plan-btn {
   margin-top: auto;
-  display: flex;
+  align-self: flex-start;
+  width: fit-content;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   padding: 0.72rem 1.8rem;
   border-radius: 999px;
   background: linear-gradient(180deg, #D83D1E 0%, #C13014 100%);
@@ -3481,7 +3482,7 @@ button, input {
   filter: brightness(1.06);
 }
 
-/* Rosa dos Ventos / Marca d'água no canto inferior direito do Card 2 conforme Foto 2 */
+/* Rosa dos Ventos / Marca d'água no canto inferior direito do Card 2 sutil conforme Foto 2 */
 .plan-compass-wrap {
   position: absolute;
   bottom: -25px;
@@ -3491,7 +3492,7 @@ button, input {
   pointer-events: none;
   z-index: 1;
   overflow: hidden;
-  filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.35));
+  filter: none; /* Removido glow incandescente para acabamento técnico sutil e limpo conforme Foto 2 */
 }
 
 .plan-compass-wrap svg {

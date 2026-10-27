@@ -935,5 +935,19 @@
     - `.showcase-title .title-line-2`: estilizado com `display: block; color: #8e8e93;`, definindo a segunda linha em tom cinza suave / prateado refinado mais escuro.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 109 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 109 — Calibração Compacta do Botão Alinhado à Esquerda e Rosa dos Ventos Sutil em Planos (Conforme Foto 2)**
+  - Análise Comparativa entre as Imagens do Usuário:
+    - Na Foto 1 (estado anterior), o botão `.plan-btn` ocupava 100% da largura do card de preços e ficava centralizado na base. A rosa dos ventos (`.plan-compass-wrap`) exibia um drop-shadow alaranjado incandescente no CSS (`filter: drop-shadow(...)`), stroke amarelo brilhante (`#ffd79a`) e linhas com espessura e opacidade elevadas.
+    - Na Foto 2 (referência desejada), o botão "Agendar conversa" é compacto (`width: fit-content;`) e posicionado alinhado à esquerda (`align-self: flex-start;`). A rosa dos ventos atua como uma refinada marca d'água técnica geométrica sutil sobre o fundo escuro do card, com traços tênues e sem halos incandescentes externos.
+  - Implementação em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+      - `.plan-btn`: configurado com `width: fit-content; display: inline-flex; align-self: flex-start;`, diminuindo o botão para dimensões elegantes e alinhando-o perfeitamente à esquerda da base do card conforme a Foto 2.
+      - `.plan-compass-wrap`: alterado para `filter: none;`, eliminando o glow borrado alaranjado.
+    - [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html):
+      - Halo central reduzido (`stop-opacity="0.16"` e `0.06"`).
+      - Retículo HUD em tom terracota suave (`#d6682a`) com traços ultra-finos (`0.75` a `0.9`) e opacidades entre `0.25` e `0.45`.
+      - Estrela de 4 pontas preenchida com degradê terracota escuro suave (`#e65100` -> `#d84315` -> `#bf360c` -> `#5c1504`) e contorno terracota sutil (`stroke="#d6682a" stroke-opacity="0.45"`), idêntica à Foto 2.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 110 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
