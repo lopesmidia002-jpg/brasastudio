@@ -1130,6 +1130,27 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.80 Padronização Visual do Acordeão de FAQ Aberto (Passo 86)
+- **Solicitação do Usuário:**
+  - "mude o estilo deste banner para este da segunda foto, mude o fundo o icone de abertura e fechamento a cor, deixe exatamente igual" enviando:
+    - Foto 1: Card de acordeão aberto com fundo cinza-escuro, borda avermelhada e ícone de traço horizontal (-) cinza.
+    - Foto 2: Card de acordeão aberto com fundo **preto absoluto (`#000000`)**, borda fina nítida em **laranja vibrante (`rgba(255, 90, 31, 0.7)`)**, numeração `01` laranja, pergunta em branco puro e ícone de fechamento no formato **`✕` (X) em laranja vibrante (`#ff5722`)**.
+- **Investigação Visual e Comparação (Imagem 1 vs Imagem 2):**
+  1. *Fundo do Card:* Na Imagem 1, o card aberto possuía fundo grafite/cinza (`#111218`). Na Imagem 2, o fundo é preto absoluto puro (`#000000`), integrando-se sem desnível de cinza.
+  2. *Borda do Card:* Contorno fino nítido em laranja vibrante com luminosidade uniforme ao redor de todo o card.
+  3. *Ícone de Abertura e Fechamento:* Na Imagem 1, o ícone de abertura era uma cruz cinza e ao abrir virava um hífen cinza `-`. Na Imagem 2, o ícone de fechamento é explicitamente um **`✕` (cruz em X) na cor laranja vibrante (`#ff5722`)**, exatamente da mesma cor do número `01`.
+  4. *Tipografia e Quebra da Resposta:* Resposta ajustada com largura de 640px para quebrar em 3 linhas idênticas à imagem.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.qa`: fundo preto puro `#000000` e borda suave.
+    - `.qa[open]`: `background: #000000; border-color: rgba(255, 90, 31, 0.7); box-shadow: none;`.
+    - `.qa-i`: ícone com barras horizontal (`::before`) e vertical (`::after`) em laranja vibrante `#ff5722`.
+    - `.qa[open] .qa-i`: rotação de `45deg` com transição elástica, transformando a cruz de abertura `+` no `✕` de fechamento em laranja vibrante.
+    - `.qa .text-sm`: padding de 1.75rem e max-width calibrado para quebra em 3 linhas.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

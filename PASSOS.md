@@ -699,7 +699,16 @@
   - Formulário inline com input pílula escuro e botão "Quero conversar" em gradiente terracota/laranja com glow suave.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 86 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 86 — Padronização Visual do Acordeão de FAQ Aberto (Idêntico à Foto 2)**
+  - Fundo do card `.qa[open]` calibrado para preto absoluto (`#000000`).
+  - Borda fina contínua em laranja vibrante (`rgba(255, 90, 31, 0.7)`) contornando o card aberto.
+  - Ícone de abertura e fechamento `.qa-i` estilizado em **laranja vibrante (`#ff5722`)**:
+    - Fechado: cruz/mais (`+`) nítido em laranja.
+    - Aberto: transição geométrica com rotação de 45deg formando um **`✕` (fechamento)** em laranja vibrante idêntico à Foto 2.
+  - Resposta `.text-sm` com largura confortável (`max-width: 640px`) e quebra em 3 linhas idêntica à imagem.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 87 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

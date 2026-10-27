@@ -218,11 +218,14 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       - *Título Principal (`.faq-title`):* Tipografia moderna sem serifa, peso 600, 100% branca pura (`#ffffff`) em duas linhas elegantes ("Perguntas" / "frequentes."), eliminando completamente a cor laranja no título conforme a Foto 2.
       - *Subtítulo (`.faq-text`):* Texto em cinza claro neutro (`#a1a1aa`), entrelinha 1.62 e largura confortável de 320px.
     - **Coluna da Direita (Grid de 6 Acordeões):**
-      - 6 cards empilhados verticalmente (`.qa`) com superfície grafite escura (`#0d0e12`), cantos arredondados de 16px, contorno sutil `1px solid rgba(255, 255, 255, 0.07)` e gap de 14px.
+      - 6 cards empilhados verticalmente (`.qa`) com superfície preto absoluto (`#000000`), cantos arredondados de 18px e gap de 14px.
+      - Estado aberto (`.qa[open]`): fundo preto profundo `#000000` emoldurado por borda fina contínua em **laranja vibrante (`rgba(255, 90, 31, 0.7)`)**, sem sombras expansivas.
       - Numeração sequencial ("01" a "06") em **laranja vibrante (`#ff5722`)** em negrito.
-      - Título da pergunta em branco puro (`#ffffff`), peso 500.
-      - Ícone de expansão minimalista em cruz/plus fino (`+`) que gira e converte para menos (`-`) suavemente quando o card é aberto.
-      - Resposta expansível em cinza claro com entrelinha legível.
+      - Título da pergunta em branco puro (`#ffffff`), peso 600.
+      - **Ícone de Abertura e Fechamento em Laranja Vibrante (`#ff5722`):**
+        - Fechado: símbolo de mais (`+`) nítido em laranja.
+        - Aberto: transição geométrica suave rotacionando 45 graus para transformar o `+` em um **`✕` (fechamento)** em laranja vibrante, idêntico à Foto 2.
+      - Resposta expansível em cinza suave com entrelinha confortável e quebra alinhada.
 14. **CTA Final (`.cta` #contato — Card Dark Mode com Iluminação Térmica e Tipografia Monocromática):**
     - **Fundo & Atmosfera:** Fundo preto absoluto (`#000000`).
     - **Card Central (`.cta-card`):**
