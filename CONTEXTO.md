@@ -1367,6 +1367,19 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
     - `.svc-compass`: filtro de drop-shadow atenuado para `drop-shadow(0 0 16px rgba(230, 74, 25, 0.4))`.
   - Em `index.html`:
     - Atributos `width` e `height` do elemento `<svg class="svc-compass">` atualizados de 280 para 200.
+### 2.91 Eliminação da Moldura Externa do Botão Fale Agora (Passo 97)
+- **Solicitação do Usuário:**
+  - "corrija este icone e faça igual ao da segunda foto", fornecendo imagens comparativas do botão "Fale agora" da seção "Por Que a Brasa" (`#diferenciais` / `.benefits`).
+- **Análise Comparativa (Foto 1 vs Foto 2):**
+  1. *Foto 1 (Estado Anterior com Moldura Duplicada):*
+     - O botão branco "Fale agora" aparecia envolvido por uma moldura/cápsula oval escura externa com borda cinza translúcida.
+     - A causa raiz foi identificada na regra genérica `.pills li` em `style.css`, que atribuía `background`, `border`, `border-radius: 9999px;` e `padding` a qualquer `li` descendente de `.pills`. Como o botão estava aninhado em `<li class="pill-cta-item"><a class="btn-pill-cta">Fale agora</a></li>`, o `li` pai gerava a cápsula escura ao redor do botão branco interno.
+  2. *Foto 2 (Estado Desejado Limpo e Individual):*
+     - O botão branco "Fale agora" é uma pílula sólida e individual em branco puro (`#ffffff`) com cantos suavemente arredondados (`border-radius: 9px`), sem qualquer moldura ou cápsula escura em volta.
+- **Implementação Técnica:**
+  - Em `style.css`:
+    - `.pills--benefits li.pill-cta-item`: neutralizado completamente com `background: transparent !important; border: none !important; padding: 0 !important; margin: 0 !important; border-radius: 0 !important; box-shadow: none !important; display: inline-flex; align-items: center;`.
+    - `.pills--benefits .btn-pill-cta`: ajustado com `background: #ffffff; color: #000000 !important; font-size: 0.83rem; font-weight: 500; padding: 0.42rem 1.05rem; border-radius: 9px; border: none; box-shadow: none;`.
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.

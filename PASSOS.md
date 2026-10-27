@@ -813,7 +813,15 @@
     - O grafismo agora fica perfeitamente contido no canto inferior direito do card, eliminando a invasão visual sobre os itens de checks e o botão de ação "Agendar conversa".
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 97 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 97 — Eliminação da Moldura Externa do Botão Fale Agora (Idêntico à Foto 2)**
+  - Correção da herança de estilos em `li.pill-cta-item`:
+    - Neutralizados `background: transparent !important;`, `border: none !important;`, `padding: 0 !important;`, `margin: 0 !important;` e `border-radius: 0 !important;`, eliminando a cápsula oval escura duplicada que envolvia o botão.
+  - Calibração do botão `.btn-pill-cta`:
+    - Pílula sólida branca pura (`#ffffff`) com cantos suaves (`border-radius: 9px;`), tipografia preta nítida (`color: #000000 !important; font-weight: 500; font-size: 0.83rem;`) e padding refinado de `0.42rem 1.05rem`.
+    - O botão agora se apresenta de forma limpa, direta e individual, perfeitamente alinhado na segunda linha de pílulas sem molduras aninhadas, exatamente idêntico à Foto 2.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 98 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
