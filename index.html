@@ -20,11 +20,12 @@
 
 <link rel="preload" href="assets/img/hero-preview-800.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="preload" href="assets/img/brasa-estrela-200.webp" as="image" type="image/webp">
+<link rel="preload" href="assets/video/brasa-hero-bg-poster.webp" as="image" type="image/webp">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23000000%27/%3E%3Cpath d=%27M16 5c1.8 5 8 7.4 8 14a8 8 0 0 1-16 0c0-3.6 1.8-5.8 3.6-7.1 0 2.6 1.3 4.4 3.1 4.9C13.4 13 13.8 8.6 16 5z%27 fill=%27%23ff5a1f%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=2.2">
+<link rel="stylesheet" href="style.css?v=2.3">
 <script>document.documentElement.classList.add('js')</script>
-<script src="main.js?v=2.2" defer></script>
+<script src="main.js?v=2.3" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -62,7 +63,12 @@
 <main id="conteudo">
 
 <section class="hero" id="topo-hero" aria-labelledby="hero-titulo">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/brasa-hero-bg-poster.webp" width="1024" height="562" tabindex="-1">
+      <source src="assets/video/brasa-hero-bg.webm" type="video/webm">
+      <source src="assets/video/brasa-hero-bg2.webm" type="video/webm">
+    </video>
+  </div>
   <div class="container hero-in">
     <div class="hero-copy">
       <p class="tag-new"><span class="badge">NOVO</span><span>Agenda aberta para 2027</span></p>

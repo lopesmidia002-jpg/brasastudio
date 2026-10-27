@@ -426,10 +426,34 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('caches' in window) {
     caches.keys().then((names) => {
       names.forEach((name) => {
-        if (name === 'brasa-cache-v1') {
+        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2') {
           caches.delete(name);
         }
       });
     });
+  }
+
+  // 17. Garantia de autoplay contínuo em loop para o vídeo atmosférico da Hero
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playVideo = () => {
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Fallback caso o navegador bloqueie autoplay inicial
+          const triggerPlay = () => {
+            heroVideo.play().catch(() => {});
+            window.removeEventListener('click', triggerPlay);
+            window.removeEventListener('touchstart', triggerPlay);
+            window.removeEventListener('scroll', triggerPlay);
+          };
+          window.addEventListener('click', triggerPlay, { once: true });
+          window.addEventListener('touchstart', triggerPlay, { once: true });
+          window.addEventListener('scroll', triggerPlay, { once: true, passive: true });
+        });
+      }
+    };
+    playVideo();
   }
 });

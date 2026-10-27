@@ -1059,5 +1059,24 @@
     - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): rotina de auto-limpeza adicionada para purgar versões obsoletas do CacheStorage.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 120 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 120 — Inserção de Imagem Poster e Vídeo de Fundo em Loop Contínuo na Hero**
+  - Solicitação e Diagnóstico:
+    - O usuário solicitou: "quero que coloque essa imagem e video como background da minha hero fazendo o video em loop assim como na pagina original alterando o video e imagem para que estao na pagina do projeto brasa-hero-bg.webm, brasa-hero-bg2.webm".
+    - A estrutura original contava com uma tag `<video class="hero-video">` com poster `assets/video/brasa-hero-bg-poster.webp`, enquanto a landing page mantinha a div `.hero-bg` vazia.
+  - Implementação em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html):
+    - Inserida tag `<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/brasa-hero-bg-poster.webp" width="1024" height="562" tabindex="-1">` dentro de `<div class="hero-bg" aria-hidden="true">`.
+    - Fontes configuradas para os dois arquivos webm do projeto: `<source src="assets/video/brasa-hero-bg.webm" type="video/webm">` e `<source src="assets/video/brasa-hero-bg2.webm" type="video/webm">`.
+    - Adicionado `<link rel="preload" href="assets/video/brasa-hero-bg-poster.webp" as="image" type="image/webp">` no `<head>` para renderização instantânea do poster antes do streaming de vídeo.
+    - Atualizado versionamento dos assets para `?v=2.3`.
+  - Estilização em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.hero-bg`: configurado com `position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;`.
+    - `.hero-video`: estilizado com `position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.52; mix-blend-mode: screen; pointer-events: none;` fundindo perfeitamente os efeitos térmicos com os gradientes radiais do fundo da hero.
+    - `.hero-in`: garantido `position: relative; z-index: 1;` mantendo todos os textos, botões e carrosséis com interatividade total e nitidez.
+  - Interatividade em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js):
+    - Adicionada rotina de garantia de autoplay silencioso contínuo (`heroVideo.muted = true; heroVideo.play()`) com fallback para primeiro toque/clique caso o navegador imponha restrição de autoplay.
+  - Cache PWA em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js):
+    - Atualizado para `brasa-cache-v3` para forçar invalidação imediata do cache anterior em todos os clientes.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK para a página e para todos os assets de mídia (`/assets/video/brasa-hero-bg-poster.webp`, `/assets/video/brasa-hero-bg.webm`, `/assets/video/brasa-hero-bg2.webm`).
+
+- [ ] **Passo 121 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

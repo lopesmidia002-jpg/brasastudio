@@ -1738,6 +1738,30 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.114 Background Atmosférico em Vídeo e Poster na Hero (Passo 120)
+- **Solicitação do Usuário:**
+  - "quero que coloque essa imagem e video como background da minha hero fazendo o video em loop assim como na pagina original alterando o video e imagem para que estao na pagina do projeto brasa-hero-bg.webm, brasa-hero-bg2.webm <video class="hero-video" muted="" loop="" playsinline="" preload="none" poster="assets/video/brasa-hero-bg-poster.webp" width="1024" height="562" tabindex="-1"><source src="assets/video/brasa-hero-bg.webm" type="video/webm"><source src="assets/video/brasa-hero-bg.mp4" type="video/mp4"></video>".
+- **Diagnóstico e Análise Técnica:**
+  - A estrutura da Hero no código possuía apenas uma `<div class="hero-bg" aria-hidden="true"></div>` vazia, enquanto o layout original concebia uma experiência sensorial cinematográfica com vídeo contínuo em loop mesclado ao fundo escuro.
+  - O diretório `assets/video/` continha a imagem de pré-carregamento `brasa-hero-bg-poster.webp` (25.428 bytes) e os vídeos WebM de alta eficiência `brasa-hero-bg.webm` e `brasa-hero-bg2.webm` (19.014 bytes cada).
+- **Solução Técnica e Implementação:**
+  1. *Marcação HTML5 Semântica e Acessível em `index.html`:*
+     - Inserida a tag `<video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/brasa-hero-bg-poster.webp" width="1024" height="562" tabindex="-1">` dentro de `<div class="hero-bg" aria-hidden="true">`.
+     - Inseridas fontes alternativas com prioridade WebM para compatibilidade com navegadores modernos: `assets/video/brasa-hero-bg.webm` e `assets/video/brasa-hero-bg2.webm`.
+     - Adicionado `<link rel="preload" href="assets/video/brasa-hero-bg-poster.webp" as="image" type="image/webp">` no `<head>` para exibição imediata do poster estático antes do início da reprodução do vídeo (elimina flash visual ou layout shift).
+     - Atualizado versionamento dos assets para `?v=2.3`.
+  2. *Estilização de Camadas e Mesclagem em `style.css`:*
+     - `.hero-bg`: posicionado com `position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;`.
+     - `.hero-video`: posicionado de forma centralizada e responsiva via `position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.52; mix-blend-mode: screen; pointer-events: none;`. O modo de mesclagem `screen` funde a luminescência do vídeo com os gradientes radiais do Hero de forma cinematográfica e impede que o elemento intercepte cliques ou seleções do usuário.
+     - `.hero-in`: declarado com `position: relative; z-index: 1;`, garantindo que todo o conteúdo textual, botões e carrosséis fiquem acima do vídeo e perfeitamente interativos.
+  3. *Garantia de Autoplay e Resiliência em `main.js`:*
+     - Implementada rotina resiliente de reprodução contínua: inicialização silenciosa forçada (`heroVideo.muted = true`) com captura de promessa (`heroVideo.play().catch(...)`). Caso o navegador imponha políticas restritivas de reprodução, ouvintes passivos descartáveis (`{ once: true }`) em eventos de interação humana (clique, scroll ou toque) disparam o vídeo automaticamente.
+  4. *Invalidação de Cache PWA em `sw.js`:*
+     - Elevada a chave de cache para `brasa-cache-v3` para assegurar que todos os clientes recebam imediatamente o novo HTML, CSS e scripts sem retain de versões obsoletas em disco.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
+  - Validação de resposta HTTP 200 OK tanto na raiz (`http://localhost:3000/`) quanto nos ativos de mídia (`/assets/video/brasa-hero-bg-poster.webp`, `/assets/video/brasa-hero-bg.webm`, `/assets/video/brasa-hero-bg2.webm`).
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
