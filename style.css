@@ -4204,6 +4204,7 @@ button, input {
   position: absolute;
   background: #ffffff;
   border-radius: 1px;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Barra horizontal do ícone */
@@ -4222,9 +4223,14 @@ button, input {
   width: 2px;
 }
 
-/* Quando aberto: rotação de 45deg transforma o '+' no '✕' (fechamento) em laranja vibrante */
+/* Quando aberto: rotação de 45deg transforma o '+' no '✕' (fechamento) com a mesma cor da borda */
 .qa[open] .qa-i {
   transform: rotate(45deg);
+}
+
+.qa[open] .qa-i::before,
+.qa[open] .qa-i::after {
+  background: rgba(255, 90, 31, 0.7);
 }
 
 .qa .text-sm {

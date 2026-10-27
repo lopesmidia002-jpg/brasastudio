@@ -1334,5 +1334,18 @@
     - Cache PWA elevado para `brasa-cache-v21` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v20` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 139 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 139 — Sincronização Cromática do Ícone de Fechamento (X) com a Borda no FAQ**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do item aberto do FAQ (`.qa[open]`) com borda laranja (`rgba(255, 90, 31, 0.7)`) e instruiu: "quando a opçao de faq estiver aberta o xis tem que ficar da cor da borda".
+    - Na configuração anterior, o ícone `.qa-i` rotacionava 45 graus para formar o "X", porém suas barras (`::before` e `::after`) permaneciam com preenchimento branco puro (`background: #ffffff;`).
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Em `.qa-i::before, .qa-i::after`: adicionada transição suave de cor `transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);`.
+    - Em `.qa[open] .qa-i::before, .qa[open] .qa-i::after`: definido `background: rgba(255, 90, 31, 0.7);`, sincronizando com precisão absoluta a cor do ícone "X" de fechamento com a tonalidade da borda laranja ativa do card.
+    - Quando o item é fechado, o ícone retorna ao símbolo de mais (+) em branco puro com transição suave.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.2` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v22` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v21` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 140 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

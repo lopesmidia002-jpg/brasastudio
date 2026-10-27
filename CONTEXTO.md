@@ -2110,6 +2110,22 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
 
+### 2.133 Sincronização Cromática do Ícone de Fechamento (X) com a Borda no FAQ (Passo 139)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do item aberto do FAQ (`.qa[open]`) com borda laranja (`rgba(255, 90, 31, 0.7)`) e instruiu: `"quando a opçao de faq estiver aberta o xis tem que ficar da cor da borda"`.
+- **Diagnóstico e Análise Técnica:**
+  - No estado aberto (`.qa[open]`), o ícone `.qa-i` rotacionava 45 graus para se transformar em um "X" (✕), porém suas barras horizontais e verticais (`::before` e `::after`) mantinham a cor branca padrão (`background: #ffffff;`).
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - Em `.qa-i::before, .qa-i::after`: adicionada transição suave de cor `transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);`.
+     - Em `.qa[open] .qa-i::before, .qa[open] .qa-i::after`: definido `background: rgba(255, 90, 31, 0.7);`, sincronizando fielmente a cor do "X" com a tonalidade da borda laranja ativa do acordeão.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.2`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v22`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v21` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

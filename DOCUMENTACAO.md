@@ -252,9 +252,9 @@ A landing page está apta a ser instalada na tela de início de celulares, table
       - Estado aberto (`.qa[open]`): fundo preto profundo `#000000` emoldurado por borda fina contínua em **laranja vibrante (`rgba(255, 90, 31, 0.7)`)**, sem sombras expansivas.
       - Numeração sequencial ("01" a "06") em **laranja vibrante (`#ff5722`)** em negrito.
       - Título da pergunta em branco puro (`#ffffff`), peso 600.
-      - **Ícone de Abertura e Fechamento em Branco Puro (`#ffffff`):**
+      - **Ícone de Abertura (+) e Fechamento (✕):**
         - Fechado: símbolo de mais (`+`) nítido em traço branco puro (`background: #ffffff;`).
-        - Aberto: transição geométrica suave rotacionando 45 graus para transformar o `+` em um **`✕` (fechamento)** em branco puro, garantindo contraste nítido e elegante sobre os cards escuros.
+        - Aberto: transição geométrica suave rotacionando 45 graus para transformar o `+` em um **`✕` (fechamento)** sincronizado exatamente com a cor da borda laranja (`background: rgba(255, 90, 31, 0.7);`), criando coerência visual instantânea com o estado ativo do acordeão.
       - Resposta expansível em cinza suave com entrelinha confortável e quebra alinhada.
 14. **CTA Final (`.cta` #contato — Card Dark Mode Widescreen com Iluminação Térmica em Dois Pontos):**
     - **Fundo & Atmosfera da Seção:** Fundo preto absoluto (`#000000`).
