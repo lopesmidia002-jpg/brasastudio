@@ -885,6 +885,16 @@
     - `.case-box`: camada de texto sobreposta (`position: relative; z-index: 2; margin-top: auto; background: rgba(7, 8, 12, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 0.95rem 1.15rem 1.15rem;`), exatamente idêntica à Foto 2.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 104 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
-  - Aguardar instruções explícitas do usuário para o próximo passo.
+- [x] **Passo 104 — Restauração da Animação de Movimentação no Hover dos Cards de Diferenciais (Conforme o Original)**
+  - Diagnóstico em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Durante refatorações anteriores da seção de Diferenciais (`.features`), a transição de movimentação física (`transform`) e a elevação de profundidade haviam sido removidas, deixando apenas a transição de `border-color`. Ao passar o mouse, os cards permaneciam estáticos.
+  - Implementação das micro-interações e animações no hover:
+    - `.feature`: configurado com `transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal); cursor: default;`.
+    - `.feature:hover`: elevação vertical suave com `transform: translateY(-4px);`, realce de bordas (`border-color: rgba(255, 255, 255, 0.18); border-top-color: rgba(255, 120, 50, 0.55);`) e sombra volumétrica aprofundada (`box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 25px -5px rgba(255, 90, 31, 0.18);`).
+    - `.feature--hot:hover`: elevação idêntica com destaque térmico nas bordas e sombra quente ampliada (`box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 14px 38px rgba(220, 75, 20, 0.25);`).
+    - `.feature:hover .icon-orb`: leve pulso de escala `transform: scale(1.04);` com borda e glow âmbar intensificados (`border-color: rgba(255, 120, 50, 0.75); box-shadow: 0 0 22px rgba(255, 95, 30, 0.35);`).
+    - `.feature:hover .feature-arrow`: transição da seta diagonal `↗` com deslocamento responsivo `transform: translate(2px, -2px);`, ganho de cor branca pura (`#ffffff`) e opacidade máxima (`opacity: 1`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
+- [ ] **Passo 105 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+  - Aguardar instruções explícitas do usuário para o próximo passo.

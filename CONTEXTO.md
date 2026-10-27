@@ -1495,6 +1495,23 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.98 Restauração da Animação de Movimentação no Hover dos Cards de Diferenciais (Passo 104)
+- **Solicitação do Usuário:**
+  - "nesses cards faltam a animacao de movimentar quando passa o mouse assim como no original", enviando imagem com foco nos cards da seção Diferenciais ("Marca que vende PRO" e "Sistema editável").
+- **Diagnóstico e Causa Raiz:**
+  - No código inicial do projeto, os cards `.feature` possuíam transição elástica com elevação vertical suave ao passar o mouse (`transform: translateY(-4px);` e aumento da sombra projetada).
+  - Em ajustes de design anteriores focados exclusivamente na paleta cromática, a declaração de `transform` e `transition` composta foi substituída apenas por `transition: border-color var(--trans-fast);`, fazendo com que os cards ficassem estáticos no hover.
+- **Solução Técnica e Implementação:**
+  1. *Elevação Física e Suavidade Spring:*
+     - Em `style.css`, `.feature` recebeu `transition: transform var(--trans-normal), border-color var(--trans-normal), box-shadow var(--trans-normal); cursor: default;`.
+     - No estado `.feature:hover` e `.feature--hot:hover`, foi restabelecida a elevação fluida com `transform: translateY(-4px);`, acompanhada pelo aprofundamento das sombras volumétricas (`box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 0 25px -5px rgba(255, 90, 31, 0.18)` e no destaque térmico do Card 1 (`box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.95), 0 14px 38px rgba(220, 75, 20, 0.25)`).
+  2. *Micro-interações de Apoio:*
+     - Orbe do ícone (`.icon-orb`): ganha leve escala `transform: scale(1.04);` e intensificação do glow âmbar (`box-shadow: 0 0 22px rgba(255, 95, 30, 0.35);`).
+     - Seta superior direita (`.feature-arrow`): desloca-se sutilmente `transform: translate(2px, -2px);` com opacidade total e cor branca pura (`#ffffff`).
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
