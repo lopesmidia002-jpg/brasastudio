@@ -1228,5 +1228,18 @@
     - Cache PWA elevado para `brasa-cache-v14` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v13` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 132 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 132 — Calibração da Estrela da Etapa 3 com Opacidade 0.55 e Comportamento Estático**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card da Etapa 3 ("Entrega") na seção "Como Trabalhamos" destacando a Rosa dos Ventos / estrela de 4 pontas no canto inferior direito e instruiu: "opacity: .55; quero que a estrela tenha essa opacidade e fique estatica".
+    - Na configuração anterior, a estrela `.step-compass` herdava a animação flutuante contínua da classe global `.spark` (`animation: sparkFloat 8s ease-in-out infinite alternate;`), causando rotação e translação que quebravam a estética estática pretendida, além de possuir opacidade total (1.0).
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Em `.step-compass`: aplicado `opacity: .55;`, `animation: none !important;` e `transform: none !important;`.
+    - Em `.step-compass-wrap`: garantido `animation: none !important;` e `transform: none !important;`.
+    - No hover do card (`.step:hover .step-compass-wrap, .step:hover .step-compass`): garantido `animation: none !important;` e `transform: none !important;`, assegurando que a estrela permaneça 100% estática e com opacidade translúcida harmoniosa de 0.55 em qualquer interação.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.5` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v15` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v14` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 133 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

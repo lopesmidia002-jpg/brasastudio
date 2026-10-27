@@ -1955,6 +1955,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.126 Calibração da Estrela da Etapa 3 com Opacidade 0.55 e Comportamento 100% Estático (Passo 132)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do card da Etapa 3 ("Entrega") na seção "Como Trabalhamos" destacando a Rosa dos Ventos / estrela no canto inferior direito e instruiu: `"opacity: .55; quero que a estrela tenha essa opacidade e fique estatica"`.
+- **Diagnóstico e Análise Técnica:**
+  - A estrela oficial WebP (`.step-compass`) possuía a classe global `.spark`, que continha a regra `animation: sparkFloat 8s ease-in-out infinite alternate;`. Isso provocava movimento contínuo de rotação e translação sutil, quebrando a proposta de refinamento estático desejada pelo usuário.
+  - Além disso, a opacidade estava em seu valor padrão pleno (`1.0`), tornando o elemento visualmente mais proeminente do que o desejado na composição com o novo fundo iluminado em degradê âmbar.
+- **Solução Técnica e Implementação:**
+  1. *Ajustes de Regras CSS em `style.css`:*
+     - Em `.step-compass`: aplicado `opacity: .55;`, `animation: none !important;` e `transform: none !important;`.
+     - Em `.step-compass-wrap`: configurado `animation: none !important;` e `transform: none !important;`, preservando o drop-shadow difuso.
+     - No hover do card (`.step:hover .step-compass-wrap, .step:hover .step-compass`): garantido `animation: none !important;` e `transform: none !important;`, mantendo a estabilidade visual absoluta durante a interação com o mouse.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.5`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v15`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v14` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

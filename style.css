@@ -1632,7 +1632,7 @@ button, input {
   box-shadow: 0 12px 28px rgba(216, 67, 21, 0.6), 0 0 24px rgba(255, 87, 34, 0.4) !important;
 }
 
-/* Rosa dos ventos Âmbar Brasa da Etapa 3 idêntica à Foto 5 */
+/* Rosa dos ventos Âmbar Brasa da Etapa 3 idêntica à Foto 5 (estática com opacidade 0.55) */
 .step-compass-wrap {
   position: absolute;
   bottom: -18px;
@@ -1642,6 +1642,8 @@ button, input {
   pointer-events: none;
   z-index: 2;
   filter: drop-shadow(0 0 16px rgba(255, 90, 31, 0.45));
+  animation: none !important;
+  transform: none !important;
 }
 .step-compass {
   width: 100%;
@@ -1649,6 +1651,14 @@ button, input {
   display: block;
   object-fit: contain;
   pointer-events: none;
+  opacity: .55;
+  animation: none !important;
+  transform: none !important;
+}
+.step:hover .step-compass-wrap,
+.step:hover .step-compass {
+  transform: none !important;
+  animation: none !important;
 }
 
 .sticky-col {
