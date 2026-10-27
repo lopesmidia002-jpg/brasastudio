@@ -2126,6 +2126,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
 
+### 2.134 Calibração Tipográfica e Cromática da Descrição e Itens nos Cards de Serviços (Passo 140)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do card da seção Serviços (`#servicos` / `.svc`) e instruiu: `"mude a cor dos texto para essa #a6a6a6 do e para o tamnho de 16px da descrição e os item com a mesma cor e tamanho ,"`.
+- **Diagnóstico e Análise Técnica:**
+  - Na configuração anterior, a descrição dos serviços (`.svc .text-sm`) estava configurada com `0.96rem` (~15.3px) e cor cinza `#A1A1AA`.
+  - Os itens de benefícios (`.svc .checks li`) utilizavam `color: #FFFFFF;` e `font-size: 0.96rem`.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.svc .text-sm`: calibrado para `font-size: 16px; line-height: 1.6; color: #a6a6a6;`.
+     - `.svc .checks li`: calibrado para `font-size: 16px; line-height: 1.6; color: #a6a6a6; font-weight: 500;`.
+     - Padronização uniforme estendida a todos os 3 cards da seção Serviços (*Site sob medida*, *Identidade completa* e *Lançamento integrado*).
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.3`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v23`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v22` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

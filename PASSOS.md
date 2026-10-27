@@ -1347,5 +1347,18 @@
     - Cache PWA elevado para `brasa-cache-v22` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v21` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 140 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 140 — Calibração Tipográfica e Cromática da Descrição e Itens nos Cards de Serviços**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card da seção Serviços (`#servicos` / `.svc`) e instruiu: "mude a cor dos texto para essa #a6a6a6 do e para o tamnho de 16px da descrição e os item com a mesma cor e tamanho ,".
+    - Na configuração anterior, a descrição dos serviços (`.svc .text-sm`) utilizava `font-size: 0.96rem` (~15.3px) e cor cinza `#A1A1AA`, enquanto os itens de benefícios (`.svc .checks li`) utilizavam `color: #FFFFFF;` e `font-size: 0.96rem`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Na descrição do serviço (`.svc .text-sm`): aplicado `font-size: 16px; line-height: 1.6; color: #a6a6a6;`.
+    - Nos itens de benefícios (`.svc .checks li`): aplicado `font-size: 16px; line-height: 1.6; color: #a6a6a6; font-weight: 500;`.
+    - As alterações padronizam uniformemente os 3 cards de Serviços (*Site sob medida*, *Identidade completa* e *Lançamento integrado*).
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.3` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v23` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v22` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 141 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

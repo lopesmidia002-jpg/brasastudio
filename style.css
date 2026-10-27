@@ -2845,9 +2845,9 @@ button, input {
 
 .svc .text-sm {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.96rem;
+  font-size: 16px;
   line-height: 1.6;
-  color: #A1A1AA;
+  color: #a6a6a6;
   margin-bottom: 1.45rem;
   position: relative;
   z-index: 2;
@@ -2900,10 +2900,10 @@ button, input {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #FFFFFF;
+  color: #a6a6a6;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
-  font-size: 0.96rem;
+  font-size: 16px;
   line-height: 1.6;
 }
 
