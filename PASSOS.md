@@ -680,7 +680,18 @@
   - Remoção dos event listeners de drag/inércia/scroll no `main.js`.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 84 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 84 — Reformulação da Seção FAQ para Layout Split em 2 Colunas (Idêntico à Foto 2)**
+  - Reestruturação do container `.faq-in` com CSS Grid de 2 colunas (`display: grid; grid-template-columns: minmax(280px, 360px) 1fr; gap: clamp(36px, 5.5vw, 84px);`).
+  - Coluna da Esquerda (Cabeçalho):
+    - Dark rounded pill badge (`.tag-status--faq`) com bullet quadrado laranja neon (`#ff5722` com glow) e texto "FAQ" em branco puro.
+    - Título massivo em duas linhas ("Perguntas" / "frequentes.") 100% branco puro (`#ffffff`), eliminando o texto laranja anterior.
+    - Subtítulo em cinza claro (`#a1a1aa`) com quebra fluida e alinhamento à esquerda.
+  - Coluna da Direita (Grid de 6 Acordeões):
+    - Cartões escuros (`#0d0e12`) com borda suave (`rgba(255, 255, 255, 0.07)`), números destacados em laranja vibrante (`#ff5722`) e perguntas em branco puro com ícone de cruz (`+`).
+  - Fundo em preto absoluto (`#000000`) e responsividade fluida para mobile e tablet.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 85 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

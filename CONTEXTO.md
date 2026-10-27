@@ -1073,6 +1073,34 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.78 Reformulação da Seção FAQ para Layout Split em 2 Colunas (Passo 84)
+- **Solicitação do Usuário:**
+  - "mude esta pagina para esta segunda imagem" enviando:
+    - Foto 1: layout anterior de coluna única centralizada com eyebrow "FAQ" laranja e "frequentes." em laranja.
+    - Foto 2: layout split contemporâneo em 2 colunas assimétricas com cabeçalho à esquerda (pill badge escura, bullet laranja neon, "FAQ" branco, título em 2 linhas 100% branco "Perguntas / frequentes." e subtítulo cinza) e 6 acordeões à direita com números em laranja vibrante e cartões escuros.
+- **Investigação Visual e Comparação Minuciosa (Imagem 1 vs Imagem 2):**
+  1. *Layout da Seção:* A Imagem 1 organizava cabeçalho centralizado no topo com lista empilhada abaixo em coluna única (`max-width: 900px`). A Imagem 2 adota arquitetura split de 2 colunas lado a lado (`grid-template-columns: minmax(280px, 360px) 1fr`), com `max-width: 1240px`.
+  2. *Badge Superior:* Substituição do texto simples laranja "FAQ" por uma dark rounded pill badge (`.tag-status--faq`) com bullet quadrado laranja neon (`#ff5722` com glow) e texto "FAQ" em branco puro.
+  3. *Título Principal:* Título em duas linhas ("Perguntas" / "frequentes.") agora **100% monocromático branco puro (`#ffffff`)**, eliminando a cor laranja da segunda palavra presente na Imagem 1.
+  4. *Acordeões da Direita:* 6 cards grafite (`#0d0e12`), borda sutil de 1px, números destacados em laranja vibrante (`#ff5722`), perguntas em branco e ícone minimalista de cruz (`+`).
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Estruturado `.faq-in` com `.faq-head` à esquerda e `.faq-list` à direita.
+    - Inserida a badge `.tag-status--faq` com `.dot` e texto "FAQ".
+    - Atualizado o título com `<span class="faq-title-line">Perguntas</span>` e `<span class="faq-title-line">frequentes.</span>`.
+    - Formatados individualmente os 6 elementos `<details class="qa">` com `<summary>` e `<p class="text-sm">`.
+  - Em `style.css`:
+    - `.sec.faq`: fundo preto absoluto `#000000`, padding vertical calibrado.
+    - `.faq-in`: CSS Grid responsivo com 2 colunas (`minmax(280px, 360px) 1fr`), gap confortável e `max-width: 1240px`.
+    - `.faq-head`: `position: sticky; top: 100px;` para fixação suave durante o scroll.
+    - `.tag-status--faq`: pill badge com iluminação suave no topo, bullet quadrado laranja e texto crisp.
+    - `.faq-title`: tipografia sem serifa de alto impacto 100% branca pura.
+    - `.qa`: cartões escuros com borda sutil, hover elegante, numeração alaranjada `#ff5722` e ícone de mais/menos em cruz fina.
+    - Breakpoint responsivo em `@media (max-width: 900px)` colapsando para 1 coluna fluida.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

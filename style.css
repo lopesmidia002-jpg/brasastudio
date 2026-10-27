@@ -3737,91 +3737,207 @@ button, input {
 }
 
 /* --------------------------------------------------------------------------
-   15. SEÇÃO FAQ
+   15. SEÇÃO FAQ (LAYOUT SPLIT EM 2 COLUNAS IDÊNTICO À FOTO 2)
+   - Coluna Esquerda: Tag pílula com ponto laranja e texto FAQ, título em 2 linhas 100% branco, subtítulo cinza
+   - Coluna Direita: 6 Acordeões estilizados em cartões grafite com números em laranja vibrante e ícones de mais/menos
    -------------------------------------------------------------------------- */
-.faq-in {
-  max-width: 900px;
+.sec.faq {
+  background-color: #000000;
+  padding: clamp(4.5rem, 7.5vw, 7.5rem) 0;
+  position: relative;
+  z-index: 2;
 }
 
+.faq-in {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3.5vw, 48px);
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: clamp(36px, 5.5vw, 84px);
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* Coluna da Esquerda: Cabeçalho com Pill Badge, Título e Subtítulo */
+.faq-head {
+  text-align: left;
+  position: sticky;
+  top: 100px;
+}
+
+/* Pill Badge Superior "FAQ" com ponto laranja neon */
+.tag-status--faq {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: rgba(18, 19, 24, 0.85);
+  background-image: radial-gradient(ellipse 75% 65% at 50% -20%, rgba(255, 87, 34, 0.45) 0%, rgba(255, 87, 34, 0.1) 55%, transparent 80%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 115, 45, 0.88);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.tag-status--faq .dot {
+  width: 6px;
+  height: 6px;
+  background: #ff5722;
+  border-radius: 1.5px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.95);
+  flex-shrink: 0;
+}
+
+/* Título em duas linhas: 100% Branco Puro (sem laranja) */
+.faq-title {
+  font-family: var(--font-display, 'Inter', sans-serif);
+  font-size: clamp(2.3rem, 3.6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.25rem 0;
+}
+
+.faq-title-line {
+  display: block;
+  color: #ffffff;
+}
+
+/* Subtítulo em cinza suave e quebra harmoniosa */
+.faq-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.98rem;
+  line-height: 1.62;
+  color: #a1a1aa;
+  max-width: 320px;
+  margin: 0;
+}
+
+/* Coluna da Direita: Lista de Acordeões */
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 2.5rem;
+  gap: 14px;
+  margin: 0;
+  width: 100%;
 }
 
 .qa {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background: #0d0e12;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 16px;
   overflow: hidden;
-  transition: all var(--trans-fast);
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
+
+.qa:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
 .qa[open] {
   border-color: rgba(255, 90, 31, 0.35);
-  background: #0e0e0e;
+  background: #111218;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .qa summary {
   list-style: none;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.6rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1.25rem;
   user-select: none;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--text-white);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: #ffffff;
 }
+
 .qa summary::-webkit-details-marker {
   display: none;
 }
 
+/* Número com destaque em Laranja Vibrante */
 .qa-n {
-  font-family: var(--font-display);
+  font-family: var(--font-display, 'Inter', sans-serif);
   font-weight: 700;
-  color: var(--orange-primary);
+  color: #ff5722;
   font-size: 0.95rem;
   min-width: 24px;
 }
 
 .qa-q {
   flex-grow: 1;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
+/* Ícone de Mais (+) / Menos (-) Elegante e Delicado */
 .qa-i {
   width: 20px;
   height: 20px;
   position: relative;
   flex-shrink: 0;
 }
-.qa-i::before, .qa-i::after {
+
+.qa-i::before,
+.qa-i::after {
   content: '';
   position: absolute;
-  background: var(--text-muted);
-  transition: transform var(--trans-fast);
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 1px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
+
 .qa-i::before {
   top: 9px;
   left: 3px;
   right: 3px;
-  height: 2px;
+  height: 1.5px;
 }
+
 .qa-i::after {
   top: 3px;
   bottom: 3px;
   left: 9px;
-  width: 2px;
+  width: 1.5px;
 }
+
 .qa[open] .qa-i::after {
   transform: rotate(90deg);
   opacity: 0;
 }
 
 .qa .text-sm {
-  padding: 0 2rem 1.5rem calc(2rem + 24px + 1.25rem);
+  padding: 0 1.6rem 1.35rem calc(1.6rem + 24px + 1.25rem);
   margin: 0;
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Responsividade Mobile e Tablet */
+@media (max-width: 900px) {
+  .faq-in {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .faq-head {
+    position: static;
+  }
+  .faq-text {
+    max-width: 100%;
+  }
 }
 
 /* --------------------------------------------------------------------------
