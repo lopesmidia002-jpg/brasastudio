@@ -126,21 +126,21 @@
         </span>
       </div>
 
-      <!-- Rosa dos Ventos / Retículo Tático HUD Sci-Fi em Dourado-Âmbar de Alta Precisão -->
+      <!-- Rosa dos Ventos / Retículo Tático HUD Sci-Fi em Laranja Térmico Brasa conforme Foto 2 -->
       <div class="spark-compass-wrap" aria-hidden="true">
         <svg class="spark-compass" width="200" height="200" viewBox="0 0 200 200" fill="none">
           <defs>
             <radialGradient id="compass-glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ffbf47" stop-opacity="0.55"/>
-              <stop offset="45%" stop-color="#d99426" stop-opacity="0.22"/>
-              <stop offset="75%" stop-color="#b07010" stop-opacity="0.06"/>
-              <stop offset="100%" stop-color="#b07010" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#ff5722" stop-opacity="0.55"/>
+              <stop offset="45%" stop-color="#d84315" stop-opacity="0.22"/>
+              <stop offset="75%" stop-color="#bf360c" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#bf360c" stop-opacity="0"/>
             </radialGradient>
             <linearGradient id="star-gradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#fedc82"/>
-              <stop offset="35%" stop-color="#e0aa3a"/>
-              <stop offset="70%" stop-color="#bf8322"/>
-              <stop offset="100%" stop-color="#945d0e"/>
+              <stop offset="0%" stop-color="#ff7a3d"/>
+              <stop offset="38%" stop-color="#f4511e"/>
+              <stop offset="75%" stop-color="#d84315"/>
+              <stop offset="100%" stop-color="#bd3609"/>
             </linearGradient>
             <filter id="gold-spark-glow" x="-30%" y="-30%" width="160%" height="160%">
               <feGaussianBlur stdDeviation="3.2" result="blur"/>
@@ -153,23 +153,23 @@
 
           <!-- Marcações Técnicas / Retículo HUD Sci-fi -->
           <!-- 1. Anel interno concêntrico pontilhado -->
-          <circle cx="100" cy="100" r="32" stroke="#c59b47" stroke-width="1" stroke-dasharray="2.5, 3.5" opacity="0.6"/>
+          <circle cx="100" cy="100" r="32" stroke="#d46022" stroke-width="1" stroke-dasharray="2.5, 3.5" opacity="0.65"/>
 
           <!-- 2. Círculo intermediário contínuo fino (tangente às pontas da estrela) -->
-          <circle cx="100" cy="100" r="58" stroke="#c59b47" stroke-width="1.2" opacity="0.85"/>
+          <circle cx="100" cy="100" r="58" stroke="#d46022" stroke-width="1.2" opacity="0.88"/>
 
           <!-- 3. Anel concêntrico externo pontilhado -->
-          <circle cx="100" cy="100" r="76" stroke="#c59b47" stroke-width="1.1" stroke-dasharray="3, 4" opacity="0.75"/>
+          <circle cx="100" cy="100" r="76" stroke="#d46022" stroke-width="1.1" stroke-dasharray="3, 4" opacity="0.75"/>
 
           <!-- 4. Eixos ortogonais longos cruzados -->
-          <line x1="100" y1="8" x2="100" y2="192" stroke="#c59b47" stroke-width="1.2" opacity="0.9"/>
-          <line x1="8" y1="100" x2="192" y2="100" stroke="#c59b47" stroke-width="1.2" opacity="0.9"/>
+          <line x1="100" y1="8" x2="100" y2="192" stroke="#d46022" stroke-width="1.2" opacity="0.92"/>
+          <line x1="8" y1="100" x2="192" y2="100" stroke="#d46022" stroke-width="1.2" opacity="0.92"/>
 
           <!-- 5. Linhas diagonais de referência a 45 graus -->
-          <line x1="38" y1="38" x2="162" y2="162" stroke="#c59b47" stroke-width="0.95" opacity="0.55"/>
-          <line x1="38" y1="162" x2="162" y2="38" stroke="#c59b47" stroke-width="0.95" opacity="0.55"/>
+          <line x1="38" y1="38" x2="162" y2="162" stroke="#d46022" stroke-width="0.95" opacity="0.55"/>
+          <line x1="38" y1="162" x2="162" y2="38" stroke="#d46022" stroke-width="0.95" opacity="0.55"/>
 
-          <!-- 6. Estrela sólida de 4 pontas com bordas côncavas perfeitas em gradiente âmbar -->
+          <!-- 6. Estrela sólida de 4 pontas com bordas côncavas perfeitas em gradiente laranja brasa -->
           <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#star-gradient)" filter="url(#gold-spark-glow)"/>
           <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#star-gradient)"/>
         </svg>

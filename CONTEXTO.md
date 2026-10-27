@@ -1449,6 +1449,20 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.95 Calibração da Cor da Rosa dos Ventos do Hero para Laranja Térmico / Brasa Conforme Foto 2 (Passo 101)
+- **Solicitação do Usuário:**
+  - "mude a cor da rosa dos ventos deixanto igual ao da segunda foto", enviando duas imagens comparativas do card de preview de vídeo no Hero: a Foto 1 com a rosa dos ventos em amarelo-dourado / âmbar pálido, e a Foto 2 com a rosa dos ventos em laranja térmico / brasa vibrante.
+- **Análise Visual e Estratégia de Implementação:**
+  1. *Substituição Cromática:*
+     - A estrela sólida de 4 pontas (`#star-gradient`) e seu halo difuso central (`#compass-glow`), anteriormente em tons dourados (`#fedc82`, `#e0aa3a`), foram recalibrados para degradê em tons de fogo e brasa viva (`#ff7a3d` -> `#f4511e` -> `#d84315` -> `#bd3609`).
+     - As marcações de retículo HUD (anéis concêntricos pontilhados e contínuos, eixos ortogonais e linhas diagonais cruzadas) foram convertidas de dourado `#c59b47` para laranja acobreado `#d46022` com níveis de opacidade calibrados (0.92 nos eixos, 0.88 no anel médio tangente, 0.75 no anel externo e 0.65 no anel interno).
+  2. *Sombra e Profundidade no CSS:*
+     - Em `style.css`, `.spark-compass-wrap` teve seu filtro de drop-shadow alterado de dourado `rgba(200, 155, 70, 0.4)` para iluminação difusa alaranjada `rgba(230, 74, 25, 0.45)`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
+
 
 
 

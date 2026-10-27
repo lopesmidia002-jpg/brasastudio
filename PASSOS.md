@@ -856,7 +856,16 @@
     - `.title--about .title-line-2`: cor cinza suave / prateada `#8e8e93` idêntica à Foto 2, gerando harmonia visual e refinamento de hierarquia entre a primeira e a segunda linha do título.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 101 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 101 — Calibração da Cor da Rosa dos Ventos do Hero para Laranja Térmico / Brasa (Conforme Foto 2)**
+  - Substituição da paleta dourada/âmbar clara da rosa dos ventos do Hero (`.spark-compass-wrap`) pela paleta laranja térmico / brasa vibrante da Foto 2:
+    - Gradiente da estrela (`#star-gradient`): degradê com 4 paradas em tons de brasa viva (`#ff7a3d` -> `#f4511e` -> `#d84315` -> `#bd3609`).
+    - Halo difuso central (`#compass-glow`): luminescência alaranjada suave (`#ff5722` a `#bf360c`).
+    - Marcações técnicas / retículo HUD: anéis concêntricos pontilhados e contínuos, eixos ortogonais e linhas diagonais calibrados com traço em tom laranja acobreado (`#d46022`) com opacidades equilibradas.
+  - Ajuste de drop-shadow em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.spark-compass-wrap`: filtro atualizado para `filter: drop-shadow(0 0 20px rgba(230, 74, 25, 0.45));`, emitindo uma iluminação alaranjada coesa com o preview de vídeo e a identidade da Brasa.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 102 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

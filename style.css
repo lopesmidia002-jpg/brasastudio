@@ -889,7 +889,7 @@ button, input {
   border-color: rgba(255, 255, 255, 0.22) !important;
 }
 
-/* Rosa dos ventos em Dourado Opaco calibrada conforme solicitação */
+/* Rosa dos ventos em Laranja Térmico / Brasa calibrada conforme Foto 2 */
 .spark-compass-wrap {
   position: absolute;
   bottom: -38px;
@@ -898,7 +898,7 @@ button, input {
   height: 200px;
   pointer-events: none;
   z-index: 5;
-  filter: drop-shadow(0 0 20px rgba(200, 155, 70, 0.4));
+  filter: drop-shadow(0 0 20px rgba(230, 74, 25, 0.45));
 }
 .spark-compass {
   width: 100%;
