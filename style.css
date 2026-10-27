@@ -2812,12 +2812,13 @@ button, input {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.09);
-  color: #A1A1AA;
+  color: #a6a6a6;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.82rem;
+  font-size: 15px;
+  line-height: 26px;
   font-weight: 500;
-  padding: 0.35rem 0.95rem;
-  border-radius: 999px;
+  padding: 5px 13px;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2869,11 +2870,12 @@ button, input {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  padding: 0.38rem 0.95rem;
+  border-radius: 10px;
+  padding: 5px 13px;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.88rem;
-  color: #71717A;
+  font-size: 15px;
+  line-height: 26px;
+  color: #a6a6a6;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
@@ -4285,11 +4287,38 @@ button, input {
   box-sizing: border-box;
 }
 
+/* Vídeo Atmosférico de Fundo no CTA Card (brasa-hero-bg) */
+.cta-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 32px;
+}
+
+.cta-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.65;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
 /* Camadas Cênicas de Iluminação Térmica e Difusa do Banner conforme a Foto 2 */
 .cta-glow {
   position: absolute;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .cta-glow--right {
@@ -4315,7 +4344,7 @@ button, input {
 .cta-card .cta-text,
 .cta-card .inline-form {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Pill Badge Superior "Vamos conversar" com ponto laranja neon */

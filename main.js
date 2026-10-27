@@ -412,24 +412,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('caches' in window) {
     caches.keys().then((names) => {
       names.forEach((name) => {
-        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2' || name === 'brasa-cache-v3' || name === 'brasa-cache-v4' || name === 'brasa-cache-v5' || name === 'brasa-cache-v6' || name === 'brasa-cache-v7' || name === 'brasa-cache-v8' || name === 'brasa-cache-v9' || name === 'brasa-cache-v10' || name === 'brasa-cache-v11' || name === 'brasa-cache-v12' || name === 'brasa-cache-v13' || name === 'brasa-cache-v14' || name === 'brasa-cache-v15' || name === 'brasa-cache-v16' || name === 'brasa-cache-v17' || name === 'brasa-cache-v18' || name === 'brasa-cache-v19' || name === 'brasa-cache-v20' || name === 'brasa-cache-v21' || name === 'brasa-cache-v22') {
+        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2' || name === 'brasa-cache-v3' || name === 'brasa-cache-v4' || name === 'brasa-cache-v5' || name === 'brasa-cache-v6' || name === 'brasa-cache-v7' || name === 'brasa-cache-v8' || name === 'brasa-cache-v9' || name === 'brasa-cache-v10' || name === 'brasa-cache-v11' || name === 'brasa-cache-v12' || name === 'brasa-cache-v13' || name === 'brasa-cache-v14' || name === 'brasa-cache-v15' || name === 'brasa-cache-v16' || name === 'brasa-cache-v17' || name === 'brasa-cache-v18' || name === 'brasa-cache-v19' || name === 'brasa-cache-v20' || name === 'brasa-cache-v21' || name === 'brasa-cache-v22' || name === 'brasa-cache-v23' || name === 'brasa-cache-v24') {
           caches.delete(name);
         }
       });
     });
   }
 
-  // 17. Garantia de autoplay contínuo em loop para o vídeo atmosférico da Hero
-  const heroVideo = document.querySelector('.hero-video');
-  if (heroVideo) {
-    heroVideo.muted = true;
+  // 17. Garantia de autoplay contínuo em loop para os vídeos atmosféricos (Hero e CTA Final)
+  const bgVideos = document.querySelectorAll('.hero-video, .cta-video');
+  bgVideos.forEach((vid) => {
+    vid.muted = true;
     const playVideo = () => {
-      const playPromise = heroVideo.play();
+      const playPromise = vid.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
           // Fallback caso o navegador bloqueie autoplay inicial
           const triggerPlay = () => {
-            heroVideo.play().catch(() => {});
+            vid.play().catch(() => {});
             window.removeEventListener('click', triggerPlay);
             window.removeEventListener('touchstart', triggerPlay);
             window.removeEventListener('scroll', triggerPlay);
@@ -441,5 +441,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
     playVideo();
-  }
+  });
 });

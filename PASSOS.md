@@ -1360,5 +1360,35 @@
     - Cache PWA elevado para `brasa-cache-v23` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v22` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 141 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 141 — Calibração dos Badges e Pílulas nos Cards de Serviços**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do badge de categoria (`Site`) e das pílulas de entregáveis/prazo (`R$ 24 mil / projeto` e `5–7 semanas`) da seção Serviços (`#servicos` / `.svc`) e instruiu: "quero que o estilo deste item tenha o padding 5px 13px fonte size 15px e line-hegiht 26px, e aplique em todos os cards desta sessao".
+    - Na configuração anterior, o badge (`.svc .pill--dark`) utilizava `padding: 0.35rem 0.95rem; font-size: 0.82rem; border-radius: 999px;` e as pílulas (`.svc .pills--strong li`) utilizavam `padding: 0.38rem 0.95rem; font-size: 0.88rem; border-radius: 999px;`.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Em `.svc .pill--dark` (*Site*, *Marca* e *Campanha*): aplicado `padding: 5px 13px; font-size: 15px; line-height: 26px; border-radius: 10px; color: #a6a6a6; font-weight: 500;`.
+    - Em `.svc .pills--strong li` (valores e prazos dos projetos): aplicado `padding: 5px 13px; font-size: 15px; line-height: 26px; border-radius: 10px; color: #a6a6a6; font-weight: 500;`, preservando `strong` em branco puro (`#ffffff; font-weight: 700;`).
+    - As alterações padronizam com acabamento retangular arredondado suave todos os 3 cards da seção Serviços (*Site sob medida*, *Identidade completa* e *Lançamento integrado*), em total harmonia com os cards de Planos e Portfólio.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.4` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v24` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v23` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 142 — Integração do Vídeo Atmosférico em Loop no Background do Card de CTA**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card da seção CTA Final (`.cta-card` / `#contato`) e instruiu: "eu quero que o bacjgraound deste carda tenha o efeito assets\video\brasa-hero-bg.webm assets\video\brasa-hero-bg2.webm".
+    - Na configuração anterior, o card de CTA utilizava apenas gradientes radiais estáticos e pseudo-elementos difusos (`.cta-glow`), sem o vídeo dinâmico de partículas e brasa viva em movimento.
+  - Implementação Técnica em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html), [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css) e [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js):
+    - Em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html): inserido container `.cta-video-bg` com elemento `<video class="cta-video" autoplay muted loop playsinline preload="auto" poster="assets/video/brasa-cta-bg-poster.webp">` referenciando `assets/video/brasa-hero-bg.webm` e `assets/video/brasa-hero-bg2.webm`.
+    - Em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+      - `.cta-video-bg`: posicionado em `position: absolute; inset: 0; z-index: 0; border-radius: 32px; overflow: hidden; pointer-events: none;`.
+      - `.cta-video`: configurado com `width: 100%; height: 100%; object-fit: cover; opacity: 0.65; mix-blend-mode: screen; pointer-events: none;`, fundindo as partículas de calor e o brilho pulsante da brasa sobre o gradiente escuro do card.
+      - `.cta-glow`: ajustado para `z-index: 1;`.
+      - Conteúdo interativo (`.tag-status--cta`, `.cta-title`, `.cta-text`, `.inline-form`): ajustado para `position: relative; z-index: 2;`, garantindo legibilidade nítida e total interatividade com o formulário de conversão.
+    - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): rotina de garantia de autoplay e fallback com listeners de interação do usuário estendida para todos os vídeos de fundo (`document.querySelectorAll('.hero-video, .cta-video')`).
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.5` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v25` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v24` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 143 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

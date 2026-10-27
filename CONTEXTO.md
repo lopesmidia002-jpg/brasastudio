@@ -2144,6 +2144,46 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
 
+### 2.135 Calibração dos Badges e Pílulas nos Cards de Serviços (Passo 141)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do badge de categoria (`Site`) e das pílulas de entregáveis/prazo (`R$ 24 mil / projeto` e `5–7 semanas`) da seção Serviços (`#servicos` / `.svc`) e instruiu: `"quero que o estilo deste item tenha o padding 5px 13px fonte size 15px e line-hegiht 26px, e aplique em todos os cards desta sessao"`.
+- **Diagnóstico e Análise Técnica:**
+  - Na configuração anterior, o badge (`.svc .pill--dark`) utilizava `padding: 0.35rem 0.95rem; font-size: 0.82rem; border-radius: 999px;`.
+  - As pílulas de entregáveis e prazos (`.svc .pills--strong li`) utilizavam `padding: 0.38rem 0.95rem; font-size: 0.88rem; border-radius: 999px;`.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.svc .pill--dark`: aplicado `padding: 5px 13px; font-size: 15px; line-height: 26px; border-radius: 10px; color: #a6a6a6; font-weight: 500;`.
+     - `.svc .pills--strong li`: aplicado `padding: 5px 13px; font-size: 15px; line-height: 26px; border-radius: 10px; color: #a6a6a6; font-weight: 500;`, com números/valores em destaque branco puro (`strong` com `color: #ffffff; font-weight: 700;`).
+     - Estilo aplicado uniformemente a todos os 3 cards da seção Serviços (*Site sob medida*, *Identidade completa* e *Lançamento integrado*), harmonizando com Planos e Portfólio.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.4`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v24`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v23` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.136 Integração do Vídeo Atmosférico em Loop no Background do Card de CTA (Passo 142)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do card da seção CTA Final (`.cta-card` / `#contato`) e instruiu: `"eu quero que o bacjgraound deste carda tenha o efeito assets\video\brasa-hero-bg.webm assets\video\brasa-hero-bg2.webm"`.
+- **Diagnóstico e Análise Técnica:**
+  - O card de CTA possuía apenas gradientes radiais em CSS e glows difusos, enquanto o usuário desejava a mesma animação cinematográfica de calor e brasa viva em movimento utilizada na Hero (`brasa-hero-bg.webm` / `brasa-hero-bg2.webm`).
+- **Solução Técnica e Implementação:**
+  1. *Marcação HTML em `index.html`:*
+     - Inserido contêiner `.cta-video-bg` com elemento `<video class="cta-video" autoplay muted loop playsinline preload="auto" poster="assets/video/brasa-cta-bg-poster.webp">` com sources para `brasa-hero-bg.webm` e `brasa-hero-bg2.webm`.
+  2. *Regras CSS em `style.css`:*
+     - `.cta-video-bg`: ajustado para `position: absolute; inset: 0; z-index: 0; border-radius: 32px; overflow: hidden; pointer-events: none;`.
+     - `.cta-video`: configurado com `width: 100%; height: 100%; object-fit: cover; opacity: 0.65; mix-blend-mode: screen; pointer-events: none;`.
+     - `.cta-glow`: ajustado para `z-index: 1;`.
+     - Conteúdo interativo (`.tag-status--cta`, `.cta-title`, `.cta-text`, `.inline-form`): ajustado para `position: relative; z-index: 2;`.
+  3. *Scripts em `main.js`:*
+     - Listener de garantia de autoplay e fallback de interação estendido para todos os vídeos de fundo (`document.querySelectorAll('.hero-video, .cta-video')`).
+  4. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.5`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v25`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v24` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
