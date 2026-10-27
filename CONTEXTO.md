@@ -1672,6 +1672,20 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.109 Calibração do Carrossel de Depoimentos para 3 Ícones por Vez (Passo 115)
+- **Solicitação do Usuário:**
+  - "eu quero que apareça tres por vez", acompanhado de imagem da área de ícones de marcas parceiras da seção Depoimentos.
+- **Diagnóstico e Análise Visual:**
+  - O contêiner `.testimonials-icons-wrap` possuía largura máxima de 440px, permitindo a visibilidade de 4 a 5 ícones simultaneamente na viewport.
+  - O usuário determinou que a composição deve exibir rigorosamente 3 ícones por vez centralizados logo acima do botão "Ver portfólio".
+- **Solução Técnica e Implementação:**
+  1. *Calibração Dimensional em `style.css`:*
+     - Definido `.testimonials-icons-wrap` com `width: 248px; max-width: 248px;`, valor exato correspondente a 3 cartões de 72px e 2 gaps de 16px (`3 * 72 + 2 * 16 = 248px`).
+     - Máscara de fade lateral refinada para `linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)`, garantindo transição sutil nas pontas enquanto o loop infinito de 18s desliza com suavidade e pausa no hover.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

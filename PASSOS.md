@@ -1008,5 +1008,14 @@
     - `.plan:hover`: adicionada micro-interação elástica suave de elevação vertical (`transform: translateY(-4px);`), realce térmico na borda superior (`border-top-color: rgba(255, 115, 45, 0.5);`) e sombra volumétrica aprofundada.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 115 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 115 — Calibração do Carrossel de Depoimentos para Exibir 3 Ícones por Vez**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário solicitou: "eu quero que apareça tres por vez", enviando print da seção de Depoimentos focando nos ícones de marcas parceiras e no botão "Ver portfólio".
+    - Na configuração anterior com `max-width: 440px;`, o contêiner exibia entre 4 e 5 ícones simultaneamente, cortando as extremidades de forma dispersa.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.testimonials-icons-wrap`: calibrado com precisão matemática para `width: 248px; max-width: 248px;` (exatamente a largura de 3 cartões de 72px somados a 2 gaps de 16px: `3 * 72px + 2 * 16px = 248px`).
+    - Máscara de fade progressiva ajustada para `linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)`, garantindo que os 3 ícones centrais fiquem em foco nítido e os cartões adjacentes desvaneçam suavemente durante a rolagem contínua.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 116 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
