@@ -12,8 +12,9 @@ Ao final de qualquer nova funcionalidade (feat), correção de bug (fix), refato
 - **NÃO inicie o próximo passo de `PASSOS.md` de forma automática ou autônoma.**
 - Conclua o passo atual, atualize o `PASSOS.md` marcando a caixa correspondente e aguarde o comando explícito do usuário para iniciar o próximo passo.
 
-## 3. Geração Obrigatória de Texto para Commit
-- Sempre ao final de qualquer implementação, correção ou entrega de passo, forneça uma sugestão clara e padronizada de texto para commit Git no formato Conventional Commits (ex: `feat: ...`, `fix: ...`, `docs: ...`).
+## 3. Geração Obrigatória de Texto para Commit (Sem Commit Automático)
+- Sempre ao final de qualquer implementação, correção ou entrega de passo, forneça apenas uma sugestão clara e padronizada de texto para commit Git no formato Conventional Commits (ex: `feat: ...`, `fix: ...`, `docs: ...`).
+- **NÃO FAÇA COMMIT AUTOMÁTICO:** Não execute comandos `git commit` ou `git push` automaticamente pelo terminal. Apenas forneça o texto formatado para commit na resposta ao usuário para que ele revise e comite manualmente quando desejar.
 
 ## 4. Execução 100% no Docker
 - Toda a aplicação e qualquer validação de execução deve rodar 100% em container Docker (atualmente mapeado para http://localhost:3000 via Docker Compose e Nginx).

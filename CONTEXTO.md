@@ -1713,5 +1713,5 @@ Conforme alinhado com o usuário:
    - `DOCUMENTACAO.md`
    - `PASSOS.md`
    - `CONTEXTO.md`
-3. **Geração de Texto para Commit:** Toda resposta final de implementação ou correção deve conter uma sugestão de mensagem para commit Git clara, padronizada e descritiva.
+3. **Apenas Texto para Commit (Sem Commit Automático):** Toda resposta final de implementação ou correção deve conter apenas uma sugestão de mensagem para commit Git clara, padronizada e descritiva no formato Conventional Commits. O agente NÃO deve executar commit automático (`git commit` ou `git push`) pelo terminal; a ação de commit fica a cargo do usuário.
 4. **Execução Exclusiva em Docker:** Qualquer validação de ambiente deve garantir que o serviço esteja ativo e operacional no container Docker na porta 3000.
