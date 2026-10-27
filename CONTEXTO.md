@@ -1699,6 +1699,19 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.111 Calibração do Carrossel do Hero para 3 Ícones por Vez (Passo 117)
+- **Solicitação do Usuário:**
+  - "faça o mesmo efeito no slide superior como foi feito no inferior", acompanhado de imagens comparativas entre o carrossel de marcas de Depoimentos (exibindo 3 ícones) e o carrossel do Hero (exibindo 4 ícones).
+- **Diagnóstico e Análise Visual:**
+  - O carrossel superior do Hero utilizava `.hero-icons-wrap` com `max-width: 404px;`, comportando 4 ícones de 84px na viewport. O usuário requisitou unificar a experiência visual, exibindo rigorosamente 3 ícones por vez também no topo.
+- **Solução Técnica e Implementação:**
+  1. *Calibração Dimensional em `style.css`:*
+     - Definido `.hero-icons-wrap` com `width: 292px; max-width: 292px;`, correspondente à fórmula de 3 cartões de 84px somados a 2 espaçamentos de 20px (`3 * 84 + 2 * 20 = 292px`).
+     - Máscara de fade ajustada para `linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)`, proporcionando o mesmo respiro elegante e desvanecimento suave das pontas do carrossel inferior.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

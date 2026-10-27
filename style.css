@@ -748,17 +748,17 @@ button, input {
   margin-bottom: 2.2rem;
 }
 
-/* Carrossel em Loop Infinito Contínuo de Ícones do Hero (sem barra de rolagem horizontal) */
+/* Carrossel em Loop Infinito Contínuo de Ícones do Hero (Exatamente 3 por vez) */
 .hero-icons-wrap {
   margin-top: 1.25rem;
   padding: 0.5rem 0 0.8rem;
-  width: 100%;
-  max-width: 404px;
+  width: 292px;
+  max-width: 292px;
   position: relative;
   overflow: hidden;
-  /* Máscara de gradiente suave nas laterais para entrada e saída orgânicas dos cartões */
-  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  /* Máscara de gradiente suave nas laterais para entrada e saída orgânicas de 3 cartões por vez */
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
 .hero-icons-track {

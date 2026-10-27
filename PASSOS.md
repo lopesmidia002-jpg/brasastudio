@@ -1025,5 +1025,14 @@
     - `.qa-i::before, .qa-i::after`: calibrados com `background: #ffffff;`, transformando os símbolos de `+` e `✕` em branco puro vívido, destacando-se com alto contraste e elegância ao lado das perguntas em branco e dos números sequenciais em laranja.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 117 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 117 — Calibração do Carrossel de Ícones do Hero para Exibir 3 por Vez**
+  - Solicitação e Diagnóstico Visual:
+    - O usuário solicitou: "faça o mesmo efeito no slide superior como foi feito no inferior", enviando imagem comparativa entre o carrossel inferior (Depoimentos, exibindo 3 ícones) e o carrossel superior (Hero, exibindo 4 ícones).
+    - Anteriormente, o contêiner `.hero-icons-wrap` possuía `max-width: 404px;`, mostrando 4 ícones ao mesmo tempo.
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.hero-icons-wrap`: calibrado para `width: 292px; max-width: 292px;` (exatamente a largura de 3 cartões de 84px e 2 gaps de 20px / 1.25rem: `3 * 84px + 2 * 20px = 292px`).
+    - Máscara de fade progressiva ajustada para `linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)`, replicando com exatidão o efeito visual e a proporção de 3 cartões por vez do carrossel inferior.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 118 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
