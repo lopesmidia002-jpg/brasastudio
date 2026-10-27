@@ -1589,6 +1589,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.104 Carrossel em Loop Infinito Contínuo de Ícones do Hero sem Barra Horizontal (Passo 110)
+- **Solicitação do Usuário:**
+  - "retire a barra horizontal e coloque um efeito de loop infinito em carrocel", acompanhado de imagem com foco nos ícones squircle do Hero e na barra de rolagem horizontal branca na base.
+- **Diagnóstico e Análise Visual:**
+  - O contêiner de ícones do Hero utilizava `.hero-icons-scroll` com `overflow-x: auto;` e uma barra de rolagem personalizada com thumb branco (`#ffffff`), o que exigia interação manual de rolagem ou scroll horizontal e gerava a barra inferior visível.
+  - A experiência desejada para a marca consiste em um fluxo orgânico e dinâmico: remoção completa da scrollbar e inclusão de um carrossel em loop contínuo infinito automático que desliza suavemente para a esquerda, pausando automaticamente quando o visitante passa o mouse sobre os ícones.
+- **Solução Técnica e Implementação:**
+  1. *Eliminação Definitiva da Barra de Rolagem:*
+     - Em `style.css`, foram removidas as regras de `overflow-x: auto;`, `scrollbar-width` e todo o bloco `::-webkit-scrollbar*`. O contêiner `.hero-icons-wrap` recebeu `overflow: hidden;` com máscara de gradiente linear suave nas extremidades (`mask-image` e `-webkit-mask-image`), suavizando as entradas e saídas laterais.
+  2. *Estrutura de Dupla Track e Animação Infinita:*
+     - Em `index.html`, os 6 ícones squircle foram agrupados em `.hero-icons-track` com dois elementos `.hero-icons-group` idênticos (o segundo marcado com `aria-hidden="true"`).
+     - Em `style.css`, foi configurada a animação `@keyframes heroIconsSlideLeft` deslocando a track de `translate3d(0, 0, 0)` para `translate3d(-50%, 0, 0)` em `18s linear infinite`.
+  3. *Pausa Interativa no Hover:*
+     - Adicionado `.hero-icons-wrap:hover .hero-icons-track { animation-play-state: paused; }`, congelando o movimento instantaneamente ao passar o mouse sobre qualquer ícone e retomando com fluidez ao sair.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

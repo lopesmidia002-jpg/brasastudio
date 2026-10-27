@@ -747,47 +747,52 @@ button, input {
   margin-bottom: 2.2rem;
 }
 
-/* Container dimensionado com precisão para exibir exatamente 4 ícones inicialmente */
+/* Carrossel em Loop Infinito Contínuo de Ícones do Hero (sem barra de rolagem horizontal) */
 .hero-icons-wrap {
   margin-top: 1.25rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0 0.8rem;
   width: 100%;
-  max-width: 404px; /* Exibe exatamente 4 ícones inicialmente; os outros 2 aparecem com a rolagem horizontal */
+  max-width: 404px;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  /* Máscara de gradiente suave nas laterais para entrada e saída orgânicas dos cartões */
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
-.hero-icons-scroll {
+.hero-icons-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: heroIconsSlideLeft 18s linear infinite;
+}
+
+.hero-icons-wrap:hover .hero-icons-track {
+  animation-play-state: paused;
+}
+
+.hero-icons-group {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 0.6rem 4px 1.25rem;
-  scroll-behavior: smooth;
-  /* Scrollbar visível e estilizada em branco puro */
-  scrollbar-width: thin;
-  scrollbar-color: #ffffff rgba(255, 255, 255, 0.12);
-  -webkit-overflow-scrolling: touch;
+  padding-right: 1.25rem; /* Gap equivalente entre o fim do primeiro grupo e o início do segundo */
+  flex-shrink: 0;
 }
 
-/* Barra de rolagem horizontal branca pura conforme solicitação do usuário */
-.hero-icons-scroll::-webkit-scrollbar {
-  height: 6px;
+@keyframes heroIconsSlideLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
-.hero-icons-scroll::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 9999px;
-  margin: 0 2px;
-}
-.hero-icons-scroll::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 9999px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-.hero-icons-scroll::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.85);
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-icons-track {
+    animation: none;
+    overflow-x: auto;
+  }
 }
 
 .icon-card {

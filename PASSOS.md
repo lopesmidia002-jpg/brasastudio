@@ -949,5 +949,17 @@
       - Estrela de 4 pontas preenchida com degradê terracota escuro suave (`#e65100` -> `#d84315` -> `#bf360c` -> `#5c1504`) e contorno terracota sutil (`stroke="#d6682a" stroke-opacity="0.45"`), idêntica à Foto 2.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 110 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 110 — Carrossel em Loop Infinito Contínuo de Ícones do Hero sem Barra Horizontal**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário solicitou: "retire a barra horizontal e coloque um efeito de loop infinito em carrocel", acompanhado de imagem com os 4 ícones squircle visíveis (círculo, triângulo, cúpula com base e ondas duplas) e a barra de rolagem horizontal branca na base.
+  - Eliminação da Barra de Rolagem em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Remoção completa de `overflow-x: auto;`, `scrollbar-width: thin;`, `scrollbar-color: #ffffff ...;` e das regras de estilização da scrollbar (`::-webkit-scrollbar`, `::-webkit-scrollbar-track`, `::-webkit-scrollbar-thumb`).
+    - Configurado `.hero-icons-wrap` com `overflow: hidden; width: 100%; max-width: 440px;` e máscara de fade lateral suave (`mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent)`).
+  - Arquitetura de Carrossel Contínuo em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Estruturado `.hero-icons-track` com dois blocos idênticos de 6 ícones squircle (`.hero-icons-group`), sendo o segundo bloco configurado com `aria-hidden="true"` para acessibilidade.
+    - Implementada animação CSS `@keyframes heroIconsSlideLeft` deslizando continuamente de `translate3d(0, 0, 0)` para `translate3d(-50%, 0, 0)` em `18s linear infinite`, garantindo loop matematicamente contínuo, fluido e sem saltos visuais.
+    - Adicionada pausa instantânea no hover (`.hero-icons-wrap:hover .hero-icons-track { animation-play-state: paused; }`), parando a animação ao passar o cursor sobre os ícones e retomando suavemente ao retirá-lo.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 111 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

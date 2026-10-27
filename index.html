@@ -72,43 +72,82 @@
         <a class="btn btn--light" href="#contato" data-open-modal="modal-diagnostico">Começar um projeto</a>
         <a class="btn btn--ghost" href="#sobre">Conheça a Brasa</a>
       </div>
-      <div class="hero-icons-wrap">
-        <div class="hero-icons-scroll" role="region" aria-label="Marcas parceiras com rolagem horizontal" tabindex="0">
-          <div class="icon-card" title="Marca 1">
-            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="9.5" stroke="#ffffff" stroke-width="4.2"/>
-            </svg>
+      <!-- Carrossel em Loop Infinito Contínuo de Marcas Parceiras (sem barra de rolagem horizontal) -->
+      <div class="hero-icons-wrap" aria-label="Marcas parceiras em carrossel contínuo">
+        <div class="hero-icons-track">
+          <!-- Grupo 1 -->
+          <div class="hero-icons-group">
+            <div class="icon-card" title="Marca 1">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="16" cy="16" r="9.5" stroke="#ffffff" stroke-width="4.2"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 2">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <polygon points="16,6.5 26.5,25 5.5,25" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 3">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 17c0-6 4.5-9.5 10-9.5s10 3.5 10 9.5z" fill="#ffffff"/>
+                <rect x="6" y="20.5" width="20" height="4.5" rx="2.2" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 4">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M5 13c3.2-3.8 6.8-3.8 11 0s7.8 3.8 11 0M5 19c3.2-3.8 6.8-3.8 11 0s7.8 3.8 11 0" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 5">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <rect x="9.5" y="9.5" width="13" height="13" stroke="#ffffff" stroke-width="4.2" fill="none" transform="rotate(45 16 16)"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 6">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="10.5" cy="10.5" r="4.2" fill="#ffffff"/>
+                <circle cx="21.5" cy="10.5" r="4.2" fill="#ffffff"/>
+                <circle cx="10.5" cy="21.5" r="4.2" fill="#ffffff"/>
+                <circle cx="21.5" cy="21.5" r="4.2" fill="#ffffff"/>
+              </svg>
+            </div>
           </div>
-          <div class="icon-card" title="Marca 2">
-            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <polygon points="16,6.5 26.5,25 5.5,25" fill="#ffffff"/>
-            </svg>
-          </div>
-          <div class="icon-card" title="Marca 3">
-            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <path d="M6 17c0-6 4.5-9.5 10-9.5s10 3.5 10 9.5z" fill="#ffffff"/>
-              <rect x="6" y="20.5" width="20" height="4.5" rx="2.2" fill="#ffffff"/>
-            </svg>
-          </div>
-          <div class="icon-card" title="Marca 4">
-            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <path d="M5 13c3.2-3.8 6.8-3.8 11 0s7.8 3.8 11 0M5 19c3.2-3.8 6.8-3.8 11 0s7.8 3.8 11 0" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="icon-card" title="Marca 5">
-            <!-- Losango vazado / oco exatamente conforme a Foto 3 -->
-            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <rect x="9.5" y="9.5" width="13" height="13" stroke="#ffffff" stroke-width="4.2" fill="none" transform="rotate(45 16 16)"/>
-            </svg>
-          </div>
-          <div class="icon-card" title="Marca 6">
-            <!-- 4 círculos em grade 2x2 exatamente conforme a Foto 3 -->
-            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="10.5" cy="10.5" r="4.2" fill="#ffffff"/>
-              <circle cx="21.5" cy="10.5" r="4.2" fill="#ffffff"/>
-              <circle cx="10.5" cy="21.5" r="4.2" fill="#ffffff"/>
-              <circle cx="21.5" cy="21.5" r="4.2" fill="#ffffff"/>
-            </svg>
+          <!-- Grupo 2 (duplicado para loop infinito contínuo) -->
+          <div class="hero-icons-group" aria-hidden="true">
+            <div class="icon-card" title="Marca 1">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="16" cy="16" r="9.5" stroke="#ffffff" stroke-width="4.2"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 2">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <polygon points="16,6.5 26.5,25 5.5,25" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 3">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M6 17c0-6 4.5-9.5 10-9.5s10 3.5 10 9.5z" fill="#ffffff"/>
+                <rect x="6" y="20.5" width="20" height="4.5" rx="2.2" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 4">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M5 13c3.2-3.8 6.8-3.8 11 0s7.8 3.8 11 0M5 19c3.2-3.8 6.8-3.8 11 0s7.8 3.8 11 0" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 5">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <rect x="9.5" y="9.5" width="13" height="13" stroke="#ffffff" stroke-width="4.2" fill="none" transform="rotate(45 16 16)"/>
+              </svg>
+            </div>
+            <div class="icon-card" title="Marca 6">
+              <svg width="34" height="34" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="10.5" cy="10.5" r="4.2" fill="#ffffff"/>
+                <circle cx="21.5" cy="10.5" r="4.2" fill="#ffffff"/>
+                <circle cx="10.5" cy="21.5" r="4.2" fill="#ffffff"/>
+                <circle cx="21.5" cy="21.5" r="4.2" fill="#ffffff"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
