@@ -1919,6 +1919,23 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.124 Aplicação Universal do Espaçamento Lateral Simétrico em Todos os Cards do Carrossel de Cases (Passo 130)
+- **Solicitação do Usuário:**
+  - "aplaique em todas as imagens do carrosel", solicitando a extensão das margens laterais calibradas para todos os cards do slide de Resultados.
+- **Diagnóstico e Análise Técnica:**
+  - Inicialmente a regra com `margin-left: 10px; margin-right: 10px;` havia sido aplicada seletivamente apenas ao card do projeto Âmbar Joias.
+  - Para atender à instrução de padronização universal em todas as imagens/cards do carrossel, a regra base de `.case-box` foi atualizada diretamente no CSS com `margin-left: 10px; margin-right: 10px; box-sizing: border-box; width: auto;`.
+  - Isso garante que tanto no Grupo 1 quanto no Grupo 2 duplicado, os quatro cases (*Casa Ocre*, *Torra Rubi*, *Âmbar Joias* e *Vento Sul Bikes*) mantenham o mesmo respiro lateral uniforme, permitindo que a fotografia de fundo sobressaia com elegância e simetria de ateliê nas laterais de cada card.
+- **Solução Técnica e Implementação:**
+  1. *Ajuste de Propriedades em `style.css`:*
+     - `.case-box`: declarado com `margin-left: 10px; margin-right: 10px; box-sizing: border-box; width: auto;`.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.3`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v13`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v12` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

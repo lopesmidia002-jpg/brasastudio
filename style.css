@@ -1363,6 +1363,10 @@ button, input {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   margin-top: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  width: auto;
   position: relative;
   z-index: 2;
   padding: 0.95rem 1.15rem 1.15rem;
@@ -1370,16 +1374,6 @@ button, input {
   display: flex;
   flex-direction: column;
   gap: 0.52rem;
-}
-
-/* Card Âmbar Joias: espaçamento lateral ampliado idêntico à referência Torra Rubi */
-.case--ambar .case-box,
-.case:has([data-slot="caso-ambar-joias"]) .case-box,
-.case-box--ambar {
-  margin-left: 10px;
-  margin-right: 10px;
-  box-sizing: border-box;
-  width: auto;
 }
 
 .case-mark {

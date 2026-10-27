@@ -1204,5 +1204,16 @@
     - Cache PWA elevado para `brasa-cache-v12` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v11` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 130 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 130 — Aplicação Universal do Espaçamento Lateral Simétrico em Todos os Cards do Carrossel de Cases**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário instruiu: "aplaique em todas as imagens do carrosel", solicitando que o espaçamento lateral calibrado no card Âmbar Joias seja estendido a 100% dos cards do carrossel de cases da seção Resultados.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - A regra `.case-box` recebeu universalmente as propriedades `margin-left: 10px; margin-right: 10px; box-sizing: border-box; width: auto;`, garantindo que todos os cases (*Casa Ocre*, *Torra Rubi*, *Âmbar Joias* e *Vento Sul Bikes*) em ambos os grupos do carrossel (Grupo 1 e Grupo 2 duplicado) apresentem o mesmo respiro lateral simétrico e a mesma harmonia visual flutuante sobre a fotografia de fundo.
+    - Preservados os cantos de 18px (`border-radius: 18px`), a iluminação dark glassmorphism, os ícones temáticos, títulos e pílulas de métricas de todos os projetos.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.3` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v13` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v12` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 131 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
