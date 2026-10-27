@@ -4054,7 +4054,7 @@ button, input {
   letter-spacing: -0.01em;
 }
 
-/* Ícone de Abertura (+) e Fechamento (✕) em Laranja Vibrante conforme a Foto 2 */
+/* Ícone de Abertura (+) e Fechamento (✕) em Branco Puro (#ffffff) */
 .qa-i {
   width: 16px;
   height: 16px;
@@ -4068,7 +4068,7 @@ button, input {
 .qa-i::after {
   content: '';
   position: absolute;
-  background: #ff5722;
+  background: #ffffff;
   border-radius: 1px;
 }
 

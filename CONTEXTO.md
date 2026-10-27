@@ -1686,6 +1686,19 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.110 Cruzes das Caixas de Perguntas do FAQ em Branco Puro (Passo 116)
+- **Solicitação do Usuário:**
+  - "quero que as cruzes das caixa de perguntas fiquem brancas", acompanhado de imagem da lista de acordeões do FAQ.
+- **Diagnóstico e Análise Visual:**
+  - O ícone `.qa-i` renderizava as hastes horizontal e vertical (`::before` e `::after`) em tom laranja vibrante (`#ff5722`).
+  - A solicitação do usuário estabelece que os símbolos de adição e fechamento nos acordeões devem ser em branco puro (`#ffffff`), conferindo harmonia cromática direta com o texto da pergunta.
+- **Solução Técnica e Implementação:**
+  1. *Atualização de Cor em `style.css`:*
+     - Em `.qa-i::before, .qa-i::after`, a propriedade de fundo foi atualizada de `#ff5722` para `#ffffff`, preservando a espessura de 2px e a rotação elástica de 45 graus ao abrir/fechar.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

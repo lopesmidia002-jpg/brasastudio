@@ -1017,5 +1017,13 @@
     - Máscara de fade progressiva ajustada para `linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)`, garantindo que os 3 ícones centrais fiquem em foco nítido e os cartões adjacentes desvaneçam suavemente durante a rolagem contínua.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 116 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 116 — Calibração das Cruzes das Caixas de Perguntas do FAQ em Branco Puro**
+  - Solicitação e Diagnóstico Visual:
+    - O usuário solicitou: "quero que as cruzes das caixa de perguntas fiquem brancas", enviando print dos 6 acordeões do FAQ (`.qa`).
+    - Anteriormente, o ícone vetorial `.qa-i::before, .qa-i::after` estava preenchido em tom laranja (`background: #ff5722;`).
+  - Implementação em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.qa-i::before, .qa-i::after`: calibrados com `background: #ffffff;`, transformando os símbolos de `+` e `✕` em branco puro vívido, destacando-se com alto contraste e elegância ao lado das perguntas em branco e dos números sequenciais em laranja.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 117 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
