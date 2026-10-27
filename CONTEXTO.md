@@ -2395,6 +2395,29 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` reconstruído/recarregado e validado na porta 3000 com status HTTP 200 OK.
 
+### 2.146 Reordenação da Imagem da Seção Processo Antes dos Itens no Mobile (Passo 152)
+- **Solicitação do Usuário:**
+  - O usuário enviou print da imagem da mesa com amostras de tecido, papéis e latão (`processo-mesa-1040.webp`), instruindo: `"no mobile esta imagem deve vim antes dos itens dessa sessao"`.
+- **Diagnóstico e Análise Técnica:**
+  - Na visualização móvel (`@media (max-width: 809px)`), a seção `.split--steps` utilizava `grid-template-columns: 1fr;`. Pelo fluxo padrão do HTML, o bloco de texto `.split-copy` (contendo o cabeçalho `.head` e as 3 etapas `.steps`) era renderizado por completo antes da coluna `.sticky-col` que continha a imagem da mesa.
+  - Como resultado, a fotografia aparecia apenas no fim da seção, após o botão "Agendar conversa" e a estrela/rosa dos ventos da Etapa 3.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - No `@media (max-width: 809px)`:
+       - `.split--steps` transformado em flex container vertical (`display: flex; flex-direction: column;`).
+       - `.split-copy` configurado com `display: contents;` para promover seus nós filhos (`.head` e `.steps`) diretamente ao contexto flex pai.
+       - Aplicada ordenação visual sem alterar a semântica do markup:
+         - `.split-copy > .head`: `order: 1;`.
+         - `.sticky-col`: `order: 2; position: static; margin: 1.5rem 0 2rem 0; width: 100%;`.
+         - `.steps`: `order: 3; margin-top: 0;`.
+     - No desktop (`min-width: 810px`), o layout mantém grid de 2 colunas com imagem sticky perfeitamente alinhada à direita.
+  2. *Invalidação PWA e Cache:*
+     - Em `index.html`: versão dos assets elevada para `?v=5.5`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v35`.
+     - Em `main.js`: adicionada auto-limpeza de `brasa-cache-v34`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

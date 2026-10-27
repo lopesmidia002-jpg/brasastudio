@@ -1800,11 +1800,24 @@ button, input {
 
 @media (max-width: 809px) {
   .split--steps {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+  .split-copy {
+    display: contents;
+  }
+  .split-copy > .head {
+    order: 1;
   }
   .sticky-col {
+    order: 2;
     position: static;
-    margin-top: 2rem;
+    margin: 1.5rem 0 2rem 0;
+    width: 100%;
+  }
+  .steps {
+    order: 3;
+    margin-top: 0;
   }
 }
 

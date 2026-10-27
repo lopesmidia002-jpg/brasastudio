@@ -1549,5 +1549,24 @@
     - Cache PWA elevado para `brasa-cache-v34` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v33` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 152 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 152 — Reordenação da Imagem da Seção Processo Antes dos Itens no Mobile**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print da fotografia da mesa com amostras de tecido, papéis e latão (`assets/img/processo-mesa-1040.webp`), instruindo: "no mobile esta imagem deve vim antes dos itens dessa sessao".
+  - Diagnóstico e Análise Técnica:
+    - Na visualização móvel (`max-width: 809px`), a grade `.split--steps` colapsava para uma coluna simples (`grid-template-columns: 1fr;`), seguindo a ordem natural do DOM: primeiro o bloco `.split-copy` (cabeçalho descritivo + lista das 3 etapas do processo) e, somente ao final, a coluna `.sticky-col` com a fotografia.
+    - Isso forçava a imagem a ser visualizada apenas após o término de todas as etapas e do botão de conversão.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Configurado `.split--steps` em `@media (max-width: 809px)` com `display: flex; flex-direction: column;`.
+    - Definido `.split-copy` com `display: contents;`, permitindo que seus elementos filhos participem diretamente do contexto flex da seção.
+    - Estabelecida a ordenação precisa de fluxo editorial:
+      - Cabeçalho descritivo (`.split-copy > .head`): `order: 1;`.
+      - Imagem do processo (`.sticky-col`): `order: 2; position: static; margin: 1.5rem 0 2rem 0; width: 100%;`.
+      - Lista dos itens/etapas (`.steps`): `order: 3; margin-top: 0;`.
+    - No desktop (`min-width: 810px`), a grade bidirecional com a imagem sticky na lateral direita continua 100% preservada.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=5.5` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v35` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v34` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 153 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
