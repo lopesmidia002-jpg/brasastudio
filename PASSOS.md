@@ -821,7 +821,22 @@
     - O botão agora se apresenta de forma limpa, direta e individual, perfeitamente alinhado na segunda linha de pílulas sem molduras aninhadas, exatamente idêntico à Foto 2.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 98 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 98 — Substituição e Calibração Compacta dos Banners de Planos (Conforme Foto 2)**
+  - Remoção das linhas horizontais divisórias `<hr class="rule">` em ambos os cards ("Essencial" e "Estúdio"), permitindo fluxo visual direto entre o valor do plano e o texto descritivo.
+  - Calibração dimensional compacta e elegante dos cards (`.plan`):
+    - Padding interno reduzido de `2.5rem 2.25rem` para `1.85rem 1.65rem 1.65rem`, com bordas arredondadas em `border-radius: 22px;` e altura vertical proporcional (~520px) idêntica à Foto 2.
+    - Ícones squircle do topo (`.icon-box`) compactados para 42x42px com raio de 11px, glow contido e SVGs ajustados para 20x20px.
+    - Pílulas de destaque ("Mais escolhido" e "Recomendado") com tipografia refinada de 0.76rem e padding de 0.26rem 0.78rem.
+    - Título do plano (`.plan-name`) calibrado para `font-size: 1.08rem; font-weight: 600;` com margem inferior enxuta de 0.45rem.
+    - Preço (`.price-v`) refinado para 2.15rem, `/ mês` em 0.82rem cinza `#71717a` e risco diagonal alaranjado suave (`#ff5722; height: 1.5px; transform: rotate(-13deg);`) sobre `R$ 4.600`.
+    - Descrição (`.text-sm`) ajustada para `0.82rem; line-height: 1.5; color: #8e8e96;`.
+    - Pílulas de quantidade (`.pills--strong`) compactadas com padding `0.3rem 0.75rem` e gap de `0.45rem`.
+    - Lista de 5 checks (`.checks`) com espaçamento vertical de 0.62rem, tipografia de 0.85rem e ícones de 18x18px.
+    - Botão CTA (`.plan-btn`) compacto em pílula com gradiente terracota, padding de `0.72rem 1.8rem`, `font-size: 0.88rem` e glow sutil.
+    - Rosa dos ventos no Card 2 perfeitamente posicionada e dimensionada no canto inferior direito (`width: 220px; height: 220px; bottom: -25px; right: -25px;`).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 99 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

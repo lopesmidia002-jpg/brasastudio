@@ -1384,6 +1384,40 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.92 Substituição e Calibração Compacta dos Banners de Planos Conforme Foto 2 (Passo 98)
+- **Solicitação do Usuário:**
+  - "exclua este dois banners e subistitua por esses dois da segunda foto", enviando imagens comparativas dos banners de planos da seção `#planos` (`.pricing .plans`): a Foto 1 (banners anteriores alongados com altura de ~631px e linhas divisórias `<hr>`) e a Foto 2 (banners novos compactos e refinados com altura de ~520px).
+- **Análise Comparativa Detalhada (Foto 1 vs Foto 2):**
+  1. *Linhas Divisórias `<hr class="rule">`:*
+     - Na Foto 1 havia uma linha divisória cinza `<hr class="rule">` cortando o card abaixo do preço.
+     - Na Foto 2 não existem linhas divisórias cortando o conteúdo; a descrição em cinza suave se conecta diretamente abaixo do preço.
+  2. *Escala e Dimensões:*
+     - A Foto 1 apresentava espaçamentos verticais excessivos (`padding: 2.5rem 2.25rem 2.25rem`), totalizando altura superior a 630px.
+     - Na Foto 2 os banners são elegantes e compactos (~520px de altura), com `padding: 1.85rem 1.65rem 1.65rem;` e `border-radius: 22px;`.
+  3. *Squircle dos Ícones no Topo:*
+     - Reduzidos de 52x52px para 42x42px com cantos arredondados de 11px, glow contido e ícones de 20x20px.
+  4. *Tipografia & Preço:*
+     - Títulos dos planos ("Essencial" e "Estúdio") calibrados para `font-size: 1.08rem; font-weight: 600;` com margem inferior curta.
+     - Preço principal (`.price-v`) ajustado para 2.15rem, `/ mês` em 0.82rem cinza `#71717a` e risco diagonal fino alaranjado (`#ff5722; height: 1.5px; transform: rotate(-13deg);`) sobre `R$ 4.600`.
+     - Descrição (`.text-sm`) em 0.82rem com entrelinha 1.5 e cor `#8e8e96`.
+  5. *Pílulas de Entregáveis & Checks:*
+     - Pílulas compactadas com `padding: 0.3rem 0.75rem; font-size: 0.78rem;`.
+     - Lista de 5 checks com espaçamento vertical de 0.62rem, tipografia de 0.85rem e ícones de 18x18px.
+  6. *Botão CTA ("Agendar conversa"):*
+     - Pílula compacta com `padding: 0.72rem 1.8rem; font-size: 0.88rem; font-weight: 600;` e gradiente terracota suave com sombra difusa contida.
+  7. *Rosa dos Ventos no Card 2:*
+     - Posicionamento e dimensões perfeitamente sincronizados no canto inferior direito (`bottom: -25px; right: -25px; width: 220px; height: 220px;`).
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removidas as tags `<hr class="rule">` de ambos os cards de planos.
+    - Calibrados os tamanhos dos SVGs para 20x20px nos ícones do topo e 18x18px nos checks.
+  - Em `style.css`:
+    - Atualizadas as regras de `.plans`, `.plan`, `.plan .step-top`, `.plan .icon-box`, `.plan .pill--dark`, `.plan .plan-name`, `.plan .price`, `.plan .price-v`, `.plan .price-u`, `.price-diagonal-slash`, `.plan hr.rule`, `.plan .text-sm`, `.plan .pills--strong`, `.plan .checks`, `.plan-btn` e `.plan-compass-wrap`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
