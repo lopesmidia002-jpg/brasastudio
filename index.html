@@ -23,9 +23,9 @@
 <link rel="preload" href="assets/video/brasa-hero-bg-poster.webp" as="image" type="image/webp">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23000000%27/%3E%3Cpath d=%27M16 5c1.8 5 8 7.4 8 14a8 8 0 0 1-16 0c0-3.6 1.8-5.8 3.6-7.1 0 2.6 1.3 4.4 3.1 4.9C13.4 13 13.8 8.6 16 5z%27 fill=%27%23ff5a1f%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=2.3">
+<link rel="stylesheet" href="style.css?v=2.4">
 <script>document.documentElement.classList.add('js')</script>
-<script src="main.js?v=2.3" defer></script>
+<script src="main.js?v=2.4" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -171,53 +171,9 @@
         </span>
       </div>
 
-      <!-- Rosa dos Ventos / Retículo Tático HUD Sci-Fi em Laranja Térmico Brasa conforme Foto 2 -->
+      <!-- Rosa dos Ventos / Estrela Brasa 200x200 -->
       <div class="spark-compass-wrap" aria-hidden="true">
-        <svg class="spark-compass" width="200" height="200" viewBox="0 0 200 200" fill="none">
-          <defs>
-            <radialGradient id="compass-glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ff5722" stop-opacity="0.55"/>
-              <stop offset="45%" stop-color="#d84315" stop-opacity="0.22"/>
-              <stop offset="75%" stop-color="#bf360c" stop-opacity="0.06"/>
-              <stop offset="100%" stop-color="#bf360c" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="star-gradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ff7a3d"/>
-              <stop offset="38%" stop-color="#f4511e"/>
-              <stop offset="75%" stop-color="#d84315"/>
-              <stop offset="100%" stop-color="#bd3609"/>
-            </linearGradient>
-            <filter id="gold-spark-glow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="3.2" result="blur"/>
-              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-            </filter>
-          </defs>
-
-          <!-- Halo de luminescência âmbar suave central -->
-          <circle cx="100" cy="100" r="48" fill="url(#compass-glow)"/>
-
-          <!-- Marcações Técnicas / Retículo HUD Sci-fi -->
-          <!-- 1. Anel interno concêntrico pontilhado -->
-          <circle cx="100" cy="100" r="32" stroke="#d46022" stroke-width="1" stroke-dasharray="2.5, 3.5" opacity="0.65"/>
-
-          <!-- 2. Círculo intermediário contínuo fino (tangente às pontas da estrela) -->
-          <circle cx="100" cy="100" r="58" stroke="#d46022" stroke-width="1.2" opacity="0.88"/>
-
-          <!-- 3. Anel concêntrico externo pontilhado -->
-          <circle cx="100" cy="100" r="76" stroke="#d46022" stroke-width="1.1" stroke-dasharray="3, 4" opacity="0.75"/>
-
-          <!-- 4. Eixos ortogonais longos cruzados -->
-          <line x1="100" y1="8" x2="100" y2="192" stroke="#d46022" stroke-width="1.2" opacity="0.92"/>
-          <line x1="8" y1="100" x2="192" y2="100" stroke="#d46022" stroke-width="1.2" opacity="0.92"/>
-
-          <!-- 5. Linhas diagonais de referência a 45 graus -->
-          <line x1="38" y1="38" x2="162" y2="162" stroke="#d46022" stroke-width="0.95" opacity="0.55"/>
-          <line x1="38" y1="162" x2="162" y2="38" stroke="#d46022" stroke-width="0.95" opacity="0.55"/>
-
-          <!-- 6. Estrela sólida de 4 pontas com bordas côncavas perfeitas em gradiente laranja brasa -->
-          <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#star-gradient)" filter="url(#gold-spark-glow)"/>
-          <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#star-gradient)"/>
-        </svg>
+        <img class="spark spark--hero spark-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="200" height="200" loading="eager" decoding="async">
       </div>
     </div>
   </div>
@@ -518,53 +474,9 @@
           </ul>
           <a class="btn btn--brasa btn--sm btn--step" href="#contato" data-open-modal="modal-diagnostico">Agendar conversa</a>
 
-          <!-- Rosa dos Ventos / Retículo Tático HUD Sci-Fi em Terracota-Âmbar de Alta Precisão conforme Foto 2 -->
+          <!-- Rosa dos Ventos / Estrela Brasa 200x200 -->
           <div class="step-compass-wrap" aria-hidden="true">
-            <svg class="step-compass" width="165" height="165" viewBox="0 0 200 200" fill="none">
-              <defs>
-                <radialGradient id="step-compass-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ff5722" stop-opacity="0.45"/>
-                  <stop offset="45%" stop-color="#d84315" stop-opacity="0.18"/>
-                  <stop offset="75%" stop-color="#bf360c" stop-opacity="0.05"/>
-                  <stop offset="100%" stop-color="#bf360c" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="step-orange-star" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#ff7043"/>
-                  <stop offset="40%" stop-color="#f4511e"/>
-                  <stop offset="80%" stop-color="#d84315"/>
-                  <stop offset="100%" stop-color="#bf360c"/>
-                </linearGradient>
-                <filter id="step-spark-glow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur stdDeviation="3.2" result="blur"/>
-                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-              </defs>
-
-              <!-- Halo de luminescência âmbar suave central -->
-              <circle cx="100" cy="100" r="48" fill="url(#step-compass-glow)"/>
-
-              <!-- Marcações Técnicas / Retículo HUD Sci-fi -->
-              <!-- 1. Anel interno concêntrico pontilhado -->
-              <circle cx="100" cy="100" r="32" stroke="#b57d2a" stroke-width="1" stroke-dasharray="2.5, 3.5" opacity="0.6"/>
-
-              <!-- 2. Círculo intermediário contínuo fino (tangente às pontas da estrela) -->
-              <circle cx="100" cy="100" r="58" stroke="#b57d2a" stroke-width="1.2" opacity="0.85"/>
-
-              <!-- 3. Anel concêntrico externo pontilhado -->
-              <circle cx="100" cy="100" r="76" stroke="#b57d2a" stroke-width="1.1" stroke-dasharray="3, 4" opacity="0.75"/>
-
-              <!-- 4. Eixos ortogonais longos cruzados -->
-              <line x1="100" y1="8" x2="100" y2="192" stroke="#b57d2a" stroke-width="1.2" opacity="0.9"/>
-              <line x1="8" y1="100" x2="192" y2="100" stroke="#b57d2a" stroke-width="1.2" opacity="0.9"/>
-
-              <!-- 5. Linhas diagonais de referência a 45 graus -->
-              <line x1="38" y1="38" x2="162" y2="162" stroke="#b57d2a" stroke-width="0.95" opacity="0.55"/>
-              <line x1="38" y1="162" x2="162" y2="38" stroke="#b57d2a" stroke-width="0.95" opacity="0.55"/>
-
-              <!-- 6. Estrela sólida de 4 pontas com bordas côncavas perfeitas em terracota/laranja vibrante conforme Foto 2 -->
-              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#step-orange-star)" filter="url(#step-spark-glow)"/>
-              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#step-orange-star)"/>
-            </svg>
+            <img class="spark spark--card step-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="165" height="165" loading="lazy" decoding="async">
           </div>
         </li>
       </ol>
@@ -972,52 +884,10 @@
           </ul>
           <a class="btn btn--brasa btn--sm btn--svc" href="#contato">Agendar conversa</a>
 
-          <!-- Grafismo Decorativo de Fundo no Canto Inferior Direito: Bússola Vetorial Sutil Conforme Foto 2 -->
+          <!-- Rosa dos Ventos / Estrela Brasa 200x200 -->
           <div class="svc-compass-wrap" aria-hidden="true">
-            <svg class="svc-compass" width="200" height="200" viewBox="0 0 200 200" fill="none">
-              <defs>
-                <!-- Glow radial muito suave de fundo -->
-                <radialGradient id="svc-bottom-glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ff5722" stop-opacity="0.18"/>
-                  <stop offset="50%" stop-color="#d03b1e" stop-opacity="0.08"/>
-                  <stop offset="85%" stop-color="#801b08" stop-opacity="0.02"/>
-                  <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-                </radialGradient>
-                <!-- Gradiente terracota suave nobre para a estrela -->
-                <linearGradient id="svc-bottom-star" x1="100" y1="42" x2="100" y2="158" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#e65100"/>
-                  <stop offset="38%" stop-color="#d84315"/>
-                  <stop offset="72%" stop-color="#bf360c"/>
-                  <stop offset="100%" stop-color="#5c1504"/>
-                </linearGradient>
-              </defs>
-
-              <!-- Halo de luminescência suave central -->
-              <circle cx="100" cy="100" r="58" fill="url(#svc-bottom-glow)"/>
-
-              <!-- Marcações Técnicas / Bússola com círculos concêntricos pontilhados/finos sutis -->
-              <!-- 1. Anel interno pontilhado -->
-              <circle cx="100" cy="100" r="32" stroke="#d6682a" stroke-width="0.85" stroke-dasharray="2 3" opacity="0.35"/>
-
-              <!-- 2. Círculo intermediário contínuo fino tangente às pontas da estrela -->
-              <circle cx="100" cy="100" r="58" stroke="#d6682a" stroke-width="0.9" opacity="0.45"/>
-
-              <!-- 3. Anel externo pontilhado -->
-              <circle cx="100" cy="100" r="76" stroke="#d6682a" stroke-width="0.85" stroke-dasharray="2.5 3.5" opacity="0.32"/>
-
-              <!-- 4. Eixos ortogonais longos cruzados -->
-              <line x1="100" y1="8" x2="100" y2="192" stroke="#d6682a" stroke-width="0.9" opacity="0.45"/>
-              <line x1="8" y1="100" x2="192" y2="100" stroke="#d6682a" stroke-width="0.9" opacity="0.45"/>
-
-              <!-- 5. Linhas diagonais a 45 graus -->
-              <line x1="38" y1="38" x2="162" y2="162" stroke="#d6682a" stroke-width="0.75" opacity="0.25"/>
-              <line x1="38" y1="162" x2="162" y2="38" stroke="#d6682a" stroke-width="0.75" opacity="0.25"/>
-
-              <!-- 6. Estrela sólida de 4 pontas preenchida com degradê terracota suave -->
-              <path d="M 100,42 Q 100,100 158,100 Q 100,100 100,158 Q 100,100 42,100 Q 100,100 100,42 Z" fill="url(#svc-bottom-star)" opacity="0.92"/>
-            </svg>
+            <img class="spark spark--card svc-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="200" height="200" loading="lazy" decoding="async">
           </div>
-        </li>
         </li>
       </ul>
     </div>
@@ -1211,33 +1081,9 @@
         </ul>
         <a class="plan-btn" href="#contato">Agendar conversa</a>
 
-        <!-- Marca d'água geométrica da Rosa dos Ventos no Canto Inferior Direito -->
+        <!-- Rosa dos Ventos / Estrela Brasa 200x200 -->
         <div class="plan-compass-wrap" aria-hidden="true">
-          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="plan-bottom-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#ff5722" stop-opacity="0.16"/>
-                <stop offset="50%" stop-color="#d03b1e" stop-opacity="0.06"/>
-                <stop offset="85%" stop-color="#801b08" stop-opacity="0.02"/>
-                <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="plan-bottom-star" x1="100" y1="12" x2="100" y2="188" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#e65100"/>
-                <stop offset="38%" stop-color="#d84315"/>
-                <stop offset="72%" stop-color="#bf360c"/>
-                <stop offset="100%" stop-color="#5c1504"/>
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="92" fill="url(#plan-bottom-glow)"/>
-            <line x1="8" y1="100" x2="192" y2="100" stroke="#d6682a" stroke-width="0.85" stroke-opacity="0.45"/>
-            <line x1="100" y1="8" x2="100" y2="192" stroke="#d6682a" stroke-width="0.85" stroke-opacity="0.45"/>
-            <line x1="38" y1="38" x2="162" y2="162" stroke="#d6682a" stroke-width="0.75" stroke-opacity="0.25"/>
-            <line x1="162" y1="38" x2="38" y2="162" stroke="#d6682a" stroke-width="0.75" stroke-opacity="0.25"/>
-            <circle cx="100" cy="100" r="76" stroke="#d6682a" stroke-width="0.85" stroke-dasharray="2.5 3.5" stroke-opacity="0.32"/>
-            <circle cx="100" cy="100" r="58" stroke="#d6682a" stroke-width="0.9" stroke-opacity="0.45"/>
-            <circle cx="100" cy="100" r="32" stroke="#d6682a" stroke-width="0.85" stroke-dasharray="2 3" stroke-opacity="0.35"/>
-            <path d="M100 12 C100 68 132 100 188 100 C132 100 100 132 100 188 C100 132 68 100 12 100 C68 100 100 68 100 12 Z" fill="url(#plan-bottom-star)" stroke="#d6682a" stroke-width="0.75" stroke-opacity="0.45"/>
-          </svg>
+          <img class="spark spark--plan plan-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="220" height="220" loading="lazy" decoding="async">
         </div>
       </article>
     </div>

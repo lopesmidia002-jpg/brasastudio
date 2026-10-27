@@ -1762,6 +1762,26 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
   - Validação de resposta HTTP 200 OK tanto na raiz (`http://localhost:3000/`) quanto nos ativos de mídia (`/assets/video/brasa-hero-bg-poster.webp`, `/assets/video/brasa-hero-bg.webm`, `/assets/video/brasa-hero-bg2.webm`).
 
+### 2.115 Substituição Integral das Estrelas / Rosa dos Ventos por brasa-estrela-200.webp (Passo 121)
+- **Solicitação do Usuário:**
+  - "coloque em todos o site que estiver esta estrela da imagem substitua por essa brasa-estrela-200.webp", enviando print da estrela de 4 pontas com retículo no card do Hero.
+- **Diagnóstico e Análise Técnica:**
+  - A estrela e o retículo tático eram renderizados por meio de blocos SVG inline extensos nas seções Hero, Como Trabalhamos (Etapa 3), Serviços (Card 3) e Planos (Card Estúdio).
+  - A pasta `assets/img/` continha a versão oficial em imagem WebP transparente de alta resolução `brasa-estrela-200.webp` e sua variante Retina 2x `brasa-estrela-400.webp`, idênticas ao projeto original.
+- **Solução Técnica e Implementação:**
+  1. *Substituição em `index.html`:*
+     - Em todas as 4 ocorrências (`.spark-compass-wrap`, `.step-compass-wrap`, `.svc-compass-wrap` e `.plan-compass-wrap`), os blocos SVG inline foram substituídos por tags `<img>` semânticas utilizando `src="assets/img/brasa-estrela-200.webp"` e `srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x"`.
+     - No Hero, foi definido `loading="eager"` com decodificação assíncrona, enquanto nas seções subsequentes foi aplicado `loading="lazy"`.
+     - Versionamento de assets elevado para `?v=2.4`.
+  2. *Ajuste de Estilos em `style.css`:*
+     - Definido `object-fit: contain; pointer-events: none; width: 100%; height: 100%; display: block;` para `.spark-compass`, `.step-compass`, `.svc-compass`, `.plan-compass` e `.plan-compass-wrap img`.
+     - Preservadas as posições, dimensões e filtros térmicos específicos de cada cartão.
+  3. *Invalidação PWA em `sw.js` e `main.js`:*
+     - Cache elevado para `brasa-cache-v4` e auto-limpeza de `brasa-cache-v3` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
+  - Mapeamento e retorno HTTP 200 OK validados para o HTML e para as imagens `brasa-estrela-200.webp` e `brasa-estrela-400.webp`.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

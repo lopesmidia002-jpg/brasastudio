@@ -1078,5 +1078,24 @@
     - Atualizado para `brasa-cache-v3` para forçar invalidação imediata do cache anterior em todos os clientes.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK para a página e para todos os assets de mídia (`/assets/video/brasa-hero-bg-poster.webp`, `/assets/video/brasa-hero-bg.webm`, `/assets/video/brasa-hero-bg2.webm`).
 
-- [ ] **Passo 121 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 121 — Substituição de Todas as Estrelas / Rosa dos Ventos pela Imagem brasa-estrela-200.webp**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card da Hero destacando a estrela com o retículo em volta e instruiu: "coloque em todos o site que estiver esta estrela da imagem substitua por essa brasa-estrela-200.webp".
+    - No código anterior, a estrela e as marcações técnicas eram renderizadas via SVGs inline complexos em 4 seções distintas (`.spark-compass-wrap`, `.step-compass-wrap`, `.svc-compass-wrap` e `.plan-compass-wrap`).
+    - No projeto original de referência (`index.html.txt`), todos esses 4 locais utilizavam a imagem oficial transparente WebP `assets/img/brasa-estrela-200.webp` com suporte a telas de alta densidade (`srcset` com `brasa-estrela-400.webp 2x`).
+  - Implementação em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html):
+    - **Hero Section (`.spark-compass-wrap`):** Substituído o SVG inline pela tag `<img class="spark spark--hero spark-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="200" height="200" loading="eager" decoding="async">`.
+    - **Como Trabalhamos — Etapa 3 (`.step-compass-wrap`):** Substituído o SVG inline pela tag `<img class="spark spark--card step-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="165" height="165" loading="lazy" decoding="async">`.
+    - **Serviços — Card 3 (`.svc-compass-wrap`):** Substituído o SVG inline pela tag `<img class="spark spark--card svc-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="200" height="200" loading="lazy" decoding="async">`.
+    - **Planos — Card Estúdio (`.plan-compass-wrap`):** Substituído o SVG inline pela tag `<img class="spark spark--plan plan-compass" src="assets/img/brasa-estrela-200.webp" srcset="assets/img/brasa-estrela-200.webp 1x, assets/img/brasa-estrela-400.webp 2x" alt="" width="220" height="220" loading="lazy" decoding="async">`.
+    - Versionamento dos assets elevado para `?v=2.4`.
+  - Estilização em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Configurado `width: 100%; height: 100%; display: block; object-fit: contain; pointer-events: none;` para `.spark-compass`, `.step-compass`, `.svc-compass`, `.plan-compass` e `.plan-compass-wrap img`.
+    - Mantidos os posicionamentos, dimensões responsivas e filtros térmicos dos wrappers em todas as resoluções de tela.
+  - Invalidação de Cache PWA:
+    - Em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js): Chave de cache atualizada para `brasa-cache-v4`.
+    - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): Adicionada rotina de exclusão automática para `brasa-cache-v3`.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK para todas as rotas e assets de imagem (`brasa-estrela-200.webp` e `brasa-estrela-400.webp`).
+
+- [ ] **Passo 122 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

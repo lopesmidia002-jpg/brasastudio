@@ -937,7 +937,9 @@ button, input {
   width: 100%;
   height: 100%;
   display: block;
-  animation: none; /* Estático sem transição ou pulso conforme solicitado */
+  object-fit: contain;
+  pointer-events: none;
+  animation: none; /* Estático conforme solicitado */
 }
 
 @media (max-width: 809px) {
@@ -1627,6 +1629,8 @@ button, input {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .sticky-col {
@@ -2893,7 +2897,9 @@ button, input {
   width: 100%;
   height: 100%;
   display: block;
-  filter: none; /* Removido glow incandescente para acabamento técnico sutil e limpo conforme Foto 2 */
+  object-fit: contain;
+  pointer-events: none;
+  filter: none;
 }
 
 .btn--svc {
@@ -3537,10 +3543,14 @@ button, input {
   filter: none; /* Removido glow incandescente para acabamento técnico sutil e limpo conforme Foto 2 */
 }
 
-.plan-compass-wrap svg {
+.plan-compass-wrap svg,
+.plan-compass-wrap img,
+.plan-compass {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 @media (max-width: 809px) {
