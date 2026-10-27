@@ -1272,5 +1272,23 @@
     - Cache PWA elevado para `brasa-cache-v17` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v16` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 135 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 135 — Carrossel Infinito Bidirecional sem Barras de Rolagem na Vitrine**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print da galeria de imagens da seção Vitrine (`.showcase` / `#lancamento`) destacando as duas barras de rolagem cinzas horizontais e instruiu: "retire a bara de rolagem horizontal e coloque o carrosel infinito a parte de cima para esquerda e a a parte de baixo para direita".
+    - Na implementação anterior, as duas sequências de cards (`#showcase-row-1` e `#showcase-row-2`) funcionavam com overflow rolável manual via scrollbar nativo e listeners de mouse wheel em `main.js`.
+  - Implementação Técnica em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html), [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css) e [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js):
+    - Em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html): reestruturada a galeria com track duplo contínuo (`.showcase-marquee-track`) e grupos de cards duplicados (`.showcase-group`, com o segundo em `aria-hidden="true"`). A Linha 1 contém os cards 1 a 4 duplicados e a Linha 2 contém os cards 5 a 8 duplicados.
+    - Em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+      - Removidas total e definitivamente todas as barras de rolagem horizontais (`scrollbar-width: none !important; -ms-overflow-style: none !important; ::-webkit-scrollbar { display: none !important; }`).
+      - Linha 1 (`.showcase-track--left`): configurada com animação contínua `@keyframes showcaseSlideLeft` (0% translateX(0) a 100% translateX(-50%)) em 35s linear infinite para a **esquerda**.
+      - Linha 2 (`.showcase-track--right`): configurada com animação contínua `@keyframes showcaseSlideRight` (0% translateX(-50%) a 100% translateX(0)) em 35s linear infinite para a **direita**.
+      - Pausa instantânea no hover ao passar o cursor sobre qualquer uma das sequências (`.showcase-scroll-row:hover .showcase-marquee-track { animation-play-state: paused !important; }`).
+      - Largura total fluida (`width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);`) para fluxo contínuo de borda a borda da tela.
+    - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): descontinuado o ouvinte de rolagem manual via roda do mouse (`wheel`) em favor da movimentação 100% fluida e acelerada por hardware via CSS.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=3.8` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v18` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v17` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 136 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

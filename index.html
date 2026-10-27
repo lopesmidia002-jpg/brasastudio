@@ -23,9 +23,9 @@
 <link rel="preload" href="assets/video/brasa-hero-bg-poster.webp" as="image" type="image/webp">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23000000%27/%3E%3Cpath d=%27M16 5c1.8 5 8 7.4 8 14a8 8 0 0 1-16 0c0-3.6 1.8-5.8 3.6-7.1 0 2.6 1.3 4.4 3.1 4.9C13.4 13 13.8 8.6 16 5z%27 fill=%27%23ff5a1f%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=3.7">
+<link rel="stylesheet" href="style.css?v=3.8">
 <script>document.documentElement.classList.add('js')</script>
-<script src="main.js?v=3.7" defer></script>
+<script src="main.js?v=3.8" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -913,64 +913,122 @@
     <p class="showcase-text">Do primeiro esboço ao site no ar, com acompanhamento próximo e um time que responde rápido.</p>
     <a class="btn showcase-btn" href="#processo">Ver como trabalhamos</a>
   </div>
-  <!-- Galeria em Grid Interativa Dark Mode com 2 Sequências e Barras de Rolagem Horizontais -->
+  <!-- Galeria em Grid Interativa Dark Mode com Carrossel Infinito Contínuo (Cima para Esquerda, Baixo para Direita) -->
   <div class="showcase-gallery" id="showcase-gallery" data-reveal>
-    <!-- Sequência 1 (Linha 1): 4 Cards Quadrados 1:1 com Barra de Rolagem Horizontal Dedicada -->
-    <div class="showcase-scroll-row" id="showcase-row-1" tabindex="0" role="region" aria-label="Galeria de projetos - Linha 1">
-      <div class="showcase-grid-track">
-        <div class="gallery-card" data-card="1">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-1-450.webp 450w, assets/img/vitrine-1-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-1-900.webp" width="900" height="900" alt="Mãos modelando argila em um torno de cerâmica" loading="lazy" decoding="async">
-          </picture>
+    <!-- Sequência 1 (Linha 1): Desliza Continuamente para a Esquerda -->
+    <div class="showcase-scroll-row showcase-scroll-row--left" id="showcase-row-1" role="region" aria-label="Galeria de projetos - Linha 1">
+      <div class="showcase-marquee-track showcase-track--left">
+        <div class="showcase-group">
+          <div class="gallery-card" data-card="1">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-1-450.webp 450w, assets/img/vitrine-1-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-1-900.webp" width="900" height="900" alt="Mãos modelando argila em um torno de cerâmica" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="2">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-2-450.webp 450w, assets/img/vitrine-2-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-2-900.webp" width="900" height="900" alt="Café sendo servido em xícara de porcelana" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="3">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-3-450.webp 450w, assets/img/vitrine-3-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-3-900.webp" width="900" height="900" alt="Fachada de loja autoral ao entardecer" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="4">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-4-450.webp 450w, assets/img/vitrine-4-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-4-900.webp" width="900" height="900" alt="Estação de trabalho do estúdio com monitor e amostras" loading="lazy" decoding="async">
+            </picture>
+          </div>
         </div>
-        <div class="gallery-card" data-card="2">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-2-450.webp 450w, assets/img/vitrine-2-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-2-900.webp" width="900" height="900" alt="Café sendo servido em xícara de porcelana" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="gallery-card" data-card="3">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-3-450.webp 450w, assets/img/vitrine-3-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-3-900.webp" width="900" height="900" alt="Fachada de loja autoral ao entardecer" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="gallery-card" data-card="4">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-4-450.webp 450w, assets/img/vitrine-4-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-4-900.webp" width="900" height="900" alt="Estação de trabalho do estúdio com monitor e amostras" loading="lazy" decoding="async">
-          </picture>
+        <!-- Grupo 2 Duplicado para Loop Infinito Contínuo sem Saltos -->
+        <div class="showcase-group" aria-hidden="true">
+          <div class="gallery-card" data-card="1">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-1-450.webp 450w, assets/img/vitrine-1-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-1-900.webp" width="900" height="900" alt="Mãos modelando argila em um torno de cerâmica" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="2">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-2-450.webp 450w, assets/img/vitrine-2-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-2-900.webp" width="900" height="900" alt="Café sendo servido em xícara de porcelana" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="3">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-3-450.webp 450w, assets/img/vitrine-3-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-3-900.webp" width="900" height="900" alt="Fachada de loja autoral ao entardecer" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="4">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-4-450.webp 450w, assets/img/vitrine-4-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-4-900.webp" width="900" height="900" alt="Estação de trabalho do estúdio com monitor e amostras" loading="lazy" decoding="async">
+            </picture>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Sequência 2 (Linha 2): 4 Cards Quadrados 1:1 Estáticos -->
-    <div class="showcase-scroll-row" id="showcase-row-2" role="region" aria-label="Galeria de projetos - Linha 2">
-      <div class="showcase-grid-track">
-        <div class="gallery-card" data-card="5">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-5-450.webp 450w, assets/img/vitrine-5-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-5-900.webp" width="900" height="900" alt="Detalhe de colar de ouro sobre tecido de linho" loading="lazy" decoding="async">
-          </picture>
+    <!-- Sequência 2 (Linha 2): Desliza Continuamente para a Direita -->
+    <div class="showcase-scroll-row showcase-scroll-row--right" id="showcase-row-2" role="region" aria-label="Galeria de projetos - Linha 2">
+      <div class="showcase-marquee-track showcase-track--right">
+        <div class="showcase-group">
+          <div class="gallery-card" data-card="5">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-5-450.webp 450w, assets/img/vitrine-5-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-5-900.webp" width="900" height="900" alt="Detalhe de colar de ouro sobre tecido de linho" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="6">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-6-450.webp 450w, assets/img/vitrine-6-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-6-900.webp" width="900" height="900" alt="Ciclista atravessando rua de pedra ao pôr do sol" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="7">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-7-450.webp 450w, assets/img/vitrine-7-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-7-900.webp" width="900" height="900" alt="Amostras de tecido artesanal em tons de terracota" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="8">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-8-450.webp 450w, assets/img/vitrine-8-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-8-900.webp" width="900" height="900" alt="Interior de arquitetura com planos geométricos e luz rasante" loading="lazy" decoding="async">
+            </picture>
+          </div>
         </div>
-        <div class="gallery-card" data-card="6">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-6-450.webp 450w, assets/img/vitrine-6-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-6-900.webp" width="900" height="900" alt="Ciclista atravessando rua de pedra ao pôr do sol" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="gallery-card" data-card="7">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-7-450.webp 450w, assets/img/vitrine-7-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-7-900.webp" width="900" height="900" alt="Amostras de tecido artesanal em tons de terracota" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="gallery-card" data-card="8">
-          <picture>
-            <source type="image/webp" srcset="assets/img/vitrine-8-450.webp 450w, assets/img/vitrine-8-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
-            <img src="assets/img/vitrine-8-900.webp" width="900" height="900" alt="Interior de arquitetura com planos geométricos e luz rasante" loading="lazy" decoding="async">
-          </picture>
+        <!-- Grupo 2 Duplicado para Loop Infinito Contínuo sem Saltos -->
+        <div class="showcase-group" aria-hidden="true">
+          <div class="gallery-card" data-card="5">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-5-450.webp 450w, assets/img/vitrine-5-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-5-900.webp" width="900" height="900" alt="Detalhe de colar de ouro sobre tecido de linho" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="6">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-6-450.webp 450w, assets/img/vitrine-6-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-6-900.webp" width="900" height="900" alt="Ciclista atravessando rua de pedra ao pôr do sol" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="7">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-7-450.webp 450w, assets/img/vitrine-7-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-7-900.webp" width="900" height="900" alt="Amostras de tecido artesanal em tons de terracota" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="gallery-card" data-card="8">
+            <picture>
+              <source type="image/webp" srcset="assets/img/vitrine-8-450.webp 450w, assets/img/vitrine-8-900.webp 900w" sizes="(min-width: 1200px) calc(25vw - 24px), 280px">
+              <img src="assets/img/vitrine-8-900.webp" width="900" height="900" alt="Interior de arquitetura com planos geométricos e luz rasante" loading="lazy" decoding="async">
+            </picture>
+          </div>
         </div>
       </div>
     </div>

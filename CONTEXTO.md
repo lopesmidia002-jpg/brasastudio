@@ -2022,6 +2022,32 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
 
+### 2.129 Carrossel Infinito Bidirecional sem Barras de Rolagem na Vitrine (Passo 135)
+- **Solicitação do Usuário:**
+  - O usuário enviou print da galeria de imagens da seção Vitrine (`.showcase` / `#lancamento`) destacando as duas barras de rolagem cinzas horizontais e instruiu: `"retire a bara de rolagem horizontal e coloque o carrosel infinito a parte de cima para esquerda e a a parte de baixo para direita"`.
+- **Diagnóstico e Análise Técnica:**
+  - A galeria da Vitrine possuía 2 sequências de 4 cards quadrados (`#showcase-row-1` e `#showcase-row-2`), ambas com `overflow-x: auto` e estilização de scrollbar fina cinza.
+  - Para criar o fluxo estético contínuo característico de estúdios criativos modernos:
+    1. As barras de rolagem foram completamente eliminadas via CSS (`scrollbar-width: none !important; -ms-overflow-style: none !important; ::-webkit-scrollbar { display: none !important; }`).
+    2. A estrutura HTML de cada linha foi atualizada com track duplo e duplicação exata de grupos de cards (`.showcase-marquee-track` com `.showcase-group`), com o segundo grupo recebendo `aria-hidden="true"` para garantir acessibilidade sem repetição para leitores de tela.
+    3. A Linha 1 (superior) foi configurada para deslizar continuamente para a **esquerda** via `@keyframes showcaseSlideLeft` (`0% { transform: translateX(0); } 100% { transform: translateX(-50%); }`).
+    4. A Linha 2 (inferior) foi configurada para deslizar continuamente para a **direita** via `@keyframes showcaseSlideRight` (`0% { transform: translateX(-50%); } 100% { transform: translateX(0); }`).
+    5. O carrossel recebeu largura total fluida (`100vw`) cobrindo as laterais da tela com elegância e pausa instantânea no hover (`animation-play-state: paused !important;`).
+- **Solução Técnica e Implementação:**
+  1. *Atualizações em `index.html`:*
+     - Reorganizados os cards em `.showcase-marquee-track` com dois `.showcase-group` por linha (cards 1 a 4 na linha 1; cards 5 a 8 na linha 2).
+  2. *Regras CSS em `style.css`:*
+     - Definidas animações contínuas `@keyframes showcaseSlideLeft` e `@keyframes showcaseSlideRight` (35s linear infinite) com prefixos `-webkit-`.
+     - Removidas integralmente todas as propriedades de scrollbar.
+  3. *Atualização de Scripts em `main.js`:*
+     - Descontinuados ouvintes de scroll manual via roda do mouse (`wheel`) em prol do carrossel 100% automatizado e acelerado por hardware.
+  4. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão elevada para `?v=3.8`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v18`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v17` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

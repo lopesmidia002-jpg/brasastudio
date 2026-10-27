@@ -405,28 +405,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
-  // 15. Galeria de Banners Vitrine: Suporte a rolagem horizontal suave via roda do mouse (sem mãozinha)
-  const initGalleryInteractivity = () => {
-    const row1 = document.getElementById('showcase-row-1');
-    const row2 = document.getElementById('showcase-row-2');
-    [row1, row2].forEach((row) => {
-      if (row) {
-        row.addEventListener('wheel', (e) => {
-          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            row.scrollLeft += e.deltaY;
-          }
-        }, { passive: true });
-      }
-    });
-  };
-
-  initGalleryInteractivity();
+  // 15. Galeria Vitrine: Carrossel contínuo infinito automatizado via CSS (animação fluida nos eixos)
+  // Barras de rolagem manuais descontinuadas conforme novo design contínuo em loop
 
   // 16. Auto-limpeza de caches de versões legadas do navegador
   if ('caches' in window) {
     caches.keys().then((names) => {
       names.forEach((name) => {
-        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2' || name === 'brasa-cache-v3' || name === 'brasa-cache-v4' || name === 'brasa-cache-v5' || name === 'brasa-cache-v6' || name === 'brasa-cache-v7' || name === 'brasa-cache-v8' || name === 'brasa-cache-v9' || name === 'brasa-cache-v10' || name === 'brasa-cache-v11' || name === 'brasa-cache-v12' || name === 'brasa-cache-v13' || name === 'brasa-cache-v14' || name === 'brasa-cache-v15' || name === 'brasa-cache-v16') {
+        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2' || name === 'brasa-cache-v3' || name === 'brasa-cache-v4' || name === 'brasa-cache-v5' || name === 'brasa-cache-v6' || name === 'brasa-cache-v7' || name === 'brasa-cache-v8' || name === 'brasa-cache-v9' || name === 'brasa-cache-v10' || name === 'brasa-cache-v11' || name === 'brasa-cache-v12' || name === 'brasa-cache-v13' || name === 'brasa-cache-v14' || name === 'brasa-cache-v15' || name === 'brasa-cache-v16' || name === 'brasa-cache-v17') {
           caches.delete(name);
         }
       });
