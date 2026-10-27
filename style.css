@@ -1012,14 +1012,22 @@ button, input {
   box-shadow: 0 0 6px rgba(255, 90, 31, 0.8);
 }
 
-/* Título 100% Branco Monocromático conforme Foto 2 */
+/* Título com Primeira Linha Branca e Segunda Linha em Cinza Suave conforme Foto 2 */
 .title--about {
-  color: #ffffff !important;
+  color: #ffffff;
   font-size: clamp(2.3rem, 4.2vw, 3.4rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.035em;
   margin-bottom: 1.4rem;
+}
+
+.title--about .title-line-1 {
+  color: #ffffff;
+}
+
+.title--about .title-line-2 {
+  color: #8e8e93; /* Cinza suave / prateado idêntico à Foto 2 */
 }
 
 .checks {

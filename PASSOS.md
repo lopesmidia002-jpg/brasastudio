@@ -847,7 +847,16 @@
     - Ao acionar a barra de rolagem (arraste do thumb, rolagem horizontal via roda do mouse ou arraste direto dos cartões com suporte a `drag-to-scroll` no `main.js`), os outros dois ícones aparecem de forma fluida.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 100 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 100 — Calibração da Cor do Segundo Texto no Título da Seção Sobre (Conforme Foto 2)**
+  - Estruturação do título em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) (`#sobre-titulo`):
+    - Primeira linha: `<span class="title-line-1">Marcas mais fortes,</span>`
+    - Segunda linha: `<span class="title-line-2">impressões que ficam.</span>`
+  - Estilização de contraste cromático editorial em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - `.title--about .title-line-1`: cor branca pura `#ffffff` em destaque massivo.
+    - `.title--about .title-line-2`: cor cinza suave / prateada `#8e8e93` idêntica à Foto 2, gerando harmonia visual e refinamento de hierarquia entre a primeira e a segunda linha do título.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 101 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

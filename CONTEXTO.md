@@ -1435,6 +1435,21 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.94 Calibração da Cor do Segundo Texto no Título da Seção Sobre Conforme Foto 2 (Passo 100)
+- **Solicitação do Usuário:**
+  - "mude a cor do segundo texto deixando exatamente igual ao da segunda imagem", enviando duas imagens comparativas do título da seção Sobre a Brasa (`#sobre` / `.about`): a Imagem 1 com ambas as linhas em branco monocromático, e a Imagem 2 com a primeira linha em branco e a segunda linha ("impressões que ficam.") em cinza suave / prateado.
+- **Análise Visual e Estratégia de Implementação:**
+  1. *Hierarquia Cromática:*
+     - Linha 1 ("Marcas mais fortes,"): mantida em branco sólido `#ffffff`.
+     - Linha 2 ("impressões que ficam."): alterada para cinza suave / prateado `#8e8e93`, criando o contraste editorial elegante e sofisticado idêntico à Foto 2.
+  2. *Estrutura HTML e CSS:*
+     - Em `index.html`: o elemento `<h2 class="title title--about" id="sobre-titulo">` foi dividido em dois spans com classes dedicadas: `<span class="title-line-1">Marcas mais fortes,</span><br><span class="title-line-2">impressões que ficam.</span>`.
+     - Em `style.css`: `.title--about .title-line-1` foi fixado em `color: #ffffff;` e `.title--about .title-line-2` em `color: #8e8e93;`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
+
 
 
 ## 3. Arquitetura de Execução (100% Docker)
