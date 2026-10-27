@@ -647,6 +647,76 @@ button, input {
   .menu {
     display: block;
   }
+
+  /* Menu Mobile Aberto Ocupando a Tela Inteira (Fullscreen Overlay) */
+  .menu-panel {
+    position: fixed;
+    top: 89px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: calc(100vh - 89px);
+    height: calc(100dvh - 89px);
+    background: #000000;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    padding: 1.5rem clamp(1.5rem, 6vw, 2.5rem) 2.5rem;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  /* Linha discreta separando cada item de navegação */
+  .menu-panel a:not(.btn) {
+    display: block;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+    text-decoration: none;
+    transition: color var(--trans-fast), padding-left var(--trans-fast);
+  }
+
+  .menu-panel a:not(.btn):hover,
+  .menu-panel a:not(.btn):focus {
+    color: #ff5a1f;
+    background: transparent;
+    padding-left: 6px;
+  }
+
+  /* Botão CTA com Border Radius 999px e Estilo Padronizado */
+  .menu-panel .btn.btn--brasa {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff !important;
+    background: linear-gradient(180deg, #d84315 0%, #c43812 100%);
+    border: none;
+    box-shadow: 0 4px 20px rgba(216, 67, 21, 0.45);
+    transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+  }
+
+  .menu-panel .btn.btn--brasa:hover {
+    background: linear-gradient(180deg, #e64a19 0%, #d84315 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(216, 67, 21, 0.6);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -656,8 +726,8 @@ button, input {
   position: relative;
   min-height: clamp(620px, 92vh, 860px);
   display: flex;
-  align-items: center;
-  padding: clamp(6.5rem, 12vh, 8.5rem) 0 3.5rem;
+  align-items: flex-start;
+  padding: calc(89px + 54px) 0 3.5rem;
   overflow: hidden;
   background-color: #030303;
   /* Efeito de plano de fundo idêntico à foto 2: clarão âmbar forte no topo direito e glow suave no topo esquerdo */
@@ -721,6 +791,7 @@ button, input {
   font-size: 0.95rem;
   font-weight: 600;
   color: #ffffff;
+  margin-top: 0;
   margin-bottom: 1.6rem;
   width: fit-content;
   backdrop-filter: blur(12px);
@@ -957,24 +1028,16 @@ button, input {
 }
 
 @media (max-width: 809px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: calc(89px + 54px);
+  }
   .hero-in {
     grid-template-columns: 1fr;
   }
+  /* Ocultar card de preview da Hero (.hero-art e rosa dos ventos) no mobile conforme solicitado */
   .hero-art {
-    margin-top: 1.5rem;
-    justify-content: center;
-    padding-right: 20px;
-    padding-bottom: 35px;
-  }
-  .preview--hero {
-    width: min(100%, 260px);
-    flex: 0 1 260px;
-  }
-  .spark-compass-wrap {
-    bottom: -30px;
-    right: -26px;
-    width: 160px;
-    height: 160px;
+    display: none !important;
   }
 }
 
@@ -1154,6 +1217,18 @@ button, input {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  /* No mobile, manter a imagem de Sobre a Brasa visível no topo da seção */
+  .about .split {
+    display: flex;
+    flex-direction: column;
+  }
+  .about .frame--tall {
+    display: block !important;
+    order: -1;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 1.5rem auto;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1199,6 +1274,23 @@ button, input {
   clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
   /* Degradê simétrico para a asa direita */
   background: linear-gradient(225deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
+}
+
+/* Calibração das Asas no Mobile: Vão Central Preto Simétrico e Centralizado Idêntico à Referência */
+@media (max-width: 809px) {
+  .stage-wing {
+    top: clamp(95px, 14vw, 125px);
+    height: clamp(220px, 35vw, 300px);
+    width: clamp(85px, 28vw, 130px);
+  }
+
+  .stage-wing--left {
+    clip-path: polygon(0 0, 100% 0, 35% 100%, 0 100%);
+  }
+
+  .stage-wing--right {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 100%);
+  }
 }
 
 .results-head {
@@ -1764,6 +1856,18 @@ button, input {
   background: linear-gradient(225deg, rgba(185, 60, 16, 0.42) 0%, rgba(110, 32, 8, 0.24) 38%, rgba(35, 12, 4, 0.08) 75%, transparent 100%);
 }
 
+/* No mobile: background de Diferenciais orientado ao centro escuro e sem efeito de beams */
+@media (max-width: 809px) {
+  .features {
+    background-color: #000000 !important;
+    background-image: none !important;
+  }
+  .features-backdrop,
+  .feature-beam {
+    display: none !important;
+  }
+}
+
 .head--features {
   position: relative;
   z-index: 1;
@@ -1879,7 +1983,16 @@ button, input {
   gap: 1.5rem;
   list-style: none;
   margin-top: 3.5rem;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 809px) {
+  .feature-grid {
+    padding-left: clamp(1.25rem, 4vw, 2.5rem) !important;
+    padding-right: clamp(1.25rem, 4vw, 2.5rem) !important;
+    box-sizing: border-box;
+  }
 }
 
 /* Card individual Diferenciais: Modern SaaS Feature Card
@@ -2420,6 +2533,17 @@ button, input {
   right: 0;
   clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
   background: linear-gradient(225deg, rgba(55, 22, 12, 0.5) 0%, rgba(32, 12, 6, 0.22) 55%, transparent 100%);
+}
+
+/* No mobile: background de Portfólio 100% escuro sem o efeito de asas */
+@media (max-width: 809px) {
+  .portfolio {
+    background-color: #000000 !important;
+    background-image: none !important;
+  }
+  .portfolio-backdrop {
+    display: none !important;
+  }
 }
 
 /* Fundo alaranjado difuso removido */
@@ -3205,6 +3329,17 @@ button, input {
   right: 0;
   clip-path: polygon(32% 0, 100% 0, 100% 100%, 0 100%);
   background: linear-gradient(225deg, rgba(120, 38, 18, 0.38) 0%, rgba(65, 20, 8, 0.22) 40%, rgba(20, 6, 2, 0.08) 75%, transparent 100%);
+}
+
+@media (max-width: 809px) {
+  .showcase {
+    background-color: #000000 !important;
+    background-image: none !important;
+  }
+  .showcase-backdrop,
+  .showcase-wing {
+    display: none !important;
+  }
 }
 
 .showcase-head {
@@ -4534,21 +4669,36 @@ button, input {
   pointer-events: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .cta-card .inline-form {
-    padding: 5px 5px 5px 16px;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 14px 16px;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .cta-card .inline-form .input-group {
+    width: 100%;
   }
 
   .cta-card .inline-form input[type="email"] {
-    font-size: 0.9rem;
+    width: 100%;
+    padding: 8px 4px;
+    font-size: 1rem;
+    text-align: left;
   }
 
   .cta-card .btn--brasa,
   .cta-card .inline-form .btn--brasa {
-    min-height: 42px;
-    padding: 8px 18px;
-    font-size: 15px;
-    line-height: 24px;
+    width: 100%;
+    margin-left: 0;
+    min-height: 48px;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
   }
 }
 
@@ -4908,23 +5058,39 @@ button, input {
   pointer-events: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .footer-brand .inline-form,
   .inline-form--sm {
-    padding: 5px 5px 5px 16px;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 14px 16px;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .footer-brand .inline-form .input-group,
+  .inline-form--sm .input-group {
+    width: 100%;
   }
 
   .footer-brand .inline-form input[type="email"],
   .inline-form--sm input[type="email"] {
-    font-size: 0.9rem !important;
+    width: 100%;
+    padding: 8px 4px;
+    font-size: 1rem !important;
+    text-align: left;
   }
 
   .footer-brand .inline-form .btn--brasa,
   .inline-form--sm .btn--brasa {
-    min-height: 42px;
-    padding: 8px 18px;
-    font-size: 15px;
-    line-height: 24px;
+    width: 100%;
+    margin-left: 0;
+    min-height: 48px;
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
   }
 }
 
@@ -4990,7 +5156,28 @@ button, input {
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.95), 0 0 25px rgba(255, 90, 31, 0.2);
 }
 .preview--sm .play {
-  display: none;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 10, 12, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform var(--trans-normal), background var(--trans-normal), border-color var(--trans-normal);
+  z-index: 2;
+}
+.preview--sm:hover .play {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(255, 90, 31, 0.85);
+  border-color: #ffb347;
 }
 
 .footer-bottom {
@@ -5018,9 +5205,12 @@ button, input {
     gap: 2rem;
   }
   .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -5036,4 +5226,35 @@ button, input {
 [data-reveal].is-revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* Pílulas de Serviços e Planos Lado a Lado na Mesma Linha no Mobile */
+@media (max-width: 809px) {
+  .svc .pills--strong,
+  .plan .pills--strong {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .svc .pills--strong::-webkit-scrollbar,
+  .plan .pills--strong::-webkit-scrollbar {
+    display: none;
+  }
+
+  .svc .pills--strong li,
+  .plan .pills--strong li {
+    white-space: nowrap !important;
+    flex-shrink: 0;
+    padding: 5px 10px !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+  }
 }

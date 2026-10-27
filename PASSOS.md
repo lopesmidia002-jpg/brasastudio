@@ -1448,5 +1448,106 @@
     - Cache PWA elevado para `brasa-cache-v28` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v27` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
 
-- [ ] **Passo 146 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 146 — Calibração da Margem Superior do Badge da Hero até a Barra Superior (54px)**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do topo da página (exibindo a barra superior com logo e menu hambúrguer, e o badge `[NOVO] Agenda aberta para 2027` da Hero) e instruiu: "quero a margem top deste item ate a barra superior de 54px".
+    - Na configuração anterior, a seção `.hero` utilizava `align-items: center;` e `padding: clamp(6.5rem, 12vh, 8.5rem) 0 3.5rem;`, fazendo com que a distância do badge até a barra superior fixa (`height: 89px;`) variasse conforme a altura da tela ou encolhesse no mobile.
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Configurado `.hero` com alinhamento vertical estável a partir do topo:
+      - `align-items: flex-start;`
+      - `padding: calc(89px + 54px) 0 3.5rem;` (onde 89px corresponde à altura da barra superior fixa e 54px é a margem superior exata solicitada até o badge).
+    - Ajustado o media query `@media (max-width: 809px)` mantendo `padding-top: calc(89px + 54px);` e `align-items: flex-start;`.
+    - Garantido `margin-top: 0;` em `.tag-new`, assegurando que o espaço entre a base inferior do `.site-header` e o topo do badge seja rigorosamente de 54px em todas as resoluções.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=4.9` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v29` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v28` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 147 — Menu Mobile Fullscreen com Linhas Divisórias e Botão CTA 999px**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do menu mobile aberto (onde anteriormente abria como um card dropdown pequeno e deixava elementos da Hero visíveis por baixo) e instruiu: "quero que o menu no mobile aberto ocupe a tela inteira, e o botao com border radius 999px. coloque uma linha discreta serando os itens do menu".
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css) e [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js):
+    - Configurado `.menu-panel` no media query `@media (max-width: 809px)`:
+      - `position: fixed; top: 89px; left: 0; right: 0; bottom: 0; width: 100vw; height: calc(100vh - 89px); height: calc(100dvh - 89px);`
+      - Fundo 100% preto sólido (`background: #000000; z-index: 999; overflow-y: auto;`), preenchendo a tela inteira abaixo do header e cobrindo totalmente qualquer elemento inferior da Hero.
+    - Linhas divisórias discretas em cada item de navegação (`.menu-panel a:not(.btn)`):
+      - `border-bottom: 1px solid rgba(255, 255, 255, 0.08);`
+      - `padding: 1.15rem 0; font-size: 1.25rem; font-weight: 500; color: #ffffff;`
+    - Botão CTA móvel (`.menu-panel .btn.btn--brasa` - "Fale com a gente"):
+      - `margin-top: 2rem; width: 100%; min-height: 52px; padding: 14px 28px;`
+      - `border-radius: 999px; font-size: 1.05rem; font-weight: 600;`
+      - Gradiente térmico alaranjado com glow e micro-interação no toque/hover.
+    - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): adicionado listener para travar o scroll de fundo do `body` (`overflow: hidden`) enquanto o menu estiver aberto, restaurando ao fechar ou clicar em qualquer item.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=5.0` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v30` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v29` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 148 — Ocultação do Card de Preview da Hero (.hero-art) no Mobile**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print do card de preview da Hero (contendo a arte do vaso com o botão de play central e a rosa dos ventos/estrela em laranja térmico sobreposta no canto inferior direito) e instruiu: "no mobile oculte esta sessao".
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Configurado `.hero-art` com `display: none !important;` no media query `@media (max-width: 809px)`, removendo a exibição do card de preview (`.preview--hero`) e da rosa dos ventos (`.spark-compass-wrap`) em dispositivos móveis.
+    - Otimizada a experiência na Hero mobile, tornando o carregamento mais leve e mantendo o foco exclusivo na proposta de valor, no badge e nas chamadas de ação.
+    - No desktop (`min-width: 810px`), a composição visual artística permanece 100% preservada e alinhada ao lado direito.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=5.1` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v31` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v30` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 149 — Calibração Centralizada do Fundo e Asas de Resultados no Mobile**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou print da seção Resultados no mobile comparando o estado atual (onde as asas laterais `.stage-wing` de 230px se sobrepunham no meio em telas de ~360px gerando um cruzamento escuro assimétrico no título) com o layout original de referência (onde o fundo preto central é amplo, simétrico e as asas marrons ficam perfeitamente centralizadas e restritas às extremidades laterais), instruindo: "no mobile quero o backgraound fique centralizado do jeito do original".
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - Configurado `.stage-wing` no media query `@media (max-width: 809px)`:
+      - `top: clamp(95px, 14vw, 125px); height: clamp(220px, 35vw, 300px);`
+      - `width: clamp(85px, 28vw, 130px);` (evitando sobreposição no centro da tela móvel e garantindo que cada asa ocupe no máximo 28vw).
+      - Asa esquerda (`.stage-wing--left`): `clip-path: polygon(0 0, 100% 0, 35% 100%, 0 100%);`
+      - Asa direita (`.stage-wing--right`): `clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 100%);`
+    - Criação de uma abertura central trapezoidal em preto absoluto de 44vw a 48vw no topo e de mais de 75vw na base, perfeitamente simétrica e centralizada atrás do título, texto e botão, reproduzindo com fidelidade a composição original da marca.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=5.2` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v32` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v31` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 150 — Calibração Global Mobile: Fundo Escuro em Portfólio/Diferenciais, Espaçamento de Cards e Imagem de Sobre no Topo**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou quatro instruções sequenciais de alinhamento mobile:
+      1. Manter a foto da seção Sobre a Brasa exibida no topo no mobile ("no mobile continue mostando esta imagem no topo").
+      2. No mobile, deixar o background de Diferenciais orientado ao centro escuro ("no mobile coloque o background orientado ao centro para deixar escuro").
+      3. No mobile, deixar o background de Portfólio escuro sem o efeito de asas ("no mobile deixe este background escuro sem este efeito").
+      4. No mobile, alinhar o espaçamento da direita e esquerda dos cards de Diferenciais com o restante do site ("no mobile coloque o espaçamento da direita e equerda com o mesmo espaçamento do restante do site").
+  - Implementação Técnica em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - **Sobre a Brasa (`.about`):** Configurado `.about .split` como `display: flex; flex-direction: column;` e `.about .frame--tall` como `display: block !important; order: -1; max-width: 380px; margin: 0 auto 1.5rem auto;`, garantindo a imagem autoral sempre no topo da seção no mobile.
+    - **Portfólio (`.portfolio`):** Desativado o efeito de asas no mobile (`.portfolio-backdrop { display: none !important; }`) e fixado background 100% escuro puro (`background-color: #000000 !important; background-image: none !important;`).
+    - **Diferenciais (`.features`):** Desativado o efeito de feixes no mobile (`.features-backdrop { display: none !important; }`), fixando fundo preto com gradiente sutil orientado ao centro escuro.
+    - **Espaçamento Lateral de Diferenciais (`.feature-grid`):** Removido `padding: 0;` que anulava os paddings laterais do `.container`. Adicionado no mobile `padding-left: clamp(1.25rem, 4vw, 2.5rem) !important; padding-right: clamp(1.25rem, 4vw, 2.5rem) !important; box-sizing: border-box;`, harmonizando os recuos com rigorosamente o mesmo padrão do restante da landing page.
+    - **Vitrine (`.showcase`):** Assegurado também `.showcase-backdrop { display: none !important; }` no mobile para total coerência de fundos limpos e escuros.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=5.3` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v33` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v32` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [x] **Passo 151 — Alinhamento de Formulários em Duas Linhas no Mobile, Ícone de Play no Showreel e Copy/Topo na Mesma Linha**
+  - Solicitação do Usuário e Análise Visual:
+    - O usuário enviou três instruções de calibração para o mobile e o rodapé:
+      1. Campo de e-mail e botão do formulário cada um em uma linha no mobile ("no mobile preciso que o campo de email e botao fiquem cada um em uma linha assim como na imagem").
+      2. Ícone de play circular sobre o showreel no rodapé tanto no mobile quanto no desktop ("no mobile e no desktop adicione o icone de paly igual a da imagem").
+      3. Copyright e link "Voltar ao topo" mantidos na mesma linha no mobile ("no mobile colque o copy e o voltar ao topo na mesma linha").
+  - Implementação Técnica em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - **Formulários no Mobile (`.cta-card .inline-form`, `.footer-brand .inline-form`, `.inline-form--sm`):**
+      - Em `@media (max-width: 640px)`, conversão para layout vertical em card arredondado de 20px (`border-radius: 20px; padding: 14px 16px; gap: 12px; flex-direction: column; align-items: stretch;`).
+      - Campo de e-mail ocupando 100% da linha superior (`width: 100%; padding: 8px 4px; font-size: 1rem;`).
+      - Botão de ação `.btn--brasa` ocupando 100% da linha inferior em formato pílula full-width (`width: 100%; border-radius: 999px; min-height: 48px; margin-left: 0; display: flex; justify-content: center; align-items: center; font-size: 16px;`).
+    - **Showreel 2026 no Rodapé (`.preview--sm`):**
+      - Inserido elemento `<span class="play" aria-hidden="true"><svg ...></svg></span>` dentro do link do Showreel em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+      - Em [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css), estilizado `.preview--sm .play` com 48px de diâmetro, centralizado por coordenadas absolutas (`top: 50%; left: 50%; transform: translate(-50%, -50%);`), fundo dark glassmorphism (`rgba(10, 10, 12, 0.75)` com `backdrop-filter: blur(12px)`), borda sutil e micro-interação no hover com aumento de escala (`scale(1.08)`) e gradiente brasa iluminado (`rgba(255, 90, 31, 0.85)`).
+    - **Rodapé Inferior (`.footer-bottom`):**
+      - Em `@media (max-width: 640px)`, reconfigurado para `flex-direction: row !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; gap: 12px !important; white-space: nowrap !important;`, assegurando que o copyright (`© 2026 Brasa Studio`) e o atalho `Voltar ao topo` permaneçam rigorosamente lado a lado na mesma linha em qualquer resolução móvel.
+  - Invalidação de Cache PWA e Versionamento:
+    - Versionamento dos assets elevado para `?v=5.4` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v34` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e auto-limpeza de `brasa-cache-v33` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK.
+
+- [ ] **Passo 152 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

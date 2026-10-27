@@ -2270,6 +2270,131 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
 - **Execução e Validação Docker:**
   - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
 
+### 2.140 Calibração da Margem Superior do Badge da Hero até a Barra Superior (Passo 146)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do topo da página com a barra superior e o badge `[NOVO] Agenda aberta para 2027` da Hero, solicitando: `"quero a margem top deste item ate a barra superior de 54px"`.
+- **Diagnóstico e Análise Técnica:**
+  - A barra superior fixa `.site-header` possui altura de 89px.
+  - A seção `.hero` aplicava `align-items: center;` e padding dinâmico `clamp(6.5rem, 12vh, 8.5rem) 0 3.5rem;`. Isso causava variação da distância entre a base da barra superior e o topo do badge conforme a altura da janela do navegador ou resolução do dispositivo.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.hero`: configurado com `align-items: flex-start;` e `padding: calc(89px + 54px) 0 3.5rem;`, onde 89px é a altura da barra superior e 54px é a margem física exata solicitada.
+     - `@media (max-width: 809px)`: assegurado `align-items: flex-start;` e `padding-top: calc(89px + 54px);`.
+     - `.tag-new`: garantido `margin-top: 0;`, fixando a distância física precisa de 54px entre a borda inferior do header e o topo do badge.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=4.9`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v29`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v28` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.141 Menu Mobile Fullscreen com Linhas Divisórias e Botão CTA 999px (Passo 147)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do menu mobile aberto e instruiu: `"quero que o menu no mobile aberto ocupe a tela inteira, e o botao com border radius 999px. coloque uma linha discreta serando os itens do menu"`.
+- **Diagnóstico e Análise Técnica:**
+  - Anteriormente, o menu móvel `.menu-panel` abria como um card dropdown suspenso de 240px com cantos arredondados, deixando a tela exposta e os botões da Hero visíveis por trás. Além disso, os itens não possuíam separadores visuais e o botão CTA interno não utilizava `border-radius: 999px`.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.menu-panel` no `@media (max-width: 809px)`:
+       - `position: fixed; top: 89px; left: 0; right: 0; bottom: 0; width: 100vw; height: calc(100vh - 89px); height: calc(100dvh - 89px);`
+       - Fundo preto sólido (`background: #000000; z-index: 999; overflow-y: auto;`), preenchendo a tela toda abaixo do header.
+     - Linhas divisórias em cada link `.menu-panel a:not(.btn)`: `border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 1.15rem 0; font-size: 1.25rem; font-weight: 500;`.
+     - Botão CTA `.menu-panel .btn.btn--brasa`: `border-radius: 999px; width: 100%; min-height: 52px; padding: 14px 28px; font-size: 1.05rem; font-weight: 600;`.
+  2. *Comportamento JS em `main.js`:*
+     - Adicionado listener de `toggle` no `<details class="menu">` para travar a rolagem de fundo (`document.body.style.overflow = 'hidden'`) ao abrir e restaurar ao fechar ou navegar.
+  3. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=5.0`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v30`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v29` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.142 Ocultação do Card de Preview da Hero (.hero-art) no Mobile (Passo 148)
+- **Solicitação do Usuário:**
+  - O usuário enviou print do card de preview da Hero contendo o vaso iluminado, botão de play e a rosa dos ventos/estrela em laranja térmico (`.hero-art`), instruindo: `"no mobile oculte esta sessao"`.
+- **Diagnóstico e Análise Técnica:**
+  - No breakpoint móvel (`max-width: 809px`), a grade `.hero-in` colapsava para 1 coluna e o bloco `.hero-art` era exibido abaixo dos botões e do carrossel de marcas parceiras com `margin-top: 1.5rem; justify-content: center;`.
+  - A remoção deste elemento no mobile proporciona maior dinamismo e foco editorial imediato nas seções subsequentes, mantendo a experiência idêntica aos padrões de landing pages ultracompactas e modernas.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - No `@media (max-width: 809px)`, `.hero-art` foi atualizado para `display: none !important;`.
+     - Preservada 100% da renderização do card e da rosa dos ventos estática no desktop (`min-width: 810px`).
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=5.1`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v31`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v30` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.143 Calibração Centralizada do Fundo e Asas de Resultados no Mobile (Passo 149)
+- **Solicitação do Usuário:**
+  - O usuário enviou print da seção Resultados no mobile e instruiu: `"no mobile quero o backgraound fique centralizado do jeito do original"`.
+- **Diagnóstico e Análise Técnica:**
+  - As asas laterais `.stage-wing` tinham dimensões fixadas com largura mínima de 230px (`clamp(230px, 25vw, 380px)`). Em viewports mobile de 360px a 400px, as duas asas ultrapassavam a largura total da tela, cruzando-se no centro e gerando um recorte marrom assimétrico com fenda invertida atrás do título.
+  - No design original de referência, o fundo preto central deve permanecer amplo, simétrico e desimpedido, com as duas asas marrons-acobreadas confinadas às bordas laterais e abrindo a área preta para baixo.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - No `@media (max-width: 809px)`:
+       - `.stage-wing`: ajustado para `top: clamp(95px, 14vw, 125px); height: clamp(220px, 35vw, 300px); width: clamp(85px, 28vw, 130px);`.
+       - `.stage-wing--left`: `clip-path: polygon(0 0, 100% 0, 35% 100%, 0 100%);`.
+       - `.stage-wing--right`: `clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 100%);`.
+     - Isso cria um vão central de mais de 44vw no topo e 75vw na base, mantendo o fundo preto perfeitamente centralizado e simétrico como no original.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=5.2`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v32`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v31` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.144 Calibração Global Mobile: Fundo Escuro em Portfólio/Diferenciais, Espaçamento de Cards e Imagem de Sobre no Topo (Passo 150)
+- **Solicitações do Usuário:**
+  - Sobre a Brasa: `"no mobile continue mostando esta imagem no topo"`.
+  - Diferenciais: `"no mobile coloque o background orientado ao centro para deixar escuro"`.
+  - Portfólio: `"no mobile deixe este background escuro sem este efeito"`.
+  - Cards de Diferenciais: `"no mobile coloque o espaçamento da direita e equerda com o mesmo espaçamento do restante do site"`.
+- **Diagnóstico e Análise Técnica:**
+  - Em Sobre a Brasa, foi necessário reforçar a ordem flex (`order: -1`) para que a imagem institucional continue abrindo a seção no topo em dispositivos móveis.
+  - Em Portfólio e Diferenciais, os backdrops com asas geométricas e feixes laterais geravam recortes assimétricos no mobile; a remoção desses backdrops em telas pequenas garante fundo preto puro escuro e legibilidade de alto contraste.
+  - Na grade `.feature-grid`, a regra `padding: 0;` sobrescrevia os paddings laterais de `.container`, fazendo os cards encostarem nas bordas da tela.
+- **Solução Técnica e Implementação:**
+  1. *Regras CSS em `style.css`:*
+     - `.about .split` e `.about .frame--tall`: imagem posicionada no topo com `order: -1; display: block !important; max-width: 380px; margin: 0 auto 1.5rem auto;`.
+     - `.portfolio-backdrop`: ocultado com `display: none !important;` e `.portfolio { background-color: #000000 !important; }`.
+     - `.features-backdrop`: ocultado com `display: none !important;` e `.features { background-color: #000000 !important; background-image: radial-gradient(ellipse 85% 55% at 50% 25%, rgba(255, 90, 31, 0.04) 0%, #000000 70%) !important; }`.
+     - `.feature-grid`: atualizado com `padding-top: 0; padding-bottom: 0;` e no mobile forçado `padding-left: clamp(1.25rem, 4vw, 2.5rem) !important; padding-right: clamp(1.25rem, 4vw, 2.5rem) !important;`.
+     - `.showcase-backdrop`: ocultado no mobile para consistência.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versão de assets elevada para `?v=5.3`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v33`.
+     - Em `main.js`: auto-limpeza de `brasa-cache-v32` configurada.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` validado na porta 3000 com status HTTP 200 OK via `Invoke-WebRequest`.
+
+### 2.145 Alinhamento de Formulários em Duas Linhas no Mobile, Ícone de Play no Showreel e Copy/Topo na Mesma Linha (Passo 151)
+- **Solicitações do Usuário:**
+  1. No mobile, reorganizar os formulários (CTA e newsletter) para que o campo de e-mail e o botão fiquem cada um em uma linha distinta ("no mobile preciso que o campo de email e botao fiquem cada um em uma linha assim como na imagem").
+  2. Adicionar o ícone circular de reprodução (play) sobre a claquete do Showreel 2026 no rodapé no desktop e no mobile ("no mobile e no desktop adicione o icone de paly igual a da imagem").
+  3. No mobile, manter o copyright (`© 2026 Brasa Studio`) e o atalho `Voltar ao topo` alinhados lado a lado na mesma linha ("no mobile colque o copy e o voltar ao topo na mesma linha").
+- **Diagnóstico e Análise Técnica:**
+  - *Formulários no Mobile:* A cápsula horizontal integrada com input à esquerda e botão à direita ficava comprimida em viewports móveis estreitas (~360px a 480px). O layout vertical em duas linhas (card arredondado de 20px, input ocupando 100% da linha superior e botão pílula ocupando 100% da linha inferior com `min-height: 48px`) oferece uma experiência tátil muito mais confortável e legível.
+  - *Showreel 2026:* O card `.footer-reel .preview--sm` estava com `.play { display: none; }` e sem a tag SVG correspondente no HTML. Inserindo o `<span class="play">` com SVG de 20px e configurando o círculo de 48px em dark glassmorphism com hover dinâmico em gradiente brasa, a claquete ganha affordance imediata de vídeo em ambas as plataformas.
+  - *Rodapé Inferior:* A regra legada em `@media (max-width: 640px)` forçava `.footer-bottom { flex-direction: column; gap: 1rem; align-items: flex-start; }`, quebrando o texto em duas linhas. Ao reconfigurar para `flex-direction: row !important; justify-content: space-between !important; align-items: center !important; white-space: nowrap !important;`, os dois elementos ficam perfeitamente distribuídos nos extremos da mesma linha.
+- **Solução Técnica e Implementação:**
+  1. *Marcação em `index.html`:*
+     - Inserido `<span class="play" aria-hidden="true"><svg ...></svg></span>` dentro de `.preview--sm` no rodapé.
+     - Versionamento de assets elevado para `?v=5.4`.
+  2. *Regras CSS em `style.css`:*
+     - No `@media (max-width: 640px)`:
+       - `.cta-card .inline-form`, `.footer-brand .inline-form`, `.inline-form--sm` ajustados com `flex-direction: column; border-radius: 20px; padding: 14px 16px; gap: 12px; align-items: stretch;`.
+       - Inputs com `width: 100%; padding: 8px 4px; font-size: 1rem;` e botões `.btn--brasa` com `width: 100%; border-radius: 999px; min-height: 48px; margin-left: 0; justify-content: center;`.
+       - `.footer-bottom` com `flex-direction: row !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; gap: 12px !important; white-space: nowrap !important;`.
+     - `.preview--sm .play`: ativado com diâmetro de 48px, dark glassmorphism (`rgba(10, 10, 12, 0.75)` com blur de 12px e borda fina `rgba(255, 255, 255, 0.24)`), ícone SVG branco centralizado e escala de `1.08` com gradiente brasa no hover.
+  3. *Invalidação PWA e Cache:*
+     - Cache PWA elevado para `brasa-cache-v34` em `sw.js`.
+     - Auto-limpeza de `brasa-cache-v33` adicionada em `main.js`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído/recarregado e validado na porta 3000 com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
