@@ -1164,6 +1164,34 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.82 Calibração do Formato Widescreen e Efeitos Cênicos de Fundo do Banner de CTA (Passo 88)
+- **Solicitação do Usuário:**
+  - "mude este banner para este da segunda foto, o formato do banner o efeito do fundo do banner", enviando como referência a imagem comparativa do banner de CTA final.
+- **Análise Comparativa (Foto 1 vs Foto 2):**
+  1. *Formato do Banner:*
+     - A versão anterior (Foto 1) apresentava um bloco mais compacto e verticalmente estendido (`max-width: 980px` com padding vertical alto), conferindo uma proporção quase quadrada/4:3.
+     - A Foto 2 apresenta um banner decididamente panorâmico widescreen (cerca de 21:9 a 2.35:1), ocupando a largura total do contêiner com altura controlada e cantos arredondados contínuos de 32px.
+  2. *Efeito do Fundo do Banner (Iluminação Térmica em Dois Pontos):*
+     - A Foto 1 continha apenas um ponto de luz genérico no topo direito.
+     - A Foto 2 exibe um complexo sistema de iluminação térmica volumétrica:
+       - Um foco primário de calor solar no canto superior direito (clarão térmico alaranjado/cobre vivo e difuso).
+       - Um reflexo secundário atmosférico no terço médio/esquerdo (nuvem difusa bronze/âmbar suave).
+       - Uma base e centro em tom escuro profundo (`#0e0f14` a `#07080a`), permitindo máxima legibilidade ao título 100% branco e aos elementos de interação.
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Adicionadas as camadas de ambiência e glow cênico `.cta-glow.cta-glow--right` e `.cta-glow.cta-glow--left` como filhos de `.cta-card`.
+  - Em `style.css`:
+    - `.cta-card`:
+      - Proporção: `width: 100%; max-width: 100%; box-sizing: border-box;` com padding vertical reduzido para `clamp(3.4rem, 5.2vw, 4.8rem) clamp(1.8rem, 4.5vw, 4.5rem);`.
+      - Fundo: composição com gradiente radial elíptico primário a 86% 12% (`rgba(225, 78, 20, 0.62)`), gradiente radial elíptico secundário a 14% 42% (`rgba(140, 45, 14, 0.24)`), e base linear vertical `#0e0f14` a `#07080a`.
+      - Bordas: `border: 1px solid rgba(255, 255, 255, 0.08); border-top: 1px solid rgba(255, 115, 45, 0.38); border-radius: 32px;`.
+      - Projeção de sombra: `box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(210, 75, 20, 0.14);`.
+    - `.cta-glow--right`: largura de 650px, altura de 600px, posicionado em `top: -100px; right: -80px;`, gradiente radial térmico acobreado e `filter: blur(52px);`.
+    - `.cta-glow--left`: largura de 520px, altura de 520px, posicionado em `top: 15%; left: -100px;`, gradiente radial âmbar e `filter: blur(58px);`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado com `docker-compose up -d --build`.
+  - Endpoint `http://localhost:3000/` validado com status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

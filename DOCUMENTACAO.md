@@ -227,14 +227,17 @@ A landing page está apta a ser instalada na tela de início de celulares, table
         - Fechado: símbolo de mais (`+`) nítido em laranja.
         - Aberto: transição geométrica suave rotacionando 45 graus para transformar o `+` em um **`✕` (fechamento)** em laranja vibrante, idêntico à Foto 2.
       - Resposta expansível em cinza suave com entrelinha confortável e quebra alinhada.
-14. **CTA Final (`.cta` #contato — Card Dark Mode com Iluminação Térmica e Tipografia Monocromática):**
-    - **Fundo & Atmosfera:** Fundo preto absoluto (`#000000`).
-    - **Card Central (`.cta-card`):**
-      - Fundo grafite profundo com **gradiente radial térmico alaranjado/acobreado** no canto superior direito (`radial-gradient(circle 600px at 84% 18%, rgba(210, 75, 20, 0.48) 0%, rgba(160, 48, 12, 0.22) 42%, rgba(13, 14, 18, 0.95) 75%), #0c0d12;`).
-      - Camada difusa de iluminação cênica âmbar (`.cta-glow`) com blur de 48px proporcionando acabamento cinematográfico incandescente.
-      - Cantos arredondados amplos de 32px (`border-radius: 32px`), contorno fino de 1px e borda superior iluminada `border-top: 1px solid rgba(255, 115, 45, 0.45)`.
+14. **CTA Final (`.cta` #contato — Card Dark Mode Widescreen com Iluminação Térmica em Dois Pontos):**
+    - **Fundo & Atmosfera da Seção:** Fundo preto absoluto (`#000000`).
+    - **Card Central em Formato Panorâmico Widescreen (`.cta-card`):**
+      - *Proporção e Dimensões:* Formato panorâmico widescreen 21:9 (`width: 100%; max-width: 100%;`) ocupando a largura total do contêiner de 1240px, com altura equilibrada (`padding: clamp(3.4rem, 5.2vw, 4.8rem) clamp(1.8rem, 4.5vw, 4.5rem);`) e cantos arredondados amplos de 32px (`border-radius: 32px;`).
+      - *Sistema de Iluminação Térmica e Efeitos de Fundo (Dois Pontos conforme a Foto 2):*
+        1. **Foco Incandescente Primário (Topo Direito):** Gradiente radial acobreado vibrante (`rgba(225, 78, 20, 0.62)`) combinado com camada difusa `.cta-glow--right` (650px x 600px, blur de 52px), simulando um flare solar/térmico intenso no canto superior direito.
+        2. **Reflexo Atmosférico Secundário (Lado Esquerdo Médio):** Gradiente radial bronze suave (`rgba(140, 45, 14, 0.24)`) combinado com camada difusa `.cta-glow--left` (520px x 520px, blur de 58px) a 15% do topo, criando ambiência e profundidade equilibrada.
+        3. **Centro & Base Escura:** Gradiente linear vertical sutil de `#0e0f14` a `#07080a`, proporcionando contraste absoluto para a leitura dos textos centrais.
+      - *Bordas & Acabamento:* Contorno fino de 1px em `rgba(255, 255, 255, 0.08)`, rim light acobreado no topo `border-top: 1px solid rgba(255, 115, 45, 0.38)` e projeção de sombra profunda `box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(210, 75, 20, 0.14)`.
     - **Pill Badge Superior (`.tag-status--cta`):** Pílula em dark glassmorphism com borda fina iluminada no topo, bullet quadrado laranja neon (`#ff5722` com glow) e texto "Vamos conversar" em branco puro.
-    - **Título Principal (`.cta-title`):** 100% Branco Puro (`#ffffff`) sem serifa, peso medium (500), em duas linhas equilibradas ("Cada projeto é uma brasa" / "que a gente acende junto."), eliminando completamente a cor laranja anterior conforme a Foto 2.
+    - **Título Principal (`.cta-title`):** 100% Branco Puro (`#ffffff`) sem serifa, peso medium (500), em duas linhas perfeitamente legíveis ("Cada projeto é uma brasa" / "que a gente acende junto.").
     - **Subtítulo (`.cta-text`):** Texto em cinza claro (`#a1a1aa`), entrelinha 1.62 e largura de 520px centralizado em 2 linhas.
     - **Formulário Inline (`.inline-form`):** Campo de e-mail pílula translúcido com placeholder cinza `#71717a` e botão CTA "Quero conversar" em gradiente terracota/vermelho-alaranjado vibrante com sombra difusa âmbar projetada.
 15. **Footer:** Links institucionais, redes sociais e direitos reservados.

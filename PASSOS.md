@@ -713,7 +713,17 @@
   - O bloco contendo a pill badge "FAQ", o título "Perguntas frequentes." e o subtítulo permanece 100% estático no topo da seção, sem flutuar ou acompanhar a rolagem da página.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 88 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 88 — Calibração do Formato Widescreen e Efeitos Cênicos de Fundo do Banner de CTA (Idêntico à Foto 2)**
+  - Reestruturação do formato do card `.cta-card` para proporção widescreen panorâmica (`width: 100%; max-width: 100%; box-sizing: border-box;`), preenchendo a amplitude horizontal do contêiner de 1240px com cantos arredondados de 32px (`border-radius: 32px;`).
+  - Ajuste de padding vertical e horizontal balanceado (`padding: clamp(3.4rem, 5.2vw, 4.8rem) clamp(1.8rem, 4.5vw, 4.5rem);`) para eliminar a altura excessiva e estabelecer a exata proporção ultrawide/panorâmica da Foto 2.
+  - Implementação do sistema de iluminação térmica e cênica de dois pontos no fundo do card:
+    - **Foco Incandescente Primário (Topo Direito):** Gradiente radial acobreado vivo (`rgba(225, 78, 20, 0.62)`) associado à camada difusa `.cta-glow--right` (650px x 600px, blur de 52px), criando clarão térmico intenso no quadrante superior direito.
+    - **Reflexo Atmosférico Secundário (Lado Esquerdo Médio):** Gradiente radial bronze suave (`rgba(140, 45, 14, 0.24)`) associado à camada difusa `.cta-glow--left` (520px x 520px, blur de 58px) a 15% do topo, conferindo profundidade atmosférica equilibrada à composição.
+    - **Base & Centro Preto Profundo:** Gradiente linear vertical sutil de `#0e0f14` a `#07080a` garantindo contraste visual para o título e textos centrais.
+  - Acabamento de borda com contorno fino de 1px em `rgba(255, 255, 255, 0.08)`, rim light superior acobreado `border-top: 1px solid rgba(255, 115, 45, 0.38)` e projeção de sombra `box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(210, 75, 20, 0.14)`.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 89 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

@@ -3955,29 +3955,46 @@ button, input {
 
 .cta-card {
   position: relative;
-  max-width: 980px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   border-radius: 32px;
-  padding: clamp(3.5rem, 6vw, 5.2rem) clamp(1.5rem, 4vw, 3.8rem);
-  background: radial-gradient(circle 600px at 84% 18%, rgba(210, 75, 20, 0.48) 0%, rgba(160, 48, 12, 0.22) 42%, rgba(13, 14, 18, 0.95) 75%), #0c0d12;
+  padding: clamp(3.4rem, 5.2vw, 4.8rem) clamp(1.8rem, 4.5vw, 4.5rem);
+  background:
+    radial-gradient(ellipse 65% 55% at 86% 12%, rgba(225, 78, 20, 0.62) 0%, rgba(170, 50, 14, 0.3) 44%, transparent 72%),
+    radial-gradient(ellipse 55% 45% at 14% 42%, rgba(140, 45, 14, 0.24) 0%, rgba(85, 26, 8, 0.08) 48%, transparent 70%),
+    linear-gradient(180deg, #0e0f14 0%, #07080a 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 115, 45, 0.45);
+  border-top: 1px solid rgba(255, 115, 45, 0.38);
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 45px rgba(210, 75, 20, 0.12);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95), 0 0 55px rgba(210, 75, 20, 0.14);
+  box-sizing: border-box;
 }
 
-/* Camada Difusa de Iluminação Térmica no Topo Direito conforme a Foto 2 */
+/* Camadas Cênicas de Iluminação Térmica e Difusa do Banner conforme a Foto 2 */
 .cta-glow {
   position: absolute;
-  top: -80px;
-  right: -80px;
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(235, 85, 25, 0.42) 0%, rgba(190, 55, 15, 0.18) 45%, transparent 70%);
-  filter: blur(48px);
   pointer-events: none;
   z-index: 0;
+}
+
+.cta-glow--right {
+  top: -100px;
+  right: -80px;
+  width: 650px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(235, 82, 22, 0.52) 0%, rgba(185, 50, 14, 0.25) 45%, transparent 70%);
+  filter: blur(52px);
+}
+
+.cta-glow--left {
+  top: 15%;
+  left: -100px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(160, 48, 14, 0.22) 0%, rgba(100, 28, 8, 0.08) 46%, transparent 70%);
+  filter: blur(58px);
 }
 
 .cta-card .tag-status--cta,
