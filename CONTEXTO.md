@@ -1216,6 +1216,31 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.84 Correção do Enquadramento dos Avatares e Banners 100% Estáticos em Depoimentos (Passo 90)
+- **Solicitação do Usuário:**
+  - "corrija esta foto nos depoimentos que esta fora de padrao deixe extamente igual a da segunda foto, tdeixe os banners estaticos", enviando imagens comparativas do avatar circular da cliente Helena Duarte (depoimento 1).
+- **Análise Comparativa (Foto 1 vs Foto 2):**
+  1. *Avatar Circular de Depoimento:*
+     - Na Foto 1, a imagem estava deslocada cerca de 20 pixels para cima em relação ao centro geométrico. Isso causava um corte abrupto no topo do aro circular do retrato e gerava uma área escura em crescente no fundo inferior da moldura circular, fazendo com que a foto parecesse "fora de padrão".
+     - Na Foto 2, a imagem da matriz original exibe a cliente com ombros perfeitamente simétricos, cabeça centralizada verticalmente, iluminação âmbar nítida e aro circular contínuo sem áreas escuras cortadas.
+     - A investigação revelou que as matrizes originais (`avatar-helena.jpg`, etc.) possuem resolução 160x160 perfeitamente enquadradas, mas na conversão anterior houve um corte vertical indesejado. Todos os 6 avatares apresentavam essa assimetria.
+  2. *Banners Estáticos:*
+     - O usuário solicitou explicitamente que os banners fossem estáticos ("deixe os banners estaticos").
+     - Anteriormente, os 6 cards de depoimentos (`.quote:hover`) e os 4 cartões de marcas (`.brand-squircle-card:hover`) possuíam efeito de elevação `transform: translateY(-3px)` e sombras expansivas ao passar o cursor.
+- **Implementação Técnica:**
+  - Em `assets/img/`:
+    - Re-exportados todos os 6 avatares (`depoimento-1` a `depoimento-6`) em WebP (qualidade 95) e AVIF nas resoluções 160x160 e 80x80 diretamente das matrizes fotográficas originais de 160x160 sem qualquer deslocamento ou corte desproporcional.
+  - Em `style.css`:
+    - `.avatar`: configurado com `overflow: hidden; border-radius: 50%;`.
+    - `.avatar picture, .avatar img`: adicionado `width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center; display: block;`.
+    - `.quote`: adicionado `cursor: default;`.
+    - `.quote:hover`: redefinido para `transform: none; border-color: rgba(255, 255, 255, 0.08); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);`, tornando os cards 100% estáticos.
+    - `.brand-squircle-card`: adicionado `cursor: default;`.
+    - `.brand-squircle-card:hover`: redefinido para `transform: none; background: #111216; border-color: rgba(255, 255, 255, 0.08); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado com `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.

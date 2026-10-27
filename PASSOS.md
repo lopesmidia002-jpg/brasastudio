@@ -735,7 +735,17 @@
     - Ocultado/removido o `<span class="play">` em HTML, aproveitando o botão circular de reprodução já renderizado na imagem autoral `rodape-showreel`, eliminando o ícone flutuante duplicado.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 90 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 90 — Correção do Enquadramento dos Avatares e Banners 100% Estáticos em Depoimentos (Idêntico à Foto 2)**
+  - Correção do enquadramento dos avatares circulares (`.avatar`):
+    - Identificado que as imagens `assets/img/depoimento-*-160.webp` e `80.webp` estavam sofrendo um corte vertical incorreto (deslocamento para cima de ~20px), gerando um corte brusco no topo do aro circular e uma área escura em crescente no fundo inferior (visível principalmente no avatar de Helena Duarte / Foto 1).
+    - Regeneração direta e conversão em alta fidelidade de todos os 6 avatares (`depoimento-1` a `depoimento-6`) em WebP e AVIF a partir das matrizes fotográficas de 160x160 (`avatar-helena.jpg`, etc.), garantindo enquadramento centralizado, ombros balanceados e aro circular completo idêntico à Foto 2.
+    - Estilização de `.avatar` com `overflow: hidden;`, `border-radius: 50%` e `object-fit: cover; object-position: center;`.
+  - Desativação de efeitos de hover nos banners e cards da seção:
+    - Removido `transform: translateY(-3px);` de `.quote:hover`, mantendo os 6 cards de depoimentos 100% estáticos com `cursor: default;`.
+    - Removido `transform: translateY(-3px);` de `.brand-squircle-card:hover`, mantendo os 4 cartões de marcas 100% estáticos com `cursor: default;`.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 91 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 
