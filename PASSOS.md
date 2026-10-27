@@ -673,7 +673,14 @@
   - Atualização do script (`main.js`) com a função modular `setupCustomScrollbar`, garantindo cálculo de rolagem, arraste (*drag-to-scroll*) do thumb e clique na trilha para ambas as fileiras.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 83 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 83 — Remoção de Efeitos e Banners em Grid 100% Estático (Idêntico à Foto)**
+  - Remoção de todas as barras de rolagem (tracks customizados `#showcase-scrollbar-track-1` e `#showcase-scrollbar-track-2` removidos de `index.html`, CSS e JS).
+  - Configuração de `.showcase-grid-track` com `display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%;` exibindo perfeitamente os 8 cards em 4 colunas x 2 linhas fixas e simétricas.
+  - Desativação completa de todos os efeitos dinâmicos de levitação, zoom ou sombra no hover/active (`cursor: default; transform: none; transition: none;`).
+  - Remoção dos event listeners de drag/inércia/scroll no `main.js`.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 84 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.
 
 

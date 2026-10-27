@@ -2892,114 +2892,46 @@ button, input {
   z-index: 2;
 }
 
-/* Sequência de Banners Rolável Horizontalmente com Barra de Rolagem na BASE */
+/* Sequência de Banners Estáticos (Fixo 4x2 sem rolagem) */
 .showcase-scroll-row {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  cursor: grab;
+  overflow: visible;
+  cursor: default;
   user-select: none;
 }
 
-/* Linhas 1 e 2: Barra de Rolagem Horizontal de Cor Branca na PARTE DE BAIXO */
 #showcase-row-1,
 #showcase-row-2 {
   transform: none;
-  padding-top: 0;
-  padding-bottom: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: #ffffff rgba(255, 255, 255, 0.15);
+  padding: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 #showcase-row-1 .showcase-grid-track,
 #showcase-row-2 .showcase-grid-track {
   transform: none;
 }
-
-.showcase-scroll-row:focus-visible {
-  outline: 1px solid rgba(255, 90, 31, 0.5);
-  outline-offset: 4px;
-}
-
-.showcase-scroll-row.is-dragging {
-  cursor: grabbing;
-  scroll-behavior: auto;
-}
-
-/* Estilização da Barra de Rolagem Horizontal Nativa (Webkit) de Cor Branca */
 #showcase-row-1::-webkit-scrollbar,
 #showcase-row-2::-webkit-scrollbar {
-  height: 6px;
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-#showcase-row-1::-webkit-scrollbar-track,
-#showcase-row-2::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  margin: 0 clamp(20px, 8vw, 90px);
+.showcase-scroll-row:focus-visible {
+  outline: none;
 }
 
-#showcase-row-1::-webkit-scrollbar-thumb,
-#showcase-row-2::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 999px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
-  transition: background 0.25s ease, box-shadow 0.25s ease;
-}
-
-#showcase-row-1::-webkit-scrollbar-thumb:hover,
-#showcase-row-2::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 1);
-}
-
-/* Barra de Rolagem Horizontal de Cor Branca na Parte de Baixo dos Banners */
-.showcase-scrollbar-track {
-  width: clamp(260px, 48vw, 680px);
-  height: 6px;
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  margin: 10px auto 16px;
-  position: relative;
-  cursor: pointer;
-  z-index: 3;
-  user-select: none;
-}
-
-.showcase-scrollbar-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 32%;
-  background: #ffffff;
-  border-radius: 999px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.95), 0 0 20px rgba(255, 255, 255, 0.5);
-  cursor: grab;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.showcase-scrollbar-thumb:hover {
-  background: #ffffff;
-  box-shadow: 0 0 14px rgba(255, 255, 255, 1), 0 0 26px rgba(255, 255, 255, 0.7);
-}
-
-.showcase-scrollbar-thumb:active {
-  cursor: grabbing;
-}
-
-/* Grid Track com Banners de Tela a Tela e Rolagem Horizontal */
+/* Grid Track Estático: 4 Colunas x 2 Linhas preenchendo a largura perfeitamente */
 .showcase-grid-track {
   display: grid;
-  grid-template-columns: repeat(4, clamp(340px, 28.5vw, 460px));
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  min-width: 100%;
-  width: max-content;
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Cards Quadrados 1:1 */
+/* Cards Quadrados 1:1 Estáticos */
 .gallery-card {
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -3009,9 +2941,9 @@ button, input {
   background: #0d0d0f;
   position: relative;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  transform: translateZ(0);
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-  will-change: transform, box-shadow;
+  cursor: default;
+  transform: none;
+  transition: none;
 }
 
 .gallery-card picture,
@@ -3021,19 +2953,19 @@ button, input {
   object-fit: cover;
   display: block;
   pointer-events: none;
+  transform: none;
+  transition: none;
 }
 
-/* Física Antigravidade: Levitação suave sem sobresaliência desproporcional */
+/* Banners 100% Estáticos: sem levitação, zoom ou translação ao hover/active */
 .gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 87, 34, 0.12);
-  border-color: rgba(255, 255, 255, 0.14);
+  transform: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
-/* Resposta Elástica ao Clique / Pressionar */
 .gallery-card:active {
-  transform: translateY(-1px) scale(0.985);
-  transition-duration: 0.15s;
+  transform: none;
 }
 
 /* Moldura de Profundidade: Silhuetas e Painéis Angulares Trapezoidais Laterais em Terracota / Marrom-Acobreado */

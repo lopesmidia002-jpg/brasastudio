@@ -1051,6 +1051,28 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` recriado com `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.77 Remoção de Efeitos e Banners em Grid 100% Estático (Passo 83)
+- **Solicitação do Usuário:**
+  - "tire o efeito ddo banners deixe eles estaticos" com foto dos 8 banners perfeitamente distribuídos em 4 colunas x 2 linhas, sem barras de rolagem, estáticos e visíveis simultaneamente.
+- **Investigação Técnica:**
+  - A galeria anteriormente possuía:
+    1. Barras de rolagem horizontais brancas e trilhas dedicadas (`#showcase-scrollbar-track-1` e `#showcase-scrollbar-track-2`).
+    2. Comportamento rolável com transbordamento (`overflow-x: auto`), inércia física amortecida e arraste com o mouse (*drag-to-scroll*).
+    3. Efeitos de levitação ao hover (`transform: translateY(-4px)` e sombra com brilho laranja) e resposta elástica ao clique (`transform: translateY(-1px) scale(0.985)`).
+- **Implementação Técnica:**
+  - Em `index.html`:
+    - Removidos os elementos das barras de rolagem (`#showcase-scrollbar-track-1` e `#showcase-scrollbar-track-2`).
+  - Em `style.css`:
+    - `.showcase-scroll-row`: `overflow: visible; cursor: default; user-select: none;` com scrollbars nativas 100% desativadas (`display: none`).
+    - `.showcase-grid-track`: configurado como grid estático `display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%;`, distribuindo os 4 cards por linha de modo perfeitamente simétrico e sem transbordamento.
+    - `.gallery-card`: eliminadas as transições e transformações dinâmicas (`transform: none; transition: none; cursor: default;`).
+    - `.gallery-card:hover` e `.gallery-card:active`: fixados em `transform: none;` com a sombra estática mantida, eliminando a levitação e deformação elástica.
+  - Em `main.js`:
+    - Desativados os ouvintes de eventos de arraste, física de inércia e rolagem horizontal na galeria em `initGalleryInteractivity()`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker rm -f brasa-studio-landing; docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
