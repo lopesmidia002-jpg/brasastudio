@@ -77,6 +77,7 @@ docker-compose down
 
 A aplicação foi otimizada para notas elevadas no Google Lighthouse e carregamento instantâneo:
 - **LCP (Largest Contentful Paint):** Preloads explícitos adicionados no `<head>` para a imagem principal do Hero (`assets/img/hero-preview-800.webp`) e o ícone central (`assets/img/brasa-estrela-200.webp`) com atributo `fetchpriority="high"` e `loading="eager"`.
+- **Imagens Oficiais e Formatos Modernos (WebP & AVIF):** 100% dos ativos fotográficos e ilustrativos foram sincronizados a partir da extração oficial da página original. Todas as imagens possuem versões emparelhadas em formatos de próxima geração: `.webp` (ampla compatibilidade) e `.avif` (máxima compressão e fidelidade de cores). Variantes responsivas foram geradas via Pillow Lanczos para todas as resoluções (`1x`, `2x`, desktop, tablet e mobile).
 - **Imagens Lazy:** Todas as imagens abaixo da dobra possuem `loading="lazy"` e `decoding="async"` para não bloquear a renderização inicial.
 - **Nginx I/O & Compressão:** Diretivas `sendfile on;`, `tcp_nopush on;` e compressão `gzip` de nível 6 habilitadas para todos os tipos de mídia textual (`CSS`, `JS`, `SVG`, `JSON`).
 - **Políticas de Cache HTTP:**

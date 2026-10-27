@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if ('caches' in window) {
     caches.keys().then((names) => {
       names.forEach((name) => {
-        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2' || name === 'brasa-cache-v3') {
+        if (name === 'brasa-cache-v1' || name === 'brasa-cache-v2' || name === 'brasa-cache-v3' || name === 'brasa-cache-v4') {
           caches.delete(name);
         }
       });

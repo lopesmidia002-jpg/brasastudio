@@ -1097,5 +1097,28 @@
     - Em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js): Adicionada rotina de exclusão automática para `brasa-cache-v3`.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK para todas as rotas e assets de imagem (`brasa-estrela-200.webp` e `brasa-estrela-400.webp`).
 
-- [ ] **Passo 122 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 122 — Substituição Integral de Todas as Imagens do Site pelos Arquivos Originais Fornecidos**
+  - Solicitação do Usuário e Análise dos Ativos:
+    - O usuário instruiu: "altere todas as imagens do site por essa imagens\Brasa Studio · Estúdio criativo de marca, site e campanha_files".
+    - Na pasta indicada, foram identificadas 32 imagens mestras autênticas extraídas da landing page original, abrangendo benefícios, cases, portfólio, vitrines, depoimentos, fotos de estúdio, processos e a estrela da marca.
+  - Sincronização e Geração de Variantes:
+    - Todas as 32 imagens mestras `.webp` originais foram copiadas para [assets/img/](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/assets/img/).
+    - Utilizando o Pillow (PIL) com algoritmo de interpolação `Resampling.LANCZOS`, foram geradas e sincronizadas 100% das variantes responsivas e versões de alta densidade (`.webp` e `.avif` de alta fidelidade) para todas as seções:
+      - Benefícios: `beneficio-*-660`, `480`, `320`
+      - Portfólio: `portfolio-*-1800`, `1200`, `800`, e variantes mobile `m-1080`, `m-800`, `m-400`
+      - Casos: `caso-*-440`
+      - Vitrines: `vitrine-*-450`
+      - Depoimentos: `depoimento-*-80`
+      - Sobre o Estúdio: `sobre-estudio-800`, `480`
+      - Processo: `processo-mesa-520`
+      - Serviços: `servicos-retrato-520`
+      - Rodapé: `rodape-showreel-300`
+      - Estrela da Marca: `brasa-estrela-400.webp` (400x400 RGBA transparente)
+    - Auditoria de integridade executada: 100% das 80 referências de imagens presentes em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) encontram-se rigorosamente sincronizadas com 0 arquivos faltantes.
+  - Versionamento e Cache PWA:
+    - Versionamento dos assets elevado para `?v=2.5` em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html).
+    - Cache PWA elevado para `brasa-cache-v5` em [sw.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/sw.js) e rotina de auto-limpeza de `brasa-cache-v4` adicionada em [main.js](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/main.js).
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 com status HTTP 200 OK para o HTML e para todas as imagens `.webp` e `.avif`.
+
+- [ ] **Passo 123 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

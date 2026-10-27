@@ -1782,6 +1782,24 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
   - Mapeamento e retorno HTTP 200 OK validados para o HTML e para as imagens `brasa-estrela-200.webp` e `brasa-estrela-400.webp`.
 
+### 2.116 Substituição Integral das Imagens do Site pelos Arquivos Originais (Passo 122)
+- **Solicitação do Usuário:**
+  - "altere todas as imagens do site por essa imagens\Brasa Studio · Estúdio criativo de marca, site e campanha_files".
+- **Diagnóstico e Análise Técnica:**
+  - A pasta fornecida continha os arquivos originais autênticos extraídos diretamente da página de referência: 32 imagens mestras `.webp` com fidelidade absoluta de proporções de aspecto (benefícios, portfólio 2:1, cases verticais 880x1006, vitrines 9:7, retratos de processos e serviços 1:1, fotos de estúdio 4:5 e a estrela da marca).
+- **Solução Técnica e Implementação:**
+  1. *Sincronização de Ativos Mestres em `assets/img/`:*
+     - Copiadas todas as 32 imagens mestras originais.
+     - Executado pipeline via biblioteca Pillow com algoritmo `Resampling.LANCZOS` gerando 100% das variantes responsivas e versões duplas WebP e AVIF (benefícios 660/480/320, cases 440, portfólio 1800/1200/800/m-1080/m-800/m-400, vitrines 450, depoimentos 80, sobre 800/480, processo 520, serviços 520, rodapé 300 e estrela 400 RGBA).
+     - Auditoria automatizada realizada: 80 referências ativas no DOM auditadas com 0 pendências.
+  2. *Versionamento e Invalidação PWA:*
+     - Em `index.html`: versionamento avançado para `?v=2.5`.
+     - Em `sw.js`: cache PWA elevado para `brasa-cache-v5`.
+     - Em `main.js`: adicionada limpeza automática para `brasa-cache-v4`.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` reconstruído via `docker-compose up -d --build`.
+  - Mapeamento e status HTTP 200 OK validados para o HTML e para todas as imagens `.webp` e `.avif` no servidor Nginx Alpine.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
