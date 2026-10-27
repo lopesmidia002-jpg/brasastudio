@@ -2844,7 +2844,7 @@ button, input {
   overflow: hidden;
 }
 
-/* Grafismo decorativo de fundo: bússola vetorial no canto inferior direito (diminuída e sutil) */
+/* Grafismo decorativo de fundo: bússola vetorial no canto inferior direito (sutil conforme Foto 2) */
 .svc-compass-wrap {
   position: absolute;
   bottom: -35px;
@@ -2860,7 +2860,7 @@ button, input {
   width: 100%;
   height: 100%;
   display: block;
-  filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.4));
+  filter: none; /* Removido glow incandescente para acabamento técnico sutil e limpo conforme Foto 2 */
 }
 
 .btn--svc {

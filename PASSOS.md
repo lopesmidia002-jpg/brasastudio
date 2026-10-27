@@ -914,5 +914,17 @@
     - `.portfolio-title .title-line-2`: estilizado com `display: block; color: #8e8e93;`, definindo a segunda linha em tom cinza suave / prateado refinado mais escuro.
   - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
 
-- [ ] **Passo 107 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
+- [x] **Passo 107 — Calibração Sutil da Rosa dos Ventos no Card de Serviços (Conforme Foto 2)**
+  - Análise Comparativa entre as Imagens do Usuário:
+    - Na Foto 1 (estado anterior), a rosa dos ventos do Card 3 ("Lançamento integrado") exibia um drop-shadow alaranjado difuso e incandescente no CSS (`filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.4));`), estrela duplicada com blur de glow (`#svc-bottom-glow-filter`), e anéis pontilhados/eixos ortogonais com opacidade e espessura elevadas, destacando-se de forma excessiva.
+    - Na Foto 2 (referência desejada), a rosa dos ventos atua como uma elegante marca d'água técnica geométrica sutil e limpa sobre o fundo escuro do card, sem halos borrados ou efeitos incandescentes externos.
+  - Implementação em [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html) e [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css):
+    - [style.css](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/style.css): `.svc-compass` teve seu filtro alterado para `filter: none;`, eliminando o drop-shadow difuso avermelhado e assegurando traços limpos e nítidos.
+    - [index.html](file:///c:/Users/Nilto/OneDrive/Documentos/brasa/index.html):
+      - Halo central reduzido para luminescência térmica extremamente discreta (`stop-opacity="0.18"` e `0.08"`).
+      - Retículo HUD calibrado com traços refinados e opacidades tênues (`stroke-width="0.85"` e opacidades entre `0.25` e `0.45`).
+      - Estrela sólida de 4 pontas preenchida em camada única com degradê terracota suave (`#e65100` -> `#d84315` -> `#bf360c` -> `#5c1504`) sem duplicação e sem filtros de blur incandescente.
+  - Reconstrução e validação do container Docker `brasa-studio-landing` na porta 3000 retornando status HTTP 200 OK.
+
+- [ ] **Passo 108 — Próxima Etapa de Refinamento ou Nova Seção (Aguardando Solicitação do Usuário)**
   - Aguardar instruções explícitas do usuário para o próximo passo.

@@ -1541,6 +1541,23 @@ Este documento registra o contexto arquitetural, histórico de decisões técnic
   - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
   - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
 
+### 2.101 Calibração Sutil da Rosa dos Ventos no Card de Serviços Conforme Foto 2 (Passo 107)
+- **Solicitação do Usuário:**
+  - "nesse card colocar essa estrela mais sutil assim com no original, dessa forma da segunnda foto", anexando duas imagens comparativas do Card 3 de Serviços ("Lançamento integrado"): a Foto 1 (estado anterior, com a rosa dos ventos e anéis excessivamente incandescentes e com drop shadow borrado) e a Foto 2 (referência desejada, onde a rosa dos ventos atua como uma elegante marca d'água técnica geométrica sutil e limpa).
+- **Diagnóstico e Análise Visual:**
+  - Em `style.css`, `.svc-compass` continha `filter: drop-shadow(0 0 16px rgba(230, 74, 25, 0.4));`, projetando um halo alaranjado borrado e incandescente que poluia visualmente o canto inferior direito do card.
+  - Em `index.html`, a estrela central estava duplicada com filtro de blur (`#svc-bottom-glow-filter`), o halo radial central possuía opacidade elevada (`0.45`), e os anéis concêntricos/eixos possuíam espessura e opacidade exageradas (`opacity="0.85"`, `stroke-width="1.2"`).
+- **Solução Técnica e Implementação:**
+  1. *Remoção de Drop Shadow Incandescente no CSS:*
+     - Em `style.css`, `.svc-compass` foi calibrado com `filter: none;`, eliminando o borrão avermelhado externo e conferindo nitidez e clareza aos traços vetoriais.
+  2. *Refinamento do Retículo HUD e Estrela no SVG:*
+     - Em `index.html`, o halo central foi suavizado para opacidade máxima de 0.18 (`#svc-bottom-glow`).
+     - Os anéis concêntricos interno, médio e externo, bem como os eixos cruzados e diagonais, tiveram suas espessuras reduzidas para `0.75` - `0.9` e suas opacidades calibradas entre `0.25` e `0.45`.
+     - A estrela sólida de 4 pontas passou a ser renderizada em camada única limpa com degradê terracota suave (`#e65100` a `#5c1504`), sem duplicação e sem filtros de blur, reproduzindo milimetricamente o efeito sutil e elegante da Foto 2.
+- **Execução e Validação Docker:**
+  - Container `brasa-studio-landing` atualizado e recriado via `docker-compose up -d --build`.
+  - Endpoint validado na porta 3000 retornando status HTTP 200 OK.
+
 ## 3. Arquitetura de Execução (100% Docker)
 - A aplicação é servida através de um container **Docker** baseado na imagem oficial leve `nginx:alpine`.
 - O arquivo `nginx.conf` inclui configuração de tipos MIME corretos para imagens modernas (WebP/SVG), compressão Gzip e cabeçalhos de controle de cache.
